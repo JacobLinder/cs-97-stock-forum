@@ -1,7 +1,7 @@
 import { csv } from 'd3';
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { VictoryLine, VictoryChart } from 'Victory';
+import { VictoryLine, VictoryChart } from 'victory';
 
 const CSV = '/data/SPY.csv';
 
