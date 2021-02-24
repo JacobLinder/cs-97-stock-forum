@@ -2,10 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import './index.css';
+
+// Using a temporary styling from bootstrap
+// replaced import './index.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+
+// Using container from bootstrap to keep sign up form
+// resizable
+import { Container } from 'react-bootstrap'
+
 import App from './App';
 import LandingPage from '../src/pages/LandingPage';
-import SignIn from '../src/pages/SignIn';
+import SignIn from './pages/SignIn';
 import CreateAccount from '../src/pages/CreateAccount';
 import Homepage from '../src/pages/Homepage';
 import CommentPage from '../src/pages/CommentPage';
@@ -26,14 +34,37 @@ ReactDOM.render(
           path="/index"
           render={(props) => <LandingPage {...props} />}
         />
+
+
         <Route
           path="/sign-in"
-          render={(props) => <SignIn {...props} />}
+          render={(props) => 
+
+          // adding flexing style
+          <Container className="d-flex align-items-center justify-content-center"
+            style={{ minHeight: "100vh"}}>
+            <div className="w-100" style={{ maxWidth: "400px"}}>
+              <SignIn {...props} />
+            </div>
+          </Container>
+          }
         />
         <Route
           path="/create-account"
-          render={(props) => <CreateAccount {...props} />}
+          render={(props) =>
+          // adding flexing style
+
+          <Container className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "100vh"}}>
+            <div className="w-100" style={{ maxWidth: "400px"}}>
+              <CreateAccount {...props} />
+            </div>
+          </Container>
+          
+          }
         />
+
+
         <Route
           path="/homepage"
           render={(props) => <Homepage {...props} />}
