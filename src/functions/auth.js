@@ -12,10 +12,16 @@ import 'firebase/auth';
 export async function signIn(email, password) {
   try {
     await firebase.auth().signInWithEmailAndPassword(email, password);
-    return true;
+    return 1;
   } catch(error) {
     console.log(error);
-    return false;
+    const errorCode = error.code;
+    if (errorCode === 'auth/user-not-found' || errorCode === 'auth/invalid-email')
+      return 2;
+    else if (errorCode === 'auth/wrong-password')
+      return 3;
+    else
+      return 4;
   }
 }
 
@@ -34,7 +40,8 @@ export async function createAccount(username, email, password) {
     await firebase.firestore().collection('users').doc(uid).set({
       username: username,
       email: email,
-      uid: uid
+      uid: uid,
+      comments: []
     });
     return true;
   } catch(error) {
