@@ -4,7 +4,6 @@ import 'firebase/auth';
 
 const db = firebase.firestore();
 
-/**
 export async function createComment(ticker, uid, comment) {
   try {
     const commentRef = db.collection('stocks').doc(ticker).collection('comments');
@@ -78,29 +77,50 @@ export async function getUserComments(uid) {
   }
 }
 
-export async function upvoteComment(uid, ticker, id, replyIndex) {
+export function userHasUpvoted(uid, comment) {
+  if (comment.upvotes.indexOf(uid) === -1)
+    return false;
+  return true;
+}
+
+export function userHasDownvoted(uid, comment) {
+  if (comment.downvotes.indexOf(uid) === -1)
+    return false;
+  return true;
+}
+
+function removeUpvote(uid, comment) {
+
+}
+
+function removeDownvote(uid, comment) {
+  
+}
+
+export async function toggleUpvoteComment(uid, ticker, id, replyIndex) {
   try {
     const commentRef = db.collection('stocks').doc(ticker).collection('comments').doc(id);
-    const comments = await commentRef.get();
+    const comments = (await commentRef.get()).data();
+    const comment = replyIndex === -1 ? comments : comments.children[0]
+    if (userHasUpvoted(uid, comment)) {
+      const uidIndex = comment.upvotes.indexOf(uid);
+      comment.upvotes.splice(uidIndex, 1);
+    } else {
+      comment.upvotes.push(uid);
+      if (userHasDownvoted(uid, comment)) {
+
+      }
+    }
     if (replyIndex === -1) {
       
     } else {
-
+      comments
     }
   } catch(err) {
     console.log(err);
   }
 }
 
-export async function downvoteComment() {
+export async function toggleDownvoteComment() {
   try
 }
-
-export async function userHasUpvoted() {
-
-}
-
-export async function userHasDownvoted() {
-  
-}
-*/

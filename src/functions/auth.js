@@ -7,7 +7,7 @@ import 'firebase/auth';
  * @async
  * @param {string} email - the user's email
  * @param {string} password - the user's password
- * @returns true if success, false if failure
+ * @returns 1 if success, 2 if wrong email, 3 if wrong password, 4 if other error
  */
 export async function signIn(email, password) {
   try {
