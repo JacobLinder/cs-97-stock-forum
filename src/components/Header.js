@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   title:{
+    textAlign: 'center',
     color: '#fff',
     fontSize: '3.2rem',
   },
@@ -61,7 +62,7 @@ export default function Header() {
         </Toolbar>
       </AppBar>
 
-      <Collapse in={checked} {...(checked ? { timeout: 1700 } : {})} collapsedHeight={10}>
+      <Collapse in={checked} {...(checked ? { timeout: 1500 } : {})} collapsedHeight={10}>
         <div className={classes.container}>
           <h1 className={classes.title}>
             Welcome to <br /> Stock
