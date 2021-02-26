@@ -2,12 +2,24 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+const firebaseConfig = {
+  apiKey: "AIzaSyAneHtBGox07-t4PL5lQUPTJSDV699-me4",
+  authDomain: "cs97-stock-forum.firebaseapp.com",
+  projectId: "cs97-stock-forum",
+  storageBucket: "cs97-stock-forum.appspot.com",
+  messagingSenderId: "102652179476",
+  appId: "1:102652179476:web:2990e1610da4903c4f2301",
+  measurementId: "G-Z9C54MJ34X"
+};
+if (firebase.app.length === 0)
+  firebase.initializeApp(firebaseConfig);
+
 /**
  * Signs in the user.
  * @async
  * @param {string} email - the user's email
  * @param {string} password - the user's password
- * @returns true if success, false if failure
+ * @returns 1 if success, 2 if wrong email, 3 if wrong password, 4 if other error
  */
 export async function signIn(email, password) {
   try {
