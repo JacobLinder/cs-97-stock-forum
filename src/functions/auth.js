@@ -43,7 +43,7 @@ export async function signIn(email, password) {
  * @param {string} username - the user's username
  * @param {string} email - the user's email
  * @param {string} password - the user's password
- * @returns true if success, false if failure
+ * @returns 1 if success, 2 if failure
  */
 export async function createAccount(username, email, password) {
   try {
@@ -55,9 +55,9 @@ export async function createAccount(username, email, password) {
       uid: uid,
       comments: []
     });
-    return true;
+    return 1;
   } catch(error) {
     console.log(error);
-    return false;
+    return 2;
   }
 }

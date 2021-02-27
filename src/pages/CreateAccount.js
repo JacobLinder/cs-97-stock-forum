@@ -1,17 +1,110 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useHistory } from 'react-router-dom';
+import { Form, Button, Card } from "react-bootstrap"; 
+import { createAccount } from '../functions/auth'
+import Homepage from "./Homepage";
 
-export default function CreateAccount() {
+export default function SignUp() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [passwordConfirm, setPasswordConfirm] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [emailErr, setEmailErr] = useState("")
+  const [passwordErr, setPasswordErr] = useState("")
+  const [passwordCErr, setPasswordCErr] = useState("")
+  const history = useHistory()
+
+  const clearErrMsg = () => {
+    setEmailErr('');
+    setPasswordErr('');
+    setPasswordCErr('');
+  }
+
+  function handleSubmit(e) {
+    // preventing default submit
+    e.preventDefault()
+    
+    // clear message
+    clearErrMsg()
+
+    // before handling a submit, disable the submit button
+    // before the first submit result comes back
+
+    if (password !== passwordConfirm)
+    {
+      setPasswordCErr("Passwords do not match each other")
+      setPasswordConfirm('')
+      return
+    }
+
+    setLoading(true)
+
+    const signUpCase = createAccount(email, password)
+
+    setLoading(false)
+    switch(signUpCase)
+    {
+      // successful login, redirect to homepage
+      case 1:
+        history.push('homepage')
+        return
+  
+      // invalid email, no user found
+      case 2:
+        setEmail('')
+        setEmailErr('Invalid Email')
+        break;
+    }
+  }
+
   return(
     <>
-      <center>
-        <h2>Create Account</h2>
-        <Link to='/homepage'>
-          <button>
-            Homepage
-          </button>
-        </Link>
-      </center>
+      <Card>
+        <Card.Body>
+          <h2 className="text-center mb-4">
+            Sign Up
+          </h2>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group id="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoFocus
+              />
+              <p className="errorMsg" style={{color: "red"}}>{emailErr}</p>
+            </Form.Group>
+            <Form.Group id="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <p className="errorMsg" style={{color: "red"}}>{passwordErr}</p>
+            </Form.Group>
+            <Form.Group id="passwordConfirm">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                required
+                value={passwordConfirm}
+                onChange={(e) => setPasswordConfirm(e.target.value)}
+              />
+              <p className="errorMsg" style={{color: "red"}}>{passwordCErr}</p>
+            </Form.Group>
+            <Button disabled={loading} className="w-100" type="submit">
+              Sign Up
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+      <div className="w-100 text-center mt-2">
+        Have an account already? <Link to="/sign-in"> Sign In </Link>
+      </div>
     </>
   );
 }
