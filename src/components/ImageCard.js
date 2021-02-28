@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -30,24 +31,27 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImageCard({ landingbutton }) {
+export default function ImageCard({ landingbutton, checked }) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardMedia
-        className={classes.media}
-        image={landingbutton.imageUrl}
-        title="Contemplative Reptile"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h1" className={classes.title}>
-          {landingbutton.title}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p" className={classes.desc}>
-          {landingbutton.description}
-        </Typography>
-      </CardContent>
-    </Card>
+    <Collapse in={checked} {...(checked ? { timeout: 1500 } : {})} collapsedHeight={10}>
+      <Card className={classes.root}>
+        <CardMedia
+          className={classes.media}
+          image={landingbutton.imageUrl}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h1" className={classes.title}>
+            {landingbutton.title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p" className={classes.desc}>
+            {landingbutton.description}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Collapse>
+
   );
 }
