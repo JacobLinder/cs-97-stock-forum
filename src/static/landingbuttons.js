@@ -2,8 +2,8 @@ const landingbuttons = [
   {
     title: 'Sign in',
     description:
-      "Sign in to view stocks!",
-    imageUrl: process.env.PUBLIC_URL + '/assets/laptop.jpeg',
+      "Sign in to view stocks! You can start following and interacting with stocks.",
+    imageUrl: process.env.PUBLIC_URL + '/assets/ipad.jpeg',
     time: 1500,
   },
   {
