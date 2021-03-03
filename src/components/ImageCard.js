@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Collapse } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -36,21 +37,23 @@ export default function ImageCard({ landingbutton, checked }) {
 
   return (
     <Collapse in={checked} {...(checked ? { timeout: 1500 } : {})} collapsedHeight={10}>
-      <Card className={classes.root}>
-        <CardMedia
-          className={classes.media}
-          image={landingbutton.imageUrl}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h1" className={classes.title}>
-            {landingbutton.title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" className={classes.desc}>
-            {landingbutton.description}
-          </Typography>
-        </CardContent>
-      </Card>
+      <Link to={landingbutton.link}>
+        <Card className={classes.root}>
+          <CardMedia
+            className={classes.media}
+            image={landingbutton.imageUrl}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h1" className={classes.title}>
+              {landingbutton.title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p" className={classes.desc}>
+              {landingbutton.description}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Link>
     </Collapse>
 
   );
