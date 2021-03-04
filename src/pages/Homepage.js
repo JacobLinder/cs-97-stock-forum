@@ -1,17 +1,13 @@
+import { RowingSharp } from '@material-ui/icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Homepage.css';
+import Landing from '../components/landing/Landing';
 
 export default function Homepage() {
   return(
-    <>
-      <center>
-        <h2>Homepage</h2>
-        <Link to='/comment-page'>
-          <button>
-            Comment Page
-          </button>
-        </Link>
-      </center>
-    </>
+    <div>
+      <Landing />
+    </div>
   );
 }
