@@ -2028,10 +2028,3043 @@ function CSVToArray(csv) {
   return lines.splice(1, lines.length)
 }
 
-const firstGraph = CSVToArray(MMM1M);
-const secondGraph = CSVToArray(MMM3M);
-const thirdGraph = CSVToArray(MMM6M);
-const fourthGraph = CSVToArray(MMM1Y);
+const ticker = 'MMM';
+
+var firstGraph = CSVToArray(MMM1M);
+var secondGraph = CSVToArray(MMM3M);
+var thirdGraph = CSVToArray(MMM6M);
+var fourthGraph = CSVToArray(MMM1Y);
+
+if (ticker === 'MMM') {
+  firstGraph = CSVToArray(MMM1M);
+  secondGraph = CSVToArray(MMM3M);
+  thirdGraph = CSVToArray(MMM6M);
+  fourthGraph = CSVToArray(MMM1Y);
+}
+if (ticker === 'ABT') {
+  firstGraph = CSVToArray(ABT1M);
+  secondGraph = CSVToArray(ABT3M);
+  thirdGraph = CSVToArray(ABT6M);
+  fourthGraph = CSVToArray(ABT1Y);
+}
+if (ticker === 'ABBV') {
+  firstGraph = CSVToArray(ABBV1M);
+  secondGraph = CSVToArray(ABBV3M);
+  thirdGraph = CSVToArray(ABBV6M);
+  fourthGraph = CSVToArray(ABBV1Y);
+}
+if (ticker === 'ABMD') {
+  firstGraph = CSVToArray(ABMD1M);
+  secondGraph = CSVToArray(ABMD3M);
+  thirdGraph = CSVToArray(ABMD6M);
+  fourthGraph = CSVToArray(ABMD1Y);
+}
+if (ticker === 'ACN') {
+  firstGraph = CSVToArray(ACN1M);
+  secondGraph = CSVToArray(ACN3M);
+  thirdGraph = CSVToArray(ACN6M);
+  fourthGraph = CSVToArray(ACN1Y);
+}
+if (ticker === 'ATVI') {
+  firstGraph = CSVToArray(ATVI1M);
+  secondGraph = CSVToArray(ATVI3M);
+  thirdGraph = CSVToArray(ATVI6M);
+  fourthGraph = CSVToArray(ATVI1Y);
+}
+if (ticker === 'ADBE') {
+  firstGraph = CSVToArray(ADBE1M);
+  secondGraph = CSVToArray(ADBE3M);
+  thirdGraph = CSVToArray(ADBE6M);
+  fourthGraph = CSVToArray(ADBE1Y);
+}
+if (ticker === 'AMD') {
+  firstGraph = CSVToArray(AMD1M);
+  secondGraph = CSVToArray(AMD3M);
+  thirdGraph = CSVToArray(AMD6M);
+  fourthGraph = CSVToArray(AMD1Y);
+}
+if (ticker === 'AAP') {
+  firstGraph = CSVToArray(AAP1M);
+  secondGraph = CSVToArray(AAP3M);
+  thirdGraph = CSVToArray(AAP6M);
+  fourthGraph = CSVToArray(AAP1Y);
+}
+if (ticker === 'AES') {
+  firstGraph = CSVToArray(AES1M);
+  secondGraph = CSVToArray(AES3M);
+  thirdGraph = CSVToArray(AES6M);
+  fourthGraph = CSVToArray(AES1Y);
+}
+if (ticker === 'AFL') {
+  firstGraph = CSVToArray(AFL1M);
+  secondGraph = CSVToArray(AFL3M);
+  thirdGraph = CSVToArray(AFL6M);
+  fourthGraph = CSVToArray(AFL1Y);
+}
+if (ticker === 'A') {
+  firstGraph = CSVToArray(A1M);
+  secondGraph = CSVToArray(A3M);
+  thirdGraph = CSVToArray(A6M);
+  fourthGraph = CSVToArray(A1Y);
+}
+if (ticker === 'APD') {
+  firstGraph = CSVToArray(APD1M);
+  secondGraph = CSVToArray(APD3M);
+  thirdGraph = CSVToArray(APD6M);
+  fourthGraph = CSVToArray(APD1Y);
+}
+if (ticker === 'AKAM') {
+  firstGraph = CSVToArray(AKAM1M);
+  secondGraph = CSVToArray(AKAM3M);
+  thirdGraph = CSVToArray(AKAM6M);
+  fourthGraph = CSVToArray(AKAM1Y);
+}
+if (ticker === 'ALK') {
+  firstGraph = CSVToArray(ALK1M);
+  secondGraph = CSVToArray(ALK3M);
+  thirdGraph = CSVToArray(ALK6M);
+  fourthGraph = CSVToArray(ALK1Y);
+}
+if (ticker === 'ALB') {
+  firstGraph = CSVToArray(ALB1M);
+  secondGraph = CSVToArray(ALB3M);
+  thirdGraph = CSVToArray(ALB6M);
+  fourthGraph = CSVToArray(ALB1Y);
+}
+if (ticker === 'ARE') {
+  firstGraph = CSVToArray(ARE1M);
+  secondGraph = CSVToArray(ARE3M);
+  thirdGraph = CSVToArray(ARE6M);
+  fourthGraph = CSVToArray(ARE1Y);
+}
+if (ticker === 'ALXN') {
+  firstGraph = CSVToArray(ALXN1M);
+  secondGraph = CSVToArray(ALXN3M);
+  thirdGraph = CSVToArray(ALXN6M);
+  fourthGraph = CSVToArray(ALXN1Y);
+}
+if (ticker === 'ALGN') {
+  firstGraph = CSVToArray(ALGN1M);
+  secondGraph = CSVToArray(ALGN3M);
+  thirdGraph = CSVToArray(ALGN6M);
+  fourthGraph = CSVToArray(ALGN1Y);
+}
+if (ticker === 'ALLE') {
+  firstGraph = CSVToArray(ALLE1M);
+  secondGraph = CSVToArray(ALLE3M);
+  thirdGraph = CSVToArray(ALLE6M);
+  fourthGraph = CSVToArray(ALLE1Y);
+}
+if (ticker === 'LNT') {
+  firstGraph = CSVToArray(LNT1M);
+  secondGraph = CSVToArray(LNT3M);
+  thirdGraph = CSVToArray(LNT6M);
+  fourthGraph = CSVToArray(LNT1Y);
+}
+if (ticker === 'ALL') {
+  firstGraph = CSVToArray(ALL1M);
+  secondGraph = CSVToArray(ALL3M);
+  thirdGraph = CSVToArray(ALL6M);
+  fourthGraph = CSVToArray(ALL1Y);
+}
+if (ticker === 'GOOGL') {
+  firstGraph = CSVToArray(GOOGL1M);
+  secondGraph = CSVToArray(GOOGL3M);
+  thirdGraph = CSVToArray(GOOGL6M);
+  fourthGraph = CSVToArray(GOOGL1Y);
+}
+if (ticker === 'GOOG') {
+  firstGraph = CSVToArray(GOOG1M);
+  secondGraph = CSVToArray(GOOG3M);
+  thirdGraph = CSVToArray(GOOG6M);
+  fourthGraph = CSVToArray(GOOG1Y);
+}
+if (ticker === 'MO') {
+  firstGraph = CSVToArray(MO1M);
+  secondGraph = CSVToArray(MO3M);
+  thirdGraph = CSVToArray(MO6M);
+  fourthGraph = CSVToArray(MO1Y);
+}
+if (ticker === 'AMZN') {
+  firstGraph = CSVToArray(AMZN1M);
+  secondGraph = CSVToArray(AMZN3M);
+  thirdGraph = CSVToArray(AMZN6M);
+  fourthGraph = CSVToArray(AMZN1Y);
+}
+if (ticker === 'AMCR') {
+  firstGraph = CSVToArray(AMCR1M);
+  secondGraph = CSVToArray(AMCR3M);
+  thirdGraph = CSVToArray(AMCR6M);
+  fourthGraph = CSVToArray(AMCR1Y);
+}
+if (ticker === 'AEE') {
+  firstGraph = CSVToArray(AEE1M);
+  secondGraph = CSVToArray(AEE3M);
+  thirdGraph = CSVToArray(AEE6M);
+  fourthGraph = CSVToArray(AEE1Y);
+}
+if (ticker === 'AAL') {
+  firstGraph = CSVToArray(AAL1M);
+  secondGraph = CSVToArray(AAL3M);
+  thirdGraph = CSVToArray(AAL6M);
+  fourthGraph = CSVToArray(AAL1Y);
+}
+if (ticker === 'AEP') {
+  firstGraph = CSVToArray(AEP1M);
+  secondGraph = CSVToArray(AEP3M);
+  thirdGraph = CSVToArray(AEP6M);
+  fourthGraph = CSVToArray(AEP1Y);
+}
+if (ticker === 'AXP') {
+  firstGraph = CSVToArray(AXP1M);
+  secondGraph = CSVToArray(AXP3M);
+  thirdGraph = CSVToArray(AXP6M);
+  fourthGraph = CSVToArray(AXP1Y);
+}
+if (ticker === 'AIG') {
+  firstGraph = CSVToArray(AIG1M);
+  secondGraph = CSVToArray(AIG3M);
+  thirdGraph = CSVToArray(AIG6M);
+  fourthGraph = CSVToArray(AIG1Y);
+}
+if (ticker === 'AMT') {
+  firstGraph = CSVToArray(AMT1M);
+  secondGraph = CSVToArray(AMT3M);
+  thirdGraph = CSVToArray(AMT6M);
+  fourthGraph = CSVToArray(AMT1Y);
+}
+if (ticker === 'AWK') {
+  firstGraph = CSVToArray(AWK1M);
+  secondGraph = CSVToArray(AWK3M);
+  thirdGraph = CSVToArray(AWK6M);
+  fourthGraph = CSVToArray(AWK1Y);
+}
+if (ticker === 'AMP') {
+  firstGraph = CSVToArray(AMP1M);
+  secondGraph = CSVToArray(AMP3M);
+  thirdGraph = CSVToArray(AMP6M);
+  fourthGraph = CSVToArray(AMP1Y);
+}
+if (ticker === 'ABC') {
+  firstGraph = CSVToArray(ABC1M);
+  secondGraph = CSVToArray(ABC3M);
+  thirdGraph = CSVToArray(ABC6M);
+  fourthGraph = CSVToArray(ABC1Y);
+}
+if (ticker === 'AME') {
+  firstGraph = CSVToArray(AME1M);
+  secondGraph = CSVToArray(AME3M);
+  thirdGraph = CSVToArray(AME6M);
+  fourthGraph = CSVToArray(AME1Y);
+}
+if (ticker === 'AMGN') {
+  firstGraph = CSVToArray(AMGN1M);
+  secondGraph = CSVToArray(AMGN3M);
+  thirdGraph = CSVToArray(AMGN6M);
+  fourthGraph = CSVToArray(AMGN1Y);
+}
+if (ticker === 'APH') {
+  firstGraph = CSVToArray(APH1M);
+  secondGraph = CSVToArray(APH3M);
+  thirdGraph = CSVToArray(APH6M);
+  fourthGraph = CSVToArray(APH1Y);
+}
+if (ticker === 'ADI') {
+  firstGraph = CSVToArray(ADI1M);
+  secondGraph = CSVToArray(ADI3M);
+  thirdGraph = CSVToArray(ADI6M);
+  fourthGraph = CSVToArray(ADI1Y);
+}
+if (ticker === 'ANSS') {
+  firstGraph = CSVToArray(ANSS1M);
+  secondGraph = CSVToArray(ANSS3M);
+  thirdGraph = CSVToArray(ANSS6M);
+  fourthGraph = CSVToArray(ANSS1Y);
+}
+if (ticker === 'ANTM') {
+  firstGraph = CSVToArray(ANTM1M);
+  secondGraph = CSVToArray(ANTM3M);
+  thirdGraph = CSVToArray(ANTM6M);
+  fourthGraph = CSVToArray(ANTM1Y);
+}
+if (ticker === 'AON') {
+  firstGraph = CSVToArray(AON1M);
+  secondGraph = CSVToArray(AON3M);
+  thirdGraph = CSVToArray(AON6M);
+  fourthGraph = CSVToArray(AON1Y);
+}
+if (ticker === 'AOS') {
+  firstGraph = CSVToArray(AOS1M);
+  secondGraph = CSVToArray(AOS3M);
+  thirdGraph = CSVToArray(AOS6M);
+  fourthGraph = CSVToArray(AOS1Y);
+}
+if (ticker === 'APA') {
+  firstGraph = CSVToArray(APA1M);
+  secondGraph = CSVToArray(APA3M);
+  thirdGraph = CSVToArray(APA6M);
+  fourthGraph = CSVToArray(APA1Y);
+}
+if (ticker === 'AAPL') {
+  firstGraph = CSVToArray(AAPL1M);
+  secondGraph = CSVToArray(AAPL3M);
+  thirdGraph = CSVToArray(AAPL6M);
+  fourthGraph = CSVToArray(AAPL1Y);
+}
+if (ticker === 'AMAT') {
+  firstGraph = CSVToArray(AMAT1M);
+  secondGraph = CSVToArray(AMAT3M);
+  thirdGraph = CSVToArray(AMAT6M);
+  fourthGraph = CSVToArray(AMAT1Y);
+}
+if (ticker === 'APTV') {
+  firstGraph = CSVToArray(APTV1M);
+  secondGraph = CSVToArray(APTV3M);
+  thirdGraph = CSVToArray(APTV6M);
+  fourthGraph = CSVToArray(APTV1Y);
+}
+if (ticker === 'ADM') {
+  firstGraph = CSVToArray(ADM1M);
+  secondGraph = CSVToArray(ADM3M);
+  thirdGraph = CSVToArray(ADM6M);
+  fourthGraph = CSVToArray(ADM1Y);
+}
+if (ticker === 'ANET') {
+  firstGraph = CSVToArray(ANET1M);
+  secondGraph = CSVToArray(ANET3M);
+  thirdGraph = CSVToArray(ANET6M);
+  fourthGraph = CSVToArray(ANET1Y);
+}
+if (ticker === 'AJG') {
+  firstGraph = CSVToArray(AJG1M);
+  secondGraph = CSVToArray(AJG3M);
+  thirdGraph = CSVToArray(AJG6M);
+  fourthGraph = CSVToArray(AJG1Y);
+}
+if (ticker === 'AIZ') {
+  firstGraph = CSVToArray(AIZ1M);
+  secondGraph = CSVToArray(AIZ3M);
+  thirdGraph = CSVToArray(AIZ6M);
+  fourthGraph = CSVToArray(AIZ1Y);
+}
+if (ticker === 'T') {
+  firstGraph = CSVToArray(T1M);
+  secondGraph = CSVToArray(T3M);
+  thirdGraph = CSVToArray(T6M);
+  fourthGraph = CSVToArray(T1Y);
+}
+if (ticker === 'ATO') {
+  firstGraph = CSVToArray(ATO1M);
+  secondGraph = CSVToArray(ATO3M);
+  thirdGraph = CSVToArray(ATO6M);
+  fourthGraph = CSVToArray(ATO1Y);
+}
+if (ticker === 'ADSK') {
+  firstGraph = CSVToArray(ADSK1M);
+  secondGraph = CSVToArray(ADSK3M);
+  thirdGraph = CSVToArray(ADSK6M);
+  fourthGraph = CSVToArray(ADSK1Y);
+}
+if (ticker === 'ADP') {
+  firstGraph = CSVToArray(ADP1M);
+  secondGraph = CSVToArray(ADP3M);
+  thirdGraph = CSVToArray(ADP6M);
+  fourthGraph = CSVToArray(ADP1Y);
+}
+if (ticker === 'AZO') {
+  firstGraph = CSVToArray(AZO1M);
+  secondGraph = CSVToArray(AZO3M);
+  thirdGraph = CSVToArray(AZO6M);
+  fourthGraph = CSVToArray(AZO1Y);
+}
+if (ticker === 'AVB') {
+  firstGraph = CSVToArray(AVB1M);
+  secondGraph = CSVToArray(AVB3M);
+  thirdGraph = CSVToArray(AVB6M);
+  fourthGraph = CSVToArray(AVB1Y);
+}
+if (ticker === 'AVY') {
+  firstGraph = CSVToArray(AVY1M);
+  secondGraph = CSVToArray(AVY3M);
+  thirdGraph = CSVToArray(AVY6M);
+  fourthGraph = CSVToArray(AVY1Y);
+}
+if (ticker === 'BKR') {
+  firstGraph = CSVToArray(BKR1M);
+  secondGraph = CSVToArray(BKR3M);
+  thirdGraph = CSVToArray(BKR6M);
+  fourthGraph = CSVToArray(BKR1Y);
+}
+if (ticker === 'BLL') {
+  firstGraph = CSVToArray(BLL1M);
+  secondGraph = CSVToArray(BLL3M);
+  thirdGraph = CSVToArray(BLL6M);
+  fourthGraph = CSVToArray(BLL1Y);
+}
+if (ticker === 'BAC') {
+  firstGraph = CSVToArray(BAC1M);
+  secondGraph = CSVToArray(BAC3M);
+  thirdGraph = CSVToArray(BAC6M);
+  fourthGraph = CSVToArray(BAC1Y);
+}
+if (ticker === 'BK') {
+  firstGraph = CSVToArray(BK1M);
+  secondGraph = CSVToArray(BK3M);
+  thirdGraph = CSVToArray(BK6M);
+  fourthGraph = CSVToArray(BK1Y);
+}
+if (ticker === 'BAX') {
+  firstGraph = CSVToArray(BAX1M);
+  secondGraph = CSVToArray(BAX3M);
+  thirdGraph = CSVToArray(BAX6M);
+  fourthGraph = CSVToArray(BAX1Y);
+}
+if (ticker === 'BDX') {
+  firstGraph = CSVToArray(BDX1M);
+  secondGraph = CSVToArray(BDX3M);
+  thirdGraph = CSVToArray(BDX6M);
+  fourthGraph = CSVToArray(BDX1Y);
+}
+if (ticker === 'BRK.B') {
+  firstGraph = CSVToArray(BRK.B1M);
+  secondGraph = CSVToArray(BRK.B3M);
+  thirdGraph = CSVToArray(BRK.B6M);
+  fourthGraph = CSVToArray(BRK.B1Y);
+}
+if (ticker === 'BBY') {
+  firstGraph = CSVToArray(BBY1M);
+  secondGraph = CSVToArray(BBY3M);
+  thirdGraph = CSVToArray(BBY6M);
+  fourthGraph = CSVToArray(BBY1Y);
+}
+if (ticker === 'BIO') {
+  firstGraph = CSVToArray(BIO1M);
+  secondGraph = CSVToArray(BIO3M);
+  thirdGraph = CSVToArray(BIO6M);
+  fourthGraph = CSVToArray(BIO1Y);
+}
+if (ticker === 'BIIB') {
+  firstGraph = CSVToArray(BIIB1M);
+  secondGraph = CSVToArray(BIIB3M);
+  thirdGraph = CSVToArray(BIIB6M);
+  fourthGraph = CSVToArray(BIIB1Y);
+}
+if (ticker === 'BLK') {
+  firstGraph = CSVToArray(BLK1M);
+  secondGraph = CSVToArray(BLK3M);
+  thirdGraph = CSVToArray(BLK6M);
+  fourthGraph = CSVToArray(BLK1Y);
+}
+if (ticker === 'BA') {
+  firstGraph = CSVToArray(BA1M);
+  secondGraph = CSVToArray(BA3M);
+  thirdGraph = CSVToArray(BA6M);
+  fourthGraph = CSVToArray(BA1Y);
+}
+if (ticker === 'BKNG') {
+  firstGraph = CSVToArray(BKNG1M);
+  secondGraph = CSVToArray(BKNG3M);
+  thirdGraph = CSVToArray(BKNG6M);
+  fourthGraph = CSVToArray(BKNG1Y);
+}
+if (ticker === 'BWA') {
+  firstGraph = CSVToArray(BWA1M);
+  secondGraph = CSVToArray(BWA3M);
+  thirdGraph = CSVToArray(BWA6M);
+  fourthGraph = CSVToArray(BWA1Y);
+}
+if (ticker === 'BXP') {
+  firstGraph = CSVToArray(BXP1M);
+  secondGraph = CSVToArray(BXP3M);
+  thirdGraph = CSVToArray(BXP6M);
+  fourthGraph = CSVToArray(BXP1Y);
+}
+if (ticker === 'BSX') {
+  firstGraph = CSVToArray(BSX1M);
+  secondGraph = CSVToArray(BSX3M);
+  thirdGraph = CSVToArray(BSX6M);
+  fourthGraph = CSVToArray(BSX1Y);
+}
+if (ticker === 'BMY') {
+  firstGraph = CSVToArray(BMY1M);
+  secondGraph = CSVToArray(BMY3M);
+  thirdGraph = CSVToArray(BMY6M);
+  fourthGraph = CSVToArray(BMY1Y);
+}
+if (ticker === 'AVGO') {
+  firstGraph = CSVToArray(AVGO1M);
+  secondGraph = CSVToArray(AVGO3M);
+  thirdGraph = CSVToArray(AVGO6M);
+  fourthGraph = CSVToArray(AVGO1Y);
+}
+if (ticker === 'BR') {
+  firstGraph = CSVToArray(BR1M);
+  secondGraph = CSVToArray(BR3M);
+  thirdGraph = CSVToArray(BR6M);
+  fourthGraph = CSVToArray(BR1Y);
+}
+if (ticker === 'BF.B') {
+  firstGraph = CSVToArray(BF.B1M);
+  secondGraph = CSVToArray(BF.B3M);
+  thirdGraph = CSVToArray(BF.B6M);
+  fourthGraph = CSVToArray(BF.B1Y);
+}
+if (ticker === 'CHRW') {
+  firstGraph = CSVToArray(CHRW1M);
+  secondGraph = CSVToArray(CHRW3M);
+  thirdGraph = CSVToArray(CHRW6M);
+  fourthGraph = CSVToArray(CHRW1Y);
+}
+if (ticker === 'COG') {
+  firstGraph = CSVToArray(COG1M);
+  secondGraph = CSVToArray(COG3M);
+  thirdGraph = CSVToArray(COG6M);
+  fourthGraph = CSVToArray(COG1Y);
+}
+if (ticker === 'CDNS') {
+  firstGraph = CSVToArray(CDNS1M);
+  secondGraph = CSVToArray(CDNS3M);
+  thirdGraph = CSVToArray(CDNS6M);
+  fourthGraph = CSVToArray(CDNS1Y);
+}
+if (ticker === 'CPB') {
+  firstGraph = CSVToArray(CPB1M);
+  secondGraph = CSVToArray(CPB3M);
+  thirdGraph = CSVToArray(CPB6M);
+  fourthGraph = CSVToArray(CPB1Y);
+}
+if (ticker === 'COF') {
+  firstGraph = CSVToArray(COF1M);
+  secondGraph = CSVToArray(COF3M);
+  thirdGraph = CSVToArray(COF6M);
+  fourthGraph = CSVToArray(COF1Y);
+}
+if (ticker === 'CAH') {
+  firstGraph = CSVToArray(CAH1M);
+  secondGraph = CSVToArray(CAH3M);
+  thirdGraph = CSVToArray(CAH6M);
+  fourthGraph = CSVToArray(CAH1Y);
+}
+if (ticker === 'KMX') {
+  firstGraph = CSVToArray(KMX1M);
+  secondGraph = CSVToArray(KMX3M);
+  thirdGraph = CSVToArray(KMX6M);
+  fourthGraph = CSVToArray(KMX1Y);
+}
+if (ticker === 'CCL') {
+  firstGraph = CSVToArray(CCL1M);
+  secondGraph = CSVToArray(CCL3M);
+  thirdGraph = CSVToArray(CCL6M);
+  fourthGraph = CSVToArray(CCL1Y);
+}
+if (ticker === 'CARR') {
+  firstGraph = CSVToArray(CARR1M);
+  secondGraph = CSVToArray(CARR3M);
+  thirdGraph = CSVToArray(CARR6M);
+  fourthGraph = CSVToArray(CARR1Y);
+}
+if (ticker === 'CTLT') {
+  firstGraph = CSVToArray(CTLT1M);
+  secondGraph = CSVToArray(CTLT3M);
+  thirdGraph = CSVToArray(CTLT6M);
+  fourthGraph = CSVToArray(CTLT1Y);
+}
+if (ticker === 'CAT') {
+  firstGraph = CSVToArray(CAT1M);
+  secondGraph = CSVToArray(CAT3M);
+  thirdGraph = CSVToArray(CAT6M);
+  fourthGraph = CSVToArray(CAT1Y);
+}
+if (ticker === 'CBOE') {
+  firstGraph = CSVToArray(CBOE1M);
+  secondGraph = CSVToArray(CBOE3M);
+  thirdGraph = CSVToArray(CBOE6M);
+  fourthGraph = CSVToArray(CBOE1Y);
+}
+if (ticker === 'CBRE') {
+  firstGraph = CSVToArray(CBRE1M);
+  secondGraph = CSVToArray(CBRE3M);
+  thirdGraph = CSVToArray(CBRE6M);
+  fourthGraph = CSVToArray(CBRE1Y);
+}
+if (ticker === 'CDW') {
+  firstGraph = CSVToArray(CDW1M);
+  secondGraph = CSVToArray(CDW3M);
+  thirdGraph = CSVToArray(CDW6M);
+  fourthGraph = CSVToArray(CDW1Y);
+}
+if (ticker === 'CE') {
+  firstGraph = CSVToArray(CE1M);
+  secondGraph = CSVToArray(CE3M);
+  thirdGraph = CSVToArray(CE6M);
+  fourthGraph = CSVToArray(CE1Y);
+}
+if (ticker === 'CNC') {
+  firstGraph = CSVToArray(CNC1M);
+  secondGraph = CSVToArray(CNC3M);
+  thirdGraph = CSVToArray(CNC6M);
+  fourthGraph = CSVToArray(CNC1Y);
+}
+if (ticker === 'CNP') {
+  firstGraph = CSVToArray(CNP1M);
+  secondGraph = CSVToArray(CNP3M);
+  thirdGraph = CSVToArray(CNP6M);
+  fourthGraph = CSVToArray(CNP1Y);
+}
+if (ticker === 'CERN') {
+  firstGraph = CSVToArray(CERN1M);
+  secondGraph = CSVToArray(CERN3M);
+  thirdGraph = CSVToArray(CERN6M);
+  fourthGraph = CSVToArray(CERN1Y);
+}
+if (ticker === 'CF') {
+  firstGraph = CSVToArray(CF1M);
+  secondGraph = CSVToArray(CF3M);
+  thirdGraph = CSVToArray(CF6M);
+  fourthGraph = CSVToArray(CF1Y);
+}
+if (ticker === 'SCHW') {
+  firstGraph = CSVToArray(SCHW1M);
+  secondGraph = CSVToArray(SCHW3M);
+  thirdGraph = CSVToArray(SCHW6M);
+  fourthGraph = CSVToArray(SCHW1Y);
+}
+if (ticker === 'CHTR') {
+  firstGraph = CSVToArray(CHTR1M);
+  secondGraph = CSVToArray(CHTR3M);
+  thirdGraph = CSVToArray(CHTR6M);
+  fourthGraph = CSVToArray(CHTR1Y);
+}
+if (ticker === 'CVX') {
+  firstGraph = CSVToArray(CVX1M);
+  secondGraph = CSVToArray(CVX3M);
+  thirdGraph = CSVToArray(CVX6M);
+  fourthGraph = CSVToArray(CVX1Y);
+}
+if (ticker === 'CMG') {
+  firstGraph = CSVToArray(CMG1M);
+  secondGraph = CSVToArray(CMG3M);
+  thirdGraph = CSVToArray(CMG6M);
+  fourthGraph = CSVToArray(CMG1Y);
+}
+if (ticker === 'CB') {
+  firstGraph = CSVToArray(CB1M);
+  secondGraph = CSVToArray(CB3M);
+  thirdGraph = CSVToArray(CB6M);
+  fourthGraph = CSVToArray(CB1Y);
+}
+if (ticker === 'CHD') {
+  firstGraph = CSVToArray(CHD1M);
+  secondGraph = CSVToArray(CHD3M);
+  thirdGraph = CSVToArray(CHD6M);
+  fourthGraph = CSVToArray(CHD1Y);
+}
+if (ticker === 'CI') {
+  firstGraph = CSVToArray(CI1M);
+  secondGraph = CSVToArray(CI3M);
+  thirdGraph = CSVToArray(CI6M);
+  fourthGraph = CSVToArray(CI1Y);
+}
+if (ticker === 'CINF') {
+  firstGraph = CSVToArray(CINF1M);
+  secondGraph = CSVToArray(CINF3M);
+  thirdGraph = CSVToArray(CINF6M);
+  fourthGraph = CSVToArray(CINF1Y);
+}
+if (ticker === 'CTAS') {
+  firstGraph = CSVToArray(CTAS1M);
+  secondGraph = CSVToArray(CTAS3M);
+  thirdGraph = CSVToArray(CTAS6M);
+  fourthGraph = CSVToArray(CTAS1Y);
+}
+if (ticker === 'CSCO') {
+  firstGraph = CSVToArray(CSCO1M);
+  secondGraph = CSVToArray(CSCO3M);
+  thirdGraph = CSVToArray(CSCO6M);
+  fourthGraph = CSVToArray(CSCO1Y);
+}
+if (ticker === 'C') {
+  firstGraph = CSVToArray(C1M);
+  secondGraph = CSVToArray(C3M);
+  thirdGraph = CSVToArray(C6M);
+  fourthGraph = CSVToArray(C1Y);
+}
+if (ticker === 'CFG') {
+  firstGraph = CSVToArray(CFG1M);
+  secondGraph = CSVToArray(CFG3M);
+  thirdGraph = CSVToArray(CFG6M);
+  fourthGraph = CSVToArray(CFG1Y);
+}
+if (ticker === 'CTXS') {
+  firstGraph = CSVToArray(CTXS1M);
+  secondGraph = CSVToArray(CTXS3M);
+  thirdGraph = CSVToArray(CTXS6M);
+  fourthGraph = CSVToArray(CTXS1Y);
+}
+if (ticker === 'CLX') {
+  firstGraph = CSVToArray(CLX1M);
+  secondGraph = CSVToArray(CLX3M);
+  thirdGraph = CSVToArray(CLX6M);
+  fourthGraph = CSVToArray(CLX1Y);
+}
+if (ticker === 'CME') {
+  firstGraph = CSVToArray(CME1M);
+  secondGraph = CSVToArray(CME3M);
+  thirdGraph = CSVToArray(CME6M);
+  fourthGraph = CSVToArray(CME1Y);
+}
+if (ticker === 'CMS') {
+  firstGraph = CSVToArray(CMS1M);
+  secondGraph = CSVToArray(CMS3M);
+  thirdGraph = CSVToArray(CMS6M);
+  fourthGraph = CSVToArray(CMS1Y);
+}
+if (ticker === 'KO') {
+  firstGraph = CSVToArray(KO1M);
+  secondGraph = CSVToArray(KO3M);
+  thirdGraph = CSVToArray(KO6M);
+  fourthGraph = CSVToArray(KO1Y);
+}
+if (ticker === 'CTSH') {
+  firstGraph = CSVToArray(CTSH1M);
+  secondGraph = CSVToArray(CTSH3M);
+  thirdGraph = CSVToArray(CTSH6M);
+  fourthGraph = CSVToArray(CTSH1Y);
+}
+if (ticker === 'CL') {
+  firstGraph = CSVToArray(CL1M);
+  secondGraph = CSVToArray(CL3M);
+  thirdGraph = CSVToArray(CL6M);
+  fourthGraph = CSVToArray(CL1Y);
+}
+if (ticker === 'CMCSA') {
+  firstGraph = CSVToArray(CMCSA1M);
+  secondGraph = CSVToArray(CMCSA3M);
+  thirdGraph = CSVToArray(CMCSA6M);
+  fourthGraph = CSVToArray(CMCSA1Y);
+}
+if (ticker === 'CMA') {
+  firstGraph = CSVToArray(CMA1M);
+  secondGraph = CSVToArray(CMA3M);
+  thirdGraph = CSVToArray(CMA6M);
+  fourthGraph = CSVToArray(CMA1Y);
+}
+if (ticker === 'CAG') {
+  firstGraph = CSVToArray(CAG1M);
+  secondGraph = CSVToArray(CAG3M);
+  thirdGraph = CSVToArray(CAG6M);
+  fourthGraph = CSVToArray(CAG1Y);
+}
+if (ticker === 'COP') {
+  firstGraph = CSVToArray(COP1M);
+  secondGraph = CSVToArray(COP3M);
+  thirdGraph = CSVToArray(COP6M);
+  fourthGraph = CSVToArray(COP1Y);
+}
+if (ticker === 'ED') {
+  firstGraph = CSVToArray(ED1M);
+  secondGraph = CSVToArray(ED3M);
+  thirdGraph = CSVToArray(ED6M);
+  fourthGraph = CSVToArray(ED1Y);
+}
+if (ticker === 'STZ') {
+  firstGraph = CSVToArray(STZ1M);
+  secondGraph = CSVToArray(STZ3M);
+  thirdGraph = CSVToArray(STZ6M);
+  fourthGraph = CSVToArray(STZ1Y);
+}
+if (ticker === 'COO') {
+  firstGraph = CSVToArray(COO1M);
+  secondGraph = CSVToArray(COO3M);
+  thirdGraph = CSVToArray(COO6M);
+  fourthGraph = CSVToArray(COO1Y);
+}
+if (ticker === 'CPRT') {
+  firstGraph = CSVToArray(CPRT1M);
+  secondGraph = CSVToArray(CPRT3M);
+  thirdGraph = CSVToArray(CPRT6M);
+  fourthGraph = CSVToArray(CPRT1Y);
+}
+if (ticker === 'GLW') {
+  firstGraph = CSVToArray(GLW1M);
+  secondGraph = CSVToArray(GLW3M);
+  thirdGraph = CSVToArray(GLW6M);
+  fourthGraph = CSVToArray(GLW1Y);
+}
+if (ticker === 'CTVA') {
+  firstGraph = CSVToArray(CTVA1M);
+  secondGraph = CSVToArray(CTVA3M);
+  thirdGraph = CSVToArray(CTVA6M);
+  fourthGraph = CSVToArray(CTVA1Y);
+}
+if (ticker === 'COST') {
+  firstGraph = CSVToArray(COST1M);
+  secondGraph = CSVToArray(COST3M);
+  thirdGraph = CSVToArray(COST6M);
+  fourthGraph = CSVToArray(COST1Y);
+}
+if (ticker === 'CCI') {
+  firstGraph = CSVToArray(CCI1M);
+  secondGraph = CSVToArray(CCI3M);
+  thirdGraph = CSVToArray(CCI6M);
+  fourthGraph = CSVToArray(CCI1Y);
+}
+if (ticker === 'CSX') {
+  firstGraph = CSVToArray(CSX1M);
+  secondGraph = CSVToArray(CSX3M);
+  thirdGraph = CSVToArray(CSX6M);
+  fourthGraph = CSVToArray(CSX1Y);
+}
+if (ticker === 'CMI') {
+  firstGraph = CSVToArray(CMI1M);
+  secondGraph = CSVToArray(CMI3M);
+  thirdGraph = CSVToArray(CMI6M);
+  fourthGraph = CSVToArray(CMI1Y);
+}
+if (ticker === 'CVS') {
+  firstGraph = CSVToArray(CVS1M);
+  secondGraph = CSVToArray(CVS3M);
+  thirdGraph = CSVToArray(CVS6M);
+  fourthGraph = CSVToArray(CVS1Y);
+}
+if (ticker === 'DHI') {
+  firstGraph = CSVToArray(DHI1M);
+  secondGraph = CSVToArray(DHI3M);
+  thirdGraph = CSVToArray(DHI6M);
+  fourthGraph = CSVToArray(DHI1Y);
+}
+if (ticker === 'DHR') {
+  firstGraph = CSVToArray(DHR1M);
+  secondGraph = CSVToArray(DHR3M);
+  thirdGraph = CSVToArray(DHR6M);
+  fourthGraph = CSVToArray(DHR1Y);
+}
+if (ticker === 'DRI') {
+  firstGraph = CSVToArray(DRI1M);
+  secondGraph = CSVToArray(DRI3M);
+  thirdGraph = CSVToArray(DRI6M);
+  fourthGraph = CSVToArray(DRI1Y);
+}
+if (ticker === 'DVA') {
+  firstGraph = CSVToArray(DVA1M);
+  secondGraph = CSVToArray(DVA3M);
+  thirdGraph = CSVToArray(DVA6M);
+  fourthGraph = CSVToArray(DVA1Y);
+}
+if (ticker === 'DE') {
+  firstGraph = CSVToArray(DE1M);
+  secondGraph = CSVToArray(DE3M);
+  thirdGraph = CSVToArray(DE6M);
+  fourthGraph = CSVToArray(DE1Y);
+}
+if (ticker === 'DAL') {
+  firstGraph = CSVToArray(DAL1M);
+  secondGraph = CSVToArray(DAL3M);
+  thirdGraph = CSVToArray(DAL6M);
+  fourthGraph = CSVToArray(DAL1Y);
+}
+if (ticker === 'XRAY') {
+  firstGraph = CSVToArray(XRAY1M);
+  secondGraph = CSVToArray(XRAY3M);
+  thirdGraph = CSVToArray(XRAY6M);
+  fourthGraph = CSVToArray(XRAY1Y);
+}
+if (ticker === 'DVN') {
+  firstGraph = CSVToArray(DVN1M);
+  secondGraph = CSVToArray(DVN3M);
+  thirdGraph = CSVToArray(DVN6M);
+  fourthGraph = CSVToArray(DVN1Y);
+}
+if (ticker === 'DXCM') {
+  firstGraph = CSVToArray(DXCM1M);
+  secondGraph = CSVToArray(DXCM3M);
+  thirdGraph = CSVToArray(DXCM6M);
+  fourthGraph = CSVToArray(DXCM1Y);
+}
+if (ticker === 'FANG') {
+  firstGraph = CSVToArray(FANG1M);
+  secondGraph = CSVToArray(FANG3M);
+  thirdGraph = CSVToArray(FANG6M);
+  fourthGraph = CSVToArray(FANG1Y);
+}
+if (ticker === 'DLR') {
+  firstGraph = CSVToArray(DLR1M);
+  secondGraph = CSVToArray(DLR3M);
+  thirdGraph = CSVToArray(DLR6M);
+  fourthGraph = CSVToArray(DLR1Y);
+}
+if (ticker === 'DFS') {
+  firstGraph = CSVToArray(DFS1M);
+  secondGraph = CSVToArray(DFS3M);
+  thirdGraph = CSVToArray(DFS6M);
+  fourthGraph = CSVToArray(DFS1Y);
+}
+if (ticker === 'DISCA') {
+  firstGraph = CSVToArray(DISCA1M);
+  secondGraph = CSVToArray(DISCA3M);
+  thirdGraph = CSVToArray(DISCA6M);
+  fourthGraph = CSVToArray(DISCA1Y);
+}
+if (ticker === 'DISCK') {
+  firstGraph = CSVToArray(DISCK1M);
+  secondGraph = CSVToArray(DISCK3M);
+  thirdGraph = CSVToArray(DISCK6M);
+  fourthGraph = CSVToArray(DISCK1Y);
+}
+if (ticker === 'DISH') {
+  firstGraph = CSVToArray(DISH1M);
+  secondGraph = CSVToArray(DISH3M);
+  thirdGraph = CSVToArray(DISH6M);
+  fourthGraph = CSVToArray(DISH1Y);
+}
+if (ticker === 'DG') {
+  firstGraph = CSVToArray(DG1M);
+  secondGraph = CSVToArray(DG3M);
+  thirdGraph = CSVToArray(DG6M);
+  fourthGraph = CSVToArray(DG1Y);
+}
+if (ticker === 'DLTR') {
+  firstGraph = CSVToArray(DLTR1M);
+  secondGraph = CSVToArray(DLTR3M);
+  thirdGraph = CSVToArray(DLTR6M);
+  fourthGraph = CSVToArray(DLTR1Y);
+}
+if (ticker === 'D') {
+  firstGraph = CSVToArray(D1M);
+  secondGraph = CSVToArray(D3M);
+  thirdGraph = CSVToArray(D6M);
+  fourthGraph = CSVToArray(D1Y);
+}
+if (ticker === 'DPZ') {
+  firstGraph = CSVToArray(DPZ1M);
+  secondGraph = CSVToArray(DPZ3M);
+  thirdGraph = CSVToArray(DPZ6M);
+  fourthGraph = CSVToArray(DPZ1Y);
+}
+if (ticker === 'DOV') {
+  firstGraph = CSVToArray(DOV1M);
+  secondGraph = CSVToArray(DOV3M);
+  thirdGraph = CSVToArray(DOV6M);
+  fourthGraph = CSVToArray(DOV1Y);
+}
+if (ticker === 'DOW') {
+  firstGraph = CSVToArray(DOW1M);
+  secondGraph = CSVToArray(DOW3M);
+  thirdGraph = CSVToArray(DOW6M);
+  fourthGraph = CSVToArray(DOW1Y);
+}
+if (ticker === 'DTE') {
+  firstGraph = CSVToArray(DTE1M);
+  secondGraph = CSVToArray(DTE3M);
+  thirdGraph = CSVToArray(DTE6M);
+  fourthGraph = CSVToArray(DTE1Y);
+}
+if (ticker === 'DUK') {
+  firstGraph = CSVToArray(DUK1M);
+  secondGraph = CSVToArray(DUK3M);
+  thirdGraph = CSVToArray(DUK6M);
+  fourthGraph = CSVToArray(DUK1Y);
+}
+if (ticker === 'DRE') {
+  firstGraph = CSVToArray(DRE1M);
+  secondGraph = CSVToArray(DRE3M);
+  thirdGraph = CSVToArray(DRE6M);
+  fourthGraph = CSVToArray(DRE1Y);
+}
+if (ticker === 'DD') {
+  firstGraph = CSVToArray(DD1M);
+  secondGraph = CSVToArray(DD3M);
+  thirdGraph = CSVToArray(DD6M);
+  fourthGraph = CSVToArray(DD1Y);
+}
+if (ticker === 'DXC') {
+  firstGraph = CSVToArray(DXC1M);
+  secondGraph = CSVToArray(DXC3M);
+  thirdGraph = CSVToArray(DXC6M);
+  fourthGraph = CSVToArray(DXC1Y);
+}
+if (ticker === 'EMN') {
+  firstGraph = CSVToArray(EMN1M);
+  secondGraph = CSVToArray(EMN3M);
+  thirdGraph = CSVToArray(EMN6M);
+  fourthGraph = CSVToArray(EMN1Y);
+}
+if (ticker === 'ETN') {
+  firstGraph = CSVToArray(ETN1M);
+  secondGraph = CSVToArray(ETN3M);
+  thirdGraph = CSVToArray(ETN6M);
+  fourthGraph = CSVToArray(ETN1Y);
+}
+if (ticker === 'EBAY') {
+  firstGraph = CSVToArray(EBAY1M);
+  secondGraph = CSVToArray(EBAY3M);
+  thirdGraph = CSVToArray(EBAY6M);
+  fourthGraph = CSVToArray(EBAY1Y);
+}
+if (ticker === 'ECL') {
+  firstGraph = CSVToArray(ECL1M);
+  secondGraph = CSVToArray(ECL3M);
+  thirdGraph = CSVToArray(ECL6M);
+  fourthGraph = CSVToArray(ECL1Y);
+}
+if (ticker === 'EIX') {
+  firstGraph = CSVToArray(EIX1M);
+  secondGraph = CSVToArray(EIX3M);
+  thirdGraph = CSVToArray(EIX6M);
+  fourthGraph = CSVToArray(EIX1Y);
+}
+if (ticker === 'EW') {
+  firstGraph = CSVToArray(EW1M);
+  secondGraph = CSVToArray(EW3M);
+  thirdGraph = CSVToArray(EW6M);
+  fourthGraph = CSVToArray(EW1Y);
+}
+if (ticker === 'EA') {
+  firstGraph = CSVToArray(EA1M);
+  secondGraph = CSVToArray(EA3M);
+  thirdGraph = CSVToArray(EA6M);
+  fourthGraph = CSVToArray(EA1Y);
+}
+if (ticker === 'EMR') {
+  firstGraph = CSVToArray(EMR1M);
+  secondGraph = CSVToArray(EMR3M);
+  thirdGraph = CSVToArray(EMR6M);
+  fourthGraph = CSVToArray(EMR1Y);
+}
+if (ticker === 'ENPH') {
+  firstGraph = CSVToArray(ENPH1M);
+  secondGraph = CSVToArray(ENPH3M);
+  thirdGraph = CSVToArray(ENPH6M);
+  fourthGraph = CSVToArray(ENPH1Y);
+}
+if (ticker === 'ETR') {
+  firstGraph = CSVToArray(ETR1M);
+  secondGraph = CSVToArray(ETR3M);
+  thirdGraph = CSVToArray(ETR6M);
+  fourthGraph = CSVToArray(ETR1Y);
+}
+if (ticker === 'EOG') {
+  firstGraph = CSVToArray(EOG1M);
+  secondGraph = CSVToArray(EOG3M);
+  thirdGraph = CSVToArray(EOG6M);
+  fourthGraph = CSVToArray(EOG1Y);
+}
+if (ticker === 'EFX') {
+  firstGraph = CSVToArray(EFX1M);
+  secondGraph = CSVToArray(EFX3M);
+  thirdGraph = CSVToArray(EFX6M);
+  fourthGraph = CSVToArray(EFX1Y);
+}
+if (ticker === 'EQIX') {
+  firstGraph = CSVToArray(EQIX1M);
+  secondGraph = CSVToArray(EQIX3M);
+  thirdGraph = CSVToArray(EQIX6M);
+  fourthGraph = CSVToArray(EQIX1Y);
+}
+if (ticker === 'EQR') {
+  firstGraph = CSVToArray(EQR1M);
+  secondGraph = CSVToArray(EQR3M);
+  thirdGraph = CSVToArray(EQR6M);
+  fourthGraph = CSVToArray(EQR1Y);
+}
+if (ticker === 'ESS') {
+  firstGraph = CSVToArray(ESS1M);
+  secondGraph = CSVToArray(ESS3M);
+  thirdGraph = CSVToArray(ESS6M);
+  fourthGraph = CSVToArray(ESS1Y);
+}
+if (ticker === 'EL') {
+  firstGraph = CSVToArray(EL1M);
+  secondGraph = CSVToArray(EL3M);
+  thirdGraph = CSVToArray(EL6M);
+  fourthGraph = CSVToArray(EL1Y);
+}
+if (ticker === 'ETSY') {
+  firstGraph = CSVToArray(ETSY1M);
+  secondGraph = CSVToArray(ETSY3M);
+  thirdGraph = CSVToArray(ETSY6M);
+  fourthGraph = CSVToArray(ETSY1Y);
+}
+if (ticker === 'EVRG') {
+  firstGraph = CSVToArray(EVRG1M);
+  secondGraph = CSVToArray(EVRG3M);
+  thirdGraph = CSVToArray(EVRG6M);
+  fourthGraph = CSVToArray(EVRG1Y);
+}
+if (ticker === 'ES') {
+  firstGraph = CSVToArray(ES1M);
+  secondGraph = CSVToArray(ES3M);
+  thirdGraph = CSVToArray(ES6M);
+  fourthGraph = CSVToArray(ES1Y);
+}
+if (ticker === 'RE') {
+  firstGraph = CSVToArray(RE1M);
+  secondGraph = CSVToArray(RE3M);
+  thirdGraph = CSVToArray(RE6M);
+  fourthGraph = CSVToArray(RE1Y);
+}
+if (ticker === 'EXC') {
+  firstGraph = CSVToArray(EXC1M);
+  secondGraph = CSVToArray(EXC3M);
+  thirdGraph = CSVToArray(EXC6M);
+  fourthGraph = CSVToArray(EXC1Y);
+}
+if (ticker === 'EXPE') {
+  firstGraph = CSVToArray(EXPE1M);
+  secondGraph = CSVToArray(EXPE3M);
+  thirdGraph = CSVToArray(EXPE6M);
+  fourthGraph = CSVToArray(EXPE1Y);
+}
+if (ticker === 'EXPD') {
+  firstGraph = CSVToArray(EXPD1M);
+  secondGraph = CSVToArray(EXPD3M);
+  thirdGraph = CSVToArray(EXPD6M);
+  fourthGraph = CSVToArray(EXPD1Y);
+}
+if (ticker === 'EXR') {
+  firstGraph = CSVToArray(EXR1M);
+  secondGraph = CSVToArray(EXR3M);
+  thirdGraph = CSVToArray(EXR6M);
+  fourthGraph = CSVToArray(EXR1Y);
+}
+if (ticker === 'XOM') {
+  firstGraph = CSVToArray(XOM1M);
+  secondGraph = CSVToArray(XOM3M);
+  thirdGraph = CSVToArray(XOM6M);
+  fourthGraph = CSVToArray(XOM1Y);
+}
+if (ticker === 'FFIV') {
+  firstGraph = CSVToArray(FFIV1M);
+  secondGraph = CSVToArray(FFIV3M);
+  thirdGraph = CSVToArray(FFIV6M);
+  fourthGraph = CSVToArray(FFIV1Y);
+}
+if (ticker === 'FB') {
+  firstGraph = CSVToArray(FB1M);
+  secondGraph = CSVToArray(FB3M);
+  thirdGraph = CSVToArray(FB6M);
+  fourthGraph = CSVToArray(FB1Y);
+}
+if (ticker === 'FAST') {
+  firstGraph = CSVToArray(FAST1M);
+  secondGraph = CSVToArray(FAST3M);
+  thirdGraph = CSVToArray(FAST6M);
+  fourthGraph = CSVToArray(FAST1Y);
+}
+if (ticker === 'FRT') {
+  firstGraph = CSVToArray(FRT1M);
+  secondGraph = CSVToArray(FRT3M);
+  thirdGraph = CSVToArray(FRT6M);
+  fourthGraph = CSVToArray(FRT1Y);
+}
+if (ticker === 'FDX') {
+  firstGraph = CSVToArray(FDX1M);
+  secondGraph = CSVToArray(FDX3M);
+  thirdGraph = CSVToArray(FDX6M);
+  fourthGraph = CSVToArray(FDX1Y);
+}
+if (ticker === 'FIS') {
+  firstGraph = CSVToArray(FIS1M);
+  secondGraph = CSVToArray(FIS3M);
+  thirdGraph = CSVToArray(FIS6M);
+  fourthGraph = CSVToArray(FIS1Y);
+}
+if (ticker === 'FITB') {
+  firstGraph = CSVToArray(FITB1M);
+  secondGraph = CSVToArray(FITB3M);
+  thirdGraph = CSVToArray(FITB6M);
+  fourthGraph = CSVToArray(FITB1Y);
+}
+if (ticker === 'FE') {
+  firstGraph = CSVToArray(FE1M);
+  secondGraph = CSVToArray(FE3M);
+  thirdGraph = CSVToArray(FE6M);
+  fourthGraph = CSVToArray(FE1Y);
+}
+if (ticker === 'FRC') {
+  firstGraph = CSVToArray(FRC1M);
+  secondGraph = CSVToArray(FRC3M);
+  thirdGraph = CSVToArray(FRC6M);
+  fourthGraph = CSVToArray(FRC1Y);
+}
+if (ticker === 'FISV') {
+  firstGraph = CSVToArray(FISV1M);
+  secondGraph = CSVToArray(FISV3M);
+  thirdGraph = CSVToArray(FISV6M);
+  fourthGraph = CSVToArray(FISV1Y);
+}
+if (ticker === 'FLT') {
+  firstGraph = CSVToArray(FLT1M);
+  secondGraph = CSVToArray(FLT3M);
+  thirdGraph = CSVToArray(FLT6M);
+  fourthGraph = CSVToArray(FLT1Y);
+}
+if (ticker === 'FLIR') {
+  firstGraph = CSVToArray(FLIR1M);
+  secondGraph = CSVToArray(FLIR3M);
+  thirdGraph = CSVToArray(FLIR6M);
+  fourthGraph = CSVToArray(FLIR1Y);
+}
+if (ticker === 'FLS') {
+  firstGraph = CSVToArray(FLS1M);
+  secondGraph = CSVToArray(FLS3M);
+  thirdGraph = CSVToArray(FLS6M);
+  fourthGraph = CSVToArray(FLS1Y);
+}
+if (ticker === 'FMC') {
+  firstGraph = CSVToArray(FMC1M);
+  secondGraph = CSVToArray(FMC3M);
+  thirdGraph = CSVToArray(FMC6M);
+  fourthGraph = CSVToArray(FMC1Y);
+}
+if (ticker === 'F') {
+  firstGraph = CSVToArray(F1M);
+  secondGraph = CSVToArray(F3M);
+  thirdGraph = CSVToArray(F6M);
+  fourthGraph = CSVToArray(F1Y);
+}
+if (ticker === 'FTNT') {
+  firstGraph = CSVToArray(FTNT1M);
+  secondGraph = CSVToArray(FTNT3M);
+  thirdGraph = CSVToArray(FTNT6M);
+  fourthGraph = CSVToArray(FTNT1Y);
+}
+if (ticker === 'FTV') {
+  firstGraph = CSVToArray(FTV1M);
+  secondGraph = CSVToArray(FTV3M);
+  thirdGraph = CSVToArray(FTV6M);
+  fourthGraph = CSVToArray(FTV1Y);
+}
+if (ticker === 'FBHS') {
+  firstGraph = CSVToArray(FBHS1M);
+  secondGraph = CSVToArray(FBHS3M);
+  thirdGraph = CSVToArray(FBHS6M);
+  fourthGraph = CSVToArray(FBHS1Y);
+}
+if (ticker === 'FOXA') {
+  firstGraph = CSVToArray(FOXA1M);
+  secondGraph = CSVToArray(FOXA3M);
+  thirdGraph = CSVToArray(FOXA6M);
+  fourthGraph = CSVToArray(FOXA1Y);
+}
+if (ticker === 'FOX') {
+  firstGraph = CSVToArray(FOX1M);
+  secondGraph = CSVToArray(FOX3M);
+  thirdGraph = CSVToArray(FOX6M);
+  fourthGraph = CSVToArray(FOX1Y);
+}
+if (ticker === 'BEN') {
+  firstGraph = CSVToArray(BEN1M);
+  secondGraph = CSVToArray(BEN3M);
+  thirdGraph = CSVToArray(BEN6M);
+  fourthGraph = CSVToArray(BEN1Y);
+}
+if (ticker === 'FCX') {
+  firstGraph = CSVToArray(FCX1M);
+  secondGraph = CSVToArray(FCX3M);
+  thirdGraph = CSVToArray(FCX6M);
+  fourthGraph = CSVToArray(FCX1Y);
+}
+if (ticker === 'GPS') {
+  firstGraph = CSVToArray(GPS1M);
+  secondGraph = CSVToArray(GPS3M);
+  thirdGraph = CSVToArray(GPS6M);
+  fourthGraph = CSVToArray(GPS1Y);
+}
+if (ticker === 'GRMN') {
+  firstGraph = CSVToArray(GRMN1M);
+  secondGraph = CSVToArray(GRMN3M);
+  thirdGraph = CSVToArray(GRMN6M);
+  fourthGraph = CSVToArray(GRMN1Y);
+}
+if (ticker === 'IT') {
+  firstGraph = CSVToArray(IT1M);
+  secondGraph = CSVToArray(IT3M);
+  thirdGraph = CSVToArray(IT6M);
+  fourthGraph = CSVToArray(IT1Y);
+}
+if (ticker === 'GD') {
+  firstGraph = CSVToArray(GD1M);
+  secondGraph = CSVToArray(GD3M);
+  thirdGraph = CSVToArray(GD6M);
+  fourthGraph = CSVToArray(GD1Y);
+}
+if (ticker === 'GE') {
+  firstGraph = CSVToArray(GE1M);
+  secondGraph = CSVToArray(GE3M);
+  thirdGraph = CSVToArray(GE6M);
+  fourthGraph = CSVToArray(GE1Y);
+}
+if (ticker === 'GIS') {
+  firstGraph = CSVToArray(GIS1M);
+  secondGraph = CSVToArray(GIS3M);
+  thirdGraph = CSVToArray(GIS6M);
+  fourthGraph = CSVToArray(GIS1Y);
+}
+if (ticker === 'GM') {
+  firstGraph = CSVToArray(GM1M);
+  secondGraph = CSVToArray(GM3M);
+  thirdGraph = CSVToArray(GM6M);
+  fourthGraph = CSVToArray(GM1Y);
+}
+if (ticker === 'GPC') {
+  firstGraph = CSVToArray(GPC1M);
+  secondGraph = CSVToArray(GPC3M);
+  thirdGraph = CSVToArray(GPC6M);
+  fourthGraph = CSVToArray(GPC1Y);
+}
+if (ticker === 'GILD') {
+  firstGraph = CSVToArray(GILD1M);
+  secondGraph = CSVToArray(GILD3M);
+  thirdGraph = CSVToArray(GILD6M);
+  fourthGraph = CSVToArray(GILD1Y);
+}
+if (ticker === 'GL') {
+  firstGraph = CSVToArray(GL1M);
+  secondGraph = CSVToArray(GL3M);
+  thirdGraph = CSVToArray(GL6M);
+  fourthGraph = CSVToArray(GL1Y);
+}
+if (ticker === 'GPN') {
+  firstGraph = CSVToArray(GPN1M);
+  secondGraph = CSVToArray(GPN3M);
+  thirdGraph = CSVToArray(GPN6M);
+  fourthGraph = CSVToArray(GPN1Y);
+}
+if (ticker === 'GS') {
+  firstGraph = CSVToArray(GS1M);
+  secondGraph = CSVToArray(GS3M);
+  thirdGraph = CSVToArray(GS6M);
+  fourthGraph = CSVToArray(GS1Y);
+}
+if (ticker === 'GWW') {
+  firstGraph = CSVToArray(GWW1M);
+  secondGraph = CSVToArray(GWW3M);
+  thirdGraph = CSVToArray(GWW6M);
+  fourthGraph = CSVToArray(GWW1Y);
+}
+if (ticker === 'HAL') {
+  firstGraph = CSVToArray(HAL1M);
+  secondGraph = CSVToArray(HAL3M);
+  thirdGraph = CSVToArray(HAL6M);
+  fourthGraph = CSVToArray(HAL1Y);
+}
+if (ticker === 'HBI') {
+  firstGraph = CSVToArray(HBI1M);
+  secondGraph = CSVToArray(HBI3M);
+  thirdGraph = CSVToArray(HBI6M);
+  fourthGraph = CSVToArray(HBI1Y);
+}
+if (ticker === 'HIG') {
+  firstGraph = CSVToArray(HIG1M);
+  secondGraph = CSVToArray(HIG3M);
+  thirdGraph = CSVToArray(HIG6M);
+  fourthGraph = CSVToArray(HIG1Y);
+}
+if (ticker === 'HAS') {
+  firstGraph = CSVToArray(HAS1M);
+  secondGraph = CSVToArray(HAS3M);
+  thirdGraph = CSVToArray(HAS6M);
+  fourthGraph = CSVToArray(HAS1Y);
+}
+if (ticker === 'HCA') {
+  firstGraph = CSVToArray(HCA1M);
+  secondGraph = CSVToArray(HCA3M);
+  thirdGraph = CSVToArray(HCA6M);
+  fourthGraph = CSVToArray(HCA1Y);
+}
+if (ticker === 'PEAK') {
+  firstGraph = CSVToArray(PEAK1M);
+  secondGraph = CSVToArray(PEAK3M);
+  thirdGraph = CSVToArray(PEAK6M);
+  fourthGraph = CSVToArray(PEAK1Y);
+}
+if (ticker === 'HSIC') {
+  firstGraph = CSVToArray(HSIC1M);
+  secondGraph = CSVToArray(HSIC3M);
+  thirdGraph = CSVToArray(HSIC6M);
+  fourthGraph = CSVToArray(HSIC1Y);
+}
+if (ticker === 'HSY') {
+  firstGraph = CSVToArray(HSY1M);
+  secondGraph = CSVToArray(HSY3M);
+  thirdGraph = CSVToArray(HSY6M);
+  fourthGraph = CSVToArray(HSY1Y);
+}
+if (ticker === 'HES') {
+  firstGraph = CSVToArray(HES1M);
+  secondGraph = CSVToArray(HES3M);
+  thirdGraph = CSVToArray(HES6M);
+  fourthGraph = CSVToArray(HES1Y);
+}
+if (ticker === 'HPE') {
+  firstGraph = CSVToArray(HPE1M);
+  secondGraph = CSVToArray(HPE3M);
+  thirdGraph = CSVToArray(HPE6M);
+  fourthGraph = CSVToArray(HPE1Y);
+}
+if (ticker === 'HLT') {
+  firstGraph = CSVToArray(HLT1M);
+  secondGraph = CSVToArray(HLT3M);
+  thirdGraph = CSVToArray(HLT6M);
+  fourthGraph = CSVToArray(HLT1Y);
+}
+if (ticker === 'HFC') {
+  firstGraph = CSVToArray(HFC1M);
+  secondGraph = CSVToArray(HFC3M);
+  thirdGraph = CSVToArray(HFC6M);
+  fourthGraph = CSVToArray(HFC1Y);
+}
+if (ticker === 'HOLX') {
+  firstGraph = CSVToArray(HOLX1M);
+  secondGraph = CSVToArray(HOLX3M);
+  thirdGraph = CSVToArray(HOLX6M);
+  fourthGraph = CSVToArray(HOLX1Y);
+}
+if (ticker === 'HD') {
+  firstGraph = CSVToArray(HD1M);
+  secondGraph = CSVToArray(HD3M);
+  thirdGraph = CSVToArray(HD6M);
+  fourthGraph = CSVToArray(HD1Y);
+}
+if (ticker === 'HON') {
+  firstGraph = CSVToArray(HON1M);
+  secondGraph = CSVToArray(HON3M);
+  thirdGraph = CSVToArray(HON6M);
+  fourthGraph = CSVToArray(HON1Y);
+}
+if (ticker === 'HRL') {
+  firstGraph = CSVToArray(HRL1M);
+  secondGraph = CSVToArray(HRL3M);
+  thirdGraph = CSVToArray(HRL6M);
+  fourthGraph = CSVToArray(HRL1Y);
+}
+if (ticker === 'HST') {
+  firstGraph = CSVToArray(HST1M);
+  secondGraph = CSVToArray(HST3M);
+  thirdGraph = CSVToArray(HST6M);
+  fourthGraph = CSVToArray(HST1Y);
+}
+if (ticker === 'HWM') {
+  firstGraph = CSVToArray(HWM1M);
+  secondGraph = CSVToArray(HWM3M);
+  thirdGraph = CSVToArray(HWM6M);
+  fourthGraph = CSVToArray(HWM1Y);
+}
+if (ticker === 'HPQ') {
+  firstGraph = CSVToArray(HPQ1M);
+  secondGraph = CSVToArray(HPQ3M);
+  thirdGraph = CSVToArray(HPQ6M);
+  fourthGraph = CSVToArray(HPQ1Y);
+}
+if (ticker === 'HUM') {
+  firstGraph = CSVToArray(HUM1M);
+  secondGraph = CSVToArray(HUM3M);
+  thirdGraph = CSVToArray(HUM6M);
+  fourthGraph = CSVToArray(HUM1Y);
+}
+if (ticker === 'HBAN') {
+  firstGraph = CSVToArray(HBAN1M);
+  secondGraph = CSVToArray(HBAN3M);
+  thirdGraph = CSVToArray(HBAN6M);
+  fourthGraph = CSVToArray(HBAN1Y);
+}
+if (ticker === 'HII') {
+  firstGraph = CSVToArray(HII1M);
+  secondGraph = CSVToArray(HII3M);
+  thirdGraph = CSVToArray(HII6M);
+  fourthGraph = CSVToArray(HII1Y);
+}
+if (ticker === 'IEX') {
+  firstGraph = CSVToArray(IEX1M);
+  secondGraph = CSVToArray(IEX3M);
+  thirdGraph = CSVToArray(IEX6M);
+  fourthGraph = CSVToArray(IEX1Y);
+}
+if (ticker === 'IDXX') {
+  firstGraph = CSVToArray(IDXX1M);
+  secondGraph = CSVToArray(IDXX3M);
+  thirdGraph = CSVToArray(IDXX6M);
+  fourthGraph = CSVToArray(IDXX1Y);
+}
+if (ticker === 'INFO') {
+  firstGraph = CSVToArray(INFO1M);
+  secondGraph = CSVToArray(INFO3M);
+  thirdGraph = CSVToArray(INFO6M);
+  fourthGraph = CSVToArray(INFO1Y);
+}
+if (ticker === 'ITW') {
+  firstGraph = CSVToArray(ITW1M);
+  secondGraph = CSVToArray(ITW3M);
+  thirdGraph = CSVToArray(ITW6M);
+  fourthGraph = CSVToArray(ITW1Y);
+}
+if (ticker === 'ILMN') {
+  firstGraph = CSVToArray(ILMN1M);
+  secondGraph = CSVToArray(ILMN3M);
+  thirdGraph = CSVToArray(ILMN6M);
+  fourthGraph = CSVToArray(ILMN1Y);
+}
+if (ticker === 'INCY') {
+  firstGraph = CSVToArray(INCY1M);
+  secondGraph = CSVToArray(INCY3M);
+  thirdGraph = CSVToArray(INCY6M);
+  fourthGraph = CSVToArray(INCY1Y);
+}
+if (ticker === 'IR') {
+  firstGraph = CSVToArray(IR1M);
+  secondGraph = CSVToArray(IR3M);
+  thirdGraph = CSVToArray(IR6M);
+  fourthGraph = CSVToArray(IR1Y);
+}
+if (ticker === 'INTC') {
+  firstGraph = CSVToArray(INTC1M);
+  secondGraph = CSVToArray(INTC3M);
+  thirdGraph = CSVToArray(INTC6M);
+  fourthGraph = CSVToArray(INTC1Y);
+}
+if (ticker === 'ICE') {
+  firstGraph = CSVToArray(ICE1M);
+  secondGraph = CSVToArray(ICE3M);
+  thirdGraph = CSVToArray(ICE6M);
+  fourthGraph = CSVToArray(ICE1Y);
+}
+if (ticker === 'IBM') {
+  firstGraph = CSVToArray(IBM1M);
+  secondGraph = CSVToArray(IBM3M);
+  thirdGraph = CSVToArray(IBM6M);
+  fourthGraph = CSVToArray(IBM1Y);
+}
+if (ticker === 'IP') {
+  firstGraph = CSVToArray(IP1M);
+  secondGraph = CSVToArray(IP3M);
+  thirdGraph = CSVToArray(IP6M);
+  fourthGraph = CSVToArray(IP1Y);
+}
+if (ticker === 'IPG') {
+  firstGraph = CSVToArray(IPG1M);
+  secondGraph = CSVToArray(IPG3M);
+  thirdGraph = CSVToArray(IPG6M);
+  fourthGraph = CSVToArray(IPG1Y);
+}
+if (ticker === 'IFF') {
+  firstGraph = CSVToArray(IFF1M);
+  secondGraph = CSVToArray(IFF3M);
+  thirdGraph = CSVToArray(IFF6M);
+  fourthGraph = CSVToArray(IFF1Y);
+}
+if (ticker === 'INTU') {
+  firstGraph = CSVToArray(INTU1M);
+  secondGraph = CSVToArray(INTU3M);
+  thirdGraph = CSVToArray(INTU6M);
+  fourthGraph = CSVToArray(INTU1Y);
+}
+if (ticker === 'ISRG') {
+  firstGraph = CSVToArray(ISRG1M);
+  secondGraph = CSVToArray(ISRG3M);
+  thirdGraph = CSVToArray(ISRG6M);
+  fourthGraph = CSVToArray(ISRG1Y);
+}
+if (ticker === 'IVZ') {
+  firstGraph = CSVToArray(IVZ1M);
+  secondGraph = CSVToArray(IVZ3M);
+  thirdGraph = CSVToArray(IVZ6M);
+  fourthGraph = CSVToArray(IVZ1Y);
+}
+if (ticker === 'IPGP') {
+  firstGraph = CSVToArray(IPGP1M);
+  secondGraph = CSVToArray(IPGP3M);
+  thirdGraph = CSVToArray(IPGP6M);
+  fourthGraph = CSVToArray(IPGP1Y);
+}
+if (ticker === 'IQV') {
+  firstGraph = CSVToArray(IQV1M);
+  secondGraph = CSVToArray(IQV3M);
+  thirdGraph = CSVToArray(IQV6M);
+  fourthGraph = CSVToArray(IQV1Y);
+}
+if (ticker === 'IRM') {
+  firstGraph = CSVToArray(IRM1M);
+  secondGraph = CSVToArray(IRM3M);
+  thirdGraph = CSVToArray(IRM6M);
+  fourthGraph = CSVToArray(IRM1Y);
+}
+if (ticker === 'JKHY') {
+  firstGraph = CSVToArray(JKHY1M);
+  secondGraph = CSVToArray(JKHY3M);
+  thirdGraph = CSVToArray(JKHY6M);
+  fourthGraph = CSVToArray(JKHY1Y);
+}
+if (ticker === 'J') {
+  firstGraph = CSVToArray(J1M);
+  secondGraph = CSVToArray(J3M);
+  thirdGraph = CSVToArray(J6M);
+  fourthGraph = CSVToArray(J1Y);
+}
+if (ticker === 'JBHT') {
+  firstGraph = CSVToArray(JBHT1M);
+  secondGraph = CSVToArray(JBHT3M);
+  thirdGraph = CSVToArray(JBHT6M);
+  fourthGraph = CSVToArray(JBHT1Y);
+}
+if (ticker === 'SJM') {
+  firstGraph = CSVToArray(SJM1M);
+  secondGraph = CSVToArray(SJM3M);
+  thirdGraph = CSVToArray(SJM6M);
+  fourthGraph = CSVToArray(SJM1Y);
+}
+if (ticker === 'JNJ') {
+  firstGraph = CSVToArray(JNJ1M);
+  secondGraph = CSVToArray(JNJ3M);
+  thirdGraph = CSVToArray(JNJ6M);
+  fourthGraph = CSVToArray(JNJ1Y);
+}
+if (ticker === 'JCI') {
+  firstGraph = CSVToArray(JCI1M);
+  secondGraph = CSVToArray(JCI3M);
+  thirdGraph = CSVToArray(JCI6M);
+  fourthGraph = CSVToArray(JCI1Y);
+}
+if (ticker === 'JPM') {
+  firstGraph = CSVToArray(JPM1M);
+  secondGraph = CSVToArray(JPM3M);
+  thirdGraph = CSVToArray(JPM6M);
+  fourthGraph = CSVToArray(JPM1Y);
+}
+if (ticker === 'JNPR') {
+  firstGraph = CSVToArray(JNPR1M);
+  secondGraph = CSVToArray(JNPR3M);
+  thirdGraph = CSVToArray(JNPR6M);
+  fourthGraph = CSVToArray(JNPR1Y);
+}
+if (ticker === 'KSU') {
+  firstGraph = CSVToArray(KSU1M);
+  secondGraph = CSVToArray(KSU3M);
+  thirdGraph = CSVToArray(KSU6M);
+  fourthGraph = CSVToArray(KSU1Y);
+}
+if (ticker === 'K') {
+  firstGraph = CSVToArray(K1M);
+  secondGraph = CSVToArray(K3M);
+  thirdGraph = CSVToArray(K6M);
+  fourthGraph = CSVToArray(K1Y);
+}
+if (ticker === 'KEY') {
+  firstGraph = CSVToArray(KEY1M);
+  secondGraph = CSVToArray(KEY3M);
+  thirdGraph = CSVToArray(KEY6M);
+  fourthGraph = CSVToArray(KEY1Y);
+}
+if (ticker === 'KEYS') {
+  firstGraph = CSVToArray(KEYS1M);
+  secondGraph = CSVToArray(KEYS3M);
+  thirdGraph = CSVToArray(KEYS6M);
+  fourthGraph = CSVToArray(KEYS1Y);
+}
+if (ticker === 'KMB') {
+  firstGraph = CSVToArray(KMB1M);
+  secondGraph = CSVToArray(KMB3M);
+  thirdGraph = CSVToArray(KMB6M);
+  fourthGraph = CSVToArray(KMB1Y);
+}
+if (ticker === 'KIM') {
+  firstGraph = CSVToArray(KIM1M);
+  secondGraph = CSVToArray(KIM3M);
+  thirdGraph = CSVToArray(KIM6M);
+  fourthGraph = CSVToArray(KIM1Y);
+}
+if (ticker === 'KMI') {
+  firstGraph = CSVToArray(KMI1M);
+  secondGraph = CSVToArray(KMI3M);
+  thirdGraph = CSVToArray(KMI6M);
+  fourthGraph = CSVToArray(KMI1Y);
+}
+if (ticker === 'KLAC') {
+  firstGraph = CSVToArray(KLAC1M);
+  secondGraph = CSVToArray(KLAC3M);
+  thirdGraph = CSVToArray(KLAC6M);
+  fourthGraph = CSVToArray(KLAC1Y);
+}
+if (ticker === 'KHC') {
+  firstGraph = CSVToArray(KHC1M);
+  secondGraph = CSVToArray(KHC3M);
+  thirdGraph = CSVToArray(KHC6M);
+  fourthGraph = CSVToArray(KHC1Y);
+}
+if (ticker === 'KR') {
+  firstGraph = CSVToArray(KR1M);
+  secondGraph = CSVToArray(KR3M);
+  thirdGraph = CSVToArray(KR6M);
+  fourthGraph = CSVToArray(KR1Y);
+}
+if (ticker === 'LB') {
+  firstGraph = CSVToArray(LB1M);
+  secondGraph = CSVToArray(LB3M);
+  thirdGraph = CSVToArray(LB6M);
+  fourthGraph = CSVToArray(LB1Y);
+}
+if (ticker === 'LHX') {
+  firstGraph = CSVToArray(LHX1M);
+  secondGraph = CSVToArray(LHX3M);
+  thirdGraph = CSVToArray(LHX6M);
+  fourthGraph = CSVToArray(LHX1Y);
+}
+if (ticker === 'LH') {
+  firstGraph = CSVToArray(LH1M);
+  secondGraph = CSVToArray(LH3M);
+  thirdGraph = CSVToArray(LH6M);
+  fourthGraph = CSVToArray(LH1Y);
+}
+if (ticker === 'LRCX') {
+  firstGraph = CSVToArray(LRCX1M);
+  secondGraph = CSVToArray(LRCX3M);
+  thirdGraph = CSVToArray(LRCX6M);
+  fourthGraph = CSVToArray(LRCX1Y);
+}
+if (ticker === 'LW') {
+  firstGraph = CSVToArray(LW1M);
+  secondGraph = CSVToArray(LW3M);
+  thirdGraph = CSVToArray(LW6M);
+  fourthGraph = CSVToArray(LW1Y);
+}
+if (ticker === 'LVS') {
+  firstGraph = CSVToArray(LVS1M);
+  secondGraph = CSVToArray(LVS3M);
+  thirdGraph = CSVToArray(LVS6M);
+  fourthGraph = CSVToArray(LVS1Y);
+}
+if (ticker === 'LEG') {
+  firstGraph = CSVToArray(LEG1M);
+  secondGraph = CSVToArray(LEG3M);
+  thirdGraph = CSVToArray(LEG6M);
+  fourthGraph = CSVToArray(LEG1Y);
+}
+if (ticker === 'LDOS') {
+  firstGraph = CSVToArray(LDOS1M);
+  secondGraph = CSVToArray(LDOS3M);
+  thirdGraph = CSVToArray(LDOS6M);
+  fourthGraph = CSVToArray(LDOS1Y);
+}
+if (ticker === 'LEN') {
+  firstGraph = CSVToArray(LEN1M);
+  secondGraph = CSVToArray(LEN3M);
+  thirdGraph = CSVToArray(LEN6M);
+  fourthGraph = CSVToArray(LEN1Y);
+}
+if (ticker === 'LLY') {
+  firstGraph = CSVToArray(LLY1M);
+  secondGraph = CSVToArray(LLY3M);
+  thirdGraph = CSVToArray(LLY6M);
+  fourthGraph = CSVToArray(LLY1Y);
+}
+if (ticker === 'LNC') {
+  firstGraph = CSVToArray(LNC1M);
+  secondGraph = CSVToArray(LNC3M);
+  thirdGraph = CSVToArray(LNC6M);
+  fourthGraph = CSVToArray(LNC1Y);
+}
+if (ticker === 'LIN') {
+  firstGraph = CSVToArray(LIN1M);
+  secondGraph = CSVToArray(LIN3M);
+  thirdGraph = CSVToArray(LIN6M);
+  fourthGraph = CSVToArray(LIN1Y);
+}
+if (ticker === 'LYV') {
+  firstGraph = CSVToArray(LYV1M);
+  secondGraph = CSVToArray(LYV3M);
+  thirdGraph = CSVToArray(LYV6M);
+  fourthGraph = CSVToArray(LYV1Y);
+}
+if (ticker === 'LKQ') {
+  firstGraph = CSVToArray(LKQ1M);
+  secondGraph = CSVToArray(LKQ3M);
+  thirdGraph = CSVToArray(LKQ6M);
+  fourthGraph = CSVToArray(LKQ1Y);
+}
+if (ticker === 'LMT') {
+  firstGraph = CSVToArray(LMT1M);
+  secondGraph = CSVToArray(LMT3M);
+  thirdGraph = CSVToArray(LMT6M);
+  fourthGraph = CSVToArray(LMT1Y);
+}
+if (ticker === 'L') {
+  firstGraph = CSVToArray(L1M);
+  secondGraph = CSVToArray(L3M);
+  thirdGraph = CSVToArray(L6M);
+  fourthGraph = CSVToArray(L1Y);
+}
+if (ticker === 'LOW') {
+  firstGraph = CSVToArray(LOW1M);
+  secondGraph = CSVToArray(LOW3M);
+  thirdGraph = CSVToArray(LOW6M);
+  fourthGraph = CSVToArray(LOW1Y);
+}
+if (ticker === 'LUMN') {
+  firstGraph = CSVToArray(LUMN1M);
+  secondGraph = CSVToArray(LUMN3M);
+  thirdGraph = CSVToArray(LUMN6M);
+  fourthGraph = CSVToArray(LUMN1Y);
+}
+if (ticker === 'LYB') {
+  firstGraph = CSVToArray(LYB1M);
+  secondGraph = CSVToArray(LYB3M);
+  thirdGraph = CSVToArray(LYB6M);
+  fourthGraph = CSVToArray(LYB1Y);
+}
+if (ticker === 'MTB') {
+  firstGraph = CSVToArray(MTB1M);
+  secondGraph = CSVToArray(MTB3M);
+  thirdGraph = CSVToArray(MTB6M);
+  fourthGraph = CSVToArray(MTB1Y);
+}
+if (ticker === 'MRO') {
+  firstGraph = CSVToArray(MRO1M);
+  secondGraph = CSVToArray(MRO3M);
+  thirdGraph = CSVToArray(MRO6M);
+  fourthGraph = CSVToArray(MRO1Y);
+}
+if (ticker === 'MPC') {
+  firstGraph = CSVToArray(MPC1M);
+  secondGraph = CSVToArray(MPC3M);
+  thirdGraph = CSVToArray(MPC6M);
+  fourthGraph = CSVToArray(MPC1Y);
+}
+if (ticker === 'MKTX') {
+  firstGraph = CSVToArray(MKTX1M);
+  secondGraph = CSVToArray(MKTX3M);
+  thirdGraph = CSVToArray(MKTX6M);
+  fourthGraph = CSVToArray(MKTX1Y);
+}
+if (ticker === 'MAR') {
+  firstGraph = CSVToArray(MAR1M);
+  secondGraph = CSVToArray(MAR3M);
+  thirdGraph = CSVToArray(MAR6M);
+  fourthGraph = CSVToArray(MAR1Y);
+}
+if (ticker === 'MMC') {
+  firstGraph = CSVToArray(MMC1M);
+  secondGraph = CSVToArray(MMC3M);
+  thirdGraph = CSVToArray(MMC6M);
+  fourthGraph = CSVToArray(MMC1Y);
+}
+if (ticker === 'MLM') {
+  firstGraph = CSVToArray(MLM1M);
+  secondGraph = CSVToArray(MLM3M);
+  thirdGraph = CSVToArray(MLM6M);
+  fourthGraph = CSVToArray(MLM1Y);
+}
+if (ticker === 'MAS') {
+  firstGraph = CSVToArray(MAS1M);
+  secondGraph = CSVToArray(MAS3M);
+  thirdGraph = CSVToArray(MAS6M);
+  fourthGraph = CSVToArray(MAS1Y);
+}
+if (ticker === 'MA') {
+  firstGraph = CSVToArray(MA1M);
+  secondGraph = CSVToArray(MA3M);
+  thirdGraph = CSVToArray(MA6M);
+  fourthGraph = CSVToArray(MA1Y);
+}
+if (ticker === 'MKC') {
+  firstGraph = CSVToArray(MKC1M);
+  secondGraph = CSVToArray(MKC3M);
+  thirdGraph = CSVToArray(MKC6M);
+  fourthGraph = CSVToArray(MKC1Y);
+}
+if (ticker === 'MXIM') {
+  firstGraph = CSVToArray(MXIM1M);
+  secondGraph = CSVToArray(MXIM3M);
+  thirdGraph = CSVToArray(MXIM6M);
+  fourthGraph = CSVToArray(MXIM1Y);
+}
+if (ticker === 'MCD') {
+  firstGraph = CSVToArray(MCD1M);
+  secondGraph = CSVToArray(MCD3M);
+  thirdGraph = CSVToArray(MCD6M);
+  fourthGraph = CSVToArray(MCD1Y);
+}
+if (ticker === 'MCK') {
+  firstGraph = CSVToArray(MCK1M);
+  secondGraph = CSVToArray(MCK3M);
+  thirdGraph = CSVToArray(MCK6M);
+  fourthGraph = CSVToArray(MCK1Y);
+}
+if (ticker === 'MDT') {
+  firstGraph = CSVToArray(MDT1M);
+  secondGraph = CSVToArray(MDT3M);
+  thirdGraph = CSVToArray(MDT6M);
+  fourthGraph = CSVToArray(MDT1Y);
+}
+if (ticker === 'MRK') {
+  firstGraph = CSVToArray(MRK1M);
+  secondGraph = CSVToArray(MRK3M);
+  thirdGraph = CSVToArray(MRK6M);
+  fourthGraph = CSVToArray(MRK1Y);
+}
+if (ticker === 'MET') {
+  firstGraph = CSVToArray(MET1M);
+  secondGraph = CSVToArray(MET3M);
+  thirdGraph = CSVToArray(MET6M);
+  fourthGraph = CSVToArray(MET1Y);
+}
+if (ticker === 'MTD') {
+  firstGraph = CSVToArray(MTD1M);
+  secondGraph = CSVToArray(MTD3M);
+  thirdGraph = CSVToArray(MTD6M);
+  fourthGraph = CSVToArray(MTD1Y);
+}
+if (ticker === 'MGM') {
+  firstGraph = CSVToArray(MGM1M);
+  secondGraph = CSVToArray(MGM3M);
+  thirdGraph = CSVToArray(MGM6M);
+  fourthGraph = CSVToArray(MGM1Y);
+}
+if (ticker === 'MCHP') {
+  firstGraph = CSVToArray(MCHP1M);
+  secondGraph = CSVToArray(MCHP3M);
+  thirdGraph = CSVToArray(MCHP6M);
+  fourthGraph = CSVToArray(MCHP1Y);
+}
+if (ticker === 'MU') {
+  firstGraph = CSVToArray(MU1M);
+  secondGraph = CSVToArray(MU3M);
+  thirdGraph = CSVToArray(MU6M);
+  fourthGraph = CSVToArray(MU1Y);
+}
+if (ticker === 'MSFT') {
+  firstGraph = CSVToArray(MSFT1M);
+  secondGraph = CSVToArray(MSFT3M);
+  thirdGraph = CSVToArray(MSFT6M);
+  fourthGraph = CSVToArray(MSFT1Y);
+}
+if (ticker === 'MAA') {
+  firstGraph = CSVToArray(MAA1M);
+  secondGraph = CSVToArray(MAA3M);
+  thirdGraph = CSVToArray(MAA6M);
+  fourthGraph = CSVToArray(MAA1Y);
+}
+if (ticker === 'MHK') {
+  firstGraph = CSVToArray(MHK1M);
+  secondGraph = CSVToArray(MHK3M);
+  thirdGraph = CSVToArray(MHK6M);
+  fourthGraph = CSVToArray(MHK1Y);
+}
+if (ticker === 'TAP') {
+  firstGraph = CSVToArray(TAP1M);
+  secondGraph = CSVToArray(TAP3M);
+  thirdGraph = CSVToArray(TAP6M);
+  fourthGraph = CSVToArray(TAP1Y);
+}
+if (ticker === 'MDLZ') {
+  firstGraph = CSVToArray(MDLZ1M);
+  secondGraph = CSVToArray(MDLZ3M);
+  thirdGraph = CSVToArray(MDLZ6M);
+  fourthGraph = CSVToArray(MDLZ1Y);
+}
+if (ticker === 'MPWR') {
+  firstGraph = CSVToArray(MPWR1M);
+  secondGraph = CSVToArray(MPWR3M);
+  thirdGraph = CSVToArray(MPWR6M);
+  fourthGraph = CSVToArray(MPWR1Y);
+}
+if (ticker === 'MNST') {
+  firstGraph = CSVToArray(MNST1M);
+  secondGraph = CSVToArray(MNST3M);
+  thirdGraph = CSVToArray(MNST6M);
+  fourthGraph = CSVToArray(MNST1Y);
+}
+if (ticker === 'MCO') {
+  firstGraph = CSVToArray(MCO1M);
+  secondGraph = CSVToArray(MCO3M);
+  thirdGraph = CSVToArray(MCO6M);
+  fourthGraph = CSVToArray(MCO1Y);
+}
+if (ticker === 'MS') {
+  firstGraph = CSVToArray(MS1M);
+  secondGraph = CSVToArray(MS3M);
+  thirdGraph = CSVToArray(MS6M);
+  fourthGraph = CSVToArray(MS1Y);
+}
+if (ticker === 'MOS') {
+  firstGraph = CSVToArray(MOS1M);
+  secondGraph = CSVToArray(MOS3M);
+  thirdGraph = CSVToArray(MOS6M);
+  fourthGraph = CSVToArray(MOS1Y);
+}
+if (ticker === 'MSI') {
+  firstGraph = CSVToArray(MSI1M);
+  secondGraph = CSVToArray(MSI3M);
+  thirdGraph = CSVToArray(MSI6M);
+  fourthGraph = CSVToArray(MSI1Y);
+}
+if (ticker === 'MSCI') {
+  firstGraph = CSVToArray(MSCI1M);
+  secondGraph = CSVToArray(MSCI3M);
+  thirdGraph = CSVToArray(MSCI6M);
+  fourthGraph = CSVToArray(MSCI1Y);
+}
+if (ticker === 'NDAQ') {
+  firstGraph = CSVToArray(NDAQ1M);
+  secondGraph = CSVToArray(NDAQ3M);
+  thirdGraph = CSVToArray(NDAQ6M);
+  fourthGraph = CSVToArray(NDAQ1Y);
+}
+if (ticker === 'NTAP') {
+  firstGraph = CSVToArray(NTAP1M);
+  secondGraph = CSVToArray(NTAP3M);
+  thirdGraph = CSVToArray(NTAP6M);
+  fourthGraph = CSVToArray(NTAP1Y);
+}
+if (ticker === 'NFLX') {
+  firstGraph = CSVToArray(NFLX1M);
+  secondGraph = CSVToArray(NFLX3M);
+  thirdGraph = CSVToArray(NFLX6M);
+  fourthGraph = CSVToArray(NFLX1Y);
+}
+if (ticker === 'NWL') {
+  firstGraph = CSVToArray(NWL1M);
+  secondGraph = CSVToArray(NWL3M);
+  thirdGraph = CSVToArray(NWL6M);
+  fourthGraph = CSVToArray(NWL1Y);
+}
+if (ticker === 'NEM') {
+  firstGraph = CSVToArray(NEM1M);
+  secondGraph = CSVToArray(NEM3M);
+  thirdGraph = CSVToArray(NEM6M);
+  fourthGraph = CSVToArray(NEM1Y);
+}
+if (ticker === 'NWSA') {
+  firstGraph = CSVToArray(NWSA1M);
+  secondGraph = CSVToArray(NWSA3M);
+  thirdGraph = CSVToArray(NWSA6M);
+  fourthGraph = CSVToArray(NWSA1Y);
+}
+if (ticker === 'NWS') {
+  firstGraph = CSVToArray(NWS1M);
+  secondGraph = CSVToArray(NWS3M);
+  thirdGraph = CSVToArray(NWS6M);
+  fourthGraph = CSVToArray(NWS1Y);
+}
+if (ticker === 'NEE') {
+  firstGraph = CSVToArray(NEE1M);
+  secondGraph = CSVToArray(NEE3M);
+  thirdGraph = CSVToArray(NEE6M);
+  fourthGraph = CSVToArray(NEE1Y);
+}
+if (ticker === 'NLSN') {
+  firstGraph = CSVToArray(NLSN1M);
+  secondGraph = CSVToArray(NLSN3M);
+  thirdGraph = CSVToArray(NLSN6M);
+  fourthGraph = CSVToArray(NLSN1Y);
+}
+if (ticker === 'NKE') {
+  firstGraph = CSVToArray(NKE1M);
+  secondGraph = CSVToArray(NKE3M);
+  thirdGraph = CSVToArray(NKE6M);
+  fourthGraph = CSVToArray(NKE1Y);
+}
+if (ticker === 'NI') {
+  firstGraph = CSVToArray(NI1M);
+  secondGraph = CSVToArray(NI3M);
+  thirdGraph = CSVToArray(NI6M);
+  fourthGraph = CSVToArray(NI1Y);
+}
+if (ticker === 'NSC') {
+  firstGraph = CSVToArray(NSC1M);
+  secondGraph = CSVToArray(NSC3M);
+  thirdGraph = CSVToArray(NSC6M);
+  fourthGraph = CSVToArray(NSC1Y);
+}
+if (ticker === 'NTRS') {
+  firstGraph = CSVToArray(NTRS1M);
+  secondGraph = CSVToArray(NTRS3M);
+  thirdGraph = CSVToArray(NTRS6M);
+  fourthGraph = CSVToArray(NTRS1Y);
+}
+if (ticker === 'NOC') {
+  firstGraph = CSVToArray(NOC1M);
+  secondGraph = CSVToArray(NOC3M);
+  thirdGraph = CSVToArray(NOC6M);
+  fourthGraph = CSVToArray(NOC1Y);
+}
+if (ticker === 'NLOK') {
+  firstGraph = CSVToArray(NLOK1M);
+  secondGraph = CSVToArray(NLOK3M);
+  thirdGraph = CSVToArray(NLOK6M);
+  fourthGraph = CSVToArray(NLOK1Y);
+}
+if (ticker === 'NCLH') {
+  firstGraph = CSVToArray(NCLH1M);
+  secondGraph = CSVToArray(NCLH3M);
+  thirdGraph = CSVToArray(NCLH6M);
+  fourthGraph = CSVToArray(NCLH1Y);
+}
+if (ticker === 'NOV') {
+  firstGraph = CSVToArray(NOV1M);
+  secondGraph = CSVToArray(NOV3M);
+  thirdGraph = CSVToArray(NOV6M);
+  fourthGraph = CSVToArray(NOV1Y);
+}
+if (ticker === 'NRG') {
+  firstGraph = CSVToArray(NRG1M);
+  secondGraph = CSVToArray(NRG3M);
+  thirdGraph = CSVToArray(NRG6M);
+  fourthGraph = CSVToArray(NRG1Y);
+}
+if (ticker === 'NUE') {
+  firstGraph = CSVToArray(NUE1M);
+  secondGraph = CSVToArray(NUE3M);
+  thirdGraph = CSVToArray(NUE6M);
+  fourthGraph = CSVToArray(NUE1Y);
+}
+if (ticker === 'NVDA') {
+  firstGraph = CSVToArray(NVDA1M);
+  secondGraph = CSVToArray(NVDA3M);
+  thirdGraph = CSVToArray(NVDA6M);
+  fourthGraph = CSVToArray(NVDA1Y);
+}
+if (ticker === 'NVR') {
+  firstGraph = CSVToArray(NVR1M);
+  secondGraph = CSVToArray(NVR3M);
+  thirdGraph = CSVToArray(NVR6M);
+  fourthGraph = CSVToArray(NVR1Y);
+}
+if (ticker === 'ORLY') {
+  firstGraph = CSVToArray(ORLY1M);
+  secondGraph = CSVToArray(ORLY3M);
+  thirdGraph = CSVToArray(ORLY6M);
+  fourthGraph = CSVToArray(ORLY1Y);
+}
+if (ticker === 'OXY') {
+  firstGraph = CSVToArray(OXY1M);
+  secondGraph = CSVToArray(OXY3M);
+  thirdGraph = CSVToArray(OXY6M);
+  fourthGraph = CSVToArray(OXY1Y);
+}
+if (ticker === 'ODFL') {
+  firstGraph = CSVToArray(ODFL1M);
+  secondGraph = CSVToArray(ODFL3M);
+  thirdGraph = CSVToArray(ODFL6M);
+  fourthGraph = CSVToArray(ODFL1Y);
+}
+if (ticker === 'OMC') {
+  firstGraph = CSVToArray(OMC1M);
+  secondGraph = CSVToArray(OMC3M);
+  thirdGraph = CSVToArray(OMC6M);
+  fourthGraph = CSVToArray(OMC1Y);
+}
+if (ticker === 'OKE') {
+  firstGraph = CSVToArray(OKE1M);
+  secondGraph = CSVToArray(OKE3M);
+  thirdGraph = CSVToArray(OKE6M);
+  fourthGraph = CSVToArray(OKE1Y);
+}
+if (ticker === 'ORCL') {
+  firstGraph = CSVToArray(ORCL1M);
+  secondGraph = CSVToArray(ORCL3M);
+  thirdGraph = CSVToArray(ORCL6M);
+  fourthGraph = CSVToArray(ORCL1Y);
+}
+if (ticker === 'OTIS') {
+  firstGraph = CSVToArray(OTIS1M);
+  secondGraph = CSVToArray(OTIS3M);
+  thirdGraph = CSVToArray(OTIS6M);
+  fourthGraph = CSVToArray(OTIS1Y);
+}
+if (ticker === 'PCAR') {
+  firstGraph = CSVToArray(PCAR1M);
+  secondGraph = CSVToArray(PCAR3M);
+  thirdGraph = CSVToArray(PCAR6M);
+  fourthGraph = CSVToArray(PCAR1Y);
+}
+if (ticker === 'PKG') {
+  firstGraph = CSVToArray(PKG1M);
+  secondGraph = CSVToArray(PKG3M);
+  thirdGraph = CSVToArray(PKG6M);
+  fourthGraph = CSVToArray(PKG1Y);
+}
+if (ticker === 'PH') {
+  firstGraph = CSVToArray(PH1M);
+  secondGraph = CSVToArray(PH3M);
+  thirdGraph = CSVToArray(PH6M);
+  fourthGraph = CSVToArray(PH1Y);
+}
+if (ticker === 'PAYX') {
+  firstGraph = CSVToArray(PAYX1M);
+  secondGraph = CSVToArray(PAYX3M);
+  thirdGraph = CSVToArray(PAYX6M);
+  fourthGraph = CSVToArray(PAYX1Y);
+}
+if (ticker === 'PAYC') {
+  firstGraph = CSVToArray(PAYC1M);
+  secondGraph = CSVToArray(PAYC3M);
+  thirdGraph = CSVToArray(PAYC6M);
+  fourthGraph = CSVToArray(PAYC1Y);
+}
+if (ticker === 'PYPL') {
+  firstGraph = CSVToArray(PYPL1M);
+  secondGraph = CSVToArray(PYPL3M);
+  thirdGraph = CSVToArray(PYPL6M);
+  fourthGraph = CSVToArray(PYPL1Y);
+}
+if (ticker === 'PNR') {
+  firstGraph = CSVToArray(PNR1M);
+  secondGraph = CSVToArray(PNR3M);
+  thirdGraph = CSVToArray(PNR6M);
+  fourthGraph = CSVToArray(PNR1Y);
+}
+if (ticker === 'PBCT') {
+  firstGraph = CSVToArray(PBCT1M);
+  secondGraph = CSVToArray(PBCT3M);
+  thirdGraph = CSVToArray(PBCT6M);
+  fourthGraph = CSVToArray(PBCT1Y);
+}
+if (ticker === 'PEP') {
+  firstGraph = CSVToArray(PEP1M);
+  secondGraph = CSVToArray(PEP3M);
+  thirdGraph = CSVToArray(PEP6M);
+  fourthGraph = CSVToArray(PEP1Y);
+}
+if (ticker === 'PKI') {
+  firstGraph = CSVToArray(PKI1M);
+  secondGraph = CSVToArray(PKI3M);
+  thirdGraph = CSVToArray(PKI6M);
+  fourthGraph = CSVToArray(PKI1Y);
+}
+if (ticker === 'PRGO') {
+  firstGraph = CSVToArray(PRGO1M);
+  secondGraph = CSVToArray(PRGO3M);
+  thirdGraph = CSVToArray(PRGO6M);
+  fourthGraph = CSVToArray(PRGO1Y);
+}
+if (ticker === 'PFE') {
+  firstGraph = CSVToArray(PFE1M);
+  secondGraph = CSVToArray(PFE3M);
+  thirdGraph = CSVToArray(PFE6M);
+  fourthGraph = CSVToArray(PFE1Y);
+}
+if (ticker === 'PM') {
+  firstGraph = CSVToArray(PM1M);
+  secondGraph = CSVToArray(PM3M);
+  thirdGraph = CSVToArray(PM6M);
+  fourthGraph = CSVToArray(PM1Y);
+}
+if (ticker === 'PSX') {
+  firstGraph = CSVToArray(PSX1M);
+  secondGraph = CSVToArray(PSX3M);
+  thirdGraph = CSVToArray(PSX6M);
+  fourthGraph = CSVToArray(PSX1Y);
+}
+if (ticker === 'PNW') {
+  firstGraph = CSVToArray(PNW1M);
+  secondGraph = CSVToArray(PNW3M);
+  thirdGraph = CSVToArray(PNW6M);
+  fourthGraph = CSVToArray(PNW1Y);
+}
+if (ticker === 'PXD') {
+  firstGraph = CSVToArray(PXD1M);
+  secondGraph = CSVToArray(PXD3M);
+  thirdGraph = CSVToArray(PXD6M);
+  fourthGraph = CSVToArray(PXD1Y);
+}
+if (ticker === 'PNC') {
+  firstGraph = CSVToArray(PNC1M);
+  secondGraph = CSVToArray(PNC3M);
+  thirdGraph = CSVToArray(PNC6M);
+  fourthGraph = CSVToArray(PNC1Y);
+}
+if (ticker === 'POOL') {
+  firstGraph = CSVToArray(POOL1M);
+  secondGraph = CSVToArray(POOL3M);
+  thirdGraph = CSVToArray(POOL6M);
+  fourthGraph = CSVToArray(POOL1Y);
+}
+if (ticker === 'PPG') {
+  firstGraph = CSVToArray(PPG1M);
+  secondGraph = CSVToArray(PPG3M);
+  thirdGraph = CSVToArray(PPG6M);
+  fourthGraph = CSVToArray(PPG1Y);
+}
+if (ticker === 'PPL') {
+  firstGraph = CSVToArray(PPL1M);
+  secondGraph = CSVToArray(PPL3M);
+  thirdGraph = CSVToArray(PPL6M);
+  fourthGraph = CSVToArray(PPL1Y);
+}
+if (ticker === 'PFG') {
+  firstGraph = CSVToArray(PFG1M);
+  secondGraph = CSVToArray(PFG3M);
+  thirdGraph = CSVToArray(PFG6M);
+  fourthGraph = CSVToArray(PFG1Y);
+}
+if (ticker === 'PG') {
+  firstGraph = CSVToArray(PG1M);
+  secondGraph = CSVToArray(PG3M);
+  thirdGraph = CSVToArray(PG6M);
+  fourthGraph = CSVToArray(PG1Y);
+}
+if (ticker === 'PGR') {
+  firstGraph = CSVToArray(PGR1M);
+  secondGraph = CSVToArray(PGR3M);
+  thirdGraph = CSVToArray(PGR6M);
+  fourthGraph = CSVToArray(PGR1Y);
+}
+if (ticker === 'PLD') {
+  firstGraph = CSVToArray(PLD1M);
+  secondGraph = CSVToArray(PLD3M);
+  thirdGraph = CSVToArray(PLD6M);
+  fourthGraph = CSVToArray(PLD1Y);
+}
+if (ticker === 'PRU') {
+  firstGraph = CSVToArray(PRU1M);
+  secondGraph = CSVToArray(PRU3M);
+  thirdGraph = CSVToArray(PRU6M);
+  fourthGraph = CSVToArray(PRU1Y);
+}
+if (ticker === 'PEG') {
+  firstGraph = CSVToArray(PEG1M);
+  secondGraph = CSVToArray(PEG3M);
+  thirdGraph = CSVToArray(PEG6M);
+  fourthGraph = CSVToArray(PEG1Y);
+}
+if (ticker === 'PSA') {
+  firstGraph = CSVToArray(PSA1M);
+  secondGraph = CSVToArray(PSA3M);
+  thirdGraph = CSVToArray(PSA6M);
+  fourthGraph = CSVToArray(PSA1Y);
+}
+if (ticker === 'PHM') {
+  firstGraph = CSVToArray(PHM1M);
+  secondGraph = CSVToArray(PHM3M);
+  thirdGraph = CSVToArray(PHM6M);
+  fourthGraph = CSVToArray(PHM1Y);
+}
+if (ticker === 'PVH') {
+  firstGraph = CSVToArray(PVH1M);
+  secondGraph = CSVToArray(PVH3M);
+  thirdGraph = CSVToArray(PVH6M);
+  fourthGraph = CSVToArray(PVH1Y);
+}
+if (ticker === 'QRVO') {
+  firstGraph = CSVToArray(QRVO1M);
+  secondGraph = CSVToArray(QRVO3M);
+  thirdGraph = CSVToArray(QRVO6M);
+  fourthGraph = CSVToArray(QRVO1Y);
+}
+if (ticker === 'PWR') {
+  firstGraph = CSVToArray(PWR1M);
+  secondGraph = CSVToArray(PWR3M);
+  thirdGraph = CSVToArray(PWR6M);
+  fourthGraph = CSVToArray(PWR1Y);
+}
+if (ticker === 'QCOM') {
+  firstGraph = CSVToArray(QCOM1M);
+  secondGraph = CSVToArray(QCOM3M);
+  thirdGraph = CSVToArray(QCOM6M);
+  fourthGraph = CSVToArray(QCOM1Y);
+}
+if (ticker === 'DGX') {
+  firstGraph = CSVToArray(DGX1M);
+  secondGraph = CSVToArray(DGX3M);
+  thirdGraph = CSVToArray(DGX6M);
+  fourthGraph = CSVToArray(DGX1Y);
+}
+if (ticker === 'RL') {
+  firstGraph = CSVToArray(RL1M);
+  secondGraph = CSVToArray(RL3M);
+  thirdGraph = CSVToArray(RL6M);
+  fourthGraph = CSVToArray(RL1Y);
+}
+if (ticker === 'RJF') {
+  firstGraph = CSVToArray(RJF1M);
+  secondGraph = CSVToArray(RJF3M);
+  thirdGraph = CSVToArray(RJF6M);
+  fourthGraph = CSVToArray(RJF1Y);
+}
+if (ticker === 'RTX') {
+  firstGraph = CSVToArray(RTX1M);
+  secondGraph = CSVToArray(RTX3M);
+  thirdGraph = CSVToArray(RTX6M);
+  fourthGraph = CSVToArray(RTX1Y);
+}
+if (ticker === 'O') {
+  firstGraph = CSVToArray(O1M);
+  secondGraph = CSVToArray(O3M);
+  thirdGraph = CSVToArray(O6M);
+  fourthGraph = CSVToArray(O1Y);
+}
+if (ticker === 'REG') {
+  firstGraph = CSVToArray(REG1M);
+  secondGraph = CSVToArray(REG3M);
+  thirdGraph = CSVToArray(REG6M);
+  fourthGraph = CSVToArray(REG1Y);
+}
+if (ticker === 'REGN') {
+  firstGraph = CSVToArray(REGN1M);
+  secondGraph = CSVToArray(REGN3M);
+  thirdGraph = CSVToArray(REGN6M);
+  fourthGraph = CSVToArray(REGN1Y);
+}
+if (ticker === 'RF') {
+  firstGraph = CSVToArray(RF1M);
+  secondGraph = CSVToArray(RF3M);
+  thirdGraph = CSVToArray(RF6M);
+  fourthGraph = CSVToArray(RF1Y);
+}
+if (ticker === 'RSG') {
+  firstGraph = CSVToArray(RSG1M);
+  secondGraph = CSVToArray(RSG3M);
+  thirdGraph = CSVToArray(RSG6M);
+  fourthGraph = CSVToArray(RSG1Y);
+}
+if (ticker === 'RMD') {
+  firstGraph = CSVToArray(RMD1M);
+  secondGraph = CSVToArray(RMD3M);
+  thirdGraph = CSVToArray(RMD6M);
+  fourthGraph = CSVToArray(RMD1Y);
+}
+if (ticker === 'RHI') {
+  firstGraph = CSVToArray(RHI1M);
+  secondGraph = CSVToArray(RHI3M);
+  thirdGraph = CSVToArray(RHI6M);
+  fourthGraph = CSVToArray(RHI1Y);
+}
+if (ticker === 'ROK') {
+  firstGraph = CSVToArray(ROK1M);
+  secondGraph = CSVToArray(ROK3M);
+  thirdGraph = CSVToArray(ROK6M);
+  fourthGraph = CSVToArray(ROK1Y);
+}
+if (ticker === 'ROL') {
+  firstGraph = CSVToArray(ROL1M);
+  secondGraph = CSVToArray(ROL3M);
+  thirdGraph = CSVToArray(ROL6M);
+  fourthGraph = CSVToArray(ROL1Y);
+}
+if (ticker === 'ROP') {
+  firstGraph = CSVToArray(ROP1M);
+  secondGraph = CSVToArray(ROP3M);
+  thirdGraph = CSVToArray(ROP6M);
+  fourthGraph = CSVToArray(ROP1Y);
+}
+if (ticker === 'ROST') {
+  firstGraph = CSVToArray(ROST1M);
+  secondGraph = CSVToArray(ROST3M);
+  thirdGraph = CSVToArray(ROST6M);
+  fourthGraph = CSVToArray(ROST1Y);
+}
+if (ticker === 'RCL') {
+  firstGraph = CSVToArray(RCL1M);
+  secondGraph = CSVToArray(RCL3M);
+  thirdGraph = CSVToArray(RCL6M);
+  fourthGraph = CSVToArray(RCL1Y);
+}
+if (ticker === 'SPGI') {
+  firstGraph = CSVToArray(SPGI1M);
+  secondGraph = CSVToArray(SPGI3M);
+  thirdGraph = CSVToArray(SPGI6M);
+  fourthGraph = CSVToArray(SPGI1Y);
+}
+if (ticker === 'CRM') {
+  firstGraph = CSVToArray(CRM1M);
+  secondGraph = CSVToArray(CRM3M);
+  thirdGraph = CSVToArray(CRM6M);
+  fourthGraph = CSVToArray(CRM1Y);
+}
+if (ticker === 'SBAC') {
+  firstGraph = CSVToArray(SBAC1M);
+  secondGraph = CSVToArray(SBAC3M);
+  thirdGraph = CSVToArray(SBAC6M);
+  fourthGraph = CSVToArray(SBAC1Y);
+}
+if (ticker === 'SLB') {
+  firstGraph = CSVToArray(SLB1M);
+  secondGraph = CSVToArray(SLB3M);
+  thirdGraph = CSVToArray(SLB6M);
+  fourthGraph = CSVToArray(SLB1Y);
+}
+if (ticker === 'STX') {
+  firstGraph = CSVToArray(STX1M);
+  secondGraph = CSVToArray(STX3M);
+  thirdGraph = CSVToArray(STX6M);
+  fourthGraph = CSVToArray(STX1Y);
+}
+if (ticker === 'SEE') {
+  firstGraph = CSVToArray(SEE1M);
+  secondGraph = CSVToArray(SEE3M);
+  thirdGraph = CSVToArray(SEE6M);
+  fourthGraph = CSVToArray(SEE1Y);
+}
+if (ticker === 'SRE') {
+  firstGraph = CSVToArray(SRE1M);
+  secondGraph = CSVToArray(SRE3M);
+  thirdGraph = CSVToArray(SRE6M);
+  fourthGraph = CSVToArray(SRE1Y);
+}
+if (ticker === 'NOW') {
+  firstGraph = CSVToArray(NOW1M);
+  secondGraph = CSVToArray(NOW3M);
+  thirdGraph = CSVToArray(NOW6M);
+  fourthGraph = CSVToArray(NOW1Y);
+}
+if (ticker === 'SHW') {
+  firstGraph = CSVToArray(SHW1M);
+  secondGraph = CSVToArray(SHW3M);
+  thirdGraph = CSVToArray(SHW6M);
+  fourthGraph = CSVToArray(SHW1Y);
+}
+if (ticker === 'SPG') {
+  firstGraph = CSVToArray(SPG1M);
+  secondGraph = CSVToArray(SPG3M);
+  thirdGraph = CSVToArray(SPG6M);
+  fourthGraph = CSVToArray(SPG1Y);
+}
+if (ticker === 'SWKS') {
+  firstGraph = CSVToArray(SWKS1M);
+  secondGraph = CSVToArray(SWKS3M);
+  thirdGraph = CSVToArray(SWKS6M);
+  fourthGraph = CSVToArray(SWKS1Y);
+}
+if (ticker === 'SLG') {
+  firstGraph = CSVToArray(SLG1M);
+  secondGraph = CSVToArray(SLG3M);
+  thirdGraph = CSVToArray(SLG6M);
+  fourthGraph = CSVToArray(SLG1Y);
+}
+if (ticker === 'SNA') {
+  firstGraph = CSVToArray(SNA1M);
+  secondGraph = CSVToArray(SNA3M);
+  thirdGraph = CSVToArray(SNA6M);
+  fourthGraph = CSVToArray(SNA1Y);
+}
+if (ticker === 'SO') {
+  firstGraph = CSVToArray(SO1M);
+  secondGraph = CSVToArray(SO3M);
+  thirdGraph = CSVToArray(SO6M);
+  fourthGraph = CSVToArray(SO1Y);
+}
+if (ticker === 'LUV') {
+  firstGraph = CSVToArray(LUV1M);
+  secondGraph = CSVToArray(LUV3M);
+  thirdGraph = CSVToArray(LUV6M);
+  fourthGraph = CSVToArray(LUV1Y);
+}
+if (ticker === 'SWK') {
+  firstGraph = CSVToArray(SWK1M);
+  secondGraph = CSVToArray(SWK3M);
+  thirdGraph = CSVToArray(SWK6M);
+  fourthGraph = CSVToArray(SWK1Y);
+}
+if (ticker === 'SBUX') {
+  firstGraph = CSVToArray(SBUX1M);
+  secondGraph = CSVToArray(SBUX3M);
+  thirdGraph = CSVToArray(SBUX6M);
+  fourthGraph = CSVToArray(SBUX1Y);
+}
+if (ticker === 'STT') {
+  firstGraph = CSVToArray(STT1M);
+  secondGraph = CSVToArray(STT3M);
+  thirdGraph = CSVToArray(STT6M);
+  fourthGraph = CSVToArray(STT1Y);
+}
+if (ticker === 'STE') {
+  firstGraph = CSVToArray(STE1M);
+  secondGraph = CSVToArray(STE3M);
+  thirdGraph = CSVToArray(STE6M);
+  fourthGraph = CSVToArray(STE1Y);
+}
+if (ticker === 'SYK') {
+  firstGraph = CSVToArray(SYK1M);
+  secondGraph = CSVToArray(SYK3M);
+  thirdGraph = CSVToArray(SYK6M);
+  fourthGraph = CSVToArray(SYK1Y);
+}
+if (ticker === 'SIVB') {
+  firstGraph = CSVToArray(SIVB1M);
+  secondGraph = CSVToArray(SIVB3M);
+  thirdGraph = CSVToArray(SIVB6M);
+  fourthGraph = CSVToArray(SIVB1Y);
+}
+if (ticker === 'SYF') {
+  firstGraph = CSVToArray(SYF1M);
+  secondGraph = CSVToArray(SYF3M);
+  thirdGraph = CSVToArray(SYF6M);
+  fourthGraph = CSVToArray(SYF1Y);
+}
+if (ticker === 'SNPS') {
+  firstGraph = CSVToArray(SNPS1M);
+  secondGraph = CSVToArray(SNPS3M);
+  thirdGraph = CSVToArray(SNPS6M);
+  fourthGraph = CSVToArray(SNPS1Y);
+}
+if (ticker === 'SYY') {
+  firstGraph = CSVToArray(SYY1M);
+  secondGraph = CSVToArray(SYY3M);
+  thirdGraph = CSVToArray(SYY6M);
+  fourthGraph = CSVToArray(SYY1Y);
+}
+if (ticker === 'TMUS') {
+  firstGraph = CSVToArray(TMUS1M);
+  secondGraph = CSVToArray(TMUS3M);
+  thirdGraph = CSVToArray(TMUS6M);
+  fourthGraph = CSVToArray(TMUS1Y);
+}
+if (ticker === 'TROW') {
+  firstGraph = CSVToArray(TROW1M);
+  secondGraph = CSVToArray(TROW3M);
+  thirdGraph = CSVToArray(TROW6M);
+  fourthGraph = CSVToArray(TROW1Y);
+}
+if (ticker === 'TTWO') {
+  firstGraph = CSVToArray(TTWO1M);
+  secondGraph = CSVToArray(TTWO3M);
+  thirdGraph = CSVToArray(TTWO6M);
+  fourthGraph = CSVToArray(TTWO1Y);
+}
+if (ticker === 'TPR') {
+  firstGraph = CSVToArray(TPR1M);
+  secondGraph = CSVToArray(TPR3M);
+  thirdGraph = CSVToArray(TPR6M);
+  fourthGraph = CSVToArray(TPR1Y);
+}
+if (ticker === 'TGT') {
+  firstGraph = CSVToArray(TGT1M);
+  secondGraph = CSVToArray(TGT3M);
+  thirdGraph = CSVToArray(TGT6M);
+  fourthGraph = CSVToArray(TGT1Y);
+}
+if (ticker === 'TEL') {
+  firstGraph = CSVToArray(TEL1M);
+  secondGraph = CSVToArray(TEL3M);
+  thirdGraph = CSVToArray(TEL6M);
+  fourthGraph = CSVToArray(TEL1Y);
+}
+if (ticker === 'TDY') {
+  firstGraph = CSVToArray(TDY1M);
+  secondGraph = CSVToArray(TDY3M);
+  thirdGraph = CSVToArray(TDY6M);
+  fourthGraph = CSVToArray(TDY1Y);
+}
+if (ticker === 'TFX') {
+  firstGraph = CSVToArray(TFX1M);
+  secondGraph = CSVToArray(TFX3M);
+  thirdGraph = CSVToArray(TFX6M);
+  fourthGraph = CSVToArray(TFX1Y);
+}
+if (ticker === 'TER') {
+  firstGraph = CSVToArray(TER1M);
+  secondGraph = CSVToArray(TER3M);
+  thirdGraph = CSVToArray(TER6M);
+  fourthGraph = CSVToArray(TER1Y);
+}
+if (ticker === 'TSLA') {
+  firstGraph = CSVToArray(TSLA1M);
+  secondGraph = CSVToArray(TSLA3M);
+  thirdGraph = CSVToArray(TSLA6M);
+  fourthGraph = CSVToArray(TSLA1Y);
+}
+if (ticker === 'TXN') {
+  firstGraph = CSVToArray(TXN1M);
+  secondGraph = CSVToArray(TXN3M);
+  thirdGraph = CSVToArray(TXN6M);
+  fourthGraph = CSVToArray(TXN1Y);
+}
+if (ticker === 'TXT') {
+  firstGraph = CSVToArray(TXT1M);
+  secondGraph = CSVToArray(TXT3M);
+  thirdGraph = CSVToArray(TXT6M);
+  fourthGraph = CSVToArray(TXT1Y);
+}
+if (ticker === 'TMO') {
+  firstGraph = CSVToArray(TMO1M);
+  secondGraph = CSVToArray(TMO3M);
+  thirdGraph = CSVToArray(TMO6M);
+  fourthGraph = CSVToArray(TMO1Y);
+}
+if (ticker === 'TJX') {
+  firstGraph = CSVToArray(TJX1M);
+  secondGraph = CSVToArray(TJX3M);
+  thirdGraph = CSVToArray(TJX6M);
+  fourthGraph = CSVToArray(TJX1Y);
+}
+if (ticker === 'TSCO') {
+  firstGraph = CSVToArray(TSCO1M);
+  secondGraph = CSVToArray(TSCO3M);
+  thirdGraph = CSVToArray(TSCO6M);
+  fourthGraph = CSVToArray(TSCO1Y);
+}
+if (ticker === 'TT') {
+  firstGraph = CSVToArray(TT1M);
+  secondGraph = CSVToArray(TT3M);
+  thirdGraph = CSVToArray(TT6M);
+  fourthGraph = CSVToArray(TT1Y);
+}
+if (ticker === 'TDG') {
+  firstGraph = CSVToArray(TDG1M);
+  secondGraph = CSVToArray(TDG3M);
+  thirdGraph = CSVToArray(TDG6M);
+  fourthGraph = CSVToArray(TDG1Y);
+}
+if (ticker === 'TRV') {
+  firstGraph = CSVToArray(TRV1M);
+  secondGraph = CSVToArray(TRV3M);
+  thirdGraph = CSVToArray(TRV6M);
+  fourthGraph = CSVToArray(TRV1Y);
+}
+if (ticker === 'TRMB') {
+  firstGraph = CSVToArray(TRMB1M);
+  secondGraph = CSVToArray(TRMB3M);
+  thirdGraph = CSVToArray(TRMB6M);
+  fourthGraph = CSVToArray(TRMB1Y);
+}
+if (ticker === 'TFC') {
+  firstGraph = CSVToArray(TFC1M);
+  secondGraph = CSVToArray(TFC3M);
+  thirdGraph = CSVToArray(TFC6M);
+  fourthGraph = CSVToArray(TFC1Y);
+}
+if (ticker === 'TWTR') {
+  firstGraph = CSVToArray(TWTR1M);
+  secondGraph = CSVToArray(TWTR3M);
+  thirdGraph = CSVToArray(TWTR6M);
+  fourthGraph = CSVToArray(TWTR1Y);
+}
+if (ticker === 'TYL') {
+  firstGraph = CSVToArray(TYL1M);
+  secondGraph = CSVToArray(TYL3M);
+  thirdGraph = CSVToArray(TYL6M);
+  fourthGraph = CSVToArray(TYL1Y);
+}
+if (ticker === 'TSN') {
+  firstGraph = CSVToArray(TSN1M);
+  secondGraph = CSVToArray(TSN3M);
+  thirdGraph = CSVToArray(TSN6M);
+  fourthGraph = CSVToArray(TSN1Y);
+}
+if (ticker === 'UDR') {
+  firstGraph = CSVToArray(UDR1M);
+  secondGraph = CSVToArray(UDR3M);
+  thirdGraph = CSVToArray(UDR6M);
+  fourthGraph = CSVToArray(UDR1Y);
+}
+if (ticker === 'ULTA') {
+  firstGraph = CSVToArray(ULTA1M);
+  secondGraph = CSVToArray(ULTA3M);
+  thirdGraph = CSVToArray(ULTA6M);
+  fourthGraph = CSVToArray(ULTA1Y);
+}
+if (ticker === 'USB') {
+  firstGraph = CSVToArray(USB1M);
+  secondGraph = CSVToArray(USB3M);
+  thirdGraph = CSVToArray(USB6M);
+  fourthGraph = CSVToArray(USB1Y);
+}
+if (ticker === 'UAA') {
+  firstGraph = CSVToArray(UAA1M);
+  secondGraph = CSVToArray(UAA3M);
+  thirdGraph = CSVToArray(UAA6M);
+  fourthGraph = CSVToArray(UAA1Y);
+}
+if (ticker === 'UA') {
+  firstGraph = CSVToArray(UA1M);
+  secondGraph = CSVToArray(UA3M);
+  thirdGraph = CSVToArray(UA6M);
+  fourthGraph = CSVToArray(UA1Y);
+}
+if (ticker === 'UNP') {
+  firstGraph = CSVToArray(UNP1M);
+  secondGraph = CSVToArray(UNP3M);
+  thirdGraph = CSVToArray(UNP6M);
+  fourthGraph = CSVToArray(UNP1Y);
+}
+if (ticker === 'UAL') {
+  firstGraph = CSVToArray(UAL1M);
+  secondGraph = CSVToArray(UAL3M);
+  thirdGraph = CSVToArray(UAL6M);
+  fourthGraph = CSVToArray(UAL1Y);
+}
+if (ticker === 'UNH') {
+  firstGraph = CSVToArray(UNH1M);
+  secondGraph = CSVToArray(UNH3M);
+  thirdGraph = CSVToArray(UNH6M);
+  fourthGraph = CSVToArray(UNH1Y);
+}
+if (ticker === 'UPS') {
+  firstGraph = CSVToArray(UPS1M);
+  secondGraph = CSVToArray(UPS3M);
+  thirdGraph = CSVToArray(UPS6M);
+  fourthGraph = CSVToArray(UPS1Y);
+}
+if (ticker === 'URI') {
+  firstGraph = CSVToArray(URI1M);
+  secondGraph = CSVToArray(URI3M);
+  thirdGraph = CSVToArray(URI6M);
+  fourthGraph = CSVToArray(URI1Y);
+}
+if (ticker === 'UHS') {
+  firstGraph = CSVToArray(UHS1M);
+  secondGraph = CSVToArray(UHS3M);
+  thirdGraph = CSVToArray(UHS6M);
+  fourthGraph = CSVToArray(UHS1Y);
+}
+if (ticker === 'UNM') {
+  firstGraph = CSVToArray(UNM1M);
+  secondGraph = CSVToArray(UNM3M);
+  thirdGraph = CSVToArray(UNM6M);
+  fourthGraph = CSVToArray(UNM1Y);
+}
+if (ticker === 'VLO') {
+  firstGraph = CSVToArray(VLO1M);
+  secondGraph = CSVToArray(VLO3M);
+  thirdGraph = CSVToArray(VLO6M);
+  fourthGraph = CSVToArray(VLO1Y);
+}
+if (ticker === 'VAR') {
+  firstGraph = CSVToArray(VAR1M);
+  secondGraph = CSVToArray(VAR3M);
+  thirdGraph = CSVToArray(VAR6M);
+  fourthGraph = CSVToArray(VAR1Y);
+}
+if (ticker === 'VTR') {
+  firstGraph = CSVToArray(VTR1M);
+  secondGraph = CSVToArray(VTR3M);
+  thirdGraph = CSVToArray(VTR6M);
+  fourthGraph = CSVToArray(VTR1Y);
+}
+if (ticker === 'VRSN') {
+  firstGraph = CSVToArray(VRSN1M);
+  secondGraph = CSVToArray(VRSN3M);
+  thirdGraph = CSVToArray(VRSN6M);
+  fourthGraph = CSVToArray(VRSN1Y);
+}
+if (ticker === 'VRSK') {
+  firstGraph = CSVToArray(VRSK1M);
+  secondGraph = CSVToArray(VRSK3M);
+  thirdGraph = CSVToArray(VRSK6M);
+  fourthGraph = CSVToArray(VRSK1Y);
+}
+if (ticker === 'VZ') {
+  firstGraph = CSVToArray(VZ1M);
+  secondGraph = CSVToArray(VZ3M);
+  thirdGraph = CSVToArray(VZ6M);
+  fourthGraph = CSVToArray(VZ1Y);
+}
+if (ticker === 'VRTX') {
+  firstGraph = CSVToArray(VRTX1M);
+  secondGraph = CSVToArray(VRTX3M);
+  thirdGraph = CSVToArray(VRTX6M);
+  fourthGraph = CSVToArray(VRTX1Y);
+}
+if (ticker === 'VFC') {
+  firstGraph = CSVToArray(VFC1M);
+  secondGraph = CSVToArray(VFC3M);
+  thirdGraph = CSVToArray(VFC6M);
+  fourthGraph = CSVToArray(VFC1Y);
+}
+if (ticker === 'VIAC') {
+  firstGraph = CSVToArray(VIAC1M);
+  secondGraph = CSVToArray(VIAC3M);
+  thirdGraph = CSVToArray(VIAC6M);
+  fourthGraph = CSVToArray(VIAC1Y);
+}
+if (ticker === 'VTRS') {
+  firstGraph = CSVToArray(VTRS1M);
+  secondGraph = CSVToArray(VTRS3M);
+  thirdGraph = CSVToArray(VTRS6M);
+  fourthGraph = CSVToArray(VTRS1Y);
+}
+if (ticker === 'V') {
+  firstGraph = CSVToArray(V1M);
+  secondGraph = CSVToArray(V3M);
+  thirdGraph = CSVToArray(V6M);
+  fourthGraph = CSVToArray(V1Y);
+}
+if (ticker === 'VNT') {
+  firstGraph = CSVToArray(VNT1M);
+  secondGraph = CSVToArray(VNT3M);
+  thirdGraph = CSVToArray(VNT6M);
+  fourthGraph = CSVToArray(VNT1Y);
+}
+if (ticker === 'VNO') {
+  firstGraph = CSVToArray(VNO1M);
+  secondGraph = CSVToArray(VNO3M);
+  thirdGraph = CSVToArray(VNO6M);
+  fourthGraph = CSVToArray(VNO1Y);
+}
+if (ticker === 'VMC') {
+  firstGraph = CSVToArray(VMC1M);
+  secondGraph = CSVToArray(VMC3M);
+  thirdGraph = CSVToArray(VMC6M);
+  fourthGraph = CSVToArray(VMC1Y);
+}
+if (ticker === 'WRB') {
+  firstGraph = CSVToArray(WRB1M);
+  secondGraph = CSVToArray(WRB3M);
+  thirdGraph = CSVToArray(WRB6M);
+  fourthGraph = CSVToArray(WRB1Y);
+}
+if (ticker === 'WAB') {
+  firstGraph = CSVToArray(WAB1M);
+  secondGraph = CSVToArray(WAB3M);
+  thirdGraph = CSVToArray(WAB6M);
+  fourthGraph = CSVToArray(WAB1Y);
+}
+if (ticker === 'WMT') {
+  firstGraph = CSVToArray(WMT1M);
+  secondGraph = CSVToArray(WMT3M);
+  thirdGraph = CSVToArray(WMT6M);
+  fourthGraph = CSVToArray(WMT1Y);
+}
+if (ticker === 'WBA') {
+  firstGraph = CSVToArray(WBA1M);
+  secondGraph = CSVToArray(WBA3M);
+  thirdGraph = CSVToArray(WBA6M);
+  fourthGraph = CSVToArray(WBA1Y);
+}
+if (ticker === 'DIS') {
+  firstGraph = CSVToArray(DIS1M);
+  secondGraph = CSVToArray(DIS3M);
+  thirdGraph = CSVToArray(DIS6M);
+  fourthGraph = CSVToArray(DIS1Y);
+}
+if (ticker === 'WM') {
+  firstGraph = CSVToArray(WM1M);
+  secondGraph = CSVToArray(WM3M);
+  thirdGraph = CSVToArray(WM6M);
+  fourthGraph = CSVToArray(WM1Y);
+}
+if (ticker === 'WAT') {
+  firstGraph = CSVToArray(WAT1M);
+  secondGraph = CSVToArray(WAT3M);
+  thirdGraph = CSVToArray(WAT6M);
+  fourthGraph = CSVToArray(WAT1Y);
+}
+if (ticker === 'WEC') {
+  firstGraph = CSVToArray(WEC1M);
+  secondGraph = CSVToArray(WEC3M);
+  thirdGraph = CSVToArray(WEC6M);
+  fourthGraph = CSVToArray(WEC1Y);
+}
+if (ticker === 'WFC') {
+  firstGraph = CSVToArray(WFC1M);
+  secondGraph = CSVToArray(WFC3M);
+  thirdGraph = CSVToArray(WFC6M);
+  fourthGraph = CSVToArray(WFC1Y);
+}
+if (ticker === 'WELL') {
+  firstGraph = CSVToArray(WELL1M);
+  secondGraph = CSVToArray(WELL3M);
+  thirdGraph = CSVToArray(WELL6M);
+  fourthGraph = CSVToArray(WELL1Y);
+}
+if (ticker === 'WST') {
+  firstGraph = CSVToArray(WST1M);
+  secondGraph = CSVToArray(WST3M);
+  thirdGraph = CSVToArray(WST6M);
+  fourthGraph = CSVToArray(WST1Y);
+}
+if (ticker === 'WDC') {
+  firstGraph = CSVToArray(WDC1M);
+  secondGraph = CSVToArray(WDC3M);
+  thirdGraph = CSVToArray(WDC6M);
+  fourthGraph = CSVToArray(WDC1Y);
+}
+if (ticker === 'WU') {
+  firstGraph = CSVToArray(WU1M);
+  secondGraph = CSVToArray(WU3M);
+  thirdGraph = CSVToArray(WU6M);
+  fourthGraph = CSVToArray(WU1Y);
+}
+if (ticker === 'WRK') {
+  firstGraph = CSVToArray(WRK1M);
+  secondGraph = CSVToArray(WRK3M);
+  thirdGraph = CSVToArray(WRK6M);
+  fourthGraph = CSVToArray(WRK1Y);
+}
+if (ticker === 'WY') {
+  firstGraph = CSVToArray(WY1M);
+  secondGraph = CSVToArray(WY3M);
+  thirdGraph = CSVToArray(WY6M);
+  fourthGraph = CSVToArray(WY1Y);
+}
+if (ticker === 'WHR') {
+  firstGraph = CSVToArray(WHR1M);
+  secondGraph = CSVToArray(WHR3M);
+  thirdGraph = CSVToArray(WHR6M);
+  fourthGraph = CSVToArray(WHR1Y);
+}
+if (ticker === 'WMB') {
+  firstGraph = CSVToArray(WMB1M);
+  secondGraph = CSVToArray(WMB3M);
+  thirdGraph = CSVToArray(WMB6M);
+  fourthGraph = CSVToArray(WMB1Y);
+}
+if (ticker === 'WLTW') {
+  firstGraph = CSVToArray(WLTW1M);
+  secondGraph = CSVToArray(WLTW3M);
+  thirdGraph = CSVToArray(WLTW6M);
+  fourthGraph = CSVToArray(WLTW1Y);
+}
+if (ticker === 'WYNN') {
+  firstGraph = CSVToArray(WYNN1M);
+  secondGraph = CSVToArray(WYNN3M);
+  thirdGraph = CSVToArray(WYNN6M);
+  fourthGraph = CSVToArray(WYNN1Y);
+}
+if (ticker === 'XEL') {
+  firstGraph = CSVToArray(XEL1M);
+  secondGraph = CSVToArray(XEL3M);
+  thirdGraph = CSVToArray(XEL6M);
+  fourthGraph = CSVToArray(XEL1Y);
+}
+if (ticker === 'XRX') {
+  firstGraph = CSVToArray(XRX1M);
+  secondGraph = CSVToArray(XRX3M);
+  thirdGraph = CSVToArray(XRX6M);
+  fourthGraph = CSVToArray(XRX1Y);
+}
+if (ticker === 'XLNX') {
+  firstGraph = CSVToArray(XLNX1M);
+  secondGraph = CSVToArray(XLNX3M);
+  thirdGraph = CSVToArray(XLNX6M);
+  fourthGraph = CSVToArray(XLNX1Y);
+}
+if (ticker === 'XYL') {
+  firstGraph = CSVToArray(XYL1M);
+  secondGraph = CSVToArray(XYL3M);
+  thirdGraph = CSVToArray(XYL6M);
+  fourthGraph = CSVToArray(XYL1Y);
+}
+if (ticker === 'YUM') {
+  firstGraph = CSVToArray(YUM1M);
+  secondGraph = CSVToArray(YUM3M);
+  thirdGraph = CSVToArray(YUM6M);
+  fourthGraph = CSVToArray(YUM1Y);
+}
+if (ticker === 'ZBRA') {
+  firstGraph = CSVToArray(ZBRA1M);
+  secondGraph = CSVToArray(ZBRA3M);
+  thirdGraph = CSVToArray(ZBRA6M);
+  fourthGraph = CSVToArray(ZBRA1Y);
+}
+if (ticker === 'ZBH') {
+  firstGraph = CSVToArray(ZBH1M);
+  secondGraph = CSVToArray(ZBH3M);
+  thirdGraph = CSVToArray(ZBH6M);
+  fourthGraph = CSVToArray(ZBH1Y);
+}
+if (ticker === 'ZION') {
+  firstGraph = CSVToArray(ZION1M);
+  secondGraph = CSVToArray(ZION3M);
+  thirdGraph = CSVToArray(ZION6M);
+  fourthGraph = CSVToArray(ZION1Y);
+}
+if (ticker === 'ZTS') {
+  firstGraph = CSVToArray(ZTS1M);
+  secondGraph = CSVToArray(ZTS3M);
+  thirdGraph = CSVToArray(ZTS6M);
+  fourthGraph = CSVToArray(ZTS1Y);
+}
 
 class Graph extends React.Component {
   constructor() {
