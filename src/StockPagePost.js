@@ -2034,7 +2034,7 @@ const thirdGraph = CSVToArray(MMM6M);
 const fourthGraph = CSVToArray(MMM1Y);
 
 class Graph extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {graph: firstGraph}
   }
@@ -2047,6 +2047,14 @@ class Graph extends React.Component {
   render() {
     return (
       <div className="row">
+        <h1>{ticker}</h1>
+        <h1>Current Price: {this.state.graph[this.state.graph.length - 1]}</h1>
+        <h2>
+        <Button variant="contained" color="secondary">Follow</Button>
+        <Button variant="contained" color="secondary">Bearish</Button>
+        <Button variant="contained" color="secondary">Neutral</Button>
+        <Button variant="contained" color="secondary">Bullish</Button>
+        </h2>
         <Button color="primary" onClick={() => {this.onClick1()}} >1 month</Button>   
         <Button color="primary" onClick={() => {this.onClick2()}} >3 months</Button> 
         <Button color="primary" onClick={() => {this.onClick3()}} >6 months</Button>   
