@@ -515,6 +515,8 @@ const miniGraph = CSVToArray(MMM);
 
 const MiniGraph = () => {
   return (
+    <h1>{ticker}</h1>
+     <h1>Current Price: {this.state.graph[this.state.graph.length - 1]}</h1>
     <VictoryChart width='600' height='300'>
     <VictoryLine data={miniGraph} x='Date' y='Price' />
     </VictoryChart>
