@@ -511,12 +511,1530 @@ function CSVToArray(csv) {
   return lines.splice(1, lines.length)
 }
 
-const miniGraph = CSVToArray(MMM);
+const ticker = 'MMM';
+
+var miniGraph = CSVToArray(MMM);
+
+if (ticker === 'MMM') {
+  miniGraph = CSVToArray(MMM);
+}
+if (ticker === 'ABT') {
+  miniGraph = CSVToArray(ABT);
+}
+if (ticker === 'ABBV') {
+  miniGraph = CSVToArray(ABBV);
+}
+if (ticker === 'ABMD') {
+  miniGraph = CSVToArray(ABMD);
+}
+if (ticker === 'ACN') {
+  miniGraph = CSVToArray(ACN);
+}
+if (ticker === 'ATVI') {
+  miniGraph = CSVToArray(ATVI);
+}
+if (ticker === 'ADBE') {
+  miniGraph = CSVToArray(ADBE);
+}
+if (ticker === 'AMD') {
+  miniGraph = CSVToArray(AMD);
+}
+if (ticker === 'AAP') {
+  miniGraph = CSVToArray(AAP);
+}
+if (ticker === 'AES') {
+  miniGraph = CSVToArray(AES);
+}
+if (ticker === 'AFL') {
+  miniGraph = CSVToArray(AFL);
+}
+if (ticker === 'A') {
+  miniGraph = CSVToArray(A);
+}
+if (ticker === 'APD') {
+  miniGraph = CSVToArray(APD);
+}
+if (ticker === 'AKAM') {
+  miniGraph = CSVToArray(AKAM);
+}
+if (ticker === 'ALK') {
+  miniGraph = CSVToArray(ALK);
+}
+if (ticker === 'ALB') {
+  miniGraph = CSVToArray(ALB);
+}
+if (ticker === 'ARE') {
+  miniGraph = CSVToArray(ARE);
+}
+if (ticker === 'ALXN') {
+  miniGraph = CSVToArray(ALXN);
+}
+if (ticker === 'ALGN') {
+  miniGraph = CSVToArray(ALGN);
+}
+if (ticker === 'ALLE') {
+  miniGraph = CSVToArray(ALLE);
+}
+if (ticker === 'LNT') {
+  miniGraph = CSVToArray(LNT);
+}
+if (ticker === 'ALL') {
+  miniGraph = CSVToArray(ALL);
+}
+if (ticker === 'GOOGL') {
+  miniGraph = CSVToArray(GOOGL);
+}
+if (ticker === 'GOOG') {
+  miniGraph = CSVToArray(GOOG);
+}
+if (ticker === 'MO') {
+  miniGraph = CSVToArray(MO);
+}
+if (ticker === 'AMZN') {
+  miniGraph = CSVToArray(AMZN);
+}
+if (ticker === 'AMCR') {
+  miniGraph = CSVToArray(AMCR);
+}
+if (ticker === 'AEE') {
+  miniGraph = CSVToArray(AEE);
+}
+if (ticker === 'AAL') {
+  miniGraph = CSVToArray(AAL);
+}
+if (ticker === 'AEP') {
+  miniGraph = CSVToArray(AEP);
+}
+if (ticker === 'AXP') {
+  miniGraph = CSVToArray(AXP);
+}
+if (ticker === 'AIG') {
+  miniGraph = CSVToArray(AIG);
+}
+if (ticker === 'AMT') {
+  miniGraph = CSVToArray(AMT);
+}
+if (ticker === 'AWK') {
+  miniGraph = CSVToArray(AWK);
+}
+if (ticker === 'AMP') {
+  miniGraph = CSVToArray(AMP);
+}
+if (ticker === 'ABC') {
+  miniGraph = CSVToArray(ABC);
+}
+if (ticker === 'AME') {
+  miniGraph = CSVToArray(AME);
+}
+if (ticker === 'AMGN') {
+  miniGraph = CSVToArray(AMGN);
+}
+if (ticker === 'APH') {
+  miniGraph = CSVToArray(APH);
+}
+if (ticker === 'ADI') {
+  miniGraph = CSVToArray(ADI);
+}
+if (ticker === 'ANSS') {
+  miniGraph = CSVToArray(ANSS);
+}
+if (ticker === 'ANTM') {
+  miniGraph = CSVToArray(ANTM);
+}
+if (ticker === 'AON') {
+  miniGraph = CSVToArray(AON);
+}
+if (ticker === 'AOS') {
+  miniGraph = CSVToArray(AOS);
+}
+if (ticker === 'APA') {
+  miniGraph = CSVToArray(APA);
+}
+if (ticker === 'AAPL') {
+  miniGraph = CSVToArray(AAPL);
+}
+if (ticker === 'AMAT') {
+  miniGraph = CSVToArray(AMAT);
+}
+if (ticker === 'APTV') {
+  miniGraph = CSVToArray(APTV);
+}
+if (ticker === 'ADM') {
+  miniGraph = CSVToArray(ADM);
+}
+if (ticker === 'ANET') {
+  miniGraph = CSVToArray(ANET);
+}
+if (ticker === 'AJG') {
+  miniGraph = CSVToArray(AJG);
+}
+if (ticker === 'AIZ') {
+  miniGraph = CSVToArray(AIZ);
+}
+if (ticker === 'T') {
+  miniGraph = CSVToArray(T);
+}
+if (ticker === 'ATO') {
+  miniGraph = CSVToArray(ATO);
+}
+if (ticker === 'ADSK') {
+  miniGraph = CSVToArray(ADSK);
+}
+if (ticker === 'ADP') {
+  miniGraph = CSVToArray(ADP);
+}
+if (ticker === 'AZO') {
+  miniGraph = CSVToArray(AZO);
+}
+if (ticker === 'AVB') {
+  miniGraph = CSVToArray(AVB);
+}
+if (ticker === 'AVY') {
+  miniGraph = CSVToArray(AVY);
+}
+if (ticker === 'BKR') {
+  miniGraph = CSVToArray(BKR);
+}
+if (ticker === 'BLL') {
+  miniGraph = CSVToArray(BLL);
+}
+if (ticker === 'BAC') {
+  miniGraph = CSVToArray(BAC);
+}
+if (ticker === 'BK') {
+  miniGraph = CSVToArray(BK);
+}
+if (ticker === 'BAX') {
+  miniGraph = CSVToArray(BAX);
+}
+if (ticker === 'BDX') {
+  miniGraph = CSVToArray(BDX);
+}
+if (ticker === 'BRK.B') {
+  miniGraph = CSVToArray(BRK.B);
+}
+if (ticker === 'BBY') {
+  miniGraph = CSVToArray(BBY);
+}
+if (ticker === 'BIO') {
+  miniGraph = CSVToArray(BIO);
+}
+if (ticker === 'BIIB') {
+  miniGraph = CSVToArray(BIIB);
+}
+if (ticker === 'BLK') {
+  miniGraph = CSVToArray(BLK);
+}
+if (ticker === 'BA') {
+  miniGraph = CSVToArray(BA);
+}
+if (ticker === 'BKNG') {
+  miniGraph = CSVToArray(BKNG);
+}
+if (ticker === 'BWA') {
+  miniGraph = CSVToArray(BWA);
+}
+if (ticker === 'BXP') {
+  miniGraph = CSVToArray(BXP);
+}
+if (ticker === 'BSX') {
+  miniGraph = CSVToArray(BSX);
+}
+if (ticker === 'BMY') {
+  miniGraph = CSVToArray(BMY);
+}
+if (ticker === 'AVGO') {
+  miniGraph = CSVToArray(AVGO);
+}
+if (ticker === 'BR') {
+  miniGraph = CSVToArray(BR);
+}
+if (ticker === 'BF.B') {
+  miniGraph = CSVToArray(BF.B);
+}
+if (ticker === 'CHRW') {
+  miniGraph = CSVToArray(CHRW);
+}
+if (ticker === 'COG') {
+  miniGraph = CSVToArray(COG);
+}
+if (ticker === 'CDNS') {
+  miniGraph = CSVToArray(CDNS);
+}
+if (ticker === 'CPB') {
+  miniGraph = CSVToArray(CPB);
+}
+if (ticker === 'COF') {
+  miniGraph = CSVToArray(COF);
+}
+if (ticker === 'CAH') {
+  miniGraph = CSVToArray(CAH);
+}
+if (ticker === 'KMX') {
+  miniGraph = CSVToArray(KMX);
+}
+if (ticker === 'CCL') {
+  miniGraph = CSVToArray(CCL);
+}
+if (ticker === 'CARR') {
+  miniGraph = CSVToArray(CARR);
+}
+if (ticker === 'CTLT') {
+  miniGraph = CSVToArray(CTLT);
+}
+if (ticker === 'CAT') {
+  miniGraph = CSVToArray(CAT);
+}
+if (ticker === 'CBOE') {
+  miniGraph = CSVToArray(CBOE);
+}
+if (ticker === 'CBRE') {
+  miniGraph = CSVToArray(CBRE);
+}
+if (ticker === 'CDW') {
+  miniGraph = CSVToArray(CDW);
+}
+if (ticker === 'CE') {
+  miniGraph = CSVToArray(CE);
+}
+if (ticker === 'CNC') {
+  miniGraph = CSVToArray(CNC);
+}
+if (ticker === 'CNP') {
+  miniGraph = CSVToArray(CNP);
+}
+if (ticker === 'CERN') {
+  miniGraph = CSVToArray(CERN);
+}
+if (ticker === 'CF') {
+  miniGraph = CSVToArray(CF);
+}
+if (ticker === 'SCHW') {
+  miniGraph = CSVToArray(SCHW);
+}
+if (ticker === 'CHTR') {
+  miniGraph = CSVToArray(CHTR);
+}
+if (ticker === 'CVX') {
+  miniGraph = CSVToArray(CVX);
+}
+if (ticker === 'CMG') {
+  miniGraph = CSVToArray(CMG);
+}
+if (ticker === 'CB') {
+  miniGraph = CSVToArray(CB);
+}
+if (ticker === 'CHD') {
+  miniGraph = CSVToArray(CHD);
+}
+if (ticker === 'CI') {
+  miniGraph = CSVToArray(CI);
+}
+if (ticker === 'CINF') {
+  miniGraph = CSVToArray(CINF);
+}
+if (ticker === 'CTAS') {
+  miniGraph = CSVToArray(CTAS);
+}
+if (ticker === 'CSCO') {
+  miniGraph = CSVToArray(CSCO);
+}
+if (ticker === 'C') {
+  miniGraph = CSVToArray(C);
+}
+if (ticker === 'CFG') {
+  miniGraph = CSVToArray(CFG);
+}
+if (ticker === 'CTXS') {
+  miniGraph = CSVToArray(CTXS);
+}
+if (ticker === 'CLX') {
+  miniGraph = CSVToArray(CLX);
+}
+if (ticker === 'CME') {
+  miniGraph = CSVToArray(CME);
+}
+if (ticker === 'CMS') {
+  miniGraph = CSVToArray(CMS);
+}
+if (ticker === 'KO') {
+  miniGraph = CSVToArray(KO);
+}
+if (ticker === 'CTSH') {
+  miniGraph = CSVToArray(CTSH);
+}
+if (ticker === 'CL') {
+  miniGraph = CSVToArray(CL);
+}
+if (ticker === 'CMCSA') {
+  miniGraph = CSVToArray(CMCSA);
+}
+if (ticker === 'CMA') {
+  miniGraph = CSVToArray(CMA);
+}
+if (ticker === 'CAG') {
+  miniGraph = CSVToArray(CAG);
+}
+if (ticker === 'COP') {
+  miniGraph = CSVToArray(COP);
+}
+if (ticker === 'ED') {
+  miniGraph = CSVToArray(ED);
+}
+if (ticker === 'STZ') {
+  miniGraph = CSVToArray(STZ);
+}
+if (ticker === 'COO') {
+  miniGraph = CSVToArray(COO);
+}
+if (ticker === 'CPRT') {
+  miniGraph = CSVToArray(CPRT);
+}
+if (ticker === 'GLW') {
+  miniGraph = CSVToArray(GLW);
+}
+if (ticker === 'CTVA') {
+  miniGraph = CSVToArray(CTVA);
+}
+if (ticker === 'COST') {
+  miniGraph = CSVToArray(COST);
+}
+if (ticker === 'CCI') {
+  miniGraph = CSVToArray(CCI);
+}
+if (ticker === 'CSX') {
+  miniGraph = CSVToArray(CSX);
+}
+if (ticker === 'CMI') {
+  miniGraph = CSVToArray(CMI);
+}
+if (ticker === 'CVS') {
+  miniGraph = CSVToArray(CVS);
+}
+if (ticker === 'DHI') {
+  miniGraph = CSVToArray(DHI);
+}
+if (ticker === 'DHR') {
+  miniGraph = CSVToArray(DHR);
+}
+if (ticker === 'DRI') {
+  miniGraph = CSVToArray(DRI);
+}
+if (ticker === 'DVA') {
+  miniGraph = CSVToArray(DVA);
+}
+if (ticker === 'DE') {
+  miniGraph = CSVToArray(DE);
+}
+if (ticker === 'DAL') {
+  miniGraph = CSVToArray(DAL);
+}
+if (ticker === 'XRAY') {
+  miniGraph = CSVToArray(XRAY);
+}
+if (ticker === 'DVN') {
+  miniGraph = CSVToArray(DVN);
+}
+if (ticker === 'DXCM') {
+  miniGraph = CSVToArray(DXCM);
+}
+if (ticker === 'FANG') {
+  miniGraph = CSVToArray(FANG);
+}
+if (ticker === 'DLR') {
+  miniGraph = CSVToArray(DLR);
+}
+if (ticker === 'DFS') {
+  miniGraph = CSVToArray(DFS);
+}
+if (ticker === 'DISCA') {
+  miniGraph = CSVToArray(DISCA);
+}
+if (ticker === 'DISCK') {
+  miniGraph = CSVToArray(DISCK);
+}
+if (ticker === 'DISH') {
+  miniGraph = CSVToArray(DISH);
+}
+if (ticker === 'DG') {
+  miniGraph = CSVToArray(DG);
+}
+if (ticker === 'DLTR') {
+  miniGraph = CSVToArray(DLTR);
+}
+if (ticker === 'D') {
+  miniGraph = CSVToArray(D);
+}
+if (ticker === 'DPZ') {
+  miniGraph = CSVToArray(DPZ);
+}
+if (ticker === 'DOV') {
+  miniGraph = CSVToArray(DOV);
+}
+if (ticker === 'DOW') {
+  miniGraph = CSVToArray(DOW);
+}
+if (ticker === 'DTE') {
+  miniGraph = CSVToArray(DTE);
+}
+if (ticker === 'DUK') {
+  miniGraph = CSVToArray(DUK);
+}
+if (ticker === 'DRE') {
+  miniGraph = CSVToArray(DRE);
+}
+if (ticker === 'DD') {
+  miniGraph = CSVToArray(DD);
+}
+if (ticker === 'DXC') {
+  miniGraph = CSVToArray(DXC);
+}
+if (ticker === 'EMN') {
+  miniGraph = CSVToArray(EMN);
+}
+if (ticker === 'ETN') {
+  miniGraph = CSVToArray(ETN);
+}
+if (ticker === 'EBAY') {
+  miniGraph = CSVToArray(EBAY);
+}
+if (ticker === 'ECL') {
+  miniGraph = CSVToArray(ECL);
+}
+if (ticker === 'EIX') {
+  miniGraph = CSVToArray(EIX);
+}
+if (ticker === 'EW') {
+  miniGraph = CSVToArray(EW);
+}
+if (ticker === 'EA') {
+  miniGraph = CSVToArray(EA);
+}
+if (ticker === 'EMR') {
+  miniGraph = CSVToArray(EMR);
+}
+if (ticker === 'ENPH') {
+  miniGraph = CSVToArray(ENPH);
+}
+if (ticker === 'ETR') {
+  miniGraph = CSVToArray(ETR);
+}
+if (ticker === 'EOG') {
+  miniGraph = CSVToArray(EOG);
+}
+if (ticker === 'EFX') {
+  miniGraph = CSVToArray(EFX);
+}
+if (ticker === 'EQIX') {
+  miniGraph = CSVToArray(EQIX);
+}
+if (ticker === 'EQR') {
+  miniGraph = CSVToArray(EQR);
+}
+if (ticker === 'ESS') {
+  miniGraph = CSVToArray(ESS);
+}
+if (ticker === 'EL') {
+  miniGraph = CSVToArray(EL);
+}
+if (ticker === 'ETSY') {
+  miniGraph = CSVToArray(ETSY);
+}
+if (ticker === 'EVRG') {
+  miniGraph = CSVToArray(EVRG);
+}
+if (ticker === 'ES') {
+  miniGraph = CSVToArray(ES);
+}
+if (ticker === 'RE') {
+  miniGraph = CSVToArray(RE);
+}
+if (ticker === 'EXC') {
+  miniGraph = CSVToArray(EXC);
+}
+if (ticker === 'EXPE') {
+  miniGraph = CSVToArray(EXPE);
+}
+if (ticker === 'EXPD') {
+  miniGraph = CSVToArray(EXPD);
+}
+if (ticker === 'EXR') {
+  miniGraph = CSVToArray(EXR);
+}
+if (ticker === 'XOM') {
+  miniGraph = CSVToArray(XOM);
+}
+if (ticker === 'FFIV') {
+  miniGraph = CSVToArray(FFIV);
+}
+if (ticker === 'FB') {
+  miniGraph = CSVToArray(FB);
+}
+if (ticker === 'FAST') {
+  miniGraph = CSVToArray(FAST);
+}
+if (ticker === 'FRT') {
+  miniGraph = CSVToArray(FRT);
+}
+if (ticker === 'FDX') {
+  miniGraph = CSVToArray(FDX);
+}
+if (ticker === 'FIS') {
+  miniGraph = CSVToArray(FIS);
+}
+if (ticker === 'FITB') {
+  miniGraph = CSVToArray(FITB);
+}
+if (ticker === 'FE') {
+  miniGraph = CSVToArray(FE);
+}
+if (ticker === 'FRC') {
+  miniGraph = CSVToArray(FRC);
+}
+if (ticker === 'FISV') {
+  miniGraph = CSVToArray(FISV);
+}
+if (ticker === 'FLT') {
+  miniGraph = CSVToArray(FLT);
+}
+if (ticker === 'FLIR') {
+  miniGraph = CSVToArray(FLIR);
+}
+if (ticker === 'FLS') {
+  miniGraph = CSVToArray(FLS);
+}
+if (ticker === 'FMC') {
+  miniGraph = CSVToArray(FMC);
+}
+if (ticker === 'F') {
+  miniGraph = CSVToArray(F);
+}
+if (ticker === 'FTNT') {
+  miniGraph = CSVToArray(FTNT);
+}
+if (ticker === 'FTV') {
+  miniGraph = CSVToArray(FTV);
+}
+if (ticker === 'FBHS') {
+  miniGraph = CSVToArray(FBHS);
+}
+if (ticker === 'FOXA') {
+  miniGraph = CSVToArray(FOXA);
+}
+if (ticker === 'FOX') {
+  miniGraph = CSVToArray(FOX);
+}
+if (ticker === 'BEN') {
+  miniGraph = CSVToArray(BEN);
+}
+if (ticker === 'FCX') {
+  miniGraph = CSVToArray(FCX);
+}
+if (ticker === 'GPS') {
+  miniGraph = CSVToArray(GPS);
+}
+if (ticker === 'GRMN') {
+  miniGraph = CSVToArray(GRMN);
+}
+if (ticker === 'IT') {
+  miniGraph = CSVToArray(IT);
+}
+if (ticker === 'GD') {
+  miniGraph = CSVToArray(GD);
+}
+if (ticker === 'GE') {
+  miniGraph = CSVToArray(GE);
+}
+if (ticker === 'GIS') {
+  miniGraph = CSVToArray(GIS);
+}
+if (ticker === 'GM') {
+  miniGraph = CSVToArray(GM);
+}
+if (ticker === 'GPC') {
+  miniGraph = CSVToArray(GPC);
+}
+if (ticker === 'GILD') {
+  miniGraph = CSVToArray(GILD);
+}
+if (ticker === 'GL') {
+  miniGraph = CSVToArray(GL);
+}
+if (ticker === 'GPN') {
+  miniGraph = CSVToArray(GPN);
+}
+if (ticker === 'GS') {
+  miniGraph = CSVToArray(GS);
+}
+if (ticker === 'GWW') {
+  miniGraph = CSVToArray(GWW);
+}
+if (ticker === 'HAL') {
+  miniGraph = CSVToArray(HAL);
+}
+if (ticker === 'HBI') {
+  miniGraph = CSVToArray(HBI);
+}
+if (ticker === 'HIG') {
+  miniGraph = CSVToArray(HIG);
+}
+if (ticker === 'HAS') {
+  miniGraph = CSVToArray(HAS);
+}
+if (ticker === 'HCA') {
+  miniGraph = CSVToArray(HCA);
+}
+if (ticker === 'PEAK') {
+  miniGraph = CSVToArray(PEAK);
+}
+if (ticker === 'HSIC') {
+  miniGraph = CSVToArray(HSIC);
+}
+if (ticker === 'HSY') {
+  miniGraph = CSVToArray(HSY);
+}
+if (ticker === 'HES') {
+  miniGraph = CSVToArray(HES);
+}
+if (ticker === 'HPE') {
+  miniGraph = CSVToArray(HPE);
+}
+if (ticker === 'HLT') {
+  miniGraph = CSVToArray(HLT);
+}
+if (ticker === 'HFC') {
+  miniGraph = CSVToArray(HFC);
+}
+if (ticker === 'HOLX') {
+  miniGraph = CSVToArray(HOLX);
+}
+if (ticker === 'HD') {
+  miniGraph = CSVToArray(HD);
+}
+if (ticker === 'HON') {
+  miniGraph = CSVToArray(HON);
+}
+if (ticker === 'HRL') {
+  miniGraph = CSVToArray(HRL);
+}
+if (ticker === 'HST') {
+  miniGraph = CSVToArray(HST);
+}
+if (ticker === 'HWM') {
+  miniGraph = CSVToArray(HWM);
+}
+if (ticker === 'HPQ') {
+  miniGraph = CSVToArray(HPQ);
+}
+if (ticker === 'HUM') {
+  miniGraph = CSVToArray(HUM);
+}
+if (ticker === 'HBAN') {
+  miniGraph = CSVToArray(HBAN);
+}
+if (ticker === 'HII') {
+  miniGraph = CSVToArray(HII);
+}
+if (ticker === 'IEX') {
+  miniGraph = CSVToArray(IEX);
+}
+if (ticker === 'IDXX') {
+  miniGraph = CSVToArray(IDXX);
+}
+if (ticker === 'INFO') {
+  miniGraph = CSVToArray(INFO);
+}
+if (ticker === 'ITW') {
+  miniGraph = CSVToArray(ITW);
+}
+if (ticker === 'ILMN') {
+  miniGraph = CSVToArray(ILMN);
+}
+if (ticker === 'INCY') {
+  miniGraph = CSVToArray(INCY);
+}
+if (ticker === 'IR') {
+  miniGraph = CSVToArray(IR);
+}
+if (ticker === 'INTC') {
+  miniGraph = CSVToArray(INTC);
+}
+if (ticker === 'ICE') {
+  miniGraph = CSVToArray(ICE);
+}
+if (ticker === 'IBM') {
+  miniGraph = CSVToArray(IBM);
+}
+if (ticker === 'IP') {
+  miniGraph = CSVToArray(IP);
+}
+if (ticker === 'IPG') {
+  miniGraph = CSVToArray(IPG);
+}
+if (ticker === 'IFF') {
+  miniGraph = CSVToArray(IFF);
+}
+if (ticker === 'INTU') {
+  miniGraph = CSVToArray(INTU);
+}
+if (ticker === 'ISRG') {
+  miniGraph = CSVToArray(ISRG);
+}
+if (ticker === 'IVZ') {
+  miniGraph = CSVToArray(IVZ);
+}
+if (ticker === 'IPGP') {
+  miniGraph = CSVToArray(IPGP);
+}
+if (ticker === 'IQV') {
+  miniGraph = CSVToArray(IQV);
+}
+if (ticker === 'IRM') {
+  miniGraph = CSVToArray(IRM);
+}
+if (ticker === 'JKHY') {
+  miniGraph = CSVToArray(JKHY);
+}
+if (ticker === 'J') {
+  miniGraph = CSVToArray(J);
+}
+if (ticker === 'JBHT') {
+  miniGraph = CSVToArray(JBHT);
+}
+if (ticker === 'SJM') {
+  miniGraph = CSVToArray(SJM);
+}
+if (ticker === 'JNJ') {
+  miniGraph = CSVToArray(JNJ);
+}
+if (ticker === 'JCI') {
+  miniGraph = CSVToArray(JCI);
+}
+if (ticker === 'JPM') {
+  miniGraph = CSVToArray(JPM);
+}
+if (ticker === 'JNPR') {
+  miniGraph = CSVToArray(JNPR);
+}
+if (ticker === 'KSU') {
+  miniGraph = CSVToArray(KSU);
+}
+if (ticker === 'K') {
+  miniGraph = CSVToArray(K);
+}
+if (ticker === 'KEY') {
+  miniGraph = CSVToArray(KEY);
+}
+if (ticker === 'KEYS') {
+  miniGraph = CSVToArray(KEYS);
+}
+if (ticker === 'KMB') {
+  miniGraph = CSVToArray(KMB);
+}
+if (ticker === 'KIM') {
+  miniGraph = CSVToArray(KIM);
+}
+if (ticker === 'KMI') {
+  miniGraph = CSVToArray(KMI);
+}
+if (ticker === 'KLAC') {
+  miniGraph = CSVToArray(KLAC);
+}
+if (ticker === 'KHC') {
+  miniGraph = CSVToArray(KHC);
+}
+if (ticker === 'KR') {
+  miniGraph = CSVToArray(KR);
+}
+if (ticker === 'LB') {
+  miniGraph = CSVToArray(LB);
+}
+if (ticker === 'LHX') {
+  miniGraph = CSVToArray(LHX);
+}
+if (ticker === 'LH') {
+  miniGraph = CSVToArray(LH);
+}
+if (ticker === 'LRCX') {
+  miniGraph = CSVToArray(LRCX);
+}
+if (ticker === 'LW') {
+  miniGraph = CSVToArray(LW);
+}
+if (ticker === 'LVS') {
+  miniGraph = CSVToArray(LVS);
+}
+if (ticker === 'LEG') {
+  miniGraph = CSVToArray(LEG);
+}
+if (ticker === 'LDOS') {
+  miniGraph = CSVToArray(LDOS);
+}
+if (ticker === 'LEN') {
+  miniGraph = CSVToArray(LEN);
+}
+if (ticker === 'LLY') {
+  miniGraph = CSVToArray(LLY);
+}
+if (ticker === 'LNC') {
+  miniGraph = CSVToArray(LNC);
+}
+if (ticker === 'LIN') {
+  miniGraph = CSVToArray(LIN);
+}
+if (ticker === 'LYV') {
+  miniGraph = CSVToArray(LYV);
+}
+if (ticker === 'LKQ') {
+  miniGraph = CSVToArray(LKQ);
+}
+if (ticker === 'LMT') {
+  miniGraph = CSVToArray(LMT);
+}
+if (ticker === 'L') {
+  miniGraph = CSVToArray(L);
+}
+if (ticker === 'LOW') {
+  miniGraph = CSVToArray(LOW);
+}
+if (ticker === 'LUMN') {
+  miniGraph = CSVToArray(LUMN);
+}
+if (ticker === 'LYB') {
+  miniGraph = CSVToArray(LYB);
+}
+if (ticker === 'MTB') {
+  miniGraph = CSVToArray(MTB);
+}
+if (ticker === 'MRO') {
+  miniGraph = CSVToArray(MRO);
+}
+if (ticker === 'MPC') {
+  miniGraph = CSVToArray(MPC);
+}
+if (ticker === 'MKTX') {
+  miniGraph = CSVToArray(MKTX);
+}
+if (ticker === 'MAR') {
+  miniGraph = CSVToArray(MAR);
+}
+if (ticker === 'MMC') {
+  miniGraph = CSVToArray(MMC);
+}
+if (ticker === 'MLM') {
+  miniGraph = CSVToArray(MLM);
+}
+if (ticker === 'MAS') {
+  miniGraph = CSVToArray(MAS);
+}
+if (ticker === 'MA') {
+  miniGraph = CSVToArray(MA);
+}
+if (ticker === 'MKC') {
+  miniGraph = CSVToArray(MKC);
+}
+if (ticker === 'MXIM') {
+  miniGraph = CSVToArray(MXIM);
+}
+if (ticker === 'MCD') {
+  miniGraph = CSVToArray(MCD);
+}
+if (ticker === 'MCK') {
+  miniGraph = CSVToArray(MCK);
+}
+if (ticker === 'MDT') {
+  miniGraph = CSVToArray(MDT);
+}
+if (ticker === 'MRK') {
+  miniGraph = CSVToArray(MRK);
+}
+if (ticker === 'MET') {
+  miniGraph = CSVToArray(MET);
+}
+if (ticker === 'MTD') {
+  miniGraph = CSVToArray(MTD);
+}
+if (ticker === 'MGM') {
+  miniGraph = CSVToArray(MGM);
+}
+if (ticker === 'MCHP') {
+  miniGraph = CSVToArray(MCHP);
+}
+if (ticker === 'MU') {
+  miniGraph = CSVToArray(MU);
+}
+if (ticker === 'MSFT') {
+  miniGraph = CSVToArray(MSFT);
+}
+if (ticker === 'MAA') {
+  miniGraph = CSVToArray(MAA);
+}
+if (ticker === 'MHK') {
+  miniGraph = CSVToArray(MHK);
+}
+if (ticker === 'TAP') {
+  miniGraph = CSVToArray(TAP);
+}
+if (ticker === 'MDLZ') {
+  miniGraph = CSVToArray(MDLZ);
+}
+if (ticker === 'MPWR') {
+  miniGraph = CSVToArray(MPWR);
+}
+if (ticker === 'MNST') {
+  miniGraph = CSVToArray(MNST);
+}
+if (ticker === 'MCO') {
+  miniGraph = CSVToArray(MCO);
+}
+if (ticker === 'MS') {
+  miniGraph = CSVToArray(MS);
+}
+if (ticker === 'MOS') {
+  miniGraph = CSVToArray(MOS);
+}
+if (ticker === 'MSI') {
+  miniGraph = CSVToArray(MSI);
+}
+if (ticker === 'MSCI') {
+  miniGraph = CSVToArray(MSCI);
+}
+if (ticker === 'NDAQ') {
+  miniGraph = CSVToArray(NDAQ);
+}
+if (ticker === 'NTAP') {
+  miniGraph = CSVToArray(NTAP);
+}
+if (ticker === 'NFLX') {
+  miniGraph = CSVToArray(NFLX);
+}
+if (ticker === 'NWL') {
+  miniGraph = CSVToArray(NWL);
+}
+if (ticker === 'NEM') {
+  miniGraph = CSVToArray(NEM);
+}
+if (ticker === 'NWSA') {
+  miniGraph = CSVToArray(NWSA);
+}
+if (ticker === 'NWS') {
+  miniGraph = CSVToArray(NWS);
+}
+if (ticker === 'NEE') {
+  miniGraph = CSVToArray(NEE);
+}
+if (ticker === 'NLSN') {
+  miniGraph = CSVToArray(NLSN);
+}
+if (ticker === 'NKE') {
+  miniGraph = CSVToArray(NKE);
+}
+if (ticker === 'NI') {
+  miniGraph = CSVToArray(NI);
+}
+if (ticker === 'NSC') {
+  miniGraph = CSVToArray(NSC);
+}
+if (ticker === 'NTRS') {
+  miniGraph = CSVToArray(NTRS);
+}
+if (ticker === 'NOC') {
+  miniGraph = CSVToArray(NOC);
+}
+if (ticker === 'NLOK') {
+  miniGraph = CSVToArray(NLOK);
+}
+if (ticker === 'NCLH') {
+  miniGraph = CSVToArray(NCLH);
+}
+if (ticker === 'NOV') {
+  miniGraph = CSVToArray(NOV);
+}
+if (ticker === 'NRG') {
+  miniGraph = CSVToArray(NRG);
+}
+if (ticker === 'NUE') {
+  miniGraph = CSVToArray(NUE);
+}
+if (ticker === 'NVDA') {
+  miniGraph = CSVToArray(NVDA);
+}
+if (ticker === 'NVR') {
+  miniGraph = CSVToArray(NVR);
+}
+if (ticker === 'ORLY') {
+  miniGraph = CSVToArray(ORLY);
+}
+if (ticker === 'OXY') {
+  miniGraph = CSVToArray(OXY);
+}
+if (ticker === 'ODFL') {
+  miniGraph = CSVToArray(ODFL);
+}
+if (ticker === 'OMC') {
+  miniGraph = CSVToArray(OMC);
+}
+if (ticker === 'OKE') {
+  miniGraph = CSVToArray(OKE);
+}
+if (ticker === 'ORCL') {
+  miniGraph = CSVToArray(ORCL);
+}
+if (ticker === 'OTIS') {
+  miniGraph = CSVToArray(OTIS);
+}
+if (ticker === 'PCAR') {
+  miniGraph = CSVToArray(PCAR);
+}
+if (ticker === 'PKG') {
+  miniGraph = CSVToArray(PKG);
+}
+if (ticker === 'PH') {
+  miniGraph = CSVToArray(PH);
+}
+if (ticker === 'PAYX') {
+  miniGraph = CSVToArray(PAYX);
+}
+if (ticker === 'PAYC') {
+  miniGraph = CSVToArray(PAYC);
+}
+if (ticker === 'PYPL') {
+  miniGraph = CSVToArray(PYPL);
+}
+if (ticker === 'PNR') {
+  miniGraph = CSVToArray(PNR);
+}
+if (ticker === 'PBCT') {
+  miniGraph = CSVToArray(PBCT);
+}
+if (ticker === 'PEP') {
+  miniGraph = CSVToArray(PEP);
+}
+if (ticker === 'PKI') {
+  miniGraph = CSVToArray(PKI);
+}
+if (ticker === 'PRGO') {
+  miniGraph = CSVToArray(PRGO);
+}
+if (ticker === 'PFE') {
+  miniGraph = CSVToArray(PFE);
+}
+if (ticker === 'PM') {
+  miniGraph = CSVToArray(PM);
+}
+if (ticker === 'PSX') {
+  miniGraph = CSVToArray(PSX);
+}
+if (ticker === 'PNW') {
+  miniGraph = CSVToArray(PNW);
+}
+if (ticker === 'PXD') {
+  miniGraph = CSVToArray(PXD);
+}
+if (ticker === 'PNC') {
+  miniGraph = CSVToArray(PNC);
+}
+if (ticker === 'POOL') {
+  miniGraph = CSVToArray(POOL);
+}
+if (ticker === 'PPG') {
+  miniGraph = CSVToArray(PPG);
+}
+if (ticker === 'PPL') {
+  miniGraph = CSVToArray(PPL);
+}
+if (ticker === 'PFG') {
+  miniGraph = CSVToArray(PFG);
+}
+if (ticker === 'PG') {
+  miniGraph = CSVToArray(PG);
+}
+if (ticker === 'PGR') {
+  miniGraph = CSVToArray(PGR);
+}
+if (ticker === 'PLD') {
+  miniGraph = CSVToArray(PLD);
+}
+if (ticker === 'PRU') {
+  miniGraph = CSVToArray(PRU);
+}
+if (ticker === 'PEG') {
+  miniGraph = CSVToArray(PEG);
+}
+if (ticker === 'PSA') {
+  miniGraph = CSVToArray(PSA);
+}
+if (ticker === 'PHM') {
+  miniGraph = CSVToArray(PHM);
+}
+if (ticker === 'PVH') {
+  miniGraph = CSVToArray(PVH);
+}
+if (ticker === 'QRVO') {
+  miniGraph = CSVToArray(QRVO);
+}
+if (ticker === 'PWR') {
+  miniGraph = CSVToArray(PWR);
+}
+if (ticker === 'QCOM') {
+  miniGraph = CSVToArray(QCOM);
+}
+if (ticker === 'DGX') {
+  miniGraph = CSVToArray(DGX);
+}
+if (ticker === 'RL') {
+  miniGraph = CSVToArray(RL);
+}
+if (ticker === 'RJF') {
+  miniGraph = CSVToArray(RJF);
+}
+if (ticker === 'RTX') {
+  miniGraph = CSVToArray(RTX);
+}
+if (ticker === 'O') {
+  miniGraph = CSVToArray(O);
+}
+if (ticker === 'REG') {
+  miniGraph = CSVToArray(REG);
+}
+if (ticker === 'REGN') {
+  miniGraph = CSVToArray(REGN);
+}
+if (ticker === 'RF') {
+  miniGraph = CSVToArray(RF);
+}
+if (ticker === 'RSG') {
+  miniGraph = CSVToArray(RSG);
+}
+if (ticker === 'RMD') {
+  miniGraph = CSVToArray(RMD);
+}
+if (ticker === 'RHI') {
+  miniGraph = CSVToArray(RHI);
+}
+if (ticker === 'ROK') {
+  miniGraph = CSVToArray(ROK);
+}
+if (ticker === 'ROL') {
+  miniGraph = CSVToArray(ROL);
+}
+if (ticker === 'ROP') {
+  miniGraph = CSVToArray(ROP);
+}
+if (ticker === 'ROST') {
+  miniGraph = CSVToArray(ROST);
+}
+if (ticker === 'RCL') {
+  miniGraph = CSVToArray(RCL);
+}
+if (ticker === 'SPGI') {
+  miniGraph = CSVToArray(SPGI);
+}
+if (ticker === 'CRM') {
+  miniGraph = CSVToArray(CRM);
+}
+if (ticker === 'SBAC') {
+  miniGraph = CSVToArray(SBAC);
+}
+if (ticker === 'SLB') {
+  miniGraph = CSVToArray(SLB);
+}
+if (ticker === 'STX') {
+  miniGraph = CSVToArray(STX);
+}
+if (ticker === 'SEE') {
+  miniGraph = CSVToArray(SEE);
+}
+if (ticker === 'SRE') {
+  miniGraph = CSVToArray(SRE);
+}
+if (ticker === 'NOW') {
+  miniGraph = CSVToArray(NOW);
+}
+if (ticker === 'SHW') {
+  miniGraph = CSVToArray(SHW);
+}
+if (ticker === 'SPG') {
+  miniGraph = CSVToArray(SPG);
+}
+if (ticker === 'SWKS') {
+  miniGraph = CSVToArray(SWKS);
+}
+if (ticker === 'SLG') {
+  miniGraph = CSVToArray(SLG);
+}
+if (ticker === 'SNA') {
+  miniGraph = CSVToArray(SNA);
+}
+if (ticker === 'SO') {
+  miniGraph = CSVToArray(SO);
+}
+if (ticker === 'LUV') {
+  miniGraph = CSVToArray(LUV);
+}
+if (ticker === 'SWK') {
+  miniGraph = CSVToArray(SWK);
+}
+if (ticker === 'SBUX') {
+  miniGraph = CSVToArray(SBUX);
+}
+if (ticker === 'STT') {
+  miniGraph = CSVToArray(STT);
+}
+if (ticker === 'STE') {
+  miniGraph = CSVToArray(STE);
+}
+if (ticker === 'SYK') {
+  miniGraph = CSVToArray(SYK);
+}
+if (ticker === 'SIVB') {
+  miniGraph = CSVToArray(SIVB);
+}
+if (ticker === 'SYF') {
+  miniGraph = CSVToArray(SYF);
+}
+if (ticker === 'SNPS') {
+  miniGraph = CSVToArray(SNPS);
+}
+if (ticker === 'SYY') {
+  miniGraph = CSVToArray(SYY);
+}
+if (ticker === 'TMUS') {
+  miniGraph = CSVToArray(TMUS);
+}
+if (ticker === 'TROW') {
+  miniGraph = CSVToArray(TROW);
+}
+if (ticker === 'TTWO') {
+  miniGraph = CSVToArray(TTWO);
+}
+if (ticker === 'TPR') {
+  miniGraph = CSVToArray(TPR);
+}
+if (ticker === 'TGT') {
+  miniGraph = CSVToArray(TGT);
+}
+if (ticker === 'TEL') {
+  miniGraph = CSVToArray(TEL);
+}
+if (ticker === 'TDY') {
+  miniGraph = CSVToArray(TDY);
+}
+if (ticker === 'TFX') {
+  miniGraph = CSVToArray(TFX);
+}
+if (ticker === 'TER') {
+  miniGraph = CSVToArray(TER);
+}
+if (ticker === 'TSLA') {
+  miniGraph = CSVToArray(TSLA);
+}
+if (ticker === 'TXN') {
+  miniGraph = CSVToArray(TXN);
+}
+if (ticker === 'TXT') {
+  miniGraph = CSVToArray(TXT);
+}
+if (ticker === 'TMO') {
+  miniGraph = CSVToArray(TMO);
+}
+if (ticker === 'TJX') {
+  miniGraph = CSVToArray(TJX);
+}
+if (ticker === 'TSCO') {
+  miniGraph = CSVToArray(TSCO);
+}
+if (ticker === 'TT') {
+  miniGraph = CSVToArray(TT);
+}
+if (ticker === 'TDG') {
+  miniGraph = CSVToArray(TDG);
+}
+if (ticker === 'TRV') {
+  miniGraph = CSVToArray(TRV);
+}
+if (ticker === 'TRMB') {
+  miniGraph = CSVToArray(TRMB);
+}
+if (ticker === 'TFC') {
+  miniGraph = CSVToArray(TFC);
+}
+if (ticker === 'TWTR') {
+  miniGraph = CSVToArray(TWTR);
+}
+if (ticker === 'TYL') {
+  miniGraph = CSVToArray(TYL);
+}
+if (ticker === 'TSN') {
+  miniGraph = CSVToArray(TSN);
+}
+if (ticker === 'UDR') {
+  miniGraph = CSVToArray(UDR);
+}
+if (ticker === 'ULTA') {
+  miniGraph = CSVToArray(ULTA);
+}
+if (ticker === 'USB') {
+  miniGraph = CSVToArray(USB);
+}
+if (ticker === 'UAA') {
+  miniGraph = CSVToArray(UAA);
+}
+if (ticker === 'UA') {
+  miniGraph = CSVToArray(UA);
+}
+if (ticker === 'UNP') {
+  miniGraph = CSVToArray(UNP);
+}
+if (ticker === 'UAL') {
+  miniGraph = CSVToArray(UAL);
+}
+if (ticker === 'UNH') {
+  miniGraph = CSVToArray(UNH);
+}
+if (ticker === 'UPS') {
+  miniGraph = CSVToArray(UPS);
+}
+if (ticker === 'URI') {
+  miniGraph = CSVToArray(URI);
+}
+if (ticker === 'UHS') {
+  miniGraph = CSVToArray(UHS);
+}
+if (ticker === 'UNM') {
+  miniGraph = CSVToArray(UNM);
+}
+if (ticker === 'VLO') {
+  miniGraph = CSVToArray(VLO);
+}
+if (ticker === 'VAR') {
+  miniGraph = CSVToArray(VAR);
+}
+if (ticker === 'VTR') {
+  miniGraph = CSVToArray(VTR);
+}
+if (ticker === 'VRSN') {
+  miniGraph = CSVToArray(VRSN);
+}
+if (ticker === 'VRSK') {
+  miniGraph = CSVToArray(VRSK);
+}
+if (ticker === 'VZ') {
+  miniGraph = CSVToArray(VZ);
+}
+if (ticker === 'VRTX') {
+  miniGraph = CSVToArray(VRTX);
+}
+if (ticker === 'VFC') {
+  miniGraph = CSVToArray(VFC);
+}
+if (ticker === 'VIAC') {
+  miniGraph = CSVToArray(VIAC);
+}
+if (ticker === 'VTRS') {
+  miniGraph = CSVToArray(VTRS);
+}
+if (ticker === 'V') {
+  miniGraph = CSVToArray(V);
+}
+if (ticker === 'VNT') {
+  miniGraph = CSVToArray(VNT);
+}
+if (ticker === 'VNO') {
+  miniGraph = CSVToArray(VNO);
+}
+if (ticker === 'VMC') {
+  miniGraph = CSVToArray(VMC);
+}
+if (ticker === 'WRB') {
+  miniGraph = CSVToArray(WRB);
+}
+if (ticker === 'WAB') {
+  miniGraph = CSVToArray(WAB);
+}
+if (ticker === 'WMT') {
+  miniGraph = CSVToArray(WMT);
+}
+if (ticker === 'WBA') {
+  miniGraph = CSVToArray(WBA);
+}
+if (ticker === 'DIS') {
+  miniGraph = CSVToArray(DIS);
+}
+if (ticker === 'WM') {
+  miniGraph = CSVToArray(WM);
+}
+if (ticker === 'WAT') {
+  miniGraph = CSVToArray(WAT);
+}
+if (ticker === 'WEC') {
+  miniGraph = CSVToArray(WEC);
+}
+if (ticker === 'WFC') {
+  miniGraph = CSVToArray(WFC);
+}
+if (ticker === 'WELL') {
+  miniGraph = CSVToArray(WELL);
+}
+if (ticker === 'WST') {
+  miniGraph = CSVToArray(WST);
+}
+if (ticker === 'WDC') {
+  miniGraph = CSVToArray(WDC);
+}
+if (ticker === 'WU') {
+  miniGraph = CSVToArray(WU);
+}
+if (ticker === 'WRK') {
+  miniGraph = CSVToArray(WRK);
+}
+if (ticker === 'WY') {
+  miniGraph = CSVToArray(WY);
+}
+if (ticker === 'WHR') {
+  miniGraph = CSVToArray(WHR);
+}
+if (ticker === 'WMB') {
+  miniGraph = CSVToArray(WMB);
+}
+if (ticker === 'WLTW') {
+  miniGraph = CSVToArray(WLTW);
+}
+if (ticker === 'WYNN') {
+  miniGraph = CSVToArray(WYNN);
+}
+if (ticker === 'XEL') {
+  miniGraph = CSVToArray(XEL);
+}
+if (ticker === 'XRX') {
+  miniGraph = CSVToArray(XRX);
+}
+if (ticker === 'XLNX') {
+  miniGraph = CSVToArray(XLNX);
+}
+if (ticker === 'XYL') {
+  miniGraph = CSVToArray(XYL);
+}
+if (ticker === 'YUM') {
+  miniGraph = CSVToArray(YUM);
+}
+if (ticker === 'ZBRA') {
+  miniGraph = CSVToArray(ZBRA);
+}
+if (ticker === 'ZBH') {
+  miniGraph = CSVToArray(ZBH);
+}
+if (ticker === 'ZION') {
+  miniGraph = CSVToArray(ZION);
+}
+if (ticker === 'ZTS') {
+  miniGraph = CSVToArray(ZTS);
+}
 
 const MiniGraph = () => {
   return (
     <h1>{ticker}</h1>
-     <h1>Current Price: {this.state.graph[this.state.graph.length - 1]}</h1>
+     <h1>Current Price: {miniGraph[miniGraph.length - 1]}</h1>
     <VictoryChart width='600' height='300'>
     <VictoryLine data={miniGraph} x='Date' y='Price' />
     </VictoryChart>
