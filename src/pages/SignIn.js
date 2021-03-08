@@ -22,7 +22,7 @@ export default function SignIn() {
     setPasswordErr('');
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     // preventing default submit
     e.preventDefault()
     
@@ -34,7 +34,7 @@ export default function SignIn() {
     setLoading(true)
 
     // call Sign in function
-    const loginCase = signIn(email, password)
+    const loginCase = await signIn(email, password)    
 
     setLoading(false)
     switch(loginCase)

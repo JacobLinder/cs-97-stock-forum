@@ -7,6 +7,7 @@ import Homepage from "./Homepage";
 export default function SignUp() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [userName, setUserName] = useState("")
   const [passwordConfirm, setPasswordConfirm] = useState("")
   const [loading, setLoading] = useState(false)
   const [emailErr, setEmailErr] = useState("")
@@ -20,7 +21,7 @@ export default function SignUp() {
     setPasswordCErr('');
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     // preventing default submit
     e.preventDefault()
     
@@ -39,7 +40,9 @@ export default function SignUp() {
 
     setLoading(true)
 
-    const signUpCase = createAccount(email, password)
+    const signUpCase = await createAccount(userName, email, password)
+
+    console.log(signUpCase);
 
     setLoading(false)
     switch(signUpCase)
@@ -65,6 +68,17 @@ export default function SignUp() {
             Sign Up
           </h2>
           <Form onSubmit={handleSubmit}>
+          <Form.Group id="username">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="username"
+                required
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                autoFocus
+              />
+              <p className="errorMsg" style={{color: "red"}}>{emailErr}</p>
+            </Form.Group>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -72,7 +86,6 @@ export default function SignUp() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                autoFocus
               />
               <p className="errorMsg" style={{color: "red"}}>{emailErr}</p>
             </Form.Group>
