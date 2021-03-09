@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom";
-import { VictoryLine, VictoryChart } from "victory";
+import { VictoryLine, VictoryChart, VictoryPie } from "victory";
 import React from "react";
 import Button from "@material-ui/core/Button";
+import "./functions/stock-interactions.js";
 import MMM1M from "./1m_data/MMM.csv";
 import MMM3M from "./3m_data/MMM.csv";
 import MMM6M from "./6m_data/MMM.csv";
@@ -2029,6 +2030,8 @@ function CSVToArray(csv) {
 }
 
 const ticker = 'MMM';
+
+var stockSentiment = getSentimentHistory(ticker);
 
 var firstGraph = CSVToArray(MMM1M);
 var secondGraph = CSVToArray(MMM3M);
@@ -5157,9 +5160,14 @@ class Graph extends React.Component {
         <Button color="primary" onClick={() => {this.onClick2()}} >3 months</Button> 
         <Button color="primary" onClick={() => {this.onClick3()}} >6 months</Button>   
         <Button color="primary" onClick={() => {this.onClick4()}} >1 year</Button>
-     {<VictoryChart width='1000' height='500'>
+    <VictoryChart width='1000' height='500'>
     <VictoryLine data={this.state.graph} x='Date' y='Price' />
-    </VictoryChart>}                                
+    </VictoryChart>       
+    <VictoryPie data={[
+    { x: "bullish", y: stockSentiment.bullish },
+    { x: "neutral", y: stockSentiment.neutral },
+    { x: "bearish", y: stockSentiment.bearish }
+    ]} />
     </div>
     )
   }
