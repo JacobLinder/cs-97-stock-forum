@@ -5078,15 +5078,80 @@ class Graph extends React.Component {
   onClick4 = () => { this.setState({graph: fourthGraph}) }
   
   render() {
+    const style1 = {
+      height: "50px",
+      width: "100%",
+      color: "white",
+      backgroundColor: "coral",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style2 = {
+      height: "30px",
+      width: "20%",
+      color: "black",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style3 = {
+      color: "white",
+      backgroundColor: "DodgerBlue",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style4 = {
+      color: "white",
+      backgroundColor: "red",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style5 = {
+      color: "white",
+      backgroundColor: "grey",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style6 = {
+      color: "white",
+      backgroundColor: "green",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style7 = {
+      color: "red",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style8 = {
+      color: "green",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    var difference;
+    var price;
+    var percentChange;
+    var style;
+    if ((this.state.graph[this.state.graph.length - 1] - this.state.graph[this.state.graph.length - 2]) > 0) {
+      difference = "+" + (this.state.graph[this.state.graph.length - 1] - this.state.graph[this.state.graph.length - 2]).toFixed(2).toString();
+      percentChange = "+" + ((this.state.graph[this.state.graph.length - 1] - this.state.graph[this.state.graph.length - 2]) * 100 / this.state.graph[this.state.graph.length - 2]).toFixed(2).toString();
+      style = style8;
+    }
+    else {
+      difference = "" + (this.state.graph[this.state.graph.length - 1] - this.state.graph[this.state.graph.length - 2]).toFixed(2).toString();
+      percentChange = "" + ((this.state.graph[this.state.graph.length - 1] - this.state.graph[this.state.graph.length - 2]) * 100 / this.state.graph[this.state.graph.length - 2]).toFixed(2).toString();
+      style = style7;
+    }
+    price = (parseFloat(this.state.graph[this.state.graph.length - 1])).toFixed(2);
     return (
       <div className="row">
-        <h1>{ticker}</h1>
-        <h1>Current Price: {this.state.graph[this.state.graph.length - 1]}</h1>
+        <h1 style={style1}>{ticker}</h1>
+        <h1 style={style2}>{price}</h1>
+        <h1 style={style}>{difference} ({percentChange}%)</h1>
         <h2>
-        <Button variant="contained" color="secondary">Follow</Button>
-        <Button variant="contained" color="secondary">Bearish</Button>
-        <Button variant="contained" color="secondary">Neutral</Button>
-        <Button variant="contained" color="secondary">Bullish</Button>
+        <Button style={style3} variant="contained" color="secondary">Follow</Button>
+        <Button style={style4} variant="contained" color="secondary">Bearish</Button>
+        <Button style={style5} variant="contained" color="secondary">Neutral</Button>
+        <Button style={style6} variant="contained" color="secondary">Bullish</Button>
         </h2>
         <Button color="primary" onClick={() => {this.onClick1()}} >1 month</Button>   
         <Button color="primary" onClick={() => {this.onClick2()}} >3 months</Button> 
