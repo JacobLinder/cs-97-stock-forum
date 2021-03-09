@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
-import { VictoryLine, VictoryChart } from 'victory';
+import { VictoryLine, VictoryChart, VictoryPie } from 'victory';
+import "./functions/stock-interactions.js";
 import MMM from "./1y_data/MMM.csv";
 import ABT from "./1y_data/ABT.csv";
 import ABBV from "./1y_data/ABBV.csv";
@@ -512,6 +513,8 @@ function CSVToArray(csv) {
 }
 
 const ticker = 'MMM';
+
+var stockSentiment = getSentimentHistory(ticker);
 
 var miniGraph = CSVToArray(MMM);
 
@@ -2102,6 +2105,11 @@ const MiniGraph = () => {
       <VictoryChart width='600' height='300'>
       <VictoryLine data={miniGraph} x='Date' y='Price' />
       </VictoryChart>
+      <VictoryPie data={[
+      { x: "bullish", y: stockSentiment.bullish },
+      { x: "neutral", y: stockSentiment.neutral },
+      { x: "bearish", y: stockSentiment.bearish }
+      ]} />
     );
 };
 
