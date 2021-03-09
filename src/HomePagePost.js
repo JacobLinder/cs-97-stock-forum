@@ -2032,13 +2032,77 @@ if (ticker === 'ZTS') {
 }
 
 const MiniGraph = () => {
-  return (
-    <h1>{ticker}</h1>
-     <h1>Current Price: {miniGraph[miniGraph.length - 1]}</h1>
-    <VictoryChart width='600' height='300'>
-    <VictoryLine data={miniGraph} x='Date' y='Price' />
-    </VictoryChart>
-  );
+    const style1 = {
+      height: "50px",
+      width: "100%",
+      color: "white",
+      backgroundColor: "coral",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style2 = {
+      height: "30px",
+      width: "20%",
+      color: "black",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style3 = {
+      color: "white",
+      backgroundColor: "red",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style4 = {
+      color: "white",
+      backgroundColor: "grey",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style5 = {
+      color: "white",
+      backgroundColor: "green",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style6 = {
+      color: "red",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    const style7 = {
+      color: "green",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+    var difference;
+    var price;
+    var percentChange;
+    var style;
+    if ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) > 0) {
+      difference = "+" + (miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+      percentChange = "+" + ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) * 100 / miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+      style = style7;
+    }
+    else {
+      difference = "" + (miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+      percentChange = "" + ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) * 100 / miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+      style = style6;
+    }
+    price = (parseFloat(miniGraph[miniGraph.length - 1])).toFixed(2);
+    return (
+      <h1 style={style1}>{ticker}</h1>
+      <h1 style={style2}>{price}</h1>
+      <h1 style={style}>{difference} ({percentChange}%)</h1>
+      <h2>
+          <Button style={style3} variant="contained" color="secondary">Bearish</Button>
+          <Button  style={style4} variant="contained" color="secondary">Neutral</Button>
+          <Button  style={style5} variant="contained" color="secondary">Bullish</Button>
+      </h2>
+      <VictoryChart width='600' height='300'>
+      <VictoryLine data={miniGraph} x='Date' y='Price' />
+      </VictoryChart>
+    );
 };
 
 const rootElement = document.getElementById('root');
