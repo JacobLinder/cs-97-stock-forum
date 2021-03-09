@@ -15,14 +15,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'left',
-    },
-    paper2: {
-        padding: theme.spacing(2),
-        textAlign: 'left',
-    },
 }));
 
 // loading existing comment section
@@ -55,54 +47,61 @@ export default function LoadComments(props)
             <hr />
 
             <div className={classes.root}>
-                {
-                    Data.map((comment, key) => {
-                        return (
-                            <Comment key={key}>
-                                <Box height="100%">
-                                    <Comment.Content>
-                                        <Grid container direction="column">
+            {
+            Data.map((comment, key) => {
+                return (
+                    // key={key}
+                        <Paper key={key} style={{padding: 10}}>
+                            <Comment>
+                                <Comment.Content>
+                                    <Grid container direction="column" spacing={1}>
+                                        <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
                                             {/* username and timestamp row*/}
-                                            <Grid container direction="row" justify="flex-start" alignItems="flex-end">
-                                                <Grid item xs={1}>
-                                                    <Comment.Author as='a'> {comment.uid} </Comment.Author>
-                                                </Grid>
-                                                <Grid item xs>
-                                                    <Box color="text.secondary" fontSize={12}>
-                                                        <Comment.Metadata> {comment.timestamp} </Comment.Metadata>
-                                                    </Box>
-                                                </Grid>
+                                            <Grid item>
+                                                <Comment.Author as='a'> {comment.uid} </Comment.Author>
                                             </Grid>
-
-                                            {/* Comments contents row */}
-                                            <Grid container justify="flex-start">
-                                                <Grid item md={8}>
-                                                    <Box height="100%">
-                                                        <Comment.Text> {comment.text} </Comment.Text>
-                                                    </Box>
-                                                </Grid>
-                                            </Grid>
-
-                                            {/* comment action row */}
-                                            <Grid container direction="row" justify="flex-start">
-                                                <Comment.Actions>
-                                                    <Box color="text.secondary" fontSize={12}>
-                                                        <Comment.Action>Reply</Comment.Action>
-                                                        <Comment.Action>Upvote</Comment.Action>
-                                                        <Comment.Action>Downvote</Comment.Action>
-                                                    </Box>
-                                                </Comment.Actions>
+                                            
+                                            <Grid item>
+                                                <Box fontSize={12}>
+                                                    <Comment.Metadata> {comment.timestamp} </Comment.Metadata>
+                                                </Box>
                                             </Grid>
                                         </Grid>
-                                    </Comment.Content>
-                                </Box>
-                                <hr />
+
+                                        <Grid item container direction="row">
+                                            {/* Comments contents row */}
+                                            <Comment.Text> {comment.text} </Comment.Text>
+                                        </Grid>
+                                        
+                                        <Grid item>
+                                            {/* comment action row */}
+                                            <Box fontSize={10}>
+                                                <Comment.Actions>
+                                                    <Grid container direction="row" spacing={1}>
+                                                        <Grid item>
+                                                            <Comment.Action>Reply</Comment.Action>
+                                                        </Grid>
+
+                                                        <Grid item>
+                                                            <Comment.Action>Upvote</Comment.Action>
+                                                        </Grid>
+
+                                                        <Grid item>
+                                                            <Comment.Action>Downvote</Comment.Action>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Comment.Actions>
+                                            </Box>
+                                        </Grid>
+                                    </Grid>
+                                </Comment.Content>
                             </Comment>
-                        )
-                    })
-                }                
+                            <hr></hr>
+                        </Paper>
+                )
+            })
+            }                
             </div>
         </>
     );
 }
-
