@@ -39,7 +39,6 @@ export default function CommentPage() {
     setUsername(name);
   }, []);
   
-  const data = [ { text: 'I like the stock', ticker: 'AAPL', timestamp: '02:02:02' }, { text: 'I hate the stock', ticker: 'TSLA', timestamp: '01:01:01'}]
   const listItems = data.map((d) => <CommentBox username={username} date={d.timestamp} text={d.text} ticker={d.ticker}></CommentBox>);
 
   return(
