@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Card, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Grid, Paper, Box, Button, ButtonGroup } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,8 +8,8 @@ import {
     getTickerComments,
     getUserComments,
 } from '../../functions/comments';
-
-import Data from './testComments.json';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,12 +18,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // loading existing comment section
-export default function LoadComments(props)
-{
+export default function LoadComments(props) {
+
+    const [comments, setComments] = useState([]);
+    const [displayComments, setDisplayComments] = useState([]);
+
+    useEffect(async() => {
+        const loadComments = await getTickerComments(props.stock);
+        const loadDisplay = [];
+        loadComments.forEach((comment) => loadDisplay.push(comment.slice(0, 1)));
+        setComments(loadComments);
+        setDisplayComments(loadDisplay);
+    });
+
     const { stock } = props;
-    const comments = getTickerComments(props.stock);
     const classes = useStyles();
-    console.log(comments);
 
     return(
         <>
@@ -48,7 +57,7 @@ export default function LoadComments(props)
 
             <div className={classes.root}>
             {
-            Data.map((comment, key) => {
+            displayComments.map((comment, key) => {
                 return (
                     // key={key}
                         <Paper key={key} style={{padding: 10}}>
