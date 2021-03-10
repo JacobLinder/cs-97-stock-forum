@@ -40,11 +40,6 @@ export default function CommentPage() {
 
       </left>
       <div>
-        <Link to='/stock-page'>
-          <button style={{float: 'left'}} className="OtherPage">
-            Stock Page
-          </button>
-        </Link>
         <Link to='/homepage'>
           <button style={{float: 'left'}} className="OtherPage">
             Home Page
