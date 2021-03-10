@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import getUserComments from 'src/functions/comments.js';
+import getUsername from 'src/functions/auth.js';
 import ReactDOM from 'react-dom';
 import './CommentPage.css';
 import { Link } from 'react-router-dom';
 import { ArrowRightAltOutlined } from '@material-ui/icons';
 
-const username = "Egg";
-
 function CommentDate(props) {
-  return <span className="CommentDate">{props.date}</span>;
+  const date = new Date(props.date.seconds * 1000);
+  return <span className="CommentDate">{date.toLocaleDateString('en')}</span>;
 }
 
 function CommentText(props){
@@ -20,19 +21,25 @@ function CommentTicker(props){
 
 function CommentBox(props) {
   return <div className="CommentBox">
-    <div className="Head">{username} at <CommentDate date={props.date}/> on <CommentTicker ticker={props.ticker}/>:</div>
+    <div className="Head">{props.username} at <CommentDate date={props.date}/> on <CommentTicker ticker={props.ticker}/>:</div>
     <CommentText text={props.text}/>
-
   </div>;
 }
 
-
-
-
-
 export default function CommentPage() {
-  const data = [ { text: 'I like the stock', ticker: 'AAPL', timestamp: '02:02:02' }, { text: 'I hate the stock', ticker: 'TSLA', timestamp: '01:01:01'}]
-  const listItems = data.map((d) => <CommentBox date={d.timestamp} text={d.text} ticker={d.ticker}></CommentBox>);
+
+  const [data, setData] = useState([]);
+  const [username, setUsername] = useState("");
+
+  useEffect(async() => {
+    const uid = window.location.search;
+    const comments = await getUserComments(uid);
+    const name = await getUsername(uid);
+    setData(comments);
+    setUsername(name);
+  }, []);
+  
+  const listItems = data.map((d) => <CommentBox username={username} date={d.timestamp} text={d.text} ticker={d.ticker}></CommentBox>);
 
   return(
     <>
@@ -47,7 +54,7 @@ export default function CommentPage() {
         </Link>
         <Link to='/landing-page'>
           <button style={{float: 'right'}} className="OtherPage">
-                Sign Out
+            Sign Out
           </button>
         </Link>
       </div>
