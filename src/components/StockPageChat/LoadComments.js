@@ -35,18 +35,222 @@ export default function LoadComments(props) {
 
     const { stock } = props;
     const classes = useStyles();
-    const [inputReply, setInputReply] = useState(false)
     const [replyAdding, setReplyAdding] = useState(false)
 
 
     async function handleReplySubmit(e) {
         e.preventDefault()
         console.log("Submitting comment placeholder")
+        setReplyAdding(false)
     }
+
+
+    function RenderSurfaceComment(surfaceComment) {
+        const [inputReply, setInputReply] = useState(false)
+
+        return (
+            <Comment>
+                <Comment.Content>
+                <Grid container direction="column" spacing={1}>
+                    <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
+                        {/* username and timestamp row*/}
+                        <Grid item>
+                            <div>
+                                <Comment.Author as='a'>{surfaceComment[0].uid}</Comment.Author>
+                            </div>
+                        </Grid>
+                    
+                        <Grid item>
+                            <Box fontSize={12} color="text.secondary">
+                                <Comment.Metadata>{surfaceComment[0].timestamp}</Comment.Metadata>
+                            </Box>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item container direction="row">
+                        {/* Comments contents row */}
+                        <Comment.Text>{surfaceComment[0].text}</Comment.Text>
+                    </Grid>
+                
+                    <Grid item>
+                        {/* comment action row */}
+                        <Box fontSize={10}>
+                            <Comment.Actions>
+                                <Grid container direction="row" spacing={1}>
+                                    <Grid item>
+                                        <Comment.Action>
+                                            <span onClick={() => setInputReply(inputReply ? false : true)}>
+                                                Reply
+                                            </span>
+                                        </Comment.Action>
+                                    </Grid>
+
+                                    <Grid item>
+                                        <Comment.Action>Upvote</Comment.Action>
+                                    </Grid>
+
+                                    <Grid item>
+                                        <Comment.Action>Downvote</Comment.Action>
+                                    </Grid>
+                                </Grid>
+                            </Comment.Actions>
+                        </Box>
+                    </Grid>
+                    <Grid item>
+                        {inputReply && 
+                        (<Card>
+                            <Card.Header>
+                                Add a reply
+                            </Card.Header>
+                            <Card.Body>
+                                <Form onSubmit={handleReplySubmit}>
+                                    <Form.Group id="reply">
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Add your reply here"
+                                            as="textarea" rows={2}
+                                        />
+                                    </Form.Group>
+                                    <Button size="small" disabled={replyAdding} type="submit">
+                                        Add reply
+                                    </Button>
+                                </Form>
+                            </Card.Body>
+                        </Card>)
+                        }
+                    </Grid>
+                </Grid>
+            </Comment.Content>
+            </Comment>
+        )
+    }
+    
+
+    function renderReply(reply) {
+        return (
+            <div>
+                test
+                {reply.map((reply, key) => {
+                <div>
+                    test
+                </div>
+                })}
+            </div>
+        );
+    }
+
+
+    function RenderComment(surfaceCommentArray) {
+        const [showReply, setShowReply] = useState(false)
+
+        return (
+            <div>
+                {RenderSurfaceComment(surfaceCommentArray)}
+                <div>
+                    {showReply &&
+                    (
+                        <div>
+                            {renderReply(surfaceCommentArray)}
+                        </div>
+                    )
+                    }
+                </div>
+                <div>
+                    {!showReply &&
+                    (
+                        <Grid container item justify="center">
+                            <span onClick={() => setShowReply(true)}>
+                                Show  replies
+                            </span>
+                        </Grid>
+                    )
+                    }
+                </div>
+                <hr />
+            </div>
+        )
+    }
+// return (
+//     <Comment key={key}>
+//         {console.log("key is " + key)}
+//         <Comment.Content>
+//         <Grid container direction="column" spacing={1}>
+//             <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
+//                 {/* username and timestamp row*/}
+//                 <Grid item>
+//                     <div>
+//                         <Comment.Author as='a'>{array.uid}</Comment.Author>
+//                     </div>
+//                 </Grid>
+            
+//                 <Grid item>
+//                     <Box fontSize={12} color="text.secondary">
+//                         <Comment.Metadata>{array.timestamp}</Comment.Metadata>
+//                     </Box>
+//                 </Grid>
+//             </Grid>
+
+//             <Grid item container direction="row">
+//                 {/* Comments contents row */}
+//                 <Comment.Text>{array.text}</Comment.Text>
+//             </Grid>
+        
+//             <Grid item>
+//                 {/* comment action row */}
+//                 <Box fontSize={10}>
+//                     <Comment.Actions>
+//                         <Grid container direction="row" spacing={1}>
+//                             <Grid item>
+//                                 <Comment.Action>
+//                                     <span onClick={() => setInputReply(inputReply ? false : true)}>
+//                                         Reply
+//                                     </span>
+//                                 </Comment.Action>
+//                             </Grid>
+
+//                             <Grid item>
+//                                 <Comment.Action>Upvote</Comment.Action>
+//                             </Grid>
+
+//                             <Grid item>
+//                                 <Comment.Action>Downvote</Comment.Action>
+//                             </Grid>
+//                         </Grid>
+//                     </Comment.Actions>
+//                 </Box>
+//             </Grid>
+//             <Grid item>
+//                 {inputReply && 
+//                 (<Card>
+//                     <Card.Header>
+//                         Add a reply
+//                     </Card.Header>
+//                     <Card.Body>
+//                         <Form onSubmit={handleReplySubmit}>
+//                             <Form.Group id="reply">
+//                                 <Form.Control
+//                                     type="text"
+//                                     placeholder="Add your reply here"
+//                                     as="textarea" rows={2}
+//                                 />
+//                             </Form.Group>
+//                             <Button size="small" disabled={replyAdding} type="submit">
+//                                 Add reply
+//                             </Button>
+//                         </Form>
+//                     </Card.Body>
+//                 </Card>)
+//                 }
+//             </Grid>
+//         </Grid>
+//     </Comment.Content>
+//     <hr />
+//     </Comment>
+// )
 
     return(
         <>
-            <Nav variant="pills" activeKey="1">
+            <Nav variant="pills">
                 <h2>
                 Comments for {props.stock}
                 </h2>
@@ -65,90 +269,15 @@ export default function LoadComments(props) {
             </Nav>
             <hr />
 
-            <div className={classes.root}>
+            <div>
             {
-            Data.map((comment, key) => {
+            Data.map((surfaceCommentArray, key) => {
                 return (
-                <Comment key={key}>
-                    <Comment.Content>
-                        <Grid container direction="column" spacing={1}>
-                            <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
-                                {/* username and timestamp row*/}
-                                <Grid item>
-                                    <div>
-                                        <Comment.Author as='a'> {comment.uid} </Comment.Author>
-                                    </div>
-                                </Grid>
-                                
-                                <Grid item>
-                                    <Box fontSize={12} color="text.secondary">
-                                        <Comment.Metadata> {comment.timestamp} </Comment.Metadata>
-                                    </Box>
-                                </Grid>
-                            </Grid>
-
-                            <Grid item container direction="row">
-                                {/* Comments contents row */}
-                                <Comment.Text> {comment.text} </Comment.Text>
-                            </Grid>
-                            
-                            <Grid item>
-                                {/* comment action row */}
-                                <Box fontSize={10}>
-                                    <Comment.Actions>
-                                        <Grid container direction="row" spacing={1}>
-                                            <Grid item>
-                                                <Comment.Action>
-                                                    <span onClick={() => setInputReply(inputReply ? false : true)}>
-                                                        Reply
-                                                    </span>
-                                                </Comment.Action>
-                                                
-                                            </Grid>
-
-                                            <Grid item>
-                                                <Comment.Action>Upvote</Comment.Action>
-                                            </Grid>
-
-                                            <Grid item>
-                                                <Comment.Action>Downvote</Comment.Action>
-                                            </Grid>
-                                        </Grid>
-                                    </Comment.Actions>
-                                </Box>
-                            </Grid>
-
-                            <Grid item>
-                                {inputReply && 
-                                (<Card>
-                                    <Card.Header>
-                                        Add a reply
-                                    </Card.Header>
-                                    <Card.Body>
-                                        <Form onSubmit={handleReplySubmit}>
-                                            <Form.Group id="reply">
-                                                <Form.Control
-                                                    type="text"
-                                                    placeholder="Add your reply here"
-                                                    as="textarea" rows={2}
-                                                />
-                                            </Form.Group>
-                                            <Button size="small" disabled={replyAdding} type="submit">
-                                                Add reply
-                                            </Button>
-                                        </Form>
-                                    </Card.Body>
-                                </Card>)
-                                }
-                            </Grid>
-                        </Grid>
-                    </Comment.Content>
-                    <hr />
-                </Comment>
-                )
-                
-            })
-            }                
+                    <div key={key}>
+                        {RenderComment(surfaceCommentArray)}
+                    </div>
+                )})
+            }
             </div>
         </>
     );

@@ -1,12 +1,26 @@
 [
-    {
-        "uid": 101,
-        "text": "user 101's comment",
-        "timestamp": "seconds: 1609531200, nanoseconds: 0"
-    },
-    {
-        "uid": 102,
-        "text": "user 102's comment",
-        "timestamp": "seconds: 1612209600, nanoseconds: 0"
-    }
+    [
+        {
+            "uid": 101,
+            "text": "user 101's comment",
+            "timestamp": "seconds: 1609531200, nanoseconds: 0"
+        },
+        {
+            "uid": 102,
+            "text": "user 101's comment's reply",
+            "timestamp": "seconds: 1612209600, nanoseconds: 0"
+        }
+    ],
+    [
+        {
+            "uid": 102,
+            "text": "user 102's comment",
+            "timestamp": "seconds: 1609531200, nanoseconds: 0"
+        },
+        {
+            "uid": 103,
+            "text": "user 102's comment's reply",
+            "timestamp": "seconds: 1612209600, nanoseconds: 0"
+        }
+    ]
 ]
