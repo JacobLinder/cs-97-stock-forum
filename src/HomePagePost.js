@@ -521,7 +521,9 @@ class MiniGraph extends React.Component {
   }
 
   render () {
-    var stockSentiment = getSentimentHistory(this.props.ticker);
+    const loadSentiment = async() => {
+      var stockSentiment = await getSentimentHistory(this.props.ticker);
+    }
     if (this.props.ticker === 'MMM') {
       miniGraph = CSVToArray(MMM);
     }
