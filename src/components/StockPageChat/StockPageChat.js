@@ -1,5 +1,6 @@
-import React from 'react';
-import { Form, Button, Card, Container, } from "react-bootstrap"; 
+import React, { useState } from 'react';
+import { Card, Container } from "react-bootstrap"; 
+import { Button } from '@material-ui/core';
 import AddComment from './AddComment'
 import LoadComments from './LoadComments'
 
@@ -9,11 +10,22 @@ export default function Chat(props)
 {
     const { user, stock } = props;
     const stockName = props.stock;
+    const [addComment, setAddComment] = useState(false)
 
     return(
         <Container>
             <LoadComments stock={ stockName }/>
-            <AddComment user={ user }/>
+            <Card>
+            {
+                addComment ?
+                (<AddComment user={ user }/>) :
+                (
+                <Button onClick={() => setAddComment(addComment ? false : true)}>
+                    Add a comment
+                </Button>
+                )
+            }
+            </Card>
         </Container>
     );
 

@@ -16,13 +16,19 @@ export default function AddComment(props)
 {
     const { user } = props;
     const [loading, setLoading] = useState(false)
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        console.log("Adding the comment, placeholder")
+    }
+
     return(
         <Card>
             <Card.Header>
                 Add a comment
             </Card.Header>
             <Card.Body>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group id="comment">
                         <Form.Control
                             type="text"
@@ -35,7 +41,6 @@ export default function AddComment(props)
                     </Button>
                 </Form>
             </Card.Body>
-            
         </Card>
     );
 }
