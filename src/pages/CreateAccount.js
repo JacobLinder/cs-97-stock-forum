@@ -49,7 +49,7 @@ export default function SignUp() {
     {
       // successful login, redirect to homepage
       case 1:
-        history.push('homepage')
+        history.push('home')
         return
   
       // invalid email, no user found

@@ -41,7 +41,7 @@ export default function SignIn() {
     {
       // successful login, redirect to homepage
       case 1:
-        history.push('homepage')
+        history.push('home')
         return
   
       // incorrect email

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Ticker 1",
+    "price": "Price 1",
+    "price change": "Price Change 1"
+  },
+  {
+    "title": "Ticker 2",
+    "price": "Price 2",
+    "price change": "Price Change 2"
+  },
+  {
+    "title": "Ticker 3",
+    "price": "Price 3",
+    "price change": "Price Change 3"
+  },
+  {
+    "title": "Ticker 4",
+    "price": "Price 4",
+    "price change": "Price Change 4"
+  }
+]

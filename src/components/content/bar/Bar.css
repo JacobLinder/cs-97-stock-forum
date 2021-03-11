@@ -1,0 +1,32 @@
+.bar {
+  flex: 1.0;
+}
+
+.bar .view-stocks-title {
+  font-weight: 450;
+}
+
+.bar .filter-container {
+  display: flex;
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid rgb(200, 200, 200);
+  padding: 10px 15px;
+  margin-top: 15px;
+}
+
+.bar .filter-container .filter-element {
+  display: flex;
+  color: var(--primary-color);
+  background-color: var(--light-grey);
+  border-radius: 20px;
+  padding: 5px 8px;
+  margin: 0px 5px;
+  font-size: 15px;
+  align-items: center;
+  font-weight: 450;
+}
+
+.bar .filter-container .filter-element:first-child {
+  margin-left: 0px;
+}

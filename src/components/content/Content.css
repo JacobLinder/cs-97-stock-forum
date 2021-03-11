@@ -1,0 +1,9 @@
+.content {
+  width: 1080px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.bar-wrapper {
+  display: flex;
+}

@@ -71,7 +71,7 @@ ReactDOM.render(
 
 
         <Route
-          path="/homepage"
+          path="/home"
           render={(props) => <Homepage {...props} />}
         />
         <Route
