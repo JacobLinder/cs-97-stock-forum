@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import './CommentPage.css';
 import { Link } from 'react-router-dom';
 import { ArrowRightAltOutlined } from '@material-ui/icons';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 function CommentDate(props) {
   const date = new Date(props.date.seconds * 1000);
@@ -32,11 +34,13 @@ export default function CommentPage() {
   const [username, setUsername] = useState("");
 
   useEffect(async() => {
-    const uid = window.location.search;
-    const comments = await getUserComments(uid);
-    const name = await getUsername(uid);
-    setData(comments);
-    setUsername(name);
+    firebase.auth().onAuthStateChanged(async(user) => {
+      const uid = user.uid;
+      const comments = await getUserComments(uid);
+      const name = await getUsername(uid);
+      setData(comments);
+      setUsername(name);
+    });
   }, []);
   
   const listItems = data.map((d) => <CommentBox username={username} date={d.timestamp} text={d.text} ticker={d.ticker}></CommentBox>);
