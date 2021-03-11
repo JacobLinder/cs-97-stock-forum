@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Container } from "react-bootstrap"; 
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import AddComment from './AddComment'
 import LoadComments from './LoadComments'
 
