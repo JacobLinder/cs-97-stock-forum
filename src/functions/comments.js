@@ -113,7 +113,7 @@ export async function getTickerComments(ticker) {
  */
 export async function getUserComments(uid) {
   try {
-    const comments = (await db.collection('users').doc(uid).get()).data.comments;
+    const comments = (await db.collection('users').doc(uid).get()).data().comments;
     return comments;
   } catch(err) {
     console.log(err);

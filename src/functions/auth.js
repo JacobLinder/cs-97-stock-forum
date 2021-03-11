@@ -61,3 +61,20 @@ export async function createAccount(username, email, password) {
     return 2;
   }
 }
+
+/**
+ * Gets the user's username.
+ * @async
+ * @param {string} uid - the user's uid
+ * @returns username if success, empty string if failure
+ */
+export async function getUsername(uid) {
+  try {
+    const userRef = firebase.firestore().collection('users').doc(uid);
+    const username = (await userRef.get()).data().username;
+    return username;
+  } catch(error) {
+    console.log(error);
+    return "";
+  }
+}
