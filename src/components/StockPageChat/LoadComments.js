@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createElement } from 'react';
 import { Form, Card, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Grid, Paper, Box, Button, ButtonGroup } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Comment, Avatar, Input, CommentAction} from 'semantic-ui-react';
+import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import { 
     getTickerComments,
     getUserComments,
@@ -47,6 +48,15 @@ export default function LoadComments(props) {
 
     function RenderSurfaceComment(surfaceComment) {
         const [inputReply, setInputReply] = useState(false)
+        const [action, setAction] = useState(null);
+
+        const like = () => {
+            setAction(action === 'liked' ? null : 'liked');
+        };
+
+        const dislike = () => {
+            setAction(action === 'disliked' ? null : 'disliked');
+        };
 
         return (
             <Comment>
@@ -76,21 +86,37 @@ export default function LoadComments(props) {
                         {/* comment action row */}
                         <Box fontSize={10}>
                             <Comment.Actions>
-                                <Grid container direction="row" spacing={1}>
+                                <Grid container direction="row" alignItems="flex-start" spacing={1}>
+                                    <Grid item>
+                                        <span onClick={like}>
+                                            {createElement(action === 'liked' ? LikeFilled : LikeOutlined)}
+                                        </span>
+                                    </Grid>
+
+                                    <Grid item>
+                                        <span>
+                                            {surfaceComment[0].upvotes.length}
+                                        </span>
+                                    </Grid>
+
+                                    <Grid item>
+                                        <span onClick={dislike}>
+                                            {createElement(action === 'disliked' ? DislikeFilled : DislikeOutlined)}
+                                        </span>
+                                    </Grid>
+
+                                    <Grid item>
+                                        <span>
+                                            {surfaceComment[0].downvotes.length}
+                                        </span>
+                                    </Grid>
+
                                     <Grid item>
                                         <Comment.Action>
                                             <span onClick={() => setInputReply(inputReply ? false : true)}>
                                                 Reply
                                             </span>
                                         </Comment.Action>
-                                    </Grid>
-
-                                    <Grid item>
-                                        <Comment.Action>Upvote</Comment.Action>
-                                    </Grid>
-
-                                    <Grid item>
-                                        <Comment.Action>Downvote</Comment.Action>
                                     </Grid>
                                 </Grid>
                             </Comment.Actions>
@@ -134,7 +160,7 @@ export default function LoadComments(props) {
                 if (key > 0)
                 {
                     return (
-                        <Comment key={key} padding="20px">
+                        <Comment key={key} style={{marginLeft: 20}}>
                             <Comment.Content>
                             <Grid container direction="column" spacing={1}>
                                 <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
