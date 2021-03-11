@@ -28,11 +28,7 @@ ReactDOM.render(
     <Switch>
       <Switch>
         <Route
-          path="/landing-page"
-          render={(props) => <LandingPage {...props} />}
-        />
-        <Route
-          path="/index"
+          path="/landing"
           render={(props) => <LandingPage {...props} />}
         />
 
@@ -75,15 +71,16 @@ ReactDOM.render(
           render={(props) => <Homepage {...props} />}
         />
         <Route
-          path="/comment-page"
+          path="/comments"
           render={(props) => <CommentPage {...props} />}
         />
         <Route
-          path="/stock-page"
+          path="/stocks"
           render={(props) => <StockPage {...props} />}
         />
-        <Redirect to="/index" />
-        <Redirect from="/" to="/index" />
+        <Redirect to="/landing" />
+        <Redirect from="/index" to="/landing" />
+        <Redirect from="/" to="/landing" />
       </Switch>
     </Switch>
   </BrowserRouter>,
