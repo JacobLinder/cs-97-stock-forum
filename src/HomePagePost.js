@@ -718,7 +718,7 @@ class MiniGraph extends React.Component {
       miniGraph = CSVToArray(BDX);
     }
     if (this.props.ticker === 'BRK.B') {
-      miniGraph = CSVToArray(BRK.B);
+      miniGraph = CSVToArray(BRKB);
     }
     if (this.props.ticker === 'BBY') {
       miniGraph = CSVToArray(BBY);
@@ -757,7 +757,7 @@ class MiniGraph extends React.Component {
       miniGraph = CSVToArray(BR);
     }
     if (this.props.ticker === 'BF.B') {
-      miniGraph = CSVToArray(BF.B);
+      miniGraph = CSVToArray(BFB);
     }
     if (this.props.ticker === 'CHRW') {
       miniGraph = CSVToArray(CHRW);
