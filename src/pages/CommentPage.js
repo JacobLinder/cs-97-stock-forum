@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import getUserComments from '../functions/comments.js';
-import getUsername from '../functions/auth.js';
+import { getUserComments } from '../functions/comments.js';
+import { getUsername } from '../functions/auth.js';
 import ReactDOM from 'react-dom';
 import './CommentPage.css';
 import { Link } from 'react-router-dom';
