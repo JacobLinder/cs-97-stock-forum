@@ -7,13 +7,6 @@ import Landing from '../components/landing/Landing';
 import '../HomePagePost.js';
 
 export default function Homepage() {
-  posts = [];
-  posts.push('<MiniGraph ticker="ABT" />')
-  posts.push('<MiniGraph ticker="ABC" />')
-  posts.push('<MiniGraph ticker="ACN" />')
-  for(var i = 0; i < posts.length; i++) {
-    document.body.innerHTML += '<div >' + posts[i] + '</div>';
-  }
   return(
     <div>
       <Select

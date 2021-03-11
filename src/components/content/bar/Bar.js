@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Bar.css';
+import Posts from '../posts/Posts';
 
 export default function Bar() {
   return (
@@ -18,6 +19,8 @@ export default function Bar() {
         <span>UNFOLLOWED</span>
       </div>
     </div>
+
+    <Posts />
   </div>
   );
 }

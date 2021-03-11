@@ -67,7 +67,7 @@ import BAC from "./1y_data/BAC.csv";
 import BK from "./1y_data/BK.csv";
 import BAX from "./1y_data/BAX.csv";
 import BDX from "./1y_data/BDX.csv";
-import BRKB from "./1y_data/BRK.B.csv";
+import BRKB from "./1y_data/BRK-B.csv";
 import BBY from "./1y_data/BBY.csv";
 import BIO from "./1y_data/BIO.csv";
 import BIIB from "./1y_data/BIIB.csv";
@@ -80,7 +80,7 @@ import BSX from "./1y_data/BSX.csv";
 import BMY from "./1y_data/BMY.csv";
 import AVGO from "./1y_data/AVGO.csv";
 import BR from "./1y_data/BR.csv";
-import BFB from "./1y_data/BF.B.csv";
+import BFB from "./1y_data/BF-B.csv";
 import CHRW from "./1y_data/CHRW.csv";
 import COG from "./1y_data/COG.csv";
 import CDNS from "./1y_data/CDNS.csv";
@@ -521,7 +521,9 @@ class MiniGraph extends React.Component {
   }
 
   render () {
-    var stockSentiment = getSentimentHistory(this.props.ticker);
+    const loadSentiment = async() => {
+      var stockSentiment = await getSentimentHistory(this.props.ticker);
+    }
     if (this.props.ticker === 'MMM') {
       miniGraph = CSVToArray(MMM);
     }
@@ -718,7 +720,7 @@ class MiniGraph extends React.Component {
       miniGraph = CSVToArray(BDX);
     }
     if (this.props.ticker === 'BRK.B') {
-      miniGraph = CSVToArray(BRK.B);
+      miniGraph = CSVToArray(BRKB);
     }
     if (this.props.ticker === 'BBY') {
       miniGraph = CSVToArray(BBY);
@@ -757,7 +759,7 @@ class MiniGraph extends React.Component {
       miniGraph = CSVToArray(BR);
     }
     if (this.props.ticker === 'BF.B') {
-      miniGraph = CSVToArray(BF.B);
+      miniGraph = CSVToArray(BFB);
     }
     if (this.props.ticker === 'CHRW') {
       miniGraph = CSVToArray(CHRW);
