@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { VictoryLine, VictoryChart, VictoryPie } from 'victory';
-import "./functions/stock-interactions.js";
+import { getSentimentHistory } from "./functions/stock-interactions.js";
 import Button from "@material-ui/core/Button";
 import MMM from "./1y_data/MMM.csv";
 import ABT from "./1y_data/ABT.csv";
@@ -508,1614 +508,1616 @@ import ZBH from "./1y_data/ZBH.csv";
 import ZION from "./1y_data/ZION.csv";
 import ZTS from "./1y_data/ZTS.csv";
 
-function CSVToArray(csv) {
-  var lines = csv.split("\n");
-  return lines.splice(1, lines.length)
-}
+export function MiniGraph(props) {
 
-var miniGraph = CSVToArray(MMM);
-
-class MiniGraph extends React.Component {
-  constructor() {
-    super();
+  const CSVToArray = (csv) => {
+    var lines = csv.split("\n");
+    return lines.splice(1, lines.length)
   }
 
-  render () {
-    const loadSentiment = async() => {
-      var stockSentiment = await getSentimentHistory(this.props.ticker);
-    }
-    if (this.props.ticker === 'MMM') {
-      miniGraph = CSVToArray(MMM);
-    }
-    if (this.props.ticker === 'ABT') {
-      miniGraph = CSVToArray(ABT);
-    }
-    if (this.props.ticker === 'ABBV') {
-      miniGraph = CSVToArray(ABBV);
-    }
-    if (this.props.ticker === 'ABMD') {
-      miniGraph = CSVToArray(ABMD);
-    }
-    if (this.props.ticker === 'ACN') {
-      miniGraph = CSVToArray(ACN);
-    }
-    if (this.props.ticker === 'ATVI') {
-      miniGraph = CSVToArray(ATVI);
-    }
-    if (this.props.ticker === 'ADBE') {
-      miniGraph = CSVToArray(ADBE);
-    }
-    if (this.props.ticker === 'AMD') {
-      miniGraph = CSVToArray(AMD);
-    }
-    if (this.props.ticker === 'AAP') {
-      miniGraph = CSVToArray(AAP);
-    }
-    if (this.props.ticker === 'AES') {
-      miniGraph = CSVToArray(AES);
-    }
-    if (this.props.ticker === 'AFL') {
-      miniGraph = CSVToArray(AFL);
-    }
-    if (this.props.ticker === 'A') {
-      miniGraph = CSVToArray(A);
-    }
-    if (this.props.ticker === 'APD') {
-      miniGraph = CSVToArray(APD);
-    }
-    if (this.props.ticker === 'AKAM') {
-      miniGraph = CSVToArray(AKAM);
-    }
-    if (this.props.ticker === 'ALK') {
-      miniGraph = CSVToArray(ALK);
-    }
-    if (this.props.ticker === 'ALB') {
-      miniGraph = CSVToArray(ALB);
-    }
-    if (this.props.ticker === 'ARE') {
-      miniGraph = CSVToArray(ARE);
-    }
-    if (this.props.ticker === 'ALXN') {
-      miniGraph = CSVToArray(ALXN);
-    }
-    if (this.props.ticker === 'ALGN') {
-      miniGraph = CSVToArray(ALGN);
-    }
-    if (this.props.ticker === 'ALLE') {
-      miniGraph = CSVToArray(ALLE);
-    }
-    if (this.props.ticker === 'LNT') {
-      miniGraph = CSVToArray(LNT);
-    }
-    if (this.props.ticker === 'ALL') {
-      miniGraph = CSVToArray(ALL);
-    }
-    if (this.props.ticker === 'GOOGL') {
-      miniGraph = CSVToArray(GOOGL);
-    }
-    if (this.props.ticker === 'GOOG') {
-      miniGraph = CSVToArray(GOOG);
-    }
-    if (this.props.ticker === 'MO') {
-      miniGraph = CSVToArray(MO);
-    }
-    if (this.props.ticker === 'AMZN') {
-      miniGraph = CSVToArray(AMZN);
-    }
-    if (this.props.ticker === 'AMCR') {
-      miniGraph = CSVToArray(AMCR);
-    }
-    if (this.props.ticker === 'AEE') {
-      miniGraph = CSVToArray(AEE);
-    }
-    if (this.props.ticker === 'AAL') {
-      miniGraph = CSVToArray(AAL);
-    }
-    if (this.props.ticker === 'AEP') {
-      miniGraph = CSVToArray(AEP);
-    }
-    if (this.props.ticker === 'AXP') {
-      miniGraph = CSVToArray(AXP);
-    }
-    if (this.props.ticker === 'AIG') {
-      miniGraph = CSVToArray(AIG);
-    }
-    if (this.props.ticker === 'AMT') {
-      miniGraph = CSVToArray(AMT);
-    }
-    if (this.props.ticker === 'AWK') {
-      miniGraph = CSVToArray(AWK);
-    }
-    if (this.props.ticker === 'AMP') {
-      miniGraph = CSVToArray(AMP);
-    }
-    if (this.props.ticker === 'ABC') {
-      miniGraph = CSVToArray(ABC);
-    }
-    if (this.props.ticker === 'AME') {
-      miniGraph = CSVToArray(AME);
-    }
-    if (this.props.ticker === 'AMGN') {
-      miniGraph = CSVToArray(AMGN);
-    }
-    if (this.props.ticker === 'APH') {
-      miniGraph = CSVToArray(APH);
-    }
-    if (this.props.ticker === 'ADI') {
-      miniGraph = CSVToArray(ADI);
-    }
-    if (this.props.ticker === 'ANSS') {
-      miniGraph = CSVToArray(ANSS);
-    }
-    if (this.props.ticker === 'ANTM') {
-      miniGraph = CSVToArray(ANTM);
-    }
-    if (this.props.ticker === 'AON') {
-      miniGraph = CSVToArray(AON);
-    }
-    if (this.props.ticker === 'AOS') {
-      miniGraph = CSVToArray(AOS);
-    }
-    if (this.props.ticker === 'APA') {
-      miniGraph = CSVToArray(APA);
-    }
-    if (this.props.ticker === 'AAPL') {
-      miniGraph = CSVToArray(AAPL);
-    }
-    if (this.props.ticker === 'AMAT') {
-      miniGraph = CSVToArray(AMAT);
-    }
-    if (this.props.ticker === 'APTV') {
-      miniGraph = CSVToArray(APTV);
-    }
-    if (this.props.ticker === 'ADM') {
-      miniGraph = CSVToArray(ADM);
-    }
-    if (this.props.ticker === 'ANET') {
-      miniGraph = CSVToArray(ANET);
-    }
-    if (this.props.ticker === 'AJG') {
-      miniGraph = CSVToArray(AJG);
-    }
-    if (this.props.ticker === 'AIZ') {
-      miniGraph = CSVToArray(AIZ);
-    }
-    if (this.props.ticker === 'T') {
-      miniGraph = CSVToArray(T);
-    }
-    if (this.props.ticker === 'ATO') {
-      miniGraph = CSVToArray(ATO);
-    }
-    if (this.props.ticker === 'ADSK') {
-      miniGraph = CSVToArray(ADSK);
-    }
-    if (this.props.ticker === 'ADP') {
-      miniGraph = CSVToArray(ADP);
-    }
-    if (this.props.ticker === 'AZO') {
-      miniGraph = CSVToArray(AZO);
-    }
-    if (this.props.ticker === 'AVB') {
-      miniGraph = CSVToArray(AVB);
-    }
-    if (this.props.ticker === 'AVY') {
-      miniGraph = CSVToArray(AVY);
-    }
-    if (this.props.ticker === 'BKR') {
-      miniGraph = CSVToArray(BKR);
-    }
-    if (this.props.ticker === 'BLL') {
-      miniGraph = CSVToArray(BLL);
-    }
-    if (this.props.ticker === 'BAC') {
-      miniGraph = CSVToArray(BAC);
-    }
-    if (this.props.ticker === 'BK') {
-      miniGraph = CSVToArray(BK);
-    }
-    if (this.props.ticker === 'BAX') {
-      miniGraph = CSVToArray(BAX);
-    }
-    if (this.props.ticker === 'BDX') {
-      miniGraph = CSVToArray(BDX);
-    }
-    if (this.props.ticker === 'BRK.B') {
-      miniGraph = CSVToArray(BRKB);
-    }
-    if (this.props.ticker === 'BBY') {
-      miniGraph = CSVToArray(BBY);
-    }
-    if (this.props.ticker === 'BIO') {
-      miniGraph = CSVToArray(BIO);
-    }
-    if (this.props.ticker === 'BIIB') {
-      miniGraph = CSVToArray(BIIB);
-    }
-    if (this.props.ticker === 'BLK') {
-      miniGraph = CSVToArray(BLK);
-    }
-    if (this.props.ticker === 'BA') {
-      miniGraph = CSVToArray(BA);
-    }
-    if (this.props.ticker === 'BKNG') {
-      miniGraph = CSVToArray(BKNG);
-    }
-    if (this.props.ticker === 'BWA') {
-      miniGraph = CSVToArray(BWA);
-    }
-    if (this.props.ticker === 'BXP') {
-      miniGraph = CSVToArray(BXP);
-    }
-    if (this.props.ticker === 'BSX') {
-      miniGraph = CSVToArray(BSX);
-    }
-    if (this.props.ticker === 'BMY') {
-      miniGraph = CSVToArray(BMY);
-    }
-    if (this.props.ticker === 'AVGO') {
-      miniGraph = CSVToArray(AVGO);
-    }
-    if (this.props.ticker === 'BR') {
-      miniGraph = CSVToArray(BR);
-    }
-    if (this.props.ticker === 'BF.B') {
-      miniGraph = CSVToArray(BFB);
-    }
-    if (this.props.ticker === 'CHRW') {
-      miniGraph = CSVToArray(CHRW);
-    }
-    if (this.props.ticker === 'COG') {
-      miniGraph = CSVToArray(COG);
-    }
-    if (this.props.ticker === 'CDNS') {
-      miniGraph = CSVToArray(CDNS);
-    }
-    if (this.props.ticker === 'CPB') {
-      miniGraph = CSVToArray(CPB);
-    }
-    if (this.props.ticker === 'COF') {
-      miniGraph = CSVToArray(COF);
-    }
-    if (this.props.ticker === 'CAH') {
-      miniGraph = CSVToArray(CAH);
-    }
-    if (this.props.ticker === 'KMX') {
-      miniGraph = CSVToArray(KMX);
-    }
-    if (this.props.ticker === 'CCL') {
-      miniGraph = CSVToArray(CCL);
-    }
-    if (this.props.ticker === 'CARR') {
-      miniGraph = CSVToArray(CARR);
-    }
-    if (this.props.ticker === 'CTLT') {
-      miniGraph = CSVToArray(CTLT);
-    }
-    if (this.props.ticker === 'CAT') {
-      miniGraph = CSVToArray(CAT);
-    }
-    if (this.props.ticker === 'CBOE') {
-      miniGraph = CSVToArray(CBOE);
-    }
-    if (this.props.ticker === 'CBRE') {
-      miniGraph = CSVToArray(CBRE);
-    }
-    if (this.props.ticker === 'CDW') {
-      miniGraph = CSVToArray(CDW);
-    }
-    if (this.props.ticker === 'CE') {
-      miniGraph = CSVToArray(CE);
-    }
-    if (this.props.ticker === 'CNC') {
-      miniGraph = CSVToArray(CNC);
-    }
-    if (this.props.ticker === 'CNP') {
-      miniGraph = CSVToArray(CNP);
-    }
-    if (this.props.ticker === 'CERN') {
-      miniGraph = CSVToArray(CERN);
-    }
-    if (this.props.ticker === 'CF') {
-      miniGraph = CSVToArray(CF);
-    }
-    if (this.props.ticker === 'SCHW') {
-      miniGraph = CSVToArray(SCHW);
-    }
-    if (this.props.ticker === 'CHTR') {
-      miniGraph = CSVToArray(CHTR);
-    }
-    if (this.props.ticker === 'CVX') {
-      miniGraph = CSVToArray(CVX);
-    }
-    if (this.props.ticker === 'CMG') {
-      miniGraph = CSVToArray(CMG);
-    }
-    if (this.props.ticker === 'CB') {
-      miniGraph = CSVToArray(CB);
-    }
-    if (this.props.ticker === 'CHD') {
-      miniGraph = CSVToArray(CHD);
-    }
-    if (this.props.ticker === 'CI') {
-      miniGraph = CSVToArray(CI);
-    }
-    if (this.props.ticker === 'CINF') {
-      miniGraph = CSVToArray(CINF);
-    }
-    if (this.props.ticker === 'CTAS') {
-      miniGraph = CSVToArray(CTAS);
-    }
-    if (this.props.ticker === 'CSCO') {
-      miniGraph = CSVToArray(CSCO);
-    }
-    if (this.props.ticker === 'C') {
-      miniGraph = CSVToArray(C);
-    }
-    if (this.props.ticker === 'CFG') {
-      miniGraph = CSVToArray(CFG);
-    }
-    if (this.props.ticker === 'CTXS') {
-      miniGraph = CSVToArray(CTXS);
-    }
-    if (this.props.ticker === 'CLX') {
-      miniGraph = CSVToArray(CLX);
-    }
-    if (this.props.ticker === 'CME') {
-      miniGraph = CSVToArray(CME);
-    }
-    if (this.props.ticker === 'CMS') {
-      miniGraph = CSVToArray(CMS);
-    }
-    if (this.props.ticker === 'KO') {
-      miniGraph = CSVToArray(KO);
-    }
-    if (this.props.ticker === 'CTSH') {
-      miniGraph = CSVToArray(CTSH);
-    }
-    if (this.props.ticker === 'CL') {
-      miniGraph = CSVToArray(CL);
-    }
-    if (this.props.ticker === 'CMCSA') {
-      miniGraph = CSVToArray(CMCSA);
-    }
-    if (this.props.ticker === 'CMA') {
-      miniGraph = CSVToArray(CMA);
-    }
-    if (this.props.ticker === 'CAG') {
-      miniGraph = CSVToArray(CAG);
-    }
-    if (this.props.ticker === 'COP') {
-      miniGraph = CSVToArray(COP);
-    }
-    if (this.props.ticker === 'ED') {
-      miniGraph = CSVToArray(ED);
-    }
-    if (this.props.ticker === 'STZ') {
-      miniGraph = CSVToArray(STZ);
-    }
-    if (this.props.ticker === 'COO') {
-      miniGraph = CSVToArray(COO);
-    }
-    if (this.props.ticker === 'CPRT') {
-      miniGraph = CSVToArray(CPRT);
-    }
-    if (this.props.ticker === 'GLW') {
-      miniGraph = CSVToArray(GLW);
-    }
-    if (this.props.ticker === 'CTVA') {
-      miniGraph = CSVToArray(CTVA);
-    }
-    if (this.props.ticker === 'COST') {
-      miniGraph = CSVToArray(COST);
-    }
-    if (this.props.ticker === 'CCI') {
-      miniGraph = CSVToArray(CCI);
-    }
-    if (this.props.ticker === 'CSX') {
-      miniGraph = CSVToArray(CSX);
-    }
-    if (this.props.ticker === 'CMI') {
-      miniGraph = CSVToArray(CMI);
-    }
-    if (this.props.ticker === 'CVS') {
-      miniGraph = CSVToArray(CVS);
-    }
-    if (this.props.ticker === 'DHI') {
-      miniGraph = CSVToArray(DHI);
-    }
-    if (this.props.ticker === 'DHR') {
-      miniGraph = CSVToArray(DHR);
-    }
-    if (this.props.ticker === 'DRI') {
-      miniGraph = CSVToArray(DRI);
-    }
-    if (this.props.ticker === 'DVA') {
-      miniGraph = CSVToArray(DVA);
-    }
-    if (this.props.ticker === 'DE') {
-      miniGraph = CSVToArray(DE);
-    }
-    if (this.props.ticker === 'DAL') {
-      miniGraph = CSVToArray(DAL);
-    }
-    if (this.props.ticker === 'XRAY') {
-      miniGraph = CSVToArray(XRAY);
-    }
-    if (this.props.ticker === 'DVN') {
-      miniGraph = CSVToArray(DVN);
-    }
-    if (this.props.ticker === 'DXCM') {
-      miniGraph = CSVToArray(DXCM);
-    }
-    if (this.props.ticker === 'FANG') {
-      miniGraph = CSVToArray(FANG);
-    }
-    if (this.props.ticker === 'DLR') {
-      miniGraph = CSVToArray(DLR);
-    }
-    if (this.props.ticker === 'DFS') {
-      miniGraph = CSVToArray(DFS);
-    }
-    if (this.props.ticker === 'DISCA') {
-      miniGraph = CSVToArray(DISCA);
-    }
-    if (this.props.ticker === 'DISCK') {
-      miniGraph = CSVToArray(DISCK);
-    }
-    if (this.props.ticker === 'DISH') {
-      miniGraph = CSVToArray(DISH);
-    }
-    if (this.props.ticker === 'DG') {
-      miniGraph = CSVToArray(DG);
-    }
-    if (this.props.ticker === 'DLTR') {
-      miniGraph = CSVToArray(DLTR);
-    }
-    if (this.props.ticker === 'D') {
-      miniGraph = CSVToArray(D);
-    }
-    if (this.props.ticker === 'DPZ') {
-      miniGraph = CSVToArray(DPZ);
-    }
-    if (this.props.ticker === 'DOV') {
-      miniGraph = CSVToArray(DOV);
-    }
-    if (this.props.ticker === 'DOW') {
-      miniGraph = CSVToArray(DOW);
-    }
-    if (this.props.ticker === 'DTE') {
-      miniGraph = CSVToArray(DTE);
-    }
-    if (this.props.ticker === 'DUK') {
-      miniGraph = CSVToArray(DUK);
-    }
-    if (this.props.ticker === 'DRE') {
-      miniGraph = CSVToArray(DRE);
-    }
-    if (this.props.ticker === 'DD') {
-      miniGraph = CSVToArray(DD);
-    }
-    if (this.props.ticker === 'DXC') {
-      miniGraph = CSVToArray(DXC);
-    }
-    if (this.props.ticker === 'EMN') {
-      miniGraph = CSVToArray(EMN);
-    }
-    if (this.props.ticker === 'ETN') {
-      miniGraph = CSVToArray(ETN);
-    }
-    if (this.props.ticker === 'EBAY') {
-      miniGraph = CSVToArray(EBAY);
-    }
-    if (this.props.ticker === 'ECL') {
-      miniGraph = CSVToArray(ECL);
-    }
-    if (this.props.ticker === 'EIX') {
-      miniGraph = CSVToArray(EIX);
-    }
-    if (this.props.ticker === 'EW') {
-      miniGraph = CSVToArray(EW);
-    }
-    if (this.props.ticker === 'EA') {
-      miniGraph = CSVToArray(EA);
-    }
-    if (this.props.ticker === 'EMR') {
-      miniGraph = CSVToArray(EMR);
-    }
-    if (this.props.ticker === 'ENPH') {
-      miniGraph = CSVToArray(ENPH);
-    }
-    if (this.props.ticker === 'ETR') {
-      miniGraph = CSVToArray(ETR);
-    }
-    if (this.props.ticker === 'EOG') {
-      miniGraph = CSVToArray(EOG);
-    }
-    if (this.props.ticker === 'EFX') {
-      miniGraph = CSVToArray(EFX);
-    }
-    if (this.props.ticker === 'EQIX') {
-      miniGraph = CSVToArray(EQIX);
-    }
-    if (this.props.ticker === 'EQR') {
-      miniGraph = CSVToArray(EQR);
-    }
-    if (this.props.ticker === 'ESS') {
-      miniGraph = CSVToArray(ESS);
-    }
-    if (this.props.ticker === 'EL') {
-      miniGraph = CSVToArray(EL);
-    }
-    if (this.props.ticker === 'ETSY') {
-      miniGraph = CSVToArray(ETSY);
-    }
-    if (this.props.ticker === 'EVRG') {
-      miniGraph = CSVToArray(EVRG);
-    }
-    if (this.props.ticker === 'ES') {
-      miniGraph = CSVToArray(ES);
-    }
-    if (this.props.ticker === 'RE') {
-      miniGraph = CSVToArray(RE);
-    }
-    if (this.props.ticker === 'EXC') {
-      miniGraph = CSVToArray(EXC);
-    }
-    if (this.props.ticker === 'EXPE') {
-      miniGraph = CSVToArray(EXPE);
-    }
-    if (this.props.ticker === 'EXPD') {
-      miniGraph = CSVToArray(EXPD);
-    }
-    if (this.props.ticker === 'EXR') {
-      miniGraph = CSVToArray(EXR);
-    }
-    if (this.props.ticker === 'XOM') {
-      miniGraph = CSVToArray(XOM);
-    }
-    if (this.props.ticker === 'FFIV') {
-      miniGraph = CSVToArray(FFIV);
-    }
-    if (this.props.ticker === 'FB') {
-      miniGraph = CSVToArray(FB);
-    }
-    if (this.props.ticker === 'FAST') {
-      miniGraph = CSVToArray(FAST);
-    }
-    if (this.props.ticker === 'FRT') {
-      miniGraph = CSVToArray(FRT);
-    }
-    if (this.props.ticker === 'FDX') {
-      miniGraph = CSVToArray(FDX);
-    }
-    if (this.props.ticker === 'FIS') {
-      miniGraph = CSVToArray(FIS);
-    }
-    if (this.props.ticker === 'FITB') {
-      miniGraph = CSVToArray(FITB);
-    }
-    if (this.props.ticker === 'FE') {
-      miniGraph = CSVToArray(FE);
-    }
-    if (this.props.ticker === 'FRC') {
-      miniGraph = CSVToArray(FRC);
-    }
-    if (this.props.ticker === 'FISV') {
-      miniGraph = CSVToArray(FISV);
-    }
-    if (this.props.ticker === 'FLT') {
-      miniGraph = CSVToArray(FLT);
-    }
-    if (this.props.ticker === 'FLIR') {
-      miniGraph = CSVToArray(FLIR);
-    }
-    if (this.props.ticker === 'FLS') {
-      miniGraph = CSVToArray(FLS);
-    }
-    if (this.props.ticker === 'FMC') {
-      miniGraph = CSVToArray(FMC);
-    }
-    if (this.props.ticker === 'F') {
-      miniGraph = CSVToArray(F);
-    }
-    if (this.props.ticker === 'FTNT') {
-      miniGraph = CSVToArray(FTNT);
-    }
-    if (this.props.ticker === 'FTV') {
-      miniGraph = CSVToArray(FTV);
-    }
-    if (this.props.ticker === 'FBHS') {
-      miniGraph = CSVToArray(FBHS);
-    }
-    if (this.props.ticker === 'FOXA') {
-      miniGraph = CSVToArray(FOXA);
-    }
-    if (this.props.ticker === 'FOX') {
-      miniGraph = CSVToArray(FOX);
-    }
-    if (this.props.ticker === 'BEN') {
-      miniGraph = CSVToArray(BEN);
-    }
-    if (this.props.ticker === 'FCX') {
-      miniGraph = CSVToArray(FCX);
-    }
-    if (this.props.ticker === 'GPS') {
-      miniGraph = CSVToArray(GPS);
-    }
-    if (this.props.ticker === 'GRMN') {
-      miniGraph = CSVToArray(GRMN);
-    }
-    if (this.props.ticker === 'IT') {
-      miniGraph = CSVToArray(IT);
-    }
-    if (this.props.ticker === 'GD') {
-      miniGraph = CSVToArray(GD);
-    }
-    if (this.props.ticker === 'GE') {
-      miniGraph = CSVToArray(GE);
-    }
-    if (this.props.ticker === 'GIS') {
-      miniGraph = CSVToArray(GIS);
-    }
-    if (this.props.ticker === 'GM') {
-      miniGraph = CSVToArray(GM);
-    }
-    if (this.props.ticker === 'GPC') {
-      miniGraph = CSVToArray(GPC);
-    }
-    if (this.props.ticker === 'GILD') {
-      miniGraph = CSVToArray(GILD);
-    }
-    if (this.props.ticker === 'GL') {
-      miniGraph = CSVToArray(GL);
-    }
-    if (this.props.ticker === 'GPN') {
-      miniGraph = CSVToArray(GPN);
-    }
-    if (this.props.ticker === 'GS') {
-      miniGraph = CSVToArray(GS);
-    }
-    if (this.props.ticker === 'GWW') {
-      miniGraph = CSVToArray(GWW);
-    }
-    if (this.props.ticker === 'HAL') {
-      miniGraph = CSVToArray(HAL);
-    }
-    if (this.props.ticker === 'HBI') {
-      miniGraph = CSVToArray(HBI);
-    }
-    if (this.props.ticker === 'HIG') {
-      miniGraph = CSVToArray(HIG);
-    }
-    if (this.props.ticker === 'HAS') {
-      miniGraph = CSVToArray(HAS);
-    }
-    if (this.props.ticker === 'HCA') {
-      miniGraph = CSVToArray(HCA);
-    }
-    if (this.props.ticker === 'PEAK') {
-      miniGraph = CSVToArray(PEAK);
-    }
-    if (this.props.ticker === 'HSIC') {
-      miniGraph = CSVToArray(HSIC);
-    }
-    if (this.props.ticker === 'HSY') {
-      miniGraph = CSVToArray(HSY);
-    }
-    if (this.props.ticker === 'HES') {
-      miniGraph = CSVToArray(HES);
-    }
-    if (this.props.ticker === 'HPE') {
-      miniGraph = CSVToArray(HPE);
-    }
-    if (this.props.ticker === 'HLT') {
-      miniGraph = CSVToArray(HLT);
-    }
-    if (this.props.ticker === 'HFC') {
-      miniGraph = CSVToArray(HFC);
-    }
-    if (this.props.ticker === 'HOLX') {
-      miniGraph = CSVToArray(HOLX);
-    }
-    if (this.props.ticker === 'HD') {
-      miniGraph = CSVToArray(HD);
-    }
-    if (this.props.ticker === 'HON') {
-      miniGraph = CSVToArray(HON);
-    }
-    if (this.props.ticker === 'HRL') {
-      miniGraph = CSVToArray(HRL);
-    }
-    if (this.props.ticker === 'HST') {
-      miniGraph = CSVToArray(HST);
-    }
-    if (this.props.ticker === 'HWM') {
-      miniGraph = CSVToArray(HWM);
-    }
-    if (this.props.ticker === 'HPQ') {
-      miniGraph = CSVToArray(HPQ);
-    }
-    if (this.props.ticker === 'HUM') {
-      miniGraph = CSVToArray(HUM);
-    }
-    if (this.props.ticker === 'HBAN') {
-      miniGraph = CSVToArray(HBAN);
-    }
-    if (this.props.ticker === 'HII') {
-      miniGraph = CSVToArray(HII);
-    }
-    if (this.props.ticker === 'IEX') {
-      miniGraph = CSVToArray(IEX);
-    }
-    if (this.props.ticker === 'IDXX') {
-      miniGraph = CSVToArray(IDXX);
-    }
-    if (this.props.ticker === 'INFO') {
-      miniGraph = CSVToArray(INFO);
-    }
-    if (this.props.ticker === 'ITW') {
-      miniGraph = CSVToArray(ITW);
-    }
-    if (this.props.ticker === 'ILMN') {
-      miniGraph = CSVToArray(ILMN);
-    }
-    if (this.props.ticker === 'INCY') {
-      miniGraph = CSVToArray(INCY);
-    }
-    if (this.props.ticker === 'IR') {
-      miniGraph = CSVToArray(IR);
-    }
-    if (this.props.ticker === 'INTC') {
-      miniGraph = CSVToArray(INTC);
-    }
-    if (this.props.ticker === 'ICE') {
-      miniGraph = CSVToArray(ICE);
-    }
-    if (this.props.ticker === 'IBM') {
-      miniGraph = CSVToArray(IBM);
-    }
-    if (this.props.ticker === 'IP') {
-      miniGraph = CSVToArray(IP);
-    }
-    if (this.props.ticker === 'IPG') {
-      miniGraph = CSVToArray(IPG);
-    }
-    if (this.props.ticker === 'IFF') {
-      miniGraph = CSVToArray(IFF);
-    }
-    if (this.props.ticker === 'INTU') {
-      miniGraph = CSVToArray(INTU);
-    }
-    if (this.props.ticker === 'ISRG') {
-      miniGraph = CSVToArray(ISRG);
-    }
-    if (this.props.ticker === 'IVZ') {
-      miniGraph = CSVToArray(IVZ);
-    }
-    if (this.props.ticker === 'IPGP') {
-      miniGraph = CSVToArray(IPGP);
-    }
-    if (this.props.ticker === 'IQV') {
-      miniGraph = CSVToArray(IQV);
-    }
-    if (this.props.ticker === 'IRM') {
-      miniGraph = CSVToArray(IRM);
-    }
-    if (this.props.ticker === 'JKHY') {
-      miniGraph = CSVToArray(JKHY);
-    }
-    if (this.props.ticker === 'J') {
-      miniGraph = CSVToArray(J);
-    }
-    if (this.props.ticker === 'JBHT') {
-      miniGraph = CSVToArray(JBHT);
-    }
-    if (this.props.ticker === 'SJM') {
-      miniGraph = CSVToArray(SJM);
-    }
-    if (this.props.ticker === 'JNJ') {
-      miniGraph = CSVToArray(JNJ);
-    }
-    if (this.props.ticker === 'JCI') {
-      miniGraph = CSVToArray(JCI);
-    }
-    if (this.props.ticker === 'JPM') {
-      miniGraph = CSVToArray(JPM);
-    }
-    if (this.props.ticker === 'JNPR') {
-      miniGraph = CSVToArray(JNPR);
-    }
-    if (this.props.ticker === 'KSU') {
-      miniGraph = CSVToArray(KSU);
-    }
-    if (this.props.ticker === 'K') {
-      miniGraph = CSVToArray(K);
-    }
-    if (this.props.ticker === 'KEY') {
-      miniGraph = CSVToArray(KEY);
-    }
-    if (this.props.ticker === 'KEYS') {
-      miniGraph = CSVToArray(KEYS);
-    }
-    if (this.props.ticker === 'KMB') {
-      miniGraph = CSVToArray(KMB);
-    }
-    if (this.props.ticker === 'KIM') {
-      miniGraph = CSVToArray(KIM);
-    }
-    if (this.props.ticker === 'KMI') {
-      miniGraph = CSVToArray(KMI);
-    }
-    if (this.props.ticker === 'KLAC') {
-      miniGraph = CSVToArray(KLAC);
-    }
-    if (this.props.ticker === 'KHC') {
-      miniGraph = CSVToArray(KHC);
-    }
-    if (this.props.ticker === 'KR') {
-      miniGraph = CSVToArray(KR);
-    }
-    if (this.props.ticker === 'LB') {
-      miniGraph = CSVToArray(LB);
-    }
-    if (this.props.ticker === 'LHX') {
-      miniGraph = CSVToArray(LHX);
-    }
-    if (this.props.ticker === 'LH') {
-      miniGraph = CSVToArray(LH);
-    }
-    if (this.props.ticker === 'LRCX') {
-      miniGraph = CSVToArray(LRCX);
-    }
-    if (this.props.ticker === 'LW') {
-      miniGraph = CSVToArray(LW);
-    }
-    if (this.props.ticker === 'LVS') {
-      miniGraph = CSVToArray(LVS);
-    }
-    if (this.props.ticker === 'LEG') {
-      miniGraph = CSVToArray(LEG);
-    }
-    if (this.props.ticker === 'LDOS') {
-      miniGraph = CSVToArray(LDOS);
-    }
-    if (this.props.ticker === 'LEN') {
-      miniGraph = CSVToArray(LEN);
-    }
-    if (this.props.ticker === 'LLY') {
-      miniGraph = CSVToArray(LLY);
-    }
-    if (this.props.ticker === 'LNC') {
-      miniGraph = CSVToArray(LNC);
-    }
-    if (this.props.ticker === 'LIN') {
-      miniGraph = CSVToArray(LIN);
-    }
-    if (this.props.ticker === 'LYV') {
-      miniGraph = CSVToArray(LYV);
-    }
-    if (this.props.ticker === 'LKQ') {
-      miniGraph = CSVToArray(LKQ);
-    }
-    if (this.props.ticker === 'LMT') {
-      miniGraph = CSVToArray(LMT);
-    }
-    if (this.props.ticker === 'L') {
-      miniGraph = CSVToArray(L);
-    }
-    if (this.props.ticker === 'LOW') {
-      miniGraph = CSVToArray(LOW);
-    }
-    if (this.props.ticker === 'LUMN') {
-      miniGraph = CSVToArray(LUMN);
-    }
-    if (this.props.ticker === 'LYB') {
-      miniGraph = CSVToArray(LYB);
-    }
-    if (this.props.ticker === 'MTB') {
-      miniGraph = CSVToArray(MTB);
-    }
-    if (this.props.ticker === 'MRO') {
-      miniGraph = CSVToArray(MRO);
-    }
-    if (this.props.ticker === 'MPC') {
-      miniGraph = CSVToArray(MPC);
-    }
-    if (this.props.ticker === 'MKTX') {
-      miniGraph = CSVToArray(MKTX);
-    }
-    if (this.props.ticker === 'MAR') {
-      miniGraph = CSVToArray(MAR);
-    }
-    if (this.props.ticker === 'MMC') {
-      miniGraph = CSVToArray(MMC);
-    }
-    if (this.props.ticker === 'MLM') {
-      miniGraph = CSVToArray(MLM);
-    }
-    if (this.props.ticker === 'MAS') {
-      miniGraph = CSVToArray(MAS);
-    }
-    if (this.props.ticker === 'MA') {
-      miniGraph = CSVToArray(MA);
-    }
-    if (this.props.ticker === 'MKC') {
-      miniGraph = CSVToArray(MKC);
-    }
-    if (this.props.ticker === 'MXIM') {
-      miniGraph = CSVToArray(MXIM);
-    }
-    if (this.props.ticker === 'MCD') {
-      miniGraph = CSVToArray(MCD);
-    }
-    if (this.props.ticker === 'MCK') {
-      miniGraph = CSVToArray(MCK);
-    }
-    if (this.props.ticker === 'MDT') {
-      miniGraph = CSVToArray(MDT);
-    }
-    if (this.props.ticker === 'MRK') {
-      miniGraph = CSVToArray(MRK);
-    }
-    if (this.props.ticker === 'MET') {
-      miniGraph = CSVToArray(MET);
-    }
-    if (this.props.ticker === 'MTD') {
-      miniGraph = CSVToArray(MTD);
-    }
-    if (this.props.ticker === 'MGM') {
-      miniGraph = CSVToArray(MGM);
-    }
-    if (this.props.ticker === 'MCHP') {
-      miniGraph = CSVToArray(MCHP);
-    }
-    if (this.props.ticker === 'MU') {
-      miniGraph = CSVToArray(MU);
-    }
-    if (this.props.ticker === 'MSFT') {
-      miniGraph = CSVToArray(MSFT);
-    }
-    if (this.props.ticker === 'MAA') {
-      miniGraph = CSVToArray(MAA);
-    }
-    if (this.props.ticker === 'MHK') {
-      miniGraph = CSVToArray(MHK);
-    }
-    if (this.props.ticker === 'TAP') {
-      miniGraph = CSVToArray(TAP);
-    }
-    if (this.props.ticker === 'MDLZ') {
-      miniGraph = CSVToArray(MDLZ);
-    }
-    if (this.props.ticker === 'MPWR') {
-      miniGraph = CSVToArray(MPWR);
-    }
-    if (this.props.ticker === 'MNST') {
-      miniGraph = CSVToArray(MNST);
-    }
-    if (this.props.ticker === 'MCO') {
-      miniGraph = CSVToArray(MCO);
-    }
-    if (this.props.ticker === 'MS') {
-      miniGraph = CSVToArray(MS);
-    }
-    if (this.props.ticker === 'MOS') {
-      miniGraph = CSVToArray(MOS);
-    }
-    if (this.props.ticker === 'MSI') {
-      miniGraph = CSVToArray(MSI);
-    }
-    if (this.props.ticker === 'MSCI') {
-      miniGraph = CSVToArray(MSCI);
-    }
-    if (this.props.ticker === 'NDAQ') {
-      miniGraph = CSVToArray(NDAQ);
-    }
-    if (this.props.ticker === 'NTAP') {
-      miniGraph = CSVToArray(NTAP);
-    }
-    if (this.props.ticker === 'NFLX') {
-      miniGraph = CSVToArray(NFLX);
-    }
-    if (this.props.ticker === 'NWL') {
-      miniGraph = CSVToArray(NWL);
-    }
-    if (this.props.ticker === 'NEM') {
-      miniGraph = CSVToArray(NEM);
-    }
-    if (this.props.ticker === 'NWSA') {
-      miniGraph = CSVToArray(NWSA);
-    }
-    if (this.props.ticker === 'NWS') {
-      miniGraph = CSVToArray(NWS);
-    }
-    if (this.props.ticker === 'NEE') {
-      miniGraph = CSVToArray(NEE);
-    }
-    if (this.props.ticker === 'NLSN') {
-      miniGraph = CSVToArray(NLSN);
-    }
-    if (this.props.ticker === 'NKE') {
-      miniGraph = CSVToArray(NKE);
-    }
-    if (this.props.ticker === 'NI') {
-      miniGraph = CSVToArray(NI);
-    }
-    if (this.props.ticker === 'NSC') {
-      miniGraph = CSVToArray(NSC);
-    }
-    if (this.props.ticker === 'NTRS') {
-      miniGraph = CSVToArray(NTRS);
-    }
-    if (this.props.ticker === 'NOC') {
-      miniGraph = CSVToArray(NOC);
-    }
-    if (this.props.ticker === 'NLOK') {
-      miniGraph = CSVToArray(NLOK);
-    }
-    if (this.props.ticker === 'NCLH') {
-      miniGraph = CSVToArray(NCLH);
-    }
-    if (this.props.ticker === 'NOV') {
-      miniGraph = CSVToArray(NOV);
-    }
-    if (this.props.ticker === 'NRG') {
-      miniGraph = CSVToArray(NRG);
-    }
-    if (this.props.ticker === 'NUE') {
-      miniGraph = CSVToArray(NUE);
-    }
-    if (this.props.ticker === 'NVDA') {
-      miniGraph = CSVToArray(NVDA);
-    }
-    if (this.props.ticker === 'NVR') {
-      miniGraph = CSVToArray(NVR);
-    }
-    if (this.props.ticker === 'ORLY') {
-      miniGraph = CSVToArray(ORLY);
-    }
-    if (this.props.ticker === 'OXY') {
-      miniGraph = CSVToArray(OXY);
-    }
-    if (this.props.ticker === 'ODFL') {
-      miniGraph = CSVToArray(ODFL);
-    }
-    if (this.props.ticker === 'OMC') {
-      miniGraph = CSVToArray(OMC);
-    }
-    if (this.props.ticker === 'OKE') {
-      miniGraph = CSVToArray(OKE);
-    }
-    if (this.props.ticker === 'ORCL') {
-      miniGraph = CSVToArray(ORCL);
-    }
-    if (this.props.ticker === 'OTIS') {
-      miniGraph = CSVToArray(OTIS);
-    }
-    if (this.props.ticker === 'PCAR') {
-      miniGraph = CSVToArray(PCAR);
-    }
-    if (this.props.ticker === 'PKG') {
-      miniGraph = CSVToArray(PKG);
-    }
-    if (this.props.ticker === 'PH') {
-      miniGraph = CSVToArray(PH);
-    }
-    if (this.props.ticker === 'PAYX') {
-      miniGraph = CSVToArray(PAYX);
-    }
-    if (this.props.ticker === 'PAYC') {
-      miniGraph = CSVToArray(PAYC);
-    }
-    if (this.props.ticker === 'PYPL') {
-      miniGraph = CSVToArray(PYPL);
-    }
-    if (this.props.ticker === 'PNR') {
-      miniGraph = CSVToArray(PNR);
-    }
-    if (this.props.ticker === 'PBCT') {
-      miniGraph = CSVToArray(PBCT);
-    }
-    if (this.props.ticker === 'PEP') {
-      miniGraph = CSVToArray(PEP);
-    }
-    if (this.props.ticker === 'PKI') {
-      miniGraph = CSVToArray(PKI);
-    }
-    if (this.props.ticker === 'PRGO') {
-      miniGraph = CSVToArray(PRGO);
-    }
-    if (this.props.ticker === 'PFE') {
-      miniGraph = CSVToArray(PFE);
-    }
-    if (this.props.ticker === 'PM') {
-      miniGraph = CSVToArray(PM);
-    }
-    if (this.props.ticker === 'PSX') {
-      miniGraph = CSVToArray(PSX);
-    }
-    if (this.props.ticker === 'PNW') {
-      miniGraph = CSVToArray(PNW);
-    }
-    if (this.props.ticker === 'PXD') {
-      miniGraph = CSVToArray(PXD);
-    }
-    if (this.props.ticker === 'PNC') {
-      miniGraph = CSVToArray(PNC);
-    }
-    if (this.props.ticker === 'POOL') {
-      miniGraph = CSVToArray(POOL);
-    }
-    if (this.props.ticker === 'PPG') {
-      miniGraph = CSVToArray(PPG);
-    }
-    if (this.props.ticker === 'PPL') {
-      miniGraph = CSVToArray(PPL);
-    }
-    if (this.props.ticker === 'PFG') {
-      miniGraph = CSVToArray(PFG);
-    }
-    if (this.props.ticker === 'PG') {
-      miniGraph = CSVToArray(PG);
-    }
-    if (this.props.ticker === 'PGR') {
-      miniGraph = CSVToArray(PGR);
-    }
-    if (this.props.ticker === 'PLD') {
-      miniGraph = CSVToArray(PLD);
-    }
-    if (this.props.ticker === 'PRU') {
-      miniGraph = CSVToArray(PRU);
-    }
-    if (this.props.ticker === 'PEG') {
-      miniGraph = CSVToArray(PEG);
-    }
-    if (this.props.ticker === 'PSA') {
-      miniGraph = CSVToArray(PSA);
-    }
-    if (this.props.ticker === 'PHM') {
-      miniGraph = CSVToArray(PHM);
-    }
-    if (this.props.ticker === 'PVH') {
-      miniGraph = CSVToArray(PVH);
-    }
-    if (this.props.ticker === 'QRVO') {
-      miniGraph = CSVToArray(QRVO);
-    }
-    if (this.props.ticker === 'PWR') {
-      miniGraph = CSVToArray(PWR);
-    }
-    if (this.props.ticker === 'QCOM') {
-      miniGraph = CSVToArray(QCOM);
-    }
-    if (this.props.ticker === 'DGX') {
-      miniGraph = CSVToArray(DGX);
-    }
-    if (this.props.ticker === 'RL') {
-      miniGraph = CSVToArray(RL);
-    }
-    if (this.props.ticker === 'RJF') {
-      miniGraph = CSVToArray(RJF);
-    }
-    if (this.props.ticker === 'RTX') {
-      miniGraph = CSVToArray(RTX);
-    }
-    if (this.props.ticker === 'O') {
-      miniGraph = CSVToArray(O);
-    }
-    if (this.props.ticker === 'REG') {
-      miniGraph = CSVToArray(REG);
-    }
-    if (this.props.ticker === 'REGN') {
-      miniGraph = CSVToArray(REGN);
-    }
-    if (this.props.ticker === 'RF') {
-      miniGraph = CSVToArray(RF);
-    }
-    if (this.props.ticker === 'RSG') {
-      miniGraph = CSVToArray(RSG);
-    }
-    if (this.props.ticker === 'RMD') {
-      miniGraph = CSVToArray(RMD);
-    }
-    if (this.props.ticker === 'RHI') {
-      miniGraph = CSVToArray(RHI);
-    }
-    if (this.props.ticker === 'ROK') {
-      miniGraph = CSVToArray(ROK);
-    }
-    if (this.props.ticker === 'ROL') {
-      miniGraph = CSVToArray(ROL);
-    }
-    if (this.props.ticker === 'ROP') {
-      miniGraph = CSVToArray(ROP);
-    }
-    if (this.props.ticker === 'ROST') {
-      miniGraph = CSVToArray(ROST);
-    }
-    if (this.props.ticker === 'RCL') {
-      miniGraph = CSVToArray(RCL);
-    }
-    if (this.props.ticker === 'SPGI') {
-      miniGraph = CSVToArray(SPGI);
-    }
-    if (this.props.ticker === 'CRM') {
-      miniGraph = CSVToArray(CRM);
-    }
-    if (this.props.ticker === 'SBAC') {
-      miniGraph = CSVToArray(SBAC);
-    }
-    if (this.props.ticker === 'SLB') {
-      miniGraph = CSVToArray(SLB);
-    }
-    if (this.props.ticker === 'STX') {
-      miniGraph = CSVToArray(STX);
-    }
-    if (this.props.ticker === 'SEE') {
-      miniGraph = CSVToArray(SEE);
-    }
-    if (this.props.ticker === 'SRE') {
-      miniGraph = CSVToArray(SRE);
-    }
-    if (this.props.ticker === 'NOW') {
-      miniGraph = CSVToArray(NOW);
-    }
-    if (this.props.ticker === 'SHW') {
-      miniGraph = CSVToArray(SHW);
-    }
-    if (this.props.ticker === 'SPG') {
-      miniGraph = CSVToArray(SPG);
-    }
-    if (this.props.ticker === 'SWKS') {
-      miniGraph = CSVToArray(SWKS);
-    }
-    if (this.props.ticker === 'SLG') {
-      miniGraph = CSVToArray(SLG);
-    }
-    if (this.props.ticker === 'SNA') {
-      miniGraph = CSVToArray(SNA);
-    }
-    if (this.props.ticker === 'SO') {
-      miniGraph = CSVToArray(SO);
-    }
-    if (this.props.ticker === 'LUV') {
-      miniGraph = CSVToArray(LUV);
-    }
-    if (this.props.ticker === 'SWK') {
-      miniGraph = CSVToArray(SWK);
-    }
-    if (this.props.ticker === 'SBUX') {
-      miniGraph = CSVToArray(SBUX);
-    }
-    if (this.props.ticker === 'STT') {
-      miniGraph = CSVToArray(STT);
-    }
-    if (this.props.ticker === 'STE') {
-      miniGraph = CSVToArray(STE);
-    }
-    if (this.props.ticker === 'SYK') {
-      miniGraph = CSVToArray(SYK);
-    }
-    if (this.props.ticker === 'SIVB') {
-      miniGraph = CSVToArray(SIVB);
-    }
-    if (this.props.ticker === 'SYF') {
-      miniGraph = CSVToArray(SYF);
-    }
-    if (this.props.ticker === 'SNPS') {
-      miniGraph = CSVToArray(SNPS);
-    }
-    if (this.props.ticker === 'SYY') {
-      miniGraph = CSVToArray(SYY);
-    }
-    if (this.props.ticker === 'TMUS') {
-      miniGraph = CSVToArray(TMUS);
-    }
-    if (this.props.ticker === 'TROW') {
-      miniGraph = CSVToArray(TROW);
-    }
-    if (this.props.ticker === 'TTWO') {
-      miniGraph = CSVToArray(TTWO);
-    }
-    if (this.props.ticker === 'TPR') {
-      miniGraph = CSVToArray(TPR);
-    }
-    if (this.props.ticker === 'TGT') {
-      miniGraph = CSVToArray(TGT);
-    }
-    if (this.props.ticker === 'TEL') {
-      miniGraph = CSVToArray(TEL);
-    }
-    if (this.props.ticker === 'TDY') {
-      miniGraph = CSVToArray(TDY);
-    }
-    if (this.props.ticker === 'TFX') {
-      miniGraph = CSVToArray(TFX);
-    }
-    if (this.props.ticker === 'TER') {
-      miniGraph = CSVToArray(TER);
-    }
-    if (this.props.ticker === 'TSLA') {
-      miniGraph = CSVToArray(TSLA);
-    }
-    if (this.props.ticker === 'TXN') {
-      miniGraph = CSVToArray(TXN);
-    }
-    if (this.props.ticker === 'TXT') {
-      miniGraph = CSVToArray(TXT);
-    }
-    if (this.props.ticker === 'TMO') {
-      miniGraph = CSVToArray(TMO);
-    }
-    if (this.props.ticker === 'TJX') {
-      miniGraph = CSVToArray(TJX);
-    }
-    if (this.props.ticker === 'TSCO') {
-      miniGraph = CSVToArray(TSCO);
-    }
-    if (this.props.ticker === 'TT') {
-      miniGraph = CSVToArray(TT);
-    }
-    if (this.props.ticker === 'TDG') {
-      miniGraph = CSVToArray(TDG);
-    }
-    if (this.props.ticker === 'TRV') {
-      miniGraph = CSVToArray(TRV);
-    }
-    if (this.props.ticker === 'TRMB') {
-      miniGraph = CSVToArray(TRMB);
-    }
-    if (this.props.ticker === 'TFC') {
-      miniGraph = CSVToArray(TFC);
-    }
-    if (this.props.ticker === 'TWTR') {
-      miniGraph = CSVToArray(TWTR);
-    }
-    if (this.props.ticker === 'TYL') {
-      miniGraph = CSVToArray(TYL);
-    }
-    if (this.props.ticker === 'TSN') {
-      miniGraph = CSVToArray(TSN);
-    }
-    if (this.props.ticker === 'UDR') {
-      miniGraph = CSVToArray(UDR);
-    }
-    if (this.props.ticker === 'ULTA') {
-      miniGraph = CSVToArray(ULTA);
-    }
-    if (this.props.ticker === 'USB') {
-      miniGraph = CSVToArray(USB);
-    }
-    if (this.props.ticker === 'UAA') {
-      miniGraph = CSVToArray(UAA);
-    }
-    if (this.props.ticker === 'UA') {
-      miniGraph = CSVToArray(UA);
-    }
-    if (this.props.ticker === 'UNP') {
-      miniGraph = CSVToArray(UNP);
-    }
-    if (this.props.ticker === 'UAL') {
-      miniGraph = CSVToArray(UAL);
-    }
-    if (this.props.ticker === 'UNH') {
-      miniGraph = CSVToArray(UNH);
-    }
-    if (this.props.ticker === 'UPS') {
-      miniGraph = CSVToArray(UPS);
-    }
-    if (this.props.ticker === 'URI') {
-      miniGraph = CSVToArray(URI);
-    }
-    if (this.props.ticker === 'UHS') {
-      miniGraph = CSVToArray(UHS);
-    }
-    if (this.props.ticker === 'UNM') {
-      miniGraph = CSVToArray(UNM);
-    }
-    if (this.props.ticker === 'VLO') {
-      miniGraph = CSVToArray(VLO);
-    }
-    if (this.props.ticker === 'VAR') {
-      miniGraph = CSVToArray(VAR);
-    }
-    if (this.props.ticker === 'VTR') {
-      miniGraph = CSVToArray(VTR);
-    }
-    if (this.props.ticker === 'VRSN') {
-      miniGraph = CSVToArray(VRSN);
-    }
-    if (this.props.ticker === 'VRSK') {
-      miniGraph = CSVToArray(VRSK);
-    }
-    if (this.props.ticker === 'VZ') {
-      miniGraph = CSVToArray(VZ);
-    }
-    if (this.props.ticker === 'VRTX') {
-      miniGraph = CSVToArray(VRTX);
-    }
-    if (this.props.ticker === 'VFC') {
-      miniGraph = CSVToArray(VFC);
-    }
-    if (this.props.ticker === 'VIAC') {
-      miniGraph = CSVToArray(VIAC);
-    }
-    if (this.props.ticker === 'VTRS') {
-      miniGraph = CSVToArray(VTRS);
-    }
-    if (this.props.ticker === 'V') {
-      miniGraph = CSVToArray(V);
-    }
-    if (this.props.ticker === 'VNT') {
-      miniGraph = CSVToArray(VNT);
-    }
-    if (this.props.ticker === 'VNO') {
-      miniGraph = CSVToArray(VNO);
-    }
-    if (this.props.ticker === 'VMC') {
-      miniGraph = CSVToArray(VMC);
-    }
-    if (this.props.ticker === 'WRB') {
-      miniGraph = CSVToArray(WRB);
-    }
-    if (this.props.ticker === 'WAB') {
-      miniGraph = CSVToArray(WAB);
-    }
-    if (this.props.ticker === 'WMT') {
-      miniGraph = CSVToArray(WMT);
-    }
-    if (this.props.ticker === 'WBA') {
-      miniGraph = CSVToArray(WBA);
-    }
-    if (this.props.ticker === 'DIS') {
-      miniGraph = CSVToArray(DIS);
-    }
-    if (this.props.ticker === 'WM') {
-      miniGraph = CSVToArray(WM);
-    }
-    if (this.props.ticker === 'WAT') {
-      miniGraph = CSVToArray(WAT);
-    }
-    if (this.props.ticker === 'WEC') {
-      miniGraph = CSVToArray(WEC);
-    }
-    if (this.props.ticker === 'WFC') {
-      miniGraph = CSVToArray(WFC);
-    }
-    if (this.props.ticker === 'WELL') {
-      miniGraph = CSVToArray(WELL);
-    }
-    if (this.props.ticker === 'WST') {
-      miniGraph = CSVToArray(WST);
-    }
-    if (this.props.ticker === 'WDC') {
-      miniGraph = CSVToArray(WDC);
-    }
-    if (this.props.ticker === 'WU') {
-      miniGraph = CSVToArray(WU);
-    }
-    if (this.props.ticker === 'WRK') {
-      miniGraph = CSVToArray(WRK);
-    }
-    if (this.props.ticker === 'WY') {
-      miniGraph = CSVToArray(WY);
-    }
-    if (this.props.ticker === 'WHR') {
-      miniGraph = CSVToArray(WHR);
-    }
-    if (this.props.ticker === 'WMB') {
-      miniGraph = CSVToArray(WMB);
-    }
-    if (this.props.ticker === 'WLTW') {
-      miniGraph = CSVToArray(WLTW);
-    }
-    if (this.props.ticker === 'WYNN') {
-      miniGraph = CSVToArray(WYNN);
-    }
-    if (this.props.ticker === 'XEL') {
-      miniGraph = CSVToArray(XEL);
-    }
-    if (this.props.ticker === 'XRX') {
-      miniGraph = CSVToArray(XRX);
-    }
-    if (this.props.ticker === 'XLNX') {
-      miniGraph = CSVToArray(XLNX);
-    }
-    if (this.props.ticker === 'XYL') {
-      miniGraph = CSVToArray(XYL);
-    }
-    if (this.props.ticker === 'YUM') {
-      miniGraph = CSVToArray(YUM);
-    }
-    if (this.props.ticker === 'ZBRA') {
-      miniGraph = CSVToArray(ZBRA);
-    }
-    if (this.props.ticker === 'ZBH') {
-      miniGraph = CSVToArray(ZBH);
-    }
-    if (this.props.ticker === 'ZION') {
-      miniGraph = CSVToArray(ZION);
-    }
-    if (this.props.ticker === 'ZTS') {
-      miniGraph = CSVToArray(ZTS);
-    }
-    const style1 = {
-      height: "50px",
-      width: "96%",
-      color: "white",
-      backgroundColor: "coral",
-      padding: "10px",
-      fontFamily: "Arial"
-    };
-    const style2 = {
-      height: "30px",
-      width: "20%",
-      color: "black",
-      padding: "10px",
-      fontFamily: "Arial"
-    };
-    const style3 = {
-      color: "white",
-      backgroundColor: "red",
-      padding: "10px",
-      fontFamily: "Arial"
-    };
-    const style4 = {
-      color: "white",
-      backgroundColor: "grey",
-      padding: "10px",
-      fontFamily: "Arial"
-    };
-    const style5 = {
-      color: "white",
-      backgroundColor: "green",
-      padding: "10px",
-      fontFamily: "Arial"
-    };
-    const style6 = {
-      color: "red",
-      padding: "10px",
-      fontFamily: "Arial"
-    };
-    const style7 = {
-      color: "green",
-      padding: "10px",
-      fontFamily: "Arial"
-    };
-    var difference;
-    var price;
-    var percentChange;
-    var style;
-    if ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) > 0) {
-      difference = "+" + (miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]).toFixed(2).toString();
-      percentChange = "+" + ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) * 100 / miniGraph[miniGraph.length - 2]).toFixed(2).toString();
-      style = style7;
-    }
-    else {
-      difference = "" + (miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]).toFixed(2).toString();
-      percentChange = "" + ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) * 100 / miniGraph[miniGraph.length - 2]).toFixed(2).toString();
-      style = style6;
-    }
-    price = (parseFloat(miniGraph[miniGraph.length - 1])).toFixed(2);
-    return (
-      <div style={{border: "solid black"}} className="row">
-      <h1 style={style1}>{this.props.ticker}</h1>
-      <h1 style={style2}>{price}</h1>
-      <h1 style={style}>{difference} ({percentChange}%)</h1>
-      <h2>
-          <Button style={style3} variant="contained" color="secondary">Bearish</Button>
-          <Button  style={style4} variant="contained" color="secondary">Neutral</Button>
-          <Button  style={style5} variant="contained" color="secondary">Bullish</Button>
-      </h2>
-      <VictoryChart width='600' height='300'>
-      <VictoryLine data={miniGraph} x='Date' y='Price' />
-      </VictoryChart>
-      <VictoryPie data={[
-      { x: "bullish", y: stockSentiment.bullish },
-      { x: "neutral", y: stockSentiment.neutral },
-      { x: "bearish", y: stockSentiment.bearish }
-      ]} />
-      </div>
-    );
+  var miniGraph = CSVToArray(MMM);
+
+  const [stockSentiment, setStockSentiment] = useState({
+    bullish: 0,
+    bearish: 0,
+    neutral: 0
+  });
+
+  const loadSentiment = async() => {
+    const sentiment = await getSentimentHistory(props.ticker);
+    setStockSentiment(sentiment);
   }
+  if (props.ticker === 'MMM') {
+    miniGraph = CSVToArray(MMM);
+  }
+  else if (props.ticker === 'ABT') {
+    miniGraph = CSVToArray(ABT);
+  }
+  else if (props.ticker === 'ABBV') {
+    miniGraph = CSVToArray(ABBV);
+  }
+  else if (props.ticker === 'ABMD') {
+    miniGraph = CSVToArray(ABMD);
+  }
+  else if (props.ticker === 'ACN') {
+    miniGraph = CSVToArray(ACN);
+  }
+  else if (props.ticker === 'ATVI') {
+    miniGraph = CSVToArray(ATVI);
+  }
+  else if (props.ticker === 'ADBE') {
+    miniGraph = CSVToArray(ADBE);
+  }
+  else if (props.ticker === 'AMD') {
+    miniGraph = CSVToArray(AMD);
+  }
+  else if (props.ticker === 'AAP') {
+    miniGraph = CSVToArray(AAP);
+  }
+  else if (props.ticker === 'AES') {
+    miniGraph = CSVToArray(AES);
+  }
+  else if (props.ticker === 'AFL') {
+    miniGraph = CSVToArray(AFL);
+  }
+  else if (props.ticker === 'A') {
+    miniGraph = CSVToArray(A);
+  }
+  else if (props.ticker === 'APD') {
+    miniGraph = CSVToArray(APD);
+  }
+  else if (props.ticker === 'AKAM') {
+    miniGraph = CSVToArray(AKAM);
+  }
+  else if (props.ticker === 'ALK') {
+    miniGraph = CSVToArray(ALK);
+  }
+  else if (props.ticker === 'ALB') {
+    miniGraph = CSVToArray(ALB);
+  }
+  else if (props.ticker === 'ARE') {
+    miniGraph = CSVToArray(ARE);
+  }
+  else if (props.ticker === 'ALXN') {
+    miniGraph = CSVToArray(ALXN);
+  }
+  else if (props.ticker === 'ALGN') {
+    miniGraph = CSVToArray(ALGN);
+  }
+  else if (props.ticker === 'ALLE') {
+    miniGraph = CSVToArray(ALLE);
+  }
+  else if (props.ticker === 'LNT') {
+    miniGraph = CSVToArray(LNT);
+  }
+  else if (props.ticker === 'ALL') {
+    miniGraph = CSVToArray(ALL);
+  }
+  else if (props.ticker === 'GOOGL') {
+    miniGraph = CSVToArray(GOOGL);
+  }
+  else if (props.ticker === 'GOOG') {
+    miniGraph = CSVToArray(GOOG);
+  }
+  else if (props.ticker === 'MO') {
+    miniGraph = CSVToArray(MO);
+  }
+  else if (props.ticker === 'AMZN') {
+    miniGraph = CSVToArray(AMZN);
+  }
+  else if (props.ticker === 'AMCR') {
+    miniGraph = CSVToArray(AMCR);
+  }
+  else if (props.ticker === 'AEE') {
+    miniGraph = CSVToArray(AEE);
+  }
+  else if (props.ticker === 'AAL') {
+    miniGraph = CSVToArray(AAL);
+  }
+  else if (props.ticker === 'AEP') {
+    miniGraph = CSVToArray(AEP);
+  }
+  else if (props.ticker === 'AXP') {
+    miniGraph = CSVToArray(AXP);
+  }
+  else if (props.ticker === 'AIG') {
+    miniGraph = CSVToArray(AIG);
+  }
+  else if (props.ticker === 'AMT') {
+    miniGraph = CSVToArray(AMT);
+  }
+  else if (props.ticker === 'AWK') {
+    miniGraph = CSVToArray(AWK);
+  }
+  else if (props.ticker === 'AMP') {
+    miniGraph = CSVToArray(AMP);
+  }
+  else if (props.ticker === 'ABC') {
+    miniGraph = CSVToArray(ABC);
+  }
+  else if (props.ticker === 'AME') {
+    miniGraph = CSVToArray(AME);
+  }
+  else if (props.ticker === 'AMGN') {
+    miniGraph = CSVToArray(AMGN);
+  }
+  else if (props.ticker === 'APH') {
+    miniGraph = CSVToArray(APH);
+  }
+  else if (props.ticker === 'ADI') {
+    miniGraph = CSVToArray(ADI);
+  }
+  else if (props.ticker === 'ANSS') {
+    miniGraph = CSVToArray(ANSS);
+  }
+  else if (props.ticker === 'ANTM') {
+    miniGraph = CSVToArray(ANTM);
+  }
+  else if (props.ticker === 'AON') {
+    miniGraph = CSVToArray(AON);
+  }
+  else if (props.ticker === 'AOS') {
+    miniGraph = CSVToArray(AOS);
+  }
+  else if (props.ticker === 'APA') {
+    miniGraph = CSVToArray(APA);
+  }
+  else if (props.ticker === 'AAPL') {
+    miniGraph = CSVToArray(AAPL);
+  }
+  else if (props.ticker === 'AMAT') {
+    miniGraph = CSVToArray(AMAT);
+  }
+  else if (props.ticker === 'APTV') {
+    miniGraph = CSVToArray(APTV);
+  }
+  else if (props.ticker === 'ADM') {
+    miniGraph = CSVToArray(ADM);
+  }
+  else if (props.ticker === 'ANET') {
+    miniGraph = CSVToArray(ANET);
+  }
+  else if (props.ticker === 'AJG') {
+    miniGraph = CSVToArray(AJG);
+  }
+  else if (props.ticker === 'AIZ') {
+    miniGraph = CSVToArray(AIZ);
+  }
+  else if (props.ticker === 'T') {
+    miniGraph = CSVToArray(T);
+  }
+  else if (props.ticker === 'ATO') {
+    miniGraph = CSVToArray(ATO);
+  }
+  else if (props.ticker === 'ADSK') {
+    miniGraph = CSVToArray(ADSK);
+  }
+  else if (props.ticker === 'ADP') {
+    miniGraph = CSVToArray(ADP);
+  }
+  else if (props.ticker === 'AZO') {
+    miniGraph = CSVToArray(AZO);
+  }
+  else if (props.ticker === 'AVB') {
+    miniGraph = CSVToArray(AVB);
+  }
+  else if (props.ticker === 'AVY') {
+    miniGraph = CSVToArray(AVY);
+  }
+  else if (props.ticker === 'BKR') {
+    miniGraph = CSVToArray(BKR);
+  }
+  else if (props.ticker === 'BLL') {
+    miniGraph = CSVToArray(BLL);
+  }
+  else if (props.ticker === 'BAC') {
+    miniGraph = CSVToArray(BAC);
+  }
+  else if (props.ticker === 'BK') {
+    miniGraph = CSVToArray(BK);
+  }
+  else if (props.ticker === 'BAX') {
+    miniGraph = CSVToArray(BAX);
+  }
+  else if (props.ticker === 'BDX') {
+    miniGraph = CSVToArray(BDX);
+  }
+  else if (props.ticker === 'BRK.B') {
+    miniGraph = CSVToArray(BRKB);
+  }
+  else if (props.ticker === 'BBY') {
+    miniGraph = CSVToArray(BBY);
+  }
+  else if (props.ticker === 'BIO') {
+    miniGraph = CSVToArray(BIO);
+  }
+  else if (props.ticker === 'BIIB') {
+    miniGraph = CSVToArray(BIIB);
+  }
+  else if (props.ticker === 'BLK') {
+    miniGraph = CSVToArray(BLK);
+  }
+  else if (props.ticker === 'BA') {
+    miniGraph = CSVToArray(BA);
+  }
+  else if (props.ticker === 'BKNG') {
+    miniGraph = CSVToArray(BKNG);
+  }
+  else if (props.ticker === 'BWA') {
+    miniGraph = CSVToArray(BWA);
+  }
+  else if (props.ticker === 'BXP') {
+    miniGraph = CSVToArray(BXP);
+  }
+  else if (props.ticker === 'BSX') {
+    miniGraph = CSVToArray(BSX);
+  }
+  else if (props.ticker === 'BMY') {
+    miniGraph = CSVToArray(BMY);
+  }
+  else if (props.ticker === 'AVGO') {
+    miniGraph = CSVToArray(AVGO);
+  }
+  else if (props.ticker === 'BR') {
+    miniGraph = CSVToArray(BR);
+  }
+  else if (props.ticker === 'BF.B') {
+    miniGraph = CSVToArray(BFB);
+  }
+  else if (props.ticker === 'CHRW') {
+    miniGraph = CSVToArray(CHRW);
+  }
+  else if (props.ticker === 'COG') {
+    miniGraph = CSVToArray(COG);
+  }
+  else if (props.ticker === 'CDNS') {
+    miniGraph = CSVToArray(CDNS);
+  }
+  else if (props.ticker === 'CPB') {
+    miniGraph = CSVToArray(CPB);
+  }
+  else if (props.ticker === 'COF') {
+    miniGraph = CSVToArray(COF);
+  }
+  else if (props.ticker === 'CAH') {
+    miniGraph = CSVToArray(CAH);
+  }
+  else if (props.ticker === 'KMX') {
+    miniGraph = CSVToArray(KMX);
+  }
+  else if (props.ticker === 'CCL') {
+    miniGraph = CSVToArray(CCL);
+  }
+  else if (props.ticker === 'CARR') {
+    miniGraph = CSVToArray(CARR);
+  }
+  else if (props.ticker === 'CTLT') {
+    miniGraph = CSVToArray(CTLT);
+  }
+  else if (props.ticker === 'CAT') {
+    miniGraph = CSVToArray(CAT);
+  }
+  else if (props.ticker === 'CBOE') {
+    miniGraph = CSVToArray(CBOE);
+  }
+  else if (props.ticker === 'CBRE') {
+    miniGraph = CSVToArray(CBRE);
+  }
+  else if (props.ticker === 'CDW') {
+    miniGraph = CSVToArray(CDW);
+  }
+  else if (props.ticker === 'CE') {
+    miniGraph = CSVToArray(CE);
+  }
+  else if (props.ticker === 'CNC') {
+    miniGraph = CSVToArray(CNC);
+  }
+  else if (props.ticker === 'CNP') {
+    miniGraph = CSVToArray(CNP);
+  }
+  else if (props.ticker === 'CERN') {
+    miniGraph = CSVToArray(CERN);
+  }
+  else if (props.ticker === 'CF') {
+    miniGraph = CSVToArray(CF);
+  }
+  else if (props.ticker === 'SCHW') {
+    miniGraph = CSVToArray(SCHW);
+  }
+  else if (props.ticker === 'CHTR') {
+    miniGraph = CSVToArray(CHTR);
+  }
+  else if (props.ticker === 'CVX') {
+    miniGraph = CSVToArray(CVX);
+  }
+  else if (props.ticker === 'CMG') {
+    miniGraph = CSVToArray(CMG);
+  }
+  else if (props.ticker === 'CB') {
+    miniGraph = CSVToArray(CB);
+  }
+  else if (props.ticker === 'CHD') {
+    miniGraph = CSVToArray(CHD);
+  }
+  else if (props.ticker === 'CI') {
+    miniGraph = CSVToArray(CI);
+  }
+  else if (props.ticker === 'CINF') {
+    miniGraph = CSVToArray(CINF);
+  }
+  else if (props.ticker === 'CTAS') {
+    miniGraph = CSVToArray(CTAS);
+  }
+  else if (props.ticker === 'CSCO') {
+    miniGraph = CSVToArray(CSCO);
+  }
+  else if (props.ticker === 'C') {
+    miniGraph = CSVToArray(C);
+  }
+  else if (props.ticker === 'CFG') {
+    miniGraph = CSVToArray(CFG);
+  }
+  else if (props.ticker === 'CTXS') {
+    miniGraph = CSVToArray(CTXS);
+  }
+  else if (props.ticker === 'CLX') {
+    miniGraph = CSVToArray(CLX);
+  }
+  else if (props.ticker === 'CME') {
+    miniGraph = CSVToArray(CME);
+  }
+  else if (props.ticker === 'CMS') {
+    miniGraph = CSVToArray(CMS);
+  }
+  else if (props.ticker === 'KO') {
+    miniGraph = CSVToArray(KO);
+  }
+  else if (props.ticker === 'CTSH') {
+    miniGraph = CSVToArray(CTSH);
+  }
+  else if (props.ticker === 'CL') {
+    miniGraph = CSVToArray(CL);
+  }
+  else if (props.ticker === 'CMCSA') {
+    miniGraph = CSVToArray(CMCSA);
+  }
+  else if (props.ticker === 'CMA') {
+    miniGraph = CSVToArray(CMA);
+  }
+  else if (props.ticker === 'CAG') {
+    miniGraph = CSVToArray(CAG);
+  }
+  else if (props.ticker === 'COP') {
+    miniGraph = CSVToArray(COP);
+  }
+  else if (props.ticker === 'ED') {
+    miniGraph = CSVToArray(ED);
+  }
+  else if (props.ticker === 'STZ') {
+    miniGraph = CSVToArray(STZ);
+  }
+  else if (props.ticker === 'COO') {
+    miniGraph = CSVToArray(COO);
+  }
+  else if (props.ticker === 'CPRT') {
+    miniGraph = CSVToArray(CPRT);
+  }
+  else if (props.ticker === 'GLW') {
+    miniGraph = CSVToArray(GLW);
+  }
+  else if (props.ticker === 'CTVA') {
+    miniGraph = CSVToArray(CTVA);
+  }
+  else if (props.ticker === 'COST') {
+    miniGraph = CSVToArray(COST);
+  }
+  else if (props.ticker === 'CCI') {
+    miniGraph = CSVToArray(CCI);
+  }
+  else if (props.ticker === 'CSX') {
+    miniGraph = CSVToArray(CSX);
+  }
+  else if (props.ticker === 'CMI') {
+    miniGraph = CSVToArray(CMI);
+  }
+  else if (props.ticker === 'CVS') {
+    miniGraph = CSVToArray(CVS);
+  }
+  else if (props.ticker === 'DHI') {
+    miniGraph = CSVToArray(DHI);
+  }
+  else if (props.ticker === 'DHR') {
+    miniGraph = CSVToArray(DHR);
+  }
+  else if (props.ticker === 'DRI') {
+    miniGraph = CSVToArray(DRI);
+  }
+  else if (props.ticker === 'DVA') {
+    miniGraph = CSVToArray(DVA);
+  }
+  else if (props.ticker === 'DE') {
+    miniGraph = CSVToArray(DE);
+  }
+  else if (props.ticker === 'DAL') {
+    miniGraph = CSVToArray(DAL);
+  }
+  else if (props.ticker === 'XRAY') {
+    miniGraph = CSVToArray(XRAY);
+  }
+  else if (props.ticker === 'DVN') {
+    miniGraph = CSVToArray(DVN);
+  }
+  else if (props.ticker === 'DXCM') {
+    miniGraph = CSVToArray(DXCM);
+  }
+  else if (props.ticker === 'FANG') {
+    miniGraph = CSVToArray(FANG);
+  }
+  else if (props.ticker === 'DLR') {
+    miniGraph = CSVToArray(DLR);
+  }
+  else if (props.ticker === 'DFS') {
+    miniGraph = CSVToArray(DFS);
+  }
+  else if (props.ticker === 'DISCA') {
+    miniGraph = CSVToArray(DISCA);
+  }
+  else if (props.ticker === 'DISCK') {
+    miniGraph = CSVToArray(DISCK);
+  }
+  else if (props.ticker === 'DISH') {
+    miniGraph = CSVToArray(DISH);
+  }
+  else if (props.ticker === 'DG') {
+    miniGraph = CSVToArray(DG);
+  }
+  else if (props.ticker === 'DLTR') {
+    miniGraph = CSVToArray(DLTR);
+  }
+  else if (props.ticker === 'D') {
+    miniGraph = CSVToArray(D);
+  }
+  else if (props.ticker === 'DPZ') {
+    miniGraph = CSVToArray(DPZ);
+  }
+  else if (props.ticker === 'DOV') {
+    miniGraph = CSVToArray(DOV);
+  }
+  else if (props.ticker === 'DOW') {
+    miniGraph = CSVToArray(DOW);
+  }
+  else if (props.ticker === 'DTE') {
+    miniGraph = CSVToArray(DTE);
+  }
+  else if (props.ticker === 'DUK') {
+    miniGraph = CSVToArray(DUK);
+  }
+  else if (props.ticker === 'DRE') {
+    miniGraph = CSVToArray(DRE);
+  }
+  else if (props.ticker === 'DD') {
+    miniGraph = CSVToArray(DD);
+  }
+  else if (props.ticker === 'DXC') {
+    miniGraph = CSVToArray(DXC);
+  }
+  else if (props.ticker === 'EMN') {
+    miniGraph = CSVToArray(EMN);
+  }
+  else if (props.ticker === 'ETN') {
+    miniGraph = CSVToArray(ETN);
+  }
+  else if (props.ticker === 'EBAY') {
+    miniGraph = CSVToArray(EBAY);
+  }
+  else if (props.ticker === 'ECL') {
+    miniGraph = CSVToArray(ECL);
+  }
+  else if (props.ticker === 'EIX') {
+    miniGraph = CSVToArray(EIX);
+  }
+  else if (props.ticker === 'EW') {
+    miniGraph = CSVToArray(EW);
+  }
+  else if (props.ticker === 'EA') {
+    miniGraph = CSVToArray(EA);
+  }
+  else if (props.ticker === 'EMR') {
+    miniGraph = CSVToArray(EMR);
+  }
+  else if (props.ticker === 'ENPH') {
+    miniGraph = CSVToArray(ENPH);
+  }
+  else if (props.ticker === 'ETR') {
+    miniGraph = CSVToArray(ETR);
+  }
+  else if (props.ticker === 'EOG') {
+    miniGraph = CSVToArray(EOG);
+  }
+  else if (props.ticker === 'EFX') {
+    miniGraph = CSVToArray(EFX);
+  }
+  else if (props.ticker === 'EQIX') {
+    miniGraph = CSVToArray(EQIX);
+  }
+  else if (props.ticker === 'EQR') {
+    miniGraph = CSVToArray(EQR);
+  }
+  else if (props.ticker === 'ESS') {
+    miniGraph = CSVToArray(ESS);
+  }
+  else if (props.ticker === 'EL') {
+    miniGraph = CSVToArray(EL);
+  }
+  else if (props.ticker === 'ETSY') {
+    miniGraph = CSVToArray(ETSY);
+  }
+  else if (props.ticker === 'EVRG') {
+    miniGraph = CSVToArray(EVRG);
+  }
+  else if (props.ticker === 'ES') {
+    miniGraph = CSVToArray(ES);
+  }
+  else if (props.ticker === 'RE') {
+    miniGraph = CSVToArray(RE);
+  }
+  else if (props.ticker === 'EXC') {
+    miniGraph = CSVToArray(EXC);
+  }
+  else if (props.ticker === 'EXPE') {
+    miniGraph = CSVToArray(EXPE);
+  }
+  else if (props.ticker === 'EXPD') {
+    miniGraph = CSVToArray(EXPD);
+  }
+  else if (props.ticker === 'EXR') {
+    miniGraph = CSVToArray(EXR);
+  }
+  else if (props.ticker === 'XOM') {
+    miniGraph = CSVToArray(XOM);
+  }
+  else if (props.ticker === 'FFIV') {
+    miniGraph = CSVToArray(FFIV);
+  }
+  else if (props.ticker === 'FB') {
+    miniGraph = CSVToArray(FB);
+  }
+  else if (props.ticker === 'FAST') {
+    miniGraph = CSVToArray(FAST);
+  }
+  else if (props.ticker === 'FRT') {
+    miniGraph = CSVToArray(FRT);
+  }
+  else if (props.ticker === 'FDX') {
+    miniGraph = CSVToArray(FDX);
+  }
+  else if (props.ticker === 'FIS') {
+    miniGraph = CSVToArray(FIS);
+  }
+  else if (props.ticker === 'FITB') {
+    miniGraph = CSVToArray(FITB);
+  }
+  else if (props.ticker === 'FE') {
+    miniGraph = CSVToArray(FE);
+  }
+  else if (props.ticker === 'FRC') {
+    miniGraph = CSVToArray(FRC);
+  }
+  else if (props.ticker === 'FISV') {
+    miniGraph = CSVToArray(FISV);
+  }
+  else if (props.ticker === 'FLT') {
+    miniGraph = CSVToArray(FLT);
+  }
+  else if (props.ticker === 'FLIR') {
+    miniGraph = CSVToArray(FLIR);
+  }
+  else if (props.ticker === 'FLS') {
+    miniGraph = CSVToArray(FLS);
+  }
+  else if (props.ticker === 'FMC') {
+    miniGraph = CSVToArray(FMC);
+  }
+  else if (props.ticker === 'F') {
+    miniGraph = CSVToArray(F);
+  }
+  else if (props.ticker === 'FTNT') {
+    miniGraph = CSVToArray(FTNT);
+  }
+  else if (props.ticker === 'FTV') {
+    miniGraph = CSVToArray(FTV);
+  }
+  else if (props.ticker === 'FBHS') {
+    miniGraph = CSVToArray(FBHS);
+  }
+  else if (props.ticker === 'FOXA') {
+    miniGraph = CSVToArray(FOXA);
+  }
+  else if (props.ticker === 'FOX') {
+    miniGraph = CSVToArray(FOX);
+  }
+  else if (props.ticker === 'BEN') {
+    miniGraph = CSVToArray(BEN);
+  }
+  else if (props.ticker === 'FCX') {
+    miniGraph = CSVToArray(FCX);
+  }
+  else if (props.ticker === 'GPS') {
+    miniGraph = CSVToArray(GPS);
+  }
+  else if (props.ticker === 'GRMN') {
+    miniGraph = CSVToArray(GRMN);
+  }
+  else if (props.ticker === 'IT') {
+    miniGraph = CSVToArray(IT);
+  }
+  else if (props.ticker === 'GD') {
+    miniGraph = CSVToArray(GD);
+  }
+  else if (props.ticker === 'GE') {
+    miniGraph = CSVToArray(GE);
+  }
+  else if (props.ticker === 'GIS') {
+    miniGraph = CSVToArray(GIS);
+  }
+  else if (props.ticker === 'GM') {
+    miniGraph = CSVToArray(GM);
+  }
+  else if (props.ticker === 'GPC') {
+    miniGraph = CSVToArray(GPC);
+  }
+  else if (props.ticker === 'GILD') {
+    miniGraph = CSVToArray(GILD);
+  }
+  else if (props.ticker === 'GL') {
+    miniGraph = CSVToArray(GL);
+  }
+  else if (props.ticker === 'GPN') {
+    miniGraph = CSVToArray(GPN);
+  }
+  else if (props.ticker === 'GS') {
+    miniGraph = CSVToArray(GS);
+  }
+  else if (props.ticker === 'GWW') {
+    miniGraph = CSVToArray(GWW);
+  }
+  else if (props.ticker === 'HAL') {
+    miniGraph = CSVToArray(HAL);
+  }
+  else if (props.ticker === 'HBI') {
+    miniGraph = CSVToArray(HBI);
+  }
+  else if (props.ticker === 'HIG') {
+    miniGraph = CSVToArray(HIG);
+  }
+  else if (props.ticker === 'HAS') {
+    miniGraph = CSVToArray(HAS);
+  }
+  else if (props.ticker === 'HCA') {
+    miniGraph = CSVToArray(HCA);
+  }
+  else if (props.ticker === 'PEAK') {
+    miniGraph = CSVToArray(PEAK);
+  }
+  else if (props.ticker === 'HSIC') {
+    miniGraph = CSVToArray(HSIC);
+  }
+  else if (props.ticker === 'HSY') {
+    miniGraph = CSVToArray(HSY);
+  }
+  else if (props.ticker === 'HES') {
+    miniGraph = CSVToArray(HES);
+  }
+  else if (props.ticker === 'HPE') {
+    miniGraph = CSVToArray(HPE);
+  }
+  else if (props.ticker === 'HLT') {
+    miniGraph = CSVToArray(HLT);
+  }
+  else if (props.ticker === 'HFC') {
+    miniGraph = CSVToArray(HFC);
+  }
+  else if (props.ticker === 'HOLX') {
+    miniGraph = CSVToArray(HOLX);
+  }
+  else if (props.ticker === 'HD') {
+    miniGraph = CSVToArray(HD);
+  }
+  else if (props.ticker === 'HON') {
+    miniGraph = CSVToArray(HON);
+  }
+  else if (props.ticker === 'HRL') {
+    miniGraph = CSVToArray(HRL);
+  }
+  else if (props.ticker === 'HST') {
+    miniGraph = CSVToArray(HST);
+  }
+  else if (props.ticker === 'HWM') {
+    miniGraph = CSVToArray(HWM);
+  }
+  else if (props.ticker === 'HPQ') {
+    miniGraph = CSVToArray(HPQ);
+  }
+  else if (props.ticker === 'HUM') {
+    miniGraph = CSVToArray(HUM);
+  }
+  else if (props.ticker === 'HBAN') {
+    miniGraph = CSVToArray(HBAN);
+  }
+  else if (props.ticker === 'HII') {
+    miniGraph = CSVToArray(HII);
+  }
+  else if (props.ticker === 'IEX') {
+    miniGraph = CSVToArray(IEX);
+  }
+  else if (props.ticker === 'IDXX') {
+    miniGraph = CSVToArray(IDXX);
+  }
+  else if (props.ticker === 'INFO') {
+    miniGraph = CSVToArray(INFO);
+  }
+  else if (props.ticker === 'ITW') {
+    miniGraph = CSVToArray(ITW);
+  }
+  else if (props.ticker === 'ILMN') {
+    miniGraph = CSVToArray(ILMN);
+  }
+  else if (props.ticker === 'INCY') {
+    miniGraph = CSVToArray(INCY);
+  }
+  else if (props.ticker === 'IR') {
+    miniGraph = CSVToArray(IR);
+  }
+  else if (props.ticker === 'INTC') {
+    miniGraph = CSVToArray(INTC);
+  }
+  else if (props.ticker === 'ICE') {
+    miniGraph = CSVToArray(ICE);
+  }
+  else if (props.ticker === 'IBM') {
+    miniGraph = CSVToArray(IBM);
+  }
+  else if (props.ticker === 'IP') {
+    miniGraph = CSVToArray(IP);
+  }
+  else if (props.ticker === 'IPG') {
+    miniGraph = CSVToArray(IPG);
+  }
+  else if (props.ticker === 'IFF') {
+    miniGraph = CSVToArray(IFF);
+  }
+  else if (props.ticker === 'INTU') {
+    miniGraph = CSVToArray(INTU);
+  }
+  else if (props.ticker === 'ISRG') {
+    miniGraph = CSVToArray(ISRG);
+  }
+  else if (props.ticker === 'IVZ') {
+    miniGraph = CSVToArray(IVZ);
+  }
+  else if (props.ticker === 'IPGP') {
+    miniGraph = CSVToArray(IPGP);
+  }
+  else if (props.ticker === 'IQV') {
+    miniGraph = CSVToArray(IQV);
+  }
+  else if (props.ticker === 'IRM') {
+    miniGraph = CSVToArray(IRM);
+  }
+  else if (props.ticker === 'JKHY') {
+    miniGraph = CSVToArray(JKHY);
+  }
+  else if (props.ticker === 'J') {
+    miniGraph = CSVToArray(J);
+  }
+  else if (props.ticker === 'JBHT') {
+    miniGraph = CSVToArray(JBHT);
+  }
+  else if (props.ticker === 'SJM') {
+    miniGraph = CSVToArray(SJM);
+  }
+  else if (props.ticker === 'JNJ') {
+    miniGraph = CSVToArray(JNJ);
+  }
+  else if (props.ticker === 'JCI') {
+    miniGraph = CSVToArray(JCI);
+  }
+  else if (props.ticker === 'JPM') {
+    miniGraph = CSVToArray(JPM);
+  }
+  else if (props.ticker === 'JNPR') {
+    miniGraph = CSVToArray(JNPR);
+  }
+  else if (props.ticker === 'KSU') {
+    miniGraph = CSVToArray(KSU);
+  }
+  else if (props.ticker === 'K') {
+    miniGraph = CSVToArray(K);
+  }
+  else if (props.ticker === 'KEY') {
+    miniGraph = CSVToArray(KEY);
+  }
+  else if (props.ticker === 'KEYS') {
+    miniGraph = CSVToArray(KEYS);
+  }
+  else if (props.ticker === 'KMB') {
+    miniGraph = CSVToArray(KMB);
+  }
+  else if (props.ticker === 'KIM') {
+    miniGraph = CSVToArray(KIM);
+  }
+  else if (props.ticker === 'KMI') {
+    miniGraph = CSVToArray(KMI);
+  }
+  else if (props.ticker === 'KLAC') {
+    miniGraph = CSVToArray(KLAC);
+  }
+  else if (props.ticker === 'KHC') {
+    miniGraph = CSVToArray(KHC);
+  }
+  else if (props.ticker === 'KR') {
+    miniGraph = CSVToArray(KR);
+  }
+  else if (props.ticker === 'LB') {
+    miniGraph = CSVToArray(LB);
+  }
+  else if (props.ticker === 'LHX') {
+    miniGraph = CSVToArray(LHX);
+  }
+  else if (props.ticker === 'LH') {
+    miniGraph = CSVToArray(LH);
+  }
+  else if (props.ticker === 'LRCX') {
+    miniGraph = CSVToArray(LRCX);
+  }
+  else if (props.ticker === 'LW') {
+    miniGraph = CSVToArray(LW);
+  }
+  else if (props.ticker === 'LVS') {
+    miniGraph = CSVToArray(LVS);
+  }
+  else if (props.ticker === 'LEG') {
+    miniGraph = CSVToArray(LEG);
+  }
+  else if (props.ticker === 'LDOS') {
+    miniGraph = CSVToArray(LDOS);
+  }
+  else if (props.ticker === 'LEN') {
+    miniGraph = CSVToArray(LEN);
+  }
+  else if (props.ticker === 'LLY') {
+    miniGraph = CSVToArray(LLY);
+  }
+  else if (props.ticker === 'LNC') {
+    miniGraph = CSVToArray(LNC);
+  }
+  else if (props.ticker === 'LIN') {
+    miniGraph = CSVToArray(LIN);
+  }
+  else if (props.ticker === 'LYV') {
+    miniGraph = CSVToArray(LYV);
+  }
+  else if (props.ticker === 'LKQ') {
+    miniGraph = CSVToArray(LKQ);
+  }
+  else if (props.ticker === 'LMT') {
+    miniGraph = CSVToArray(LMT);
+  }
+  else if (props.ticker === 'L') {
+    miniGraph = CSVToArray(L);
+  }
+  else if (props.ticker === 'LOW') {
+    miniGraph = CSVToArray(LOW);
+  }
+  else if (props.ticker === 'LUMN') {
+    miniGraph = CSVToArray(LUMN);
+  }
+  else if (props.ticker === 'LYB') {
+    miniGraph = CSVToArray(LYB);
+  }
+  else if (props.ticker === 'MTB') {
+    miniGraph = CSVToArray(MTB);
+  }
+  else if (props.ticker === 'MRO') {
+    miniGraph = CSVToArray(MRO);
+  }
+  else if (props.ticker === 'MPC') {
+    miniGraph = CSVToArray(MPC);
+  }
+  else if (props.ticker === 'MKTX') {
+    miniGraph = CSVToArray(MKTX);
+  }
+  else if (props.ticker === 'MAR') {
+    miniGraph = CSVToArray(MAR);
+  }
+  else if (props.ticker === 'MMC') {
+    miniGraph = CSVToArray(MMC);
+  }
+  else if (props.ticker === 'MLM') {
+    miniGraph = CSVToArray(MLM);
+  }
+  else if (props.ticker === 'MAS') {
+    miniGraph = CSVToArray(MAS);
+  }
+  else if (props.ticker === 'MA') {
+    miniGraph = CSVToArray(MA);
+  }
+  else if (props.ticker === 'MKC') {
+    miniGraph = CSVToArray(MKC);
+  }
+  else if (props.ticker === 'MXIM') {
+    miniGraph = CSVToArray(MXIM);
+  }
+  else if (props.ticker === 'MCD') {
+    miniGraph = CSVToArray(MCD);
+  }
+  else if (props.ticker === 'MCK') {
+    miniGraph = CSVToArray(MCK);
+  }
+  else if (props.ticker === 'MDT') {
+    miniGraph = CSVToArray(MDT);
+  }
+  else if (props.ticker === 'MRK') {
+    miniGraph = CSVToArray(MRK);
+  }
+  else if (props.ticker === 'MET') {
+    miniGraph = CSVToArray(MET);
+  }
+  else if (props.ticker === 'MTD') {
+    miniGraph = CSVToArray(MTD);
+  }
+  else if (props.ticker === 'MGM') {
+    miniGraph = CSVToArray(MGM);
+  }
+  else if (props.ticker === 'MCHP') {
+    miniGraph = CSVToArray(MCHP);
+  }
+  else if (props.ticker === 'MU') {
+    miniGraph = CSVToArray(MU);
+  }
+  else if (props.ticker === 'MSFT') {
+    miniGraph = CSVToArray(MSFT);
+  }
+  else if (props.ticker === 'MAA') {
+    miniGraph = CSVToArray(MAA);
+  }
+  else if (props.ticker === 'MHK') {
+    miniGraph = CSVToArray(MHK);
+  }
+  else if (props.ticker === 'TAP') {
+    miniGraph = CSVToArray(TAP);
+  }
+  else if (props.ticker === 'MDLZ') {
+    miniGraph = CSVToArray(MDLZ);
+  }
+  else if (props.ticker === 'MPWR') {
+    miniGraph = CSVToArray(MPWR);
+  }
+  else if (props.ticker === 'MNST') {
+    miniGraph = CSVToArray(MNST);
+  }
+  else if (props.ticker === 'MCO') {
+    miniGraph = CSVToArray(MCO);
+  }
+  else if (props.ticker === 'MS') {
+    miniGraph = CSVToArray(MS);
+  }
+  else if (props.ticker === 'MOS') {
+    miniGraph = CSVToArray(MOS);
+  }
+  else if (props.ticker === 'MSI') {
+    miniGraph = CSVToArray(MSI);
+  }
+  else if (props.ticker === 'MSCI') {
+    miniGraph = CSVToArray(MSCI);
+  }
+  else if (props.ticker === 'NDAQ') {
+    miniGraph = CSVToArray(NDAQ);
+  }
+  else if (props.ticker === 'NTAP') {
+    miniGraph = CSVToArray(NTAP);
+  }
+  else if (props.ticker === 'NFLX') {
+    miniGraph = CSVToArray(NFLX);
+  }
+  else if (props.ticker === 'NWL') {
+    miniGraph = CSVToArray(NWL);
+  }
+  else if (props.ticker === 'NEM') {
+    miniGraph = CSVToArray(NEM);
+  }
+  else if (props.ticker === 'NWSA') {
+    miniGraph = CSVToArray(NWSA);
+  }
+  else if (props.ticker === 'NWS') {
+    miniGraph = CSVToArray(NWS);
+  }
+  else if (props.ticker === 'NEE') {
+    miniGraph = CSVToArray(NEE);
+  }
+  else if (props.ticker === 'NLSN') {
+    miniGraph = CSVToArray(NLSN);
+  }
+  else if (props.ticker === 'NKE') {
+    miniGraph = CSVToArray(NKE);
+  }
+  else if (props.ticker === 'NI') {
+    miniGraph = CSVToArray(NI);
+  }
+  else if (props.ticker === 'NSC') {
+    miniGraph = CSVToArray(NSC);
+  }
+  else if (props.ticker === 'NTRS') {
+    miniGraph = CSVToArray(NTRS);
+  }
+  else if (props.ticker === 'NOC') {
+    miniGraph = CSVToArray(NOC);
+  }
+  else if (props.ticker === 'NLOK') {
+    miniGraph = CSVToArray(NLOK);
+  }
+  else if (props.ticker === 'NCLH') {
+    miniGraph = CSVToArray(NCLH);
+  }
+  else if (props.ticker === 'NOV') {
+    miniGraph = CSVToArray(NOV);
+  }
+  else if (props.ticker === 'NRG') {
+    miniGraph = CSVToArray(NRG);
+  }
+  else if (props.ticker === 'NUE') {
+    miniGraph = CSVToArray(NUE);
+  }
+  else if (props.ticker === 'NVDA') {
+    miniGraph = CSVToArray(NVDA);
+  }
+  else if (props.ticker === 'NVR') {
+    miniGraph = CSVToArray(NVR);
+  }
+  else if (props.ticker === 'ORLY') {
+    miniGraph = CSVToArray(ORLY);
+  }
+  else if (props.ticker === 'OXY') {
+    miniGraph = CSVToArray(OXY);
+  }
+  else if (props.ticker === 'ODFL') {
+    miniGraph = CSVToArray(ODFL);
+  }
+  else if (props.ticker === 'OMC') {
+    miniGraph = CSVToArray(OMC);
+  }
+  else if (props.ticker === 'OKE') {
+    miniGraph = CSVToArray(OKE);
+  }
+  else if (props.ticker === 'ORCL') {
+    miniGraph = CSVToArray(ORCL);
+  }
+  else if (props.ticker === 'OTIS') {
+    miniGraph = CSVToArray(OTIS);
+  }
+  else if (props.ticker === 'PCAR') {
+    miniGraph = CSVToArray(PCAR);
+  }
+  else if (props.ticker === 'PKG') {
+    miniGraph = CSVToArray(PKG);
+  }
+  else if (props.ticker === 'PH') {
+    miniGraph = CSVToArray(PH);
+  }
+  else if (props.ticker === 'PAYX') {
+    miniGraph = CSVToArray(PAYX);
+  }
+  else if (props.ticker === 'PAYC') {
+    miniGraph = CSVToArray(PAYC);
+  }
+  else if (props.ticker === 'PYPL') {
+    miniGraph = CSVToArray(PYPL);
+  }
+  else if (props.ticker === 'PNR') {
+    miniGraph = CSVToArray(PNR);
+  }
+  else if (props.ticker === 'PBCT') {
+    miniGraph = CSVToArray(PBCT);
+  }
+  else if (props.ticker === 'PEP') {
+    miniGraph = CSVToArray(PEP);
+  }
+  else if (props.ticker === 'PKI') {
+    miniGraph = CSVToArray(PKI);
+  }
+  else if (props.ticker === 'PRGO') {
+    miniGraph = CSVToArray(PRGO);
+  }
+  else if (props.ticker === 'PFE') {
+    miniGraph = CSVToArray(PFE);
+  }
+  else if (props.ticker === 'PM') {
+    miniGraph = CSVToArray(PM);
+  }
+  else if (props.ticker === 'PSX') {
+    miniGraph = CSVToArray(PSX);
+  }
+  else if (props.ticker === 'PNW') {
+    miniGraph = CSVToArray(PNW);
+  }
+  else if (props.ticker === 'PXD') {
+    miniGraph = CSVToArray(PXD);
+  }
+  else if (props.ticker === 'PNC') {
+    miniGraph = CSVToArray(PNC);
+  }
+  else if (props.ticker === 'POOL') {
+    miniGraph = CSVToArray(POOL);
+  }
+  else if (props.ticker === 'PPG') {
+    miniGraph = CSVToArray(PPG);
+  }
+  else if (props.ticker === 'PPL') {
+    miniGraph = CSVToArray(PPL);
+  }
+  else if (props.ticker === 'PFG') {
+    miniGraph = CSVToArray(PFG);
+  }
+  else if (props.ticker === 'PG') {
+    miniGraph = CSVToArray(PG);
+  }
+  else if (props.ticker === 'PGR') {
+    miniGraph = CSVToArray(PGR);
+  }
+  else if (props.ticker === 'PLD') {
+    miniGraph = CSVToArray(PLD);
+  }
+  else if (props.ticker === 'PRU') {
+    miniGraph = CSVToArray(PRU);
+  }
+  else if (props.ticker === 'PEG') {
+    miniGraph = CSVToArray(PEG);
+  }
+  else if (props.ticker === 'PSA') {
+    miniGraph = CSVToArray(PSA);
+  }
+  else if (props.ticker === 'PHM') {
+    miniGraph = CSVToArray(PHM);
+  }
+  else if (props.ticker === 'PVH') {
+    miniGraph = CSVToArray(PVH);
+  }
+  else if (props.ticker === 'QRVO') {
+    miniGraph = CSVToArray(QRVO);
+  }
+  else if (props.ticker === 'PWR') {
+    miniGraph = CSVToArray(PWR);
+  }
+  else if (props.ticker === 'QCOM') {
+    miniGraph = CSVToArray(QCOM);
+  }
+  else if (props.ticker === 'DGX') {
+    miniGraph = CSVToArray(DGX);
+  }
+  else if (props.ticker === 'RL') {
+    miniGraph = CSVToArray(RL);
+  }
+  else if (props.ticker === 'RJF') {
+    miniGraph = CSVToArray(RJF);
+  }
+  else if (props.ticker === 'RTX') {
+    miniGraph = CSVToArray(RTX);
+  }
+  else if (props.ticker === 'O') {
+    miniGraph = CSVToArray(O);
+  }
+  else if (props.ticker === 'REG') {
+    miniGraph = CSVToArray(REG);
+  }
+  else if (props.ticker === 'REGN') {
+    miniGraph = CSVToArray(REGN);
+  }
+  else if (props.ticker === 'RF') {
+    miniGraph = CSVToArray(RF);
+  }
+  else if (props.ticker === 'RSG') {
+    miniGraph = CSVToArray(RSG);
+  }
+  else if (props.ticker === 'RMD') {
+    miniGraph = CSVToArray(RMD);
+  }
+  else if (props.ticker === 'RHI') {
+    miniGraph = CSVToArray(RHI);
+  }
+  else if (props.ticker === 'ROK') {
+    miniGraph = CSVToArray(ROK);
+  }
+  else if (props.ticker === 'ROL') {
+    miniGraph = CSVToArray(ROL);
+  }
+  else if (props.ticker === 'ROP') {
+    miniGraph = CSVToArray(ROP);
+  }
+  else if (props.ticker === 'ROST') {
+    miniGraph = CSVToArray(ROST);
+  }
+  else if (props.ticker === 'RCL') {
+    miniGraph = CSVToArray(RCL);
+  }
+  else if (props.ticker === 'SPGI') {
+    miniGraph = CSVToArray(SPGI);
+  }
+  else if (props.ticker === 'CRM') {
+    miniGraph = CSVToArray(CRM);
+  }
+  else if (props.ticker === 'SBAC') {
+    miniGraph = CSVToArray(SBAC);
+  }
+  else if (props.ticker === 'SLB') {
+    miniGraph = CSVToArray(SLB);
+  }
+  else if (props.ticker === 'STX') {
+    miniGraph = CSVToArray(STX);
+  }
+  else if (props.ticker === 'SEE') {
+    miniGraph = CSVToArray(SEE);
+  }
+  else if (props.ticker === 'SRE') {
+    miniGraph = CSVToArray(SRE);
+  }
+  else if (props.ticker === 'NOW') {
+    miniGraph = CSVToArray(NOW);
+  }
+  else if (props.ticker === 'SHW') {
+    miniGraph = CSVToArray(SHW);
+  }
+  else if (props.ticker === 'SPG') {
+    miniGraph = CSVToArray(SPG);
+  }
+  else if (props.ticker === 'SWKS') {
+    miniGraph = CSVToArray(SWKS);
+  }
+  else if (props.ticker === 'SLG') {
+    miniGraph = CSVToArray(SLG);
+  }
+  else if (props.ticker === 'SNA') {
+    miniGraph = CSVToArray(SNA);
+  }
+  else if (props.ticker === 'SO') {
+    miniGraph = CSVToArray(SO);
+  }
+  else if (props.ticker === 'LUV') {
+    miniGraph = CSVToArray(LUV);
+  }
+  else if (props.ticker === 'SWK') {
+    miniGraph = CSVToArray(SWK);
+  }
+  else if (props.ticker === 'SBUX') {
+    miniGraph = CSVToArray(SBUX);
+  }
+  else if (props.ticker === 'STT') {
+    miniGraph = CSVToArray(STT);
+  }
+  else if (props.ticker === 'STE') {
+    miniGraph = CSVToArray(STE);
+  }
+  else if (props.ticker === 'SYK') {
+    miniGraph = CSVToArray(SYK);
+  }
+  else if (props.ticker === 'SIVB') {
+    miniGraph = CSVToArray(SIVB);
+  }
+  else if (props.ticker === 'SYF') {
+    miniGraph = CSVToArray(SYF);
+  }
+  else if (props.ticker === 'SNPS') {
+    miniGraph = CSVToArray(SNPS);
+  }
+  else if (props.ticker === 'SYY') {
+    miniGraph = CSVToArray(SYY);
+  }
+  else if (props.ticker === 'TMUS') {
+    miniGraph = CSVToArray(TMUS);
+  }
+  else if (props.ticker === 'TROW') {
+    miniGraph = CSVToArray(TROW);
+  }
+  else if (props.ticker === 'TTWO') {
+    miniGraph = CSVToArray(TTWO);
+  }
+  else if (props.ticker === 'TPR') {
+    miniGraph = CSVToArray(TPR);
+  }
+  else if (props.ticker === 'TGT') {
+    miniGraph = CSVToArray(TGT);
+  }
+  else if (props.ticker === 'TEL') {
+    miniGraph = CSVToArray(TEL);
+  }
+  else if (props.ticker === 'TDY') {
+    miniGraph = CSVToArray(TDY);
+  }
+  else if (props.ticker === 'TFX') {
+    miniGraph = CSVToArray(TFX);
+  }
+  else if (props.ticker === 'TER') {
+    miniGraph = CSVToArray(TER);
+  }
+  else if (props.ticker === 'TSLA') {
+    miniGraph = CSVToArray(TSLA);
+  }
+  else if (props.ticker === 'TXN') {
+    miniGraph = CSVToArray(TXN);
+  }
+  else if (props.ticker === 'TXT') {
+    miniGraph = CSVToArray(TXT);
+  }
+  else if (props.ticker === 'TMO') {
+    miniGraph = CSVToArray(TMO);
+  }
+  else if (props.ticker === 'TJX') {
+    miniGraph = CSVToArray(TJX);
+  }
+  else if (props.ticker === 'TSCO') {
+    miniGraph = CSVToArray(TSCO);
+  }
+  else if (props.ticker === 'TT') {
+    miniGraph = CSVToArray(TT);
+  }
+  else if (props.ticker === 'TDG') {
+    miniGraph = CSVToArray(TDG);
+  }
+  else if (props.ticker === 'TRV') {
+    miniGraph = CSVToArray(TRV);
+  }
+  else if (props.ticker === 'TRMB') {
+    miniGraph = CSVToArray(TRMB);
+  }
+  else if (props.ticker === 'TFC') {
+    miniGraph = CSVToArray(TFC);
+  }
+  else if (props.ticker === 'TWTR') {
+    miniGraph = CSVToArray(TWTR);
+  }
+  else if (props.ticker === 'TYL') {
+    miniGraph = CSVToArray(TYL);
+  }
+  else if (props.ticker === 'TSN') {
+    miniGraph = CSVToArray(TSN);
+  }
+  else if (props.ticker === 'UDR') {
+    miniGraph = CSVToArray(UDR);
+  }
+  else if (props.ticker === 'ULTA') {
+    miniGraph = CSVToArray(ULTA);
+  }
+  else if (props.ticker === 'USB') {
+    miniGraph = CSVToArray(USB);
+  }
+  else if (props.ticker === 'UAA') {
+    miniGraph = CSVToArray(UAA);
+  }
+  else if (props.ticker === 'UA') {
+    miniGraph = CSVToArray(UA);
+  }
+  else if (props.ticker === 'UNP') {
+    miniGraph = CSVToArray(UNP);
+  }
+  else if (props.ticker === 'UAL') {
+    miniGraph = CSVToArray(UAL);
+  }
+  else if (props.ticker === 'UNH') {
+    miniGraph = CSVToArray(UNH);
+  }
+  else if (props.ticker === 'UPS') {
+    miniGraph = CSVToArray(UPS);
+  }
+  else if (props.ticker === 'URI') {
+    miniGraph = CSVToArray(URI);
+  }
+  else if (props.ticker === 'UHS') {
+    miniGraph = CSVToArray(UHS);
+  }
+  else if (props.ticker === 'UNM') {
+    miniGraph = CSVToArray(UNM);
+  }
+  else if (props.ticker === 'VLO') {
+    miniGraph = CSVToArray(VLO);
+  }
+  else if (props.ticker === 'VAR') {
+    miniGraph = CSVToArray(VAR);
+  }
+  else if (props.ticker === 'VTR') {
+    miniGraph = CSVToArray(VTR);
+  }
+  else if (props.ticker === 'VRSN') {
+    miniGraph = CSVToArray(VRSN);
+  }
+  else if (props.ticker === 'VRSK') {
+    miniGraph = CSVToArray(VRSK);
+  }
+  else if (props.ticker === 'VZ') {
+    miniGraph = CSVToArray(VZ);
+  }
+  else if (props.ticker === 'VRTX') {
+    miniGraph = CSVToArray(VRTX);
+  }
+  else if (props.ticker === 'VFC') {
+    miniGraph = CSVToArray(VFC);
+  }
+  else if (props.ticker === 'VIAC') {
+    miniGraph = CSVToArray(VIAC);
+  }
+  else if (props.ticker === 'VTRS') {
+    miniGraph = CSVToArray(VTRS);
+  }
+  else if (props.ticker === 'V') {
+    miniGraph = CSVToArray(V);
+  }
+  else if (props.ticker === 'VNT') {
+    miniGraph = CSVToArray(VNT);
+  }
+  else if (props.ticker === 'VNO') {
+    miniGraph = CSVToArray(VNO);
+  }
+  else if (props.ticker === 'VMC') {
+    miniGraph = CSVToArray(VMC);
+  }
+  else if (props.ticker === 'WRB') {
+    miniGraph = CSVToArray(WRB);
+  }
+  else if (props.ticker === 'WAB') {
+    miniGraph = CSVToArray(WAB);
+  }
+  else if (props.ticker === 'WMT') {
+    miniGraph = CSVToArray(WMT);
+  }
+  else if (props.ticker === 'WBA') {
+    miniGraph = CSVToArray(WBA);
+  }
+  else if (props.ticker === 'DIS') {
+    miniGraph = CSVToArray(DIS);
+  }
+  else if (props.ticker === 'WM') {
+    miniGraph = CSVToArray(WM);
+  }
+  else if (props.ticker === 'WAT') {
+    miniGraph = CSVToArray(WAT);
+  }
+  else if (props.ticker === 'WEC') {
+    miniGraph = CSVToArray(WEC);
+  }
+  else if (props.ticker === 'WFC') {
+    miniGraph = CSVToArray(WFC);
+  }
+  else if (props.ticker === 'WELL') {
+    miniGraph = CSVToArray(WELL);
+  }
+  else if (props.ticker === 'WST') {
+    miniGraph = CSVToArray(WST);
+  }
+  else if (props.ticker === 'WDC') {
+    miniGraph = CSVToArray(WDC);
+  }
+  else if (props.ticker === 'WU') {
+    miniGraph = CSVToArray(WU);
+  }
+  else if (props.ticker === 'WRK') {
+    miniGraph = CSVToArray(WRK);
+  }
+  else if (props.ticker === 'WY') {
+    miniGraph = CSVToArray(WY);
+  }
+  else if (props.ticker === 'WHR') {
+    miniGraph = CSVToArray(WHR);
+  }
+  else if (props.ticker === 'WMB') {
+    miniGraph = CSVToArray(WMB);
+  }
+  else if (props.ticker === 'WLTW') {
+    miniGraph = CSVToArray(WLTW);
+  }
+  else if (props.ticker === 'WYNN') {
+    miniGraph = CSVToArray(WYNN);
+  }
+  else if (props.ticker === 'XEL') {
+    miniGraph = CSVToArray(XEL);
+  }
+  else if (props.ticker === 'XRX') {
+    miniGraph = CSVToArray(XRX);
+  }
+  else if (props.ticker === 'XLNX') {
+    miniGraph = CSVToArray(XLNX);
+  }
+  else if (props.ticker === 'XYL') {
+    miniGraph = CSVToArray(XYL);
+  }
+  else if (props.ticker === 'YUM') {
+    miniGraph = CSVToArray(YUM);
+  }
+  else if (props.ticker === 'ZBRA') {
+    miniGraph = CSVToArray(ZBRA);
+  }
+  else if (props.ticker === 'ZBH') {
+    miniGraph = CSVToArray(ZBH);
+  }
+  else if (props.ticker === 'ZION') {
+    miniGraph = CSVToArray(ZION);
+  }
+  else if (props.ticker === 'ZTS') {
+    miniGraph = CSVToArray(ZTS);
+  }
+  const style1 = {
+    height: "50px",
+    width: "96%",
+    color: "white",
+    backgroundColor: "coral",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  const style2 = {
+    height: "30px",
+    width: "20%",
+    color: "black",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  const style3 = {
+    color: "white",
+    backgroundColor: "red",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  const style4 = {
+    color: "white",
+    backgroundColor: "grey",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  const style5 = {
+    color: "white",
+    backgroundColor: "green",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  const style6 = {
+    color: "red",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  const style7 = {
+    color: "green",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  var difference;
+  var price;
+  var percentChange;
+  var style;
+  if ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) > 0) {
+    difference = "+" + (miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+    percentChange = "+" + ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) * 100 / miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+    style = style7;
+  }
+  else {
+    difference = "" + (miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+    percentChange = "" + ((miniGraph[miniGraph.length - 1] - miniGraph[miniGraph.length - 2]) * 100 / miniGraph[miniGraph.length - 2]).toFixed(2).toString();
+    style = style6;
+  }
+  price = (parseFloat(miniGraph[miniGraph.length - 1])).toFixed(2);
+  return (
+    <div style={{border: "solid black"}} className="row">
+    <h1 style={style1}>{props.ticker}</h1>
+    <h1 style={style2}>{price}</h1>
+    <h1 style={style}>{difference} ({percentChange}%)</h1>
+    <h2>
+        <Button style={style3} variant="contained" color="secondary">Bearish</Button>
+        <Button  style={style4} variant="contained" color="secondary">Neutral</Button>
+        <Button  style={style5} variant="contained" color="secondary">Bullish</Button>
+    </h2>
+    <VictoryChart width='600' height='300'>
+    <VictoryLine data={miniGraph} x='Date' y='Price' />
+    </VictoryChart>
+    <VictoryPie data={[
+    { x: "bullish", y: stockSentiment.bullish },
+    { x: "neutral", y: stockSentiment.neutral },
+    { x: "bearish", y: stockSentiment.bearish }
+    ]} />
+    </div>
+  );
 }
