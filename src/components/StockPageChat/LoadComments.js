@@ -129,12 +129,40 @@ export default function LoadComments(props) {
     function renderReply(reply) {
         return (
             <div>
-                test
-                {reply.map((reply, key) => {
-                <div>
-                    test
-                </div>
-                })}
+            {
+            reply.map((reply, key) => {
+                if (key > 0)
+                {
+                    return (
+                        <Comment key={key} padding="20px">
+                            <Comment.Content>
+                            <Grid container direction="column" spacing={1}>
+                                <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
+                                    {/* username and timestamp row*/}
+                                    <Grid item>
+                                        <div>
+                                            <Comment.Author as='a'>{reply.uid}</Comment.Author>
+                                        </div>
+                                    </Grid>
+                                    
+                                    <Grid item>
+                                        <Box fontSize={12} color="text.secondary">
+                                            <Comment.Metadata>{reply.timestamp}</Comment.Metadata>
+                                        </Box>
+                                    </Grid>
+                                </Grid>
+    
+                                <Grid item container direction="row">
+                                    {/* Comments contents row */}
+                                    <Comment.Text>{reply.text}</Comment.Text>
+                                </Grid>
+                            </Grid>
+                            </Comment.Content>
+                        </Comment>
+                    );
+                }
+            })
+            }
             </div>
         );
     }
