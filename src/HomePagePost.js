@@ -1,6 +1,7 @@
 import React from "react";
 import { VictoryLine, VictoryChart, VictoryPie } from 'victory';
 import "./functions/stock-interactions.js";
+import Button from "@material-ui/core/Button";
 import MMM from "./1y_data/MMM.csv";
 import ABT from "./1y_data/ABT.csv";
 import ABBV from "./1y_data/ABBV.csv";
