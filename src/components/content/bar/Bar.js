@@ -24,7 +24,6 @@ export default function Bar() {
         <span onClick={() => setPortion(1)}>FOLLOWED</span>
       </div>
     </div>
-
     <Posts portion={portion} />
   </div>
   );
