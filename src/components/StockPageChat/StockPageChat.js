@@ -8,21 +8,22 @@ import LoadComments from './LoadComments'
 // Chat box for stock page
 export default function Chat(props)
 {
-    const { user, stock } = props;
+    const user = props.user;
+    const stock = props.stock;
     const stockName = props.stock;
     const [addComment, setAddComment] = useState(false)
 
     return(
         <Container>
-            <LoadComments stock={ stockName }/>
+            <LoadComments stock={ stockName } user={ user } />
             <center>
             {
                 addComment ?
-                (<AddComment user={ user }/>) :
+                (<AddComment stock={ stockName } user={ user }/>) :
                 (
-                <Button onClick={() => setAddComment(addComment ? false : true)}>
+                  <Button onClick={() => setAddComment(addComment ? false : true)}>
                     Add a comment
-                </Button>
+                  </Button>
                 )
             }
             </center>

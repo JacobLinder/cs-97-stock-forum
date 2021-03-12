@@ -28,7 +28,8 @@ export async function createComment(ticker, uid, text) {
   try {
     const commentRef = db.collection('stocks').doc(ticker).collection('comments');
     const timestamp = new Date();
-    const doc = await commentRef.add({
+    // const doc = 
+    await commentRef.add({
       children: [{
         uid: uid,
         timestamp: timestamp,
@@ -37,7 +38,7 @@ export async function createComment(ticker, uid, text) {
         downvotes: []
       }]
     });
-    await doc.update({id: doc.id});
+    // await doc.update({id: doc.id});
     await saveUserComment(uid, ticker, text, timestamp);
     return true;
   } catch(err) {
