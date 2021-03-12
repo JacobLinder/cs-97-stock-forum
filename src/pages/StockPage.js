@@ -16,8 +16,7 @@ export default function StockPage(props) {
       if (firebaseUser) {
         setUser(firebaseUser);
       } else {
-        const history = useHistory();
-        history.push('/landing');
+        window.location.pathname = '/landing';
       }
     })
   }, []);

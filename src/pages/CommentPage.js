@@ -52,8 +52,7 @@ export default function CommentPage(props) {
   useEffect(async() => {
     firebase.auth().onAuthStateChanged((firebaseUser) => {
       if (!firebaseUser) {
-        const history = useHistory();
-        history.push('/landing');
+        window.location.pathname = '/landing';
       }
     });
     const uid = props.location.search.replace('?', '');

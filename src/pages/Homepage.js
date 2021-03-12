@@ -13,8 +13,7 @@ export default function Homepage() {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((firebaseUser) => {
       if (!firebaseUser) {
-        const history = useHistory();
-        history.push('/landing');
+        window.location.pathname = '/landing';
       }
     });
   }, []);

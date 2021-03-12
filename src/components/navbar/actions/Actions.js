@@ -17,21 +17,18 @@ export default function Actions(props) {
         setUsername(name);
         setUid(user.uid);
       } else {
-        const history = useHistory();
-        history.push('/landing');
+        window.location.pathname = '/landing';
       }
     });
   }, []);
 
   const goToComments = () => {
-    const history = useHistory();
-    history.push({pathname: 'comments', search: uid});
+    window.location.href = '/comments?' + uid;
   }
 
   const signOut = async() => {
     await firebase.auth().signOut();
-    const history = useHistory();
-    history.push('/landing');
+    window.location.pathname = '/landing';
   }
 
   return (
