@@ -23,10 +23,14 @@ export default function LandingPage() {
       <Redirections />
 
     <center>
-      <Link to={{pathname: '/comments', data: '04aIuvjEc2ZbHTLQTXIzO8CR0Xh2'}}>
-        <button>hi</button>
+      <Link to={{pathname: '/comments', search: '04aIuvjEc2ZbHTLQTXIzO8CR0Xh2'}}>
+        <button>comments</button>
       </Link>
-      </center>
+      <Link to={{pathname: '/stocks', search: 'AAPL'}}>
+        <button>stocks</button>
+      </Link>
+      <br/><br/><br/><br/><br/><br/>
+    </center>
     </div>
   );
 }

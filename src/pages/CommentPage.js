@@ -48,7 +48,7 @@ export default function CommentPage(props) {
   }
 
   useEffect(async() => {
-    const uid = props.location.data;
+    const uid = props.location.search.replace('?', '');
     const comments = await getUserComments(uid);
     const name = await getUsername(uid);
     setData(comments);
@@ -68,7 +68,7 @@ export default function CommentPage(props) {
             Home Page
           </button>
         </Link>
-        <Link to='/landing-page'>
+        <Link to='/landing'>
           <button style={{float: 'right'}} className="OtherPage">
             Sign Out
           </button>
