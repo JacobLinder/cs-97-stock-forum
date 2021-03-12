@@ -9,7 +9,7 @@ import {
 } from '../../functions/comments';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-// import Data from './testComments.json'
+import Data from './testComments.json'
 
 
 /*
@@ -244,7 +244,7 @@ export default function LoadComments(props) {
 
       <div>
         {
-          data.map((surfaceCommentArray, key) => {
+          Data.map((surfaceCommentArray, key) => {
             return (
               <div key={key}>
                 {RenderComment(surfaceCommentArray)}

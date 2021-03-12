@@ -22,6 +22,7 @@ export default function AddComment(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     await createComment(stock, user, text);
+    console.log(stock, user, text)
   }
 
   return (
