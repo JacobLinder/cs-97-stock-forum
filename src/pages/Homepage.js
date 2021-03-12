@@ -22,7 +22,6 @@ export default function Homepage() {
 
   return(
     <div>
-      <body></body>
       <Navbar />
       <Content />
     </div>
