@@ -15,7 +15,6 @@ import App from './App';
 import LandingPage from '../src/pages/LandingPage';
 import SignIn from './pages/SignIn';
 import CreateAccount from '../src/pages/CreateAccount';
-import ChatTestPage from '../src/pages/ChatTestPage';
 import Homepage from '../src/pages/Homepage';
 import CommentPage from '../src/pages/CommentPage';
 import StockPage from '../src/pages/StockPage';
@@ -31,12 +30,7 @@ ReactDOM.render(
           path="/landing"
           render={(props) => <LandingPage {...props} />}
         />
-
-        <Route
-          path="/ChatTest"
-          render={(props) => <ChatTestPage { ...props } />}
-        />
-
+        
         <Route
           path="/sign-in"
           render={(props) => 

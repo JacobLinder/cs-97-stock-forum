@@ -9,7 +9,6 @@ import {
     removeDownvote,
 } from '../../functions/comments'
 
-
 // Adding comment section
 
 export default function AddComment(props)
@@ -17,6 +16,7 @@ export default function AddComment(props)
     const { user } = props;
     const [loading, setLoading] = useState(false)
 
+    // Change for comment submit
     async function handleSubmit(e) {
         e.preventDefault()
         console.log("Adding the comment, placeholder")

@@ -11,6 +11,15 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import Data from './testComments.json'
 
+
+/*
+    Places marked for change:
+    Change date (2 places)
+    Change like
+    Change dislike
+    Change for reply submitting
+*/
+
 // loading existing comment section
 export default function LoadComments(props) {
     const [comments, setComments] = useState([]);
@@ -27,7 +36,7 @@ export default function LoadComments(props) {
     //     setDisplayComments(loadDisplay);
     // });
 
-
+    // Change for reply submitting
     async function handleReplySubmit(e) {
         e.preventDefault()
         console.log("Submitting comment placeholder")
@@ -39,10 +48,12 @@ export default function LoadComments(props) {
         const [action, setAction] = useState(null);
 
         const like = () => {
+            // Change like function here
             setAction(action === 'liked' ? null : 'liked');
         };
 
         const dislike = () => {
+            // Change dislike function here
             setAction(action === 'disliked' ? null : 'disliked');
         };
 
@@ -57,7 +68,7 @@ export default function LoadComments(props) {
                                 <Comment.Author as='a'>{surfaceComment[0].uid}</Comment.Author>
                             </div>
                         </Grid>
-                    
+                        {/* Change date here for top comment*/}
                         <Grid item>
                             <Box fontSize={12} color="text.secondary">
                                 <Comment.Metadata>{surfaceComment[0].timestamp}</Comment.Metadata>
@@ -81,6 +92,7 @@ export default function LoadComments(props) {
                                         </span>
                                     </Grid>
 
+                                    {/* Change upvote counts here */}
                                     <Grid item>
                                         <span>
                                             {surfaceComment[0].upvotes.length}
@@ -159,6 +171,7 @@ export default function LoadComments(props) {
                                         </div>
                                     </Grid>
                                     
+                                    {/* Change date here for comment replies*/}
                                     <Grid item>
                                         <Box fontSize={12} color="text.secondary">
                                             <Comment.Metadata>{reply.timestamp}</Comment.Metadata>
