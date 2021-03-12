@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
-import { Paper, Button } from '@material-ui/core'
+import { Card, Button } from '@material-ui/core'
 import './Pages.css';
 import Chat from '../components/StockPageChat/StockPageChat';
 import HomepagePost from '../HomePagePost'
@@ -37,12 +37,12 @@ export default function StockPage(props) {
         <HomepagePost ticker={stock}/>
       </div>
       {user ? 
-        <Paper style={paperStyle}>
+        <Card style={paperStyle}>
           <Chat
             user={ user }
             stock={ stock }
           />
-        </Paper>
+        </Card>
       : null}
     </>
   );

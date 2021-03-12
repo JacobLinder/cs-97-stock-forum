@@ -2062,15 +2062,11 @@ export default function MiniGraph(props) {
     fontFamily: "Arial"
   };
   const style2 = {
-    height: "30px",
-    width: "20%",
-    color: "black",
-    padding: "10px",
-    fontFamily: "Arial"
+    backgroundColor: "#FC5580",
   };
   const style3 = {
     color: "white",
-    backgroundColor: "red",
+    backgroundColor: "#E31F23",
     padding: "10px",
     fontFamily: "Arial"
   };
@@ -2082,7 +2078,7 @@ export default function MiniGraph(props) {
   };
   const style5 = {
     color: "white",
-    backgroundColor: "green",
+    backgroundColor: "#53C832",
     padding: "10px",
     fontFamily: "Arial"
   };
@@ -2151,7 +2147,7 @@ export default function MiniGraph(props) {
 
           <Grid container justify="space-around">
             <Grid item>
-              <Button onClick={async() => await followClick()} variant="contained" color="secondary">Follow</Button>
+              <Button onClick={async() => await followClick()} style={{backgroundColor: "#FC5580"}} variant="contained" color="secondary">Follow</Button>
             </Grid>
             <Grid item>
               <ButtonGroup>
