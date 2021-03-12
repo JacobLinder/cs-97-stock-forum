@@ -508,14 +508,19 @@ import ZBH from "./1y_data/ZBH.csv";
 import ZION from "./1y_data/ZION.csv";
 import ZTS from "./1y_data/ZTS.csv";
 
-export default function MiniGraph(props) {
+import {readString} from 'react-papaparse';
 
+export default function MiniGraph(props) {
   const CSVToArray = (csv) => {
-    var lines = csv.split("\n");
-    return lines.splice(1, lines.length)
+    const test = fetch(csv);
+    console.log(test);
+    var lines = readString(csv, {delimiter: "\n"});
+    //console.log(lines.data);
+    return lines.data.splice(1, lines.data.length)
   }
 
-  var miniGraph = CSVToArray(MMM);
+  var miniGraph = [1,2,3,4,5];//CSVToArray('./1y_data/MMM.csv');
+  //console.log(miniGraph);
 
   const [stockSentiment, setStockSentiment] = useState({
     bullish: 0,
