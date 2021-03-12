@@ -4,7 +4,7 @@ import { getUsername } from '../functions/auth.js';
 import ReactDOM from 'react-dom';
 import './CommentPage.css';
 import { Link } from 'react-router-dom';
-import { Grid, Box, Button, ButtonGroup } from '@material-ui/core';
+import { Grid, Box, Button, ButtonGroup, Paper } from '@material-ui/core';
 import { ArrowRightAltOutlined } from '@material-ui/icons';
 import { Card, Container } from "react-bootstrap"; 
 import firebase from 'firebase/app';
@@ -74,8 +74,7 @@ export default function CommentPage(props) {
             <h2>{username}'s Comment Page</h2>
           : null}
         </center>
-        <hr/>
-        <div>{listItems}</div>
+        <Paper style={{margin:50}}>{listItems}</Paper>
       </div>
     </>
   );
