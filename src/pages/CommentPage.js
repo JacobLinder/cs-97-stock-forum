@@ -9,6 +9,7 @@ import { ArrowRightAltOutlined } from '@material-ui/icons';
 import { Card, Container } from "react-bootstrap"; 
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import Navbar from "../components/navbar/Navbar";
 
 
 function CommentDate(props) {
@@ -59,22 +60,9 @@ export default function CommentPage(props) {
 
   return(
     <>
-      <left>
-
-      </left>
-      <div>
-        <Link to='/home'>
-          <button style={{float: 'left'}} className="OtherPage">
-            Home Page
-          </button>
-        </Link>
-        <Link to='/landing'>
-          <button style={{float: 'right'}} className="OtherPage">
-            Sign Out
-          </button>
-        </Link>
-      </div>
+      <Navbar/>
       <div style={{clear:'both'}}>
+        <br />
         <center>
           {username !== "" ?
             <h2>{username}'s Comment Page</h2>
