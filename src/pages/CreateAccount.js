@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from 'react-router-dom';
-import { Form, Button, Card } from "react-bootstrap"; 
+import { Form, Card } from "react-bootstrap"; 
+import { Button } from '@material-ui/core'
 import { createAccount } from '../functions/auth'
 import Homepage from "./Homepage";
 
