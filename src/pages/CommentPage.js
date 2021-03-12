@@ -28,19 +28,17 @@ function CommentBox(props) {
   </div>;
 }
 
-export default function CommentPage() {
+export default function CommentPage(props) {
 
   const [data, setData] = useState([]);
   const [username, setUsername] = useState("");
 
   useEffect(async() => {
-    firebase.auth().onAuthStateChanged(async(user) => {
-      const uid = user.uid;
-      const comments = await getUserComments(uid);
-      const name = await getUsername(uid);
-      setData(comments);
-      setUsername(name);
-    });
+    const uid = props.location.data;
+    const comments = await getUserComments(uid);
+    const name = await getUsername(uid);
+    setData(comments);
+    setUsername(name);
   }, []);
   
   const listItems = data.map((d) => <CommentBox username={username} date={d.timestamp} text={d.text} ticker={d.ticker}></CommentBox>);
@@ -64,10 +62,10 @@ export default function CommentPage() {
       </div>
       <div style={{clear:'both'}}>
         <center>
-          <h2>{username}'s Comment Page</h2>
-
+          {username !== "" ?
+            <h2>{username}'s Comment Page</h2>
+          : null}
           <div>{listItems}</div>
-
         </center>
       </div>
     </>

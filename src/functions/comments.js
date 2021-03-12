@@ -38,14 +38,7 @@ export async function createComment(ticker, uid, text) {
       }]
     });
     await doc.update({id: doc.id});
-    const comments = (await db.collection('users').doc(uid).get()).data().comments.slice();
-    comments.push({
-      timestamp: timestamp,
-      text: text,
-      ticker: ticker,
-      id: doc.id,
-      replyIndex: 0
-    });
+    await saveUserComment(uid, ticker, text, timestamp);
     return true;
   } catch(err) {
     console.log(err);
@@ -75,18 +68,23 @@ export async function addReply(ticker, id, uid, text) {
       downvotes: []
     });
     await commentRef.update({children: children});
-    await db.collection('users').doc(uid).update({
-      timestamp: timestamp,
-      text: text,
-      ticker: ticker,
-      id: id,
-      replyIndex: children.length - 1
-    });
+    await saveUserComment(uid, ticker, text, timestamp);
     return true;
   } catch(err) {
     console.log(err);
     return false;
   }
+}
+
+async function saveUserComment(uid, ticker, text, timestamp) {
+  const commentRef = db.collection('users').doc(uid);
+  const comments = (await commentRef.get()).data().comments;
+  comments.push({
+    ticker: ticker,
+    text: text,
+    timestamp: timestamp
+  });
+  await commentRef.update({comments: comments});
 }
 
 /**
