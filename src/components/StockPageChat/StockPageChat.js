@@ -26,7 +26,6 @@ export default function Chat(props)
                 )
             }
             </center>
-            <hr />
         </Container>
     );
 

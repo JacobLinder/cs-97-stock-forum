@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { getUserComments } from '../functions/comments.js';
 import { getUsername } from '../functions/auth.js';
 import ReactDOM from 'react-dom';
-import './CommentPage.css';
+import './Pages.css';
 import { Link } from 'react-router-dom';
 import { Grid, Box, Button, ButtonGroup, Paper } from '@material-ui/core';
 import { ArrowRightAltOutlined } from '@material-ui/icons';
 import { Card, Container } from "react-bootstrap"; 
 import firebase from 'firebase/app';
 import 'firebase/auth';
+
 
 function CommentDate(props) {
   const date = new Date(props.date.seconds * 1000);
@@ -41,6 +42,11 @@ export default function CommentPage(props) {
   const [data, setData] = useState([]);
   const [username, setUsername] = useState("");
 
+  const paperStyle = {
+    margin:50,
+    padding:10
+  }
+
   useEffect(async() => {
     const uid = props.location.data;
     const comments = await getUserComments(uid);
@@ -57,7 +63,7 @@ export default function CommentPage(props) {
 
       </left>
       <div>
-        <Link to='/homepage'>
+        <Link to='/home'>
           <button style={{float: 'left'}} className="OtherPage">
             Home Page
           </button>
@@ -74,7 +80,7 @@ export default function CommentPage(props) {
             <h2>{username}'s Comment Page</h2>
           : null}
         </center>
-        <Paper style={{margin:50}}>{listItems}</Paper>
+        <Paper style={paperStyle}>{listItems}</Paper>
       </div>
     </>
   );
