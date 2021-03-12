@@ -53,7 +53,8 @@ export async function createAccount(username, email, password) {
       username: username,
       email: email,
       uid: uid,
-      comments: []
+      comments: [],
+      followed: []
     });
     return 1;
   } catch(error) {
