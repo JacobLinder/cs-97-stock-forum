@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import firebase from "firebase/app";
+import 'firebase/auth';
+import { toggleBullish, toggleBearish, toggleNeutral, toggleFollow } from "./functions/stock-interactions.js";
 import { VictoryLine, VictoryChart, VictoryPie } from 'victory';
 import { getSentimentHistory } from "./functions/stock-interactions.js";
 import Button from "@material-ui/core/Button";
@@ -511,6 +514,9 @@ import ZTS from "./1y_data/ZTS.csv";
 import {readString} from 'react-papaparse';
 
 export default function MiniGraph(props) {
+
+  const [user, setUser] = useState({});
+
   const CSVToArray = (csv) => {
     const test = fetch(csv);
     console.log(test);
@@ -527,6 +533,12 @@ export default function MiniGraph(props) {
     bearish: 0,
     neutral: 0
   });
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((firebaseUser) => {
+      setUser(firebaseUser);
+    });
+  }, []);
 
   const loadSentiment = async() => {
     const sentiment = await getSentimentHistory(props.ticker);
@@ -2090,6 +2102,23 @@ export default function MiniGraph(props) {
     padding: "10px",
     fontFamily: "Arial"
   };
+
+  const bullishClick = async() => {
+    await toggleBullish(user.uid, props.ticker);
+  }
+
+  const bearishClick = async() => {
+    await toggleBearish(user.uid, props.ticker);
+  }
+
+  const neutralClick = async() => {
+    await toggleNeutral(user.uid, props.ticker);
+  }
+
+  const followClick = async() => {
+    await toggleFollow(user.uid, props.ticker);
+  }
+
   var difference;
   var price;
   var percentChange;
@@ -2111,9 +2140,10 @@ export default function MiniGraph(props) {
     <h1 style={style2}>{price}</h1>
     <h1 style={style}>{difference} ({percentChange}%)</h1>
     <h2>
-        <Button style={style3} variant="contained" color="secondary">Bearish</Button>
-        <Button  style={style4} variant="contained" color="secondary">Neutral</Button>
-        <Button  style={style5} variant="contained" color="secondary">Bullish</Button>
+      <Button onClick={async() => await followClick()} style={style2} variant="contained" color="secondary">Follow</Button>
+      <Button onClick={async() => await bearishClick()} style={style3} variant="contained" color="secondary">Bearish</Button>
+      <Button onClick={async() => await neutralClick()} style={style4} variant="contained" color="secondary">Neutral</Button>
+      <Button onClick={async() => await bullishClick()} style={style5} variant="contained" color="secondary">Bullish</Button>
     </h2>
     <VictoryChart width='600' height='300'>
     <VictoryLine data={miniGraph} x='Date' y='Price' />
