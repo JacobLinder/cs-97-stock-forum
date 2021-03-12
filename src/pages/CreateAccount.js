@@ -61,6 +61,7 @@ export default function SignUp() {
 
       case 3:
         setPassword('')
+        setPasswordConfirm('')
         setPasswordErr('Password is too weak, must be more than 6 digits')
         break;
 
