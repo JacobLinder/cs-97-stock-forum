@@ -10,7 +10,7 @@ export default function StockPage() {
   return(
     <>
       <center>
-        <h2>{user}'s Stock Page</h2>
+        <h2>{stock}</h2>
         <Link to='/landing-page'>
           <button>
             Landing Page
