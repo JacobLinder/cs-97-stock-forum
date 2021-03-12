@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import firebase from "firebase/app";
+import 'firebase/auth';
+import { toggleBullish, toggleBearish, toggleNeutral, toggleFollow } from "./functions/stock-interactions.js";
 import { VictoryLine, VictoryChart, VictoryPie } from 'victory';
 import { getSentimentHistory } from "./functions/stock-interactions.js";
 import Button from "@material-ui/core/Button";
@@ -508,20 +511,34 @@ import ZBH from "./1y_data/ZBH.csv";
 import ZION from "./1y_data/ZION.csv";
 import ZTS from "./1y_data/ZTS.csv";
 
+import {readString} from 'react-papaparse';
+
 export default function MiniGraph(props) {
 
+  const [user, setUser] = useState({});
+
   const CSVToArray = (csv) => {
-    var lines = csv.split("\n");
-    return lines.splice(1, lines.length)
+    const test = fetch(csv);
+    console.log(test);
+    var lines = readString(csv, {delimiter: "\n"});
+    //console.log(lines.data);
+    return lines.data.splice(1, lines.data.length)
   }
 
-  var miniGraph = CSVToArray(MMM);
+  var miniGraph = [1,2,3,4,5];//CSVToArray('./1y_data/MMM.csv');
+  //console.log(miniGraph);
 
   const [stockSentiment, setStockSentiment] = useState({
     bullish: 0,
     bearish: 0,
     neutral: 0
   });
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((firebaseUser) => {
+      setUser(firebaseUser);
+    });
+  }, []);
 
   const loadSentiment = async() => {
     const sentiment = await getSentimentHistory(props.ticker);
@@ -2085,6 +2102,23 @@ export default function MiniGraph(props) {
     padding: "10px",
     fontFamily: "Arial"
   };
+
+  const bullishClick = async() => {
+    await toggleBullish(user.uid, props.ticker);
+  }
+
+  const bearishClick = async() => {
+    await toggleBearish(user.uid, props.ticker);
+  }
+
+  const neutralClick = async() => {
+    await toggleNeutral(user.uid, props.ticker);
+  }
+
+  const followClick = async() => {
+    await toggleFollow(user.uid, props.ticker);
+  }
+
   var difference;
   var price;
   var percentChange;
@@ -2106,9 +2140,10 @@ export default function MiniGraph(props) {
     <h1 style={style2}>{price}</h1>
     <h1 style={style}>{difference} ({percentChange}%)</h1>
     <h2>
-        <Button style={style3} variant="contained" color="secondary">Bearish</Button>
-        <Button  style={style4} variant="contained" color="secondary">Neutral</Button>
-        <Button  style={style5} variant="contained" color="secondary">Bullish</Button>
+      <Button onClick={async() => await followClick()} style={style2} variant="contained" color="secondary">Follow</Button>
+      <Button onClick={async() => await bearishClick()} style={style3} variant="contained" color="secondary">Bearish</Button>
+      <Button onClick={async() => await neutralClick()} style={style4} variant="contained" color="secondary">Neutral</Button>
+      <Button onClick={async() => await bullishClick()} style={style5} variant="contained" color="secondary">Bullish</Button>
     </h2>
     <VictoryChart width='600' height='300'>
     <VictoryLine data={miniGraph} x='Date' y='Price' />
