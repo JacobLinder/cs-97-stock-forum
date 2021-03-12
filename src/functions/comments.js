@@ -97,8 +97,27 @@ async function saveUserComment(uid, ticker, text, timestamp) {
 export async function getTickerComments(ticker) {
   try {
     const commentQuery = await db.collection('stocks').doc(ticker).collection('comments').get();
+    console.log('qry, ', commentQuery);
     const comments = [];
-    commentQuery.forEach(comment => comments.push(comment.data()));
+    commentQuery.forEach((comment) => {
+      const children = comment.data().children;
+      const newComment = [];
+      children.forEach((child) => {
+        const newChild = {
+          downvotes: child.downvotes,
+          text: child.text,
+          timestamp: child.timestamp,
+          uid: child.uid,
+          upvotes: child.upvotes,
+          id: comment.id
+        };
+        newComment.push(newChild);
+      });
+      comments.push(newComment);
+    });
+    if (comments.length === 0) {
+      comments.push([]);
+    }
     return comments;
   } catch(err) {
     console.log(err);
@@ -183,9 +202,9 @@ export async function toggleUpvoteComment(uid, ticker, id, replyIndex) {
   try {
     const commentRef = db.collection('stocks').doc(ticker).collection('comments').doc(id);
     const comments = (await commentRef.get()).data().children.slice();
-    const comment = comments[replyIndex]
+    var comment = comments[replyIndex]
     if (userHasUpvoted(uid, comment))
-      comment =  removeUpvote(uid, comment);
+      comment = removeUpvote(uid, comment);
     else {
       comment.upvotes.push(uid);
       if (userHasDownvoted(uid, comment))
@@ -193,7 +212,7 @@ export async function toggleUpvoteComment(uid, ticker, id, replyIndex) {
     }
     comments[replyIndex] = comment;
     await commentRef.update({children: comments});
-    return true;
+    return comment;
   } catch(err) {
     console.log(err);
     return false;
@@ -213,17 +232,18 @@ export async function toggleDownvoteComment(uid, ticker, id, replyIndex) {
   try {
     const commentRef = db.collection('stocks').doc(ticker).collection('comments').doc(id);
     const comments = (await commentRef.get()).data().children.slice();
-    const comment = comments[replyIndex]
-    if (userHasDownvoted(uid, comment))
-      comment =  removeDownvote(uid, comment);
+    var comment = comments[replyIndex]
+    if (userHasDownvoted(uid, comment)) {
+      comment = removeDownvote(uid, comment);
+    }
     else {
-      comment.upvotes.push(uid);
+      comment.downvotes.push(uid);
       if (userHasUpvoted(uid, comment))
         comment = removeUpvote(uid, comment);
     }
     comments[replyIndex] = comment;
     await commentRef.update({children: comments});
-    return true;
+    return comment;
   } catch(err) {
     console.log(err);
     return false;

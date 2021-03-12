@@ -13,7 +13,7 @@ import { createComment } from '../../functions/comments';
 // Adding comment section
 
 export default function AddComment(props) {
-  const user = props.user;
+  const uid = props.user.uid;
   const stock = props.stock;
   const [loading, setLoading] = useState(false);
   const [text, setText] = useState("");
@@ -21,8 +21,8 @@ export default function AddComment(props) {
   // Change for comment submit
   async function handleSubmit(e) {
     e.preventDefault();
-    await createComment(stock, user, text);
-    console.log(stock, user, text)
+    await createComment(stock, uid, text);
+    console.log(stock, uid, text)
   }
 
   return (
