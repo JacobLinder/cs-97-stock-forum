@@ -4,6 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 import Header from '../components/Header';
 import Redirections from '../components/Redirections';
 import { Link } from 'react-router-dom';
+import Button from '../components/button/Button';
 
 const useStyles = makeStyles((theme) => ({
   root:{
@@ -24,10 +25,10 @@ export default function LandingPage() {
 
     <center>
       <Link to={{pathname: '/comments', search: '04aIuvjEc2ZbHTLQTXIzO8CR0Xh2'}}>
-        <button>comments</button>
+        <Button>comments</Button>
       </Link>
       <Link to={{pathname: '/stocks', search: 'AAPL'}}>
-        <button>stocks</button>
+        <Button>stocks</Button>
       </Link>
       <br/><br/><br/><br/><br/><br/>
     </center>
