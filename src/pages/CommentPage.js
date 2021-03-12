@@ -62,7 +62,7 @@ export default function CommentPage(props) {
     setUsername(name);
   }, []);
   
-  const listItems = data.map((d) => <CommentBox username={username} date={d.timestamp} text={d.text} ticker={d.ticker}></CommentBox>);
+  const listItems = !data.length? "User has no comments" : data.map((d) => <CommentBox username={username} date={d.timestamp} text={d.text} ticker={d.ticker}></CommentBox>);
 
   return(
     <>
