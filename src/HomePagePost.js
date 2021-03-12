@@ -511,22 +511,15 @@ import ZBH from "./1y_data/ZBH.csv";
 import ZION from "./1y_data/ZION.csv";
 import ZTS from "./1y_data/ZTS.csv";
 
+import TradingViewWidget,{ Themes } from 'react-tradingview-widget';
+
 import {readString} from 'react-papaparse';
 
 export default function MiniGraph(props) {
 
   const [user, setUser] = useState({});
 
-  const CSVToArray = (csv) => {
-    const test = fetch(csv);
-    console.log(test);
-    var lines = readString(csv, {delimiter: "\n"});
-    //console.log(lines.data);
-    return lines.data.splice(1, lines.data.length)
-  }
-
-  var miniGraph = [1,2,3,4,5];//CSVToArray('./1y_data/MMM.csv');
-  //console.log(miniGraph);
+  var miniGraph = "AAPL";
 
   const [stockSentiment, setStockSentiment] = useState({
     bullish: 0,
@@ -545,1519 +538,1519 @@ export default function MiniGraph(props) {
     setStockSentiment(sentiment);
   }
   if (props.ticker === 'MMM') {
-    miniGraph = CSVToArray(MMM);
+    miniGraph = "MMM";
   }
   else if (props.ticker === 'ABT') {
-    miniGraph = CSVToArray(ABT);
+    miniGraph = "ABT";
   }
   else if (props.ticker === 'ABBV') {
-    miniGraph = CSVToArray(ABBV);
+    miniGraph = "ABBV";
   }
   else if (props.ticker === 'ABMD') {
-    miniGraph = CSVToArray(ABMD);
+    miniGraph = "ABMD";
   }
   else if (props.ticker === 'ACN') {
-    miniGraph = CSVToArray(ACN);
+    miniGraph = "ACN";
   }
   else if (props.ticker === 'ATVI') {
-    miniGraph = CSVToArray(ATVI);
+    miniGraph = "ATVI";
   }
   else if (props.ticker === 'ADBE') {
-    miniGraph = CSVToArray(ADBE);
+    miniGraph = "ADBE";
   }
   else if (props.ticker === 'AMD') {
-    miniGraph = CSVToArray(AMD);
+    miniGraph = "AMD";
   }
   else if (props.ticker === 'AAP') {
-    miniGraph = CSVToArray(AAP);
+    miniGraph = "AAP";
   }
   else if (props.ticker === 'AES') {
-    miniGraph = CSVToArray(AES);
+    miniGraph = "AES";
   }
   else if (props.ticker === 'AFL') {
-    miniGraph = CSVToArray(AFL);
+    miniGraph = "AFL";
   }
   else if (props.ticker === 'A') {
-    miniGraph = CSVToArray(A);
+    miniGraph = "A";
   }
   else if (props.ticker === 'APD') {
-    miniGraph = CSVToArray(APD);
+    miniGraph = "APD";
   }
   else if (props.ticker === 'AKAM') {
-    miniGraph = CSVToArray(AKAM);
+    miniGraph = "AKAM";
   }
   else if (props.ticker === 'ALK') {
-    miniGraph = CSVToArray(ALK);
+    miniGraph = "ALK";
   }
   else if (props.ticker === 'ALB') {
-    miniGraph = CSVToArray(ALB);
+    miniGraph = "ALB";
   }
   else if (props.ticker === 'ARE') {
-    miniGraph = CSVToArray(ARE);
+    miniGraph = "ARE";
   }
   else if (props.ticker === 'ALXN') {
-    miniGraph = CSVToArray(ALXN);
+    miniGraph = "ALXN";
   }
   else if (props.ticker === 'ALGN') {
-    miniGraph = CSVToArray(ALGN);
+    miniGraph = "ALGN";
   }
   else if (props.ticker === 'ALLE') {
-    miniGraph = CSVToArray(ALLE);
+    miniGraph = "ALLE";
   }
   else if (props.ticker === 'LNT') {
-    miniGraph = CSVToArray(LNT);
+    miniGraph = "LNT";
   }
   else if (props.ticker === 'ALL') {
-    miniGraph = CSVToArray(ALL);
+    miniGraph = "ALL";
   }
   else if (props.ticker === 'GOOGL') {
-    miniGraph = CSVToArray(GOOGL);
+    miniGraph = "GOOGL";
   }
   else if (props.ticker === 'GOOG') {
-    miniGraph = CSVToArray(GOOG);
+    miniGraph = "GOOG";
   }
   else if (props.ticker === 'MO') {
-    miniGraph = CSVToArray(MO);
+    miniGraph = "MO";
   }
   else if (props.ticker === 'AMZN') {
-    miniGraph = CSVToArray(AMZN);
+    miniGraph = "AMZN";
   }
   else if (props.ticker === 'AMCR') {
-    miniGraph = CSVToArray(AMCR);
+    miniGraph = "AMCR";
   }
   else if (props.ticker === 'AEE') {
-    miniGraph = CSVToArray(AEE);
+    miniGraph = "AEE";
   }
   else if (props.ticker === 'AAL') {
-    miniGraph = CSVToArray(AAL);
+    miniGraph = "AAL";
   }
   else if (props.ticker === 'AEP') {
-    miniGraph = CSVToArray(AEP);
+    miniGraph = "AEP";
   }
   else if (props.ticker === 'AXP') {
-    miniGraph = CSVToArray(AXP);
+    miniGraph = "AXP";
   }
   else if (props.ticker === 'AIG') {
-    miniGraph = CSVToArray(AIG);
+    miniGraph = "AIG";
   }
   else if (props.ticker === 'AMT') {
-    miniGraph = CSVToArray(AMT);
+    miniGraph = "AMT";
   }
   else if (props.ticker === 'AWK') {
-    miniGraph = CSVToArray(AWK);
+    miniGraph = "AWK";
   }
   else if (props.ticker === 'AMP') {
-    miniGraph = CSVToArray(AMP);
+    miniGraph = "AMP";
   }
   else if (props.ticker === 'ABC') {
-    miniGraph = CSVToArray(ABC);
+    miniGraph = "ABC";
   }
   else if (props.ticker === 'AME') {
-    miniGraph = CSVToArray(AME);
+    miniGraph = "AME";
   }
   else if (props.ticker === 'AMGN') {
-    miniGraph = CSVToArray(AMGN);
+    miniGraph = "AMGN";
   }
   else if (props.ticker === 'APH') {
-    miniGraph = CSVToArray(APH);
+    miniGraph = "APH";
   }
   else if (props.ticker === 'ADI') {
-    miniGraph = CSVToArray(ADI);
+    miniGraph = "ADI";
   }
   else if (props.ticker === 'ANSS') {
-    miniGraph = CSVToArray(ANSS);
+    miniGraph = "ANSS";
   }
   else if (props.ticker === 'ANTM') {
-    miniGraph = CSVToArray(ANTM);
+    miniGraph = "ANTM";
   }
   else if (props.ticker === 'AON') {
-    miniGraph = CSVToArray(AON);
+    miniGraph = "AON";
   }
   else if (props.ticker === 'AOS') {
-    miniGraph = CSVToArray(AOS);
+    miniGraph = "AOS";
   }
   else if (props.ticker === 'APA') {
-    miniGraph = CSVToArray(APA);
+    miniGraph = "APA";
   }
   else if (props.ticker === 'AAPL') {
-    miniGraph = CSVToArray(AAPL);
+    miniGraph = "AAPL";
   }
   else if (props.ticker === 'AMAT') {
-    miniGraph = CSVToArray(AMAT);
+    miniGraph = "AMAT";
   }
   else if (props.ticker === 'APTV') {
-    miniGraph = CSVToArray(APTV);
+    miniGraph = "APTV";
   }
   else if (props.ticker === 'ADM') {
-    miniGraph = CSVToArray(ADM);
+    miniGraph = "ADM";
   }
   else if (props.ticker === 'ANET') {
-    miniGraph = CSVToArray(ANET);
+    miniGraph = "ANET";
   }
   else if (props.ticker === 'AJG') {
-    miniGraph = CSVToArray(AJG);
+    miniGraph = "AJG";
   }
   else if (props.ticker === 'AIZ') {
-    miniGraph = CSVToArray(AIZ);
+    miniGraph = "AIZ";
   }
   else if (props.ticker === 'T') {
-    miniGraph = CSVToArray(T);
+    miniGraph = "T";
   }
   else if (props.ticker === 'ATO') {
-    miniGraph = CSVToArray(ATO);
+    miniGraph = "ATO";
   }
   else if (props.ticker === 'ADSK') {
-    miniGraph = CSVToArray(ADSK);
+    miniGraph = "ADSK";
   }
   else if (props.ticker === 'ADP') {
-    miniGraph = CSVToArray(ADP);
+    miniGraph = "ADP";
   }
   else if (props.ticker === 'AZO') {
-    miniGraph = CSVToArray(AZO);
+    miniGraph = "AZO";
   }
   else if (props.ticker === 'AVB') {
-    miniGraph = CSVToArray(AVB);
+    miniGraph = "AVB";
   }
   else if (props.ticker === 'AVY') {
-    miniGraph = CSVToArray(AVY);
+    miniGraph = "AVY";
   }
   else if (props.ticker === 'BKR') {
-    miniGraph = CSVToArray(BKR);
+    miniGraph = "BKR";
   }
   else if (props.ticker === 'BLL') {
-    miniGraph = CSVToArray(BLL);
+    miniGraph = "BLL";
   }
   else if (props.ticker === 'BAC') {
-    miniGraph = CSVToArray(BAC);
+    miniGraph = "BAC";
   }
   else if (props.ticker === 'BK') {
-    miniGraph = CSVToArray(BK);
+    miniGraph = "BK";
   }
   else if (props.ticker === 'BAX') {
-    miniGraph = CSVToArray(BAX);
+    miniGraph = "BAX";
   }
   else if (props.ticker === 'BDX') {
-    miniGraph = CSVToArray(BDX);
+    miniGraph = "BDX";
   }
   else if (props.ticker === 'BRK.B') {
-    miniGraph = CSVToArray(BRKB);
+    miniGraph = "BRKB";
   }
   else if (props.ticker === 'BBY') {
-    miniGraph = CSVToArray(BBY);
+    miniGraph = "BBY";
   }
   else if (props.ticker === 'BIO') {
-    miniGraph = CSVToArray(BIO);
+    miniGraph = "BIO";
   }
   else if (props.ticker === 'BIIB') {
-    miniGraph = CSVToArray(BIIB);
+    miniGraph = "BIIB";
   }
   else if (props.ticker === 'BLK') {
-    miniGraph = CSVToArray(BLK);
+    miniGraph = "BLK";
   }
   else if (props.ticker === 'BA') {
-    miniGraph = CSVToArray(BA);
+    miniGraph = "BA";
   }
   else if (props.ticker === 'BKNG') {
-    miniGraph = CSVToArray(BKNG);
+    miniGraph = "BKNG";
   }
   else if (props.ticker === 'BWA') {
-    miniGraph = CSVToArray(BWA);
+    miniGraph = "BWA";
   }
   else if (props.ticker === 'BXP') {
-    miniGraph = CSVToArray(BXP);
+    miniGraph = "BXP";
   }
   else if (props.ticker === 'BSX') {
-    miniGraph = CSVToArray(BSX);
+    miniGraph = "BSX";
   }
   else if (props.ticker === 'BMY') {
-    miniGraph = CSVToArray(BMY);
+    miniGraph = "BMY";
   }
   else if (props.ticker === 'AVGO') {
-    miniGraph = CSVToArray(AVGO);
+    miniGraph = "AVGO";
   }
   else if (props.ticker === 'BR') {
-    miniGraph = CSVToArray(BR);
+    miniGraph = "BR";
   }
   else if (props.ticker === 'BF.B') {
-    miniGraph = CSVToArray(BFB);
+    miniGraph = "BFB";
   }
   else if (props.ticker === 'CHRW') {
-    miniGraph = CSVToArray(CHRW);
+    miniGraph = "CHRW";
   }
   else if (props.ticker === 'COG') {
-    miniGraph = CSVToArray(COG);
+    miniGraph = "COG";
   }
   else if (props.ticker === 'CDNS') {
-    miniGraph = CSVToArray(CDNS);
+    miniGraph = "CDNS";
   }
   else if (props.ticker === 'CPB') {
-    miniGraph = CSVToArray(CPB);
+    miniGraph = "CPB";
   }
   else if (props.ticker === 'COF') {
-    miniGraph = CSVToArray(COF);
+    miniGraph = "COF";
   }
   else if (props.ticker === 'CAH') {
-    miniGraph = CSVToArray(CAH);
+    miniGraph = "CAH";
   }
   else if (props.ticker === 'KMX') {
-    miniGraph = CSVToArray(KMX);
+    miniGraph = "KMX";
   }
   else if (props.ticker === 'CCL') {
-    miniGraph = CSVToArray(CCL);
+    miniGraph = "CCL";
   }
   else if (props.ticker === 'CARR') {
-    miniGraph = CSVToArray(CARR);
+    miniGraph = "CARR";
   }
   else if (props.ticker === 'CTLT') {
-    miniGraph = CSVToArray(CTLT);
+    miniGraph = "CTLT";
   }
   else if (props.ticker === 'CAT') {
-    miniGraph = CSVToArray(CAT);
+    miniGraph = "CAT";
   }
   else if (props.ticker === 'CBOE') {
-    miniGraph = CSVToArray(CBOE);
+    miniGraph = "CBOE";
   }
   else if (props.ticker === 'CBRE') {
-    miniGraph = CSVToArray(CBRE);
+    miniGraph = "CBRE";
   }
   else if (props.ticker === 'CDW') {
-    miniGraph = CSVToArray(CDW);
+    miniGraph = "CDW";
   }
   else if (props.ticker === 'CE') {
-    miniGraph = CSVToArray(CE);
+    miniGraph = "CE";
   }
   else if (props.ticker === 'CNC') {
-    miniGraph = CSVToArray(CNC);
+    miniGraph = "CNC";
   }
   else if (props.ticker === 'CNP') {
-    miniGraph = CSVToArray(CNP);
+    miniGraph = "CNP";
   }
   else if (props.ticker === 'CERN') {
-    miniGraph = CSVToArray(CERN);
+    miniGraph = "CERN";
   }
   else if (props.ticker === 'CF') {
-    miniGraph = CSVToArray(CF);
+    miniGraph = "CF";
   }
   else if (props.ticker === 'SCHW') {
-    miniGraph = CSVToArray(SCHW);
+    miniGraph = "SCHW";
   }
   else if (props.ticker === 'CHTR') {
-    miniGraph = CSVToArray(CHTR);
+    miniGraph = "CHTR";
   }
   else if (props.ticker === 'CVX') {
-    miniGraph = CSVToArray(CVX);
+    miniGraph = "CVX";
   }
   else if (props.ticker === 'CMG') {
-    miniGraph = CSVToArray(CMG);
+    miniGraph = "CMG";
   }
   else if (props.ticker === 'CB') {
-    miniGraph = CSVToArray(CB);
+    miniGraph = "CB";
   }
   else if (props.ticker === 'CHD') {
-    miniGraph = CSVToArray(CHD);
+    miniGraph = "CHD";
   }
   else if (props.ticker === 'CI') {
-    miniGraph = CSVToArray(CI);
+    miniGraph = "CI";
   }
   else if (props.ticker === 'CINF') {
-    miniGraph = CSVToArray(CINF);
+    miniGraph = "CINF";
   }
   else if (props.ticker === 'CTAS') {
-    miniGraph = CSVToArray(CTAS);
+    miniGraph = "CTAS";
   }
   else if (props.ticker === 'CSCO') {
-    miniGraph = CSVToArray(CSCO);
+    miniGraph = "CSCO";
   }
   else if (props.ticker === 'C') {
-    miniGraph = CSVToArray(C);
+    miniGraph = "C";
   }
   else if (props.ticker === 'CFG') {
-    miniGraph = CSVToArray(CFG);
+    miniGraph = "CFG";
   }
   else if (props.ticker === 'CTXS') {
-    miniGraph = CSVToArray(CTXS);
+    miniGraph = "CTXS";
   }
   else if (props.ticker === 'CLX') {
-    miniGraph = CSVToArray(CLX);
+    miniGraph = "CLX";
   }
   else if (props.ticker === 'CME') {
-    miniGraph = CSVToArray(CME);
+    miniGraph = "CME";
   }
   else if (props.ticker === 'CMS') {
-    miniGraph = CSVToArray(CMS);
+    miniGraph = "CMS";
   }
   else if (props.ticker === 'KO') {
-    miniGraph = CSVToArray(KO);
+    miniGraph = "KO";
   }
   else if (props.ticker === 'CTSH') {
-    miniGraph = CSVToArray(CTSH);
+    miniGraph = "CTSH";
   }
   else if (props.ticker === 'CL') {
-    miniGraph = CSVToArray(CL);
+    miniGraph = "CL";
   }
   else if (props.ticker === 'CMCSA') {
-    miniGraph = CSVToArray(CMCSA);
+    miniGraph = "CMCSA";
   }
   else if (props.ticker === 'CMA') {
-    miniGraph = CSVToArray(CMA);
+    miniGraph = "CMA";
   }
   else if (props.ticker === 'CAG') {
-    miniGraph = CSVToArray(CAG);
+    miniGraph = "CAG";
   }
   else if (props.ticker === 'COP') {
-    miniGraph = CSVToArray(COP);
+    miniGraph = "COP";
   }
   else if (props.ticker === 'ED') {
-    miniGraph = CSVToArray(ED);
+    miniGraph = "ED";
   }
   else if (props.ticker === 'STZ') {
-    miniGraph = CSVToArray(STZ);
+    miniGraph = "STZ";
   }
   else if (props.ticker === 'COO') {
-    miniGraph = CSVToArray(COO);
+    miniGraph = "COO";
   }
   else if (props.ticker === 'CPRT') {
-    miniGraph = CSVToArray(CPRT);
+    miniGraph = "CPRT";
   }
   else if (props.ticker === 'GLW') {
-    miniGraph = CSVToArray(GLW);
+    miniGraph = "GLW";
   }
   else if (props.ticker === 'CTVA') {
-    miniGraph = CSVToArray(CTVA);
+    miniGraph = "CTVA";
   }
   else if (props.ticker === 'COST') {
-    miniGraph = CSVToArray(COST);
+    miniGraph = "COST";
   }
   else if (props.ticker === 'CCI') {
-    miniGraph = CSVToArray(CCI);
+    miniGraph = "CCI";
   }
   else if (props.ticker === 'CSX') {
-    miniGraph = CSVToArray(CSX);
+    miniGraph = "CSX";
   }
   else if (props.ticker === 'CMI') {
-    miniGraph = CSVToArray(CMI);
+    miniGraph = "CMI";
   }
   else if (props.ticker === 'CVS') {
-    miniGraph = CSVToArray(CVS);
+    miniGraph = "CVS";
   }
   else if (props.ticker === 'DHI') {
-    miniGraph = CSVToArray(DHI);
+    miniGraph = "DHI";
   }
   else if (props.ticker === 'DHR') {
-    miniGraph = CSVToArray(DHR);
+    miniGraph = "DHR";
   }
   else if (props.ticker === 'DRI') {
-    miniGraph = CSVToArray(DRI);
+    miniGraph = "DRI";
   }
   else if (props.ticker === 'DVA') {
-    miniGraph = CSVToArray(DVA);
+    miniGraph = "DVA";
   }
   else if (props.ticker === 'DE') {
-    miniGraph = CSVToArray(DE);
+    miniGraph = "DE";
   }
   else if (props.ticker === 'DAL') {
-    miniGraph = CSVToArray(DAL);
+    miniGraph = "DAL";
   }
   else if (props.ticker === 'XRAY') {
-    miniGraph = CSVToArray(XRAY);
+    miniGraph = "XRAY";
   }
   else if (props.ticker === 'DVN') {
-    miniGraph = CSVToArray(DVN);
+    miniGraph = "DVN";
   }
   else if (props.ticker === 'DXCM') {
-    miniGraph = CSVToArray(DXCM);
+    miniGraph = "DXCM";
   }
   else if (props.ticker === 'FANG') {
-    miniGraph = CSVToArray(FANG);
+    miniGraph = "FANG";
   }
   else if (props.ticker === 'DLR') {
-    miniGraph = CSVToArray(DLR);
+    miniGraph = "DLR";
   }
   else if (props.ticker === 'DFS') {
-    miniGraph = CSVToArray(DFS);
+    miniGraph = "DFS";
   }
   else if (props.ticker === 'DISCA') {
-    miniGraph = CSVToArray(DISCA);
+    miniGraph = "DISCA";
   }
   else if (props.ticker === 'DISCK') {
-    miniGraph = CSVToArray(DISCK);
+    miniGraph = "DISCK";
   }
   else if (props.ticker === 'DISH') {
-    miniGraph = CSVToArray(DISH);
+    miniGraph = "DISH";
   }
   else if (props.ticker === 'DG') {
-    miniGraph = CSVToArray(DG);
+    miniGraph = "DG";
   }
   else if (props.ticker === 'DLTR') {
-    miniGraph = CSVToArray(DLTR);
+    miniGraph = "DLTR";
   }
   else if (props.ticker === 'D') {
-    miniGraph = CSVToArray(D);
+    miniGraph = "D";
   }
   else if (props.ticker === 'DPZ') {
-    miniGraph = CSVToArray(DPZ);
+    miniGraph = "DPZ";
   }
   else if (props.ticker === 'DOV') {
-    miniGraph = CSVToArray(DOV);
+    miniGraph = "DOV";
   }
   else if (props.ticker === 'DOW') {
-    miniGraph = CSVToArray(DOW);
+    miniGraph = "DOW";
   }
   else if (props.ticker === 'DTE') {
-    miniGraph = CSVToArray(DTE);
+    miniGraph = "DTE";
   }
   else if (props.ticker === 'DUK') {
-    miniGraph = CSVToArray(DUK);
+    miniGraph = "DUK";
   }
   else if (props.ticker === 'DRE') {
-    miniGraph = CSVToArray(DRE);
+    miniGraph = "DRE";
   }
   else if (props.ticker === 'DD') {
-    miniGraph = CSVToArray(DD);
+    miniGraph = "DD";
   }
   else if (props.ticker === 'DXC') {
-    miniGraph = CSVToArray(DXC);
+    miniGraph = "DXC";
   }
   else if (props.ticker === 'EMN') {
-    miniGraph = CSVToArray(EMN);
+    miniGraph = "EMN";
   }
   else if (props.ticker === 'ETN') {
-    miniGraph = CSVToArray(ETN);
+    miniGraph = "ETN";
   }
   else if (props.ticker === 'EBAY') {
-    miniGraph = CSVToArray(EBAY);
+    miniGraph = "EBAY";
   }
   else if (props.ticker === 'ECL') {
-    miniGraph = CSVToArray(ECL);
+    miniGraph = "ECL";
   }
   else if (props.ticker === 'EIX') {
-    miniGraph = CSVToArray(EIX);
+    miniGraph = "EIX";
   }
   else if (props.ticker === 'EW') {
-    miniGraph = CSVToArray(EW);
+    miniGraph = "EW";
   }
   else if (props.ticker === 'EA') {
-    miniGraph = CSVToArray(EA);
+    miniGraph = "EA";
   }
   else if (props.ticker === 'EMR') {
-    miniGraph = CSVToArray(EMR);
+    miniGraph = "EMR";
   }
   else if (props.ticker === 'ENPH') {
-    miniGraph = CSVToArray(ENPH);
+    miniGraph = "ENPH";
   }
   else if (props.ticker === 'ETR') {
-    miniGraph = CSVToArray(ETR);
+    miniGraph = "ETR";
   }
   else if (props.ticker === 'EOG') {
-    miniGraph = CSVToArray(EOG);
+    miniGraph = "EOG";
   }
   else if (props.ticker === 'EFX') {
-    miniGraph = CSVToArray(EFX);
+    miniGraph = "EFX";
   }
   else if (props.ticker === 'EQIX') {
-    miniGraph = CSVToArray(EQIX);
+    miniGraph = "EQIX";
   }
   else if (props.ticker === 'EQR') {
-    miniGraph = CSVToArray(EQR);
+    miniGraph = "EQR";
   }
   else if (props.ticker === 'ESS') {
-    miniGraph = CSVToArray(ESS);
+    miniGraph = "ESS";
   }
   else if (props.ticker === 'EL') {
-    miniGraph = CSVToArray(EL);
+    miniGraph = "EL";
   }
   else if (props.ticker === 'ETSY') {
-    miniGraph = CSVToArray(ETSY);
+    miniGraph = "ETSY";
   }
   else if (props.ticker === 'EVRG') {
-    miniGraph = CSVToArray(EVRG);
+    miniGraph = "EVRG";
   }
   else if (props.ticker === 'ES') {
-    miniGraph = CSVToArray(ES);
+    miniGraph = "ES";
   }
   else if (props.ticker === 'RE') {
-    miniGraph = CSVToArray(RE);
+    miniGraph = "RE";
   }
   else if (props.ticker === 'EXC') {
-    miniGraph = CSVToArray(EXC);
+    miniGraph = "EXC";
   }
   else if (props.ticker === 'EXPE') {
-    miniGraph = CSVToArray(EXPE);
+    miniGraph = "EXPE";
   }
   else if (props.ticker === 'EXPD') {
-    miniGraph = CSVToArray(EXPD);
+    miniGraph = "EXPD";
   }
   else if (props.ticker === 'EXR') {
-    miniGraph = CSVToArray(EXR);
+    miniGraph = "EXR";
   }
   else if (props.ticker === 'XOM') {
-    miniGraph = CSVToArray(XOM);
+    miniGraph = "XOM";
   }
   else if (props.ticker === 'FFIV') {
-    miniGraph = CSVToArray(FFIV);
+    miniGraph = "FFIV";
   }
   else if (props.ticker === 'FB') {
-    miniGraph = CSVToArray(FB);
+    miniGraph = "FB";
   }
   else if (props.ticker === 'FAST') {
-    miniGraph = CSVToArray(FAST);
+    miniGraph = "FAST";
   }
   else if (props.ticker === 'FRT') {
-    miniGraph = CSVToArray(FRT);
+    miniGraph = "FRT";
   }
   else if (props.ticker === 'FDX') {
-    miniGraph = CSVToArray(FDX);
+    miniGraph = "FDX";
   }
   else if (props.ticker === 'FIS') {
-    miniGraph = CSVToArray(FIS);
+    miniGraph = "FIS";
   }
   else if (props.ticker === 'FITB') {
-    miniGraph = CSVToArray(FITB);
+    miniGraph = "FITB";
   }
   else if (props.ticker === 'FE') {
-    miniGraph = CSVToArray(FE);
+    miniGraph = "FE";
   }
   else if (props.ticker === 'FRC') {
-    miniGraph = CSVToArray(FRC);
+    miniGraph = "FRC";
   }
   else if (props.ticker === 'FISV') {
-    miniGraph = CSVToArray(FISV);
+    miniGraph = "FISV";
   }
   else if (props.ticker === 'FLT') {
-    miniGraph = CSVToArray(FLT);
+    miniGraph = "FLT";
   }
   else if (props.ticker === 'FLIR') {
-    miniGraph = CSVToArray(FLIR);
+    miniGraph = "FLIR";
   }
   else if (props.ticker === 'FLS') {
-    miniGraph = CSVToArray(FLS);
+    miniGraph = "FLS";
   }
   else if (props.ticker === 'FMC') {
-    miniGraph = CSVToArray(FMC);
+    miniGraph = "FMC";
   }
   else if (props.ticker === 'F') {
-    miniGraph = CSVToArray(F);
+    miniGraph = "F";
   }
   else if (props.ticker === 'FTNT') {
-    miniGraph = CSVToArray(FTNT);
+    miniGraph = "FTNT";
   }
   else if (props.ticker === 'FTV') {
-    miniGraph = CSVToArray(FTV);
+    miniGraph = "FTV";
   }
   else if (props.ticker === 'FBHS') {
-    miniGraph = CSVToArray(FBHS);
+    miniGraph = "FBHS";
   }
   else if (props.ticker === 'FOXA') {
-    miniGraph = CSVToArray(FOXA);
+    miniGraph = "FOXA";
   }
   else if (props.ticker === 'FOX') {
-    miniGraph = CSVToArray(FOX);
+    miniGraph = "FOX";
   }
   else if (props.ticker === 'BEN') {
-    miniGraph = CSVToArray(BEN);
+    miniGraph = "BEN";
   }
   else if (props.ticker === 'FCX') {
-    miniGraph = CSVToArray(FCX);
+    miniGraph = "FCX";
   }
   else if (props.ticker === 'GPS') {
-    miniGraph = CSVToArray(GPS);
+    miniGraph = "GPS";
   }
   else if (props.ticker === 'GRMN') {
-    miniGraph = CSVToArray(GRMN);
+    miniGraph = "GRMN";
   }
   else if (props.ticker === 'IT') {
-    miniGraph = CSVToArray(IT);
+    miniGraph = "IT";
   }
   else if (props.ticker === 'GD') {
-    miniGraph = CSVToArray(GD);
+    miniGraph = "GD";
   }
   else if (props.ticker === 'GE') {
-    miniGraph = CSVToArray(GE);
+    miniGraph = "GE";
   }
   else if (props.ticker === 'GIS') {
-    miniGraph = CSVToArray(GIS);
+    miniGraph = "GIS";
   }
   else if (props.ticker === 'GM') {
-    miniGraph = CSVToArray(GM);
+    miniGraph = "GM";
   }
   else if (props.ticker === 'GPC') {
-    miniGraph = CSVToArray(GPC);
+    miniGraph = "GPC";
   }
   else if (props.ticker === 'GILD') {
-    miniGraph = CSVToArray(GILD);
+    miniGraph = "GILD";
   }
   else if (props.ticker === 'GL') {
-    miniGraph = CSVToArray(GL);
+    miniGraph = "GL";
   }
   else if (props.ticker === 'GPN') {
-    miniGraph = CSVToArray(GPN);
+    miniGraph = "GPN";
   }
   else if (props.ticker === 'GS') {
-    miniGraph = CSVToArray(GS);
+    miniGraph = "GS";
   }
   else if (props.ticker === 'GWW') {
-    miniGraph = CSVToArray(GWW);
+    miniGraph = "GWW";
   }
   else if (props.ticker === 'HAL') {
-    miniGraph = CSVToArray(HAL);
+    miniGraph = "HAL";
   }
   else if (props.ticker === 'HBI') {
-    miniGraph = CSVToArray(HBI);
+    miniGraph = "HBI";
   }
   else if (props.ticker === 'HIG') {
-    miniGraph = CSVToArray(HIG);
+    miniGraph = "HIG";
   }
   else if (props.ticker === 'HAS') {
-    miniGraph = CSVToArray(HAS);
+    miniGraph = "HAS";
   }
   else if (props.ticker === 'HCA') {
-    miniGraph = CSVToArray(HCA);
+    miniGraph = "HCA";
   }
   else if (props.ticker === 'PEAK') {
-    miniGraph = CSVToArray(PEAK);
+    miniGraph = "PEAK";
   }
   else if (props.ticker === 'HSIC') {
-    miniGraph = CSVToArray(HSIC);
+    miniGraph = "HSIC";
   }
   else if (props.ticker === 'HSY') {
-    miniGraph = CSVToArray(HSY);
+    miniGraph = "HSY";
   }
   else if (props.ticker === 'HES') {
-    miniGraph = CSVToArray(HES);
+    miniGraph = "HES";
   }
   else if (props.ticker === 'HPE') {
-    miniGraph = CSVToArray(HPE);
+    miniGraph = "HPE";
   }
   else if (props.ticker === 'HLT') {
-    miniGraph = CSVToArray(HLT);
+    miniGraph = "HLT";
   }
   else if (props.ticker === 'HFC') {
-    miniGraph = CSVToArray(HFC);
+    miniGraph = "HFC";
   }
   else if (props.ticker === 'HOLX') {
-    miniGraph = CSVToArray(HOLX);
+    miniGraph = "HOLX";
   }
   else if (props.ticker === 'HD') {
-    miniGraph = CSVToArray(HD);
+    miniGraph = "HD";
   }
   else if (props.ticker === 'HON') {
-    miniGraph = CSVToArray(HON);
+    miniGraph = "HON";
   }
   else if (props.ticker === 'HRL') {
-    miniGraph = CSVToArray(HRL);
+    miniGraph = "HRL";
   }
   else if (props.ticker === 'HST') {
-    miniGraph = CSVToArray(HST);
+    miniGraph = "HST";
   }
   else if (props.ticker === 'HWM') {
-    miniGraph = CSVToArray(HWM);
+    miniGraph = "HWM";
   }
   else if (props.ticker === 'HPQ') {
-    miniGraph = CSVToArray(HPQ);
+    miniGraph = "HPQ";
   }
   else if (props.ticker === 'HUM') {
-    miniGraph = CSVToArray(HUM);
+    miniGraph = "HUM";
   }
   else if (props.ticker === 'HBAN') {
-    miniGraph = CSVToArray(HBAN);
+    miniGraph = "HBAN";
   }
   else if (props.ticker === 'HII') {
-    miniGraph = CSVToArray(HII);
+    miniGraph = "HII";
   }
   else if (props.ticker === 'IEX') {
-    miniGraph = CSVToArray(IEX);
+    miniGraph = "IEX";
   }
   else if (props.ticker === 'IDXX') {
-    miniGraph = CSVToArray(IDXX);
+    miniGraph = "IDXX";
   }
   else if (props.ticker === 'INFO') {
-    miniGraph = CSVToArray(INFO);
+    miniGraph = "INFO";
   }
   else if (props.ticker === 'ITW') {
-    miniGraph = CSVToArray(ITW);
+    miniGraph = "ITW";
   }
   else if (props.ticker === 'ILMN') {
-    miniGraph = CSVToArray(ILMN);
+    miniGraph = "ILMN";
   }
   else if (props.ticker === 'INCY') {
-    miniGraph = CSVToArray(INCY);
+    miniGraph = "INCY";
   }
   else if (props.ticker === 'IR') {
-    miniGraph = CSVToArray(IR);
+    miniGraph = "IR";
   }
   else if (props.ticker === 'INTC') {
-    miniGraph = CSVToArray(INTC);
+    miniGraph = "INTC";
   }
   else if (props.ticker === 'ICE') {
-    miniGraph = CSVToArray(ICE);
+    miniGraph = "ICE";
   }
   else if (props.ticker === 'IBM') {
-    miniGraph = CSVToArray(IBM);
+    miniGraph = "IBM";
   }
   else if (props.ticker === 'IP') {
-    miniGraph = CSVToArray(IP);
+    miniGraph = "IP";
   }
   else if (props.ticker === 'IPG') {
-    miniGraph = CSVToArray(IPG);
+    miniGraph = "IPG";
   }
   else if (props.ticker === 'IFF') {
-    miniGraph = CSVToArray(IFF);
+    miniGraph = "IFF";
   }
   else if (props.ticker === 'INTU') {
-    miniGraph = CSVToArray(INTU);
+    miniGraph = "INTU";
   }
   else if (props.ticker === 'ISRG') {
-    miniGraph = CSVToArray(ISRG);
+    miniGraph = "ISRG";
   }
   else if (props.ticker === 'IVZ') {
-    miniGraph = CSVToArray(IVZ);
+    miniGraph = "IVZ";
   }
   else if (props.ticker === 'IPGP') {
-    miniGraph = CSVToArray(IPGP);
+    miniGraph = "IPGP";
   }
   else if (props.ticker === 'IQV') {
-    miniGraph = CSVToArray(IQV);
+    miniGraph = "IQV";
   }
   else if (props.ticker === 'IRM') {
-    miniGraph = CSVToArray(IRM);
+    miniGraph = "IRM";
   }
   else if (props.ticker === 'JKHY') {
-    miniGraph = CSVToArray(JKHY);
+    miniGraph = "JKHY";
   }
   else if (props.ticker === 'J') {
-    miniGraph = CSVToArray(J);
+    miniGraph = "J";
   }
   else if (props.ticker === 'JBHT') {
-    miniGraph = CSVToArray(JBHT);
+    miniGraph = "JBHT";
   }
   else if (props.ticker === 'SJM') {
-    miniGraph = CSVToArray(SJM);
+    miniGraph = "SJM";
   }
   else if (props.ticker === 'JNJ') {
-    miniGraph = CSVToArray(JNJ);
+    miniGraph = "JNJ";
   }
   else if (props.ticker === 'JCI') {
-    miniGraph = CSVToArray(JCI);
+    miniGraph = "JCI";
   }
   else if (props.ticker === 'JPM') {
-    miniGraph = CSVToArray(JPM);
+    miniGraph = "JPM";
   }
   else if (props.ticker === 'JNPR') {
-    miniGraph = CSVToArray(JNPR);
+    miniGraph = "JNPR";
   }
   else if (props.ticker === 'KSU') {
-    miniGraph = CSVToArray(KSU);
+    miniGraph = "KSU";
   }
   else if (props.ticker === 'K') {
-    miniGraph = CSVToArray(K);
+    miniGraph = "K";
   }
   else if (props.ticker === 'KEY') {
-    miniGraph = CSVToArray(KEY);
+    miniGraph = "KEY";
   }
   else if (props.ticker === 'KEYS') {
-    miniGraph = CSVToArray(KEYS);
+    miniGraph = "KEYS";
   }
   else if (props.ticker === 'KMB') {
-    miniGraph = CSVToArray(KMB);
+    miniGraph = "KMB";
   }
   else if (props.ticker === 'KIM') {
-    miniGraph = CSVToArray(KIM);
+    miniGraph = "KIM";
   }
   else if (props.ticker === 'KMI') {
-    miniGraph = CSVToArray(KMI);
+    miniGraph = "KMI";
   }
   else if (props.ticker === 'KLAC') {
-    miniGraph = CSVToArray(KLAC);
+    miniGraph = "KLAC";
   }
   else if (props.ticker === 'KHC') {
-    miniGraph = CSVToArray(KHC);
+    miniGraph = "KHC";
   }
   else if (props.ticker === 'KR') {
-    miniGraph = CSVToArray(KR);
+    miniGraph = "KR";
   }
   else if (props.ticker === 'LB') {
-    miniGraph = CSVToArray(LB);
+    miniGraph = "LB";
   }
   else if (props.ticker === 'LHX') {
-    miniGraph = CSVToArray(LHX);
+    miniGraph = "LHX";
   }
   else if (props.ticker === 'LH') {
-    miniGraph = CSVToArray(LH);
+    miniGraph = "LH";
   }
   else if (props.ticker === 'LRCX') {
-    miniGraph = CSVToArray(LRCX);
+    miniGraph = "LRCX";
   }
   else if (props.ticker === 'LW') {
-    miniGraph = CSVToArray(LW);
+    miniGraph = "LW";
   }
   else if (props.ticker === 'LVS') {
-    miniGraph = CSVToArray(LVS);
+    miniGraph = "LVS";
   }
   else if (props.ticker === 'LEG') {
-    miniGraph = CSVToArray(LEG);
+    miniGraph = "LEG";
   }
   else if (props.ticker === 'LDOS') {
-    miniGraph = CSVToArray(LDOS);
+    miniGraph = "LDOS";
   }
   else if (props.ticker === 'LEN') {
-    miniGraph = CSVToArray(LEN);
+    miniGraph = "LEN";
   }
   else if (props.ticker === 'LLY') {
-    miniGraph = CSVToArray(LLY);
+    miniGraph = "LLY";
   }
   else if (props.ticker === 'LNC') {
-    miniGraph = CSVToArray(LNC);
+    miniGraph = "LNC";
   }
   else if (props.ticker === 'LIN') {
-    miniGraph = CSVToArray(LIN);
+    miniGraph = "LIN";
   }
   else if (props.ticker === 'LYV') {
-    miniGraph = CSVToArray(LYV);
+    miniGraph = "LYV";
   }
   else if (props.ticker === 'LKQ') {
-    miniGraph = CSVToArray(LKQ);
+    miniGraph = "LKQ";
   }
   else if (props.ticker === 'LMT') {
-    miniGraph = CSVToArray(LMT);
+    miniGraph = "LMT";
   }
   else if (props.ticker === 'L') {
-    miniGraph = CSVToArray(L);
+    miniGraph = "L";
   }
   else if (props.ticker === 'LOW') {
-    miniGraph = CSVToArray(LOW);
+    miniGraph = "LOW";
   }
   else if (props.ticker === 'LUMN') {
-    miniGraph = CSVToArray(LUMN);
+    miniGraph = "LUMN";
   }
   else if (props.ticker === 'LYB') {
-    miniGraph = CSVToArray(LYB);
+    miniGraph = "LYB";
   }
   else if (props.ticker === 'MTB') {
-    miniGraph = CSVToArray(MTB);
+    miniGraph = "MTB";
   }
   else if (props.ticker === 'MRO') {
-    miniGraph = CSVToArray(MRO);
+    miniGraph = "MRO";
   }
   else if (props.ticker === 'MPC') {
-    miniGraph = CSVToArray(MPC);
+    miniGraph = "MPC";
   }
   else if (props.ticker === 'MKTX') {
-    miniGraph = CSVToArray(MKTX);
+    miniGraph = "MKTX";
   }
   else if (props.ticker === 'MAR') {
-    miniGraph = CSVToArray(MAR);
+    miniGraph = "MAR";
   }
   else if (props.ticker === 'MMC') {
-    miniGraph = CSVToArray(MMC);
+    miniGraph = "MMC";
   }
   else if (props.ticker === 'MLM') {
-    miniGraph = CSVToArray(MLM);
+    miniGraph = "MLM";
   }
   else if (props.ticker === 'MAS') {
-    miniGraph = CSVToArray(MAS);
+    miniGraph = "MAS";
   }
   else if (props.ticker === 'MA') {
-    miniGraph = CSVToArray(MA);
+    miniGraph = "MA";
   }
   else if (props.ticker === 'MKC') {
-    miniGraph = CSVToArray(MKC);
+    miniGraph = "MKC";
   }
   else if (props.ticker === 'MXIM') {
-    miniGraph = CSVToArray(MXIM);
+    miniGraph = "MXIM";
   }
   else if (props.ticker === 'MCD') {
-    miniGraph = CSVToArray(MCD);
+    miniGraph = "MCD";
   }
   else if (props.ticker === 'MCK') {
-    miniGraph = CSVToArray(MCK);
+    miniGraph = "MCK";
   }
   else if (props.ticker === 'MDT') {
-    miniGraph = CSVToArray(MDT);
+    miniGraph = "MDT";
   }
   else if (props.ticker === 'MRK') {
-    miniGraph = CSVToArray(MRK);
+    miniGraph = "MRK";
   }
   else if (props.ticker === 'MET') {
-    miniGraph = CSVToArray(MET);
+    miniGraph = "MET";
   }
   else if (props.ticker === 'MTD') {
-    miniGraph = CSVToArray(MTD);
+    miniGraph = "MTD";
   }
   else if (props.ticker === 'MGM') {
-    miniGraph = CSVToArray(MGM);
+    miniGraph = "MGM";
   }
   else if (props.ticker === 'MCHP') {
-    miniGraph = CSVToArray(MCHP);
+    miniGraph = "MCHP";
   }
   else if (props.ticker === 'MU') {
-    miniGraph = CSVToArray(MU);
+    miniGraph = "MU";
   }
   else if (props.ticker === 'MSFT') {
-    miniGraph = CSVToArray(MSFT);
+    miniGraph = "MSFT";
   }
   else if (props.ticker === 'MAA') {
-    miniGraph = CSVToArray(MAA);
+    miniGraph = "MAA";
   }
   else if (props.ticker === 'MHK') {
-    miniGraph = CSVToArray(MHK);
+    miniGraph = "MHK";
   }
   else if (props.ticker === 'TAP') {
-    miniGraph = CSVToArray(TAP);
+    miniGraph = "TAP";
   }
   else if (props.ticker === 'MDLZ') {
-    miniGraph = CSVToArray(MDLZ);
+    miniGraph = "MDLZ";
   }
   else if (props.ticker === 'MPWR') {
-    miniGraph = CSVToArray(MPWR);
+    miniGraph = "MPWR";
   }
   else if (props.ticker === 'MNST') {
-    miniGraph = CSVToArray(MNST);
+    miniGraph = "MNST";
   }
   else if (props.ticker === 'MCO') {
-    miniGraph = CSVToArray(MCO);
+    miniGraph = "MCO";
   }
   else if (props.ticker === 'MS') {
-    miniGraph = CSVToArray(MS);
+    miniGraph = "MS";
   }
   else if (props.ticker === 'MOS') {
-    miniGraph = CSVToArray(MOS);
+    miniGraph = "MOS";
   }
   else if (props.ticker === 'MSI') {
-    miniGraph = CSVToArray(MSI);
+    miniGraph = "MSI";
   }
   else if (props.ticker === 'MSCI') {
-    miniGraph = CSVToArray(MSCI);
+    miniGraph = "MSCI";
   }
   else if (props.ticker === 'NDAQ') {
-    miniGraph = CSVToArray(NDAQ);
+    miniGraph = "NDAQ";
   }
   else if (props.ticker === 'NTAP') {
-    miniGraph = CSVToArray(NTAP);
+    miniGraph = "NTAP";
   }
   else if (props.ticker === 'NFLX') {
-    miniGraph = CSVToArray(NFLX);
+    miniGraph = "NFLX";
   }
   else if (props.ticker === 'NWL') {
-    miniGraph = CSVToArray(NWL);
+    miniGraph = "NWL";
   }
   else if (props.ticker === 'NEM') {
-    miniGraph = CSVToArray(NEM);
+    miniGraph = "NEM";
   }
   else if (props.ticker === 'NWSA') {
-    miniGraph = CSVToArray(NWSA);
+    miniGraph = "NWSA";
   }
   else if (props.ticker === 'NWS') {
-    miniGraph = CSVToArray(NWS);
+    miniGraph = "NWS";
   }
   else if (props.ticker === 'NEE') {
-    miniGraph = CSVToArray(NEE);
+    miniGraph = "NEE";
   }
   else if (props.ticker === 'NLSN') {
-    miniGraph = CSVToArray(NLSN);
+    miniGraph = "NLSN";
   }
   else if (props.ticker === 'NKE') {
-    miniGraph = CSVToArray(NKE);
+    miniGraph = "NKE";
   }
   else if (props.ticker === 'NI') {
-    miniGraph = CSVToArray(NI);
+    miniGraph = "NI";
   }
   else if (props.ticker === 'NSC') {
-    miniGraph = CSVToArray(NSC);
+    miniGraph = "NSC";
   }
   else if (props.ticker === 'NTRS') {
-    miniGraph = CSVToArray(NTRS);
+    miniGraph = "NTRS";
   }
   else if (props.ticker === 'NOC') {
-    miniGraph = CSVToArray(NOC);
+    miniGraph = "NOC";
   }
   else if (props.ticker === 'NLOK') {
-    miniGraph = CSVToArray(NLOK);
+    miniGraph = "NLOK";
   }
   else if (props.ticker === 'NCLH') {
-    miniGraph = CSVToArray(NCLH);
+    miniGraph = "NCLH";
   }
   else if (props.ticker === 'NOV') {
-    miniGraph = CSVToArray(NOV);
+    miniGraph = "NOV";
   }
   else if (props.ticker === 'NRG') {
-    miniGraph = CSVToArray(NRG);
+    miniGraph = "NRG";
   }
   else if (props.ticker === 'NUE') {
-    miniGraph = CSVToArray(NUE);
+    miniGraph = "NUE";
   }
   else if (props.ticker === 'NVDA') {
-    miniGraph = CSVToArray(NVDA);
+    miniGraph = "NVDA";
   }
   else if (props.ticker === 'NVR') {
-    miniGraph = CSVToArray(NVR);
+    miniGraph = "NVR";
   }
   else if (props.ticker === 'ORLY') {
-    miniGraph = CSVToArray(ORLY);
+    miniGraph = "ORLY";
   }
   else if (props.ticker === 'OXY') {
-    miniGraph = CSVToArray(OXY);
+    miniGraph = "OXY";
   }
   else if (props.ticker === 'ODFL') {
-    miniGraph = CSVToArray(ODFL);
+    miniGraph = "ODFL";
   }
   else if (props.ticker === 'OMC') {
-    miniGraph = CSVToArray(OMC);
+    miniGraph = "OMC";
   }
   else if (props.ticker === 'OKE') {
-    miniGraph = CSVToArray(OKE);
+    miniGraph = "OKE";
   }
   else if (props.ticker === 'ORCL') {
-    miniGraph = CSVToArray(ORCL);
+    miniGraph = "ORCL";
   }
   else if (props.ticker === 'OTIS') {
-    miniGraph = CSVToArray(OTIS);
+    miniGraph = "OTIS";
   }
   else if (props.ticker === 'PCAR') {
-    miniGraph = CSVToArray(PCAR);
+    miniGraph = "PCAR";
   }
   else if (props.ticker === 'PKG') {
-    miniGraph = CSVToArray(PKG);
+    miniGraph = "PKG";
   }
   else if (props.ticker === 'PH') {
-    miniGraph = CSVToArray(PH);
+    miniGraph = "PH";
   }
   else if (props.ticker === 'PAYX') {
-    miniGraph = CSVToArray(PAYX);
+    miniGraph = "PAYX";
   }
   else if (props.ticker === 'PAYC') {
-    miniGraph = CSVToArray(PAYC);
+    miniGraph = "PAYC";
   }
   else if (props.ticker === 'PYPL') {
-    miniGraph = CSVToArray(PYPL);
+    miniGraph = "PYPL";
   }
   else if (props.ticker === 'PNR') {
-    miniGraph = CSVToArray(PNR);
+    miniGraph = "PNR";
   }
   else if (props.ticker === 'PBCT') {
-    miniGraph = CSVToArray(PBCT);
+    miniGraph = "PBCT";
   }
   else if (props.ticker === 'PEP') {
-    miniGraph = CSVToArray(PEP);
+    miniGraph = "PEP";
   }
   else if (props.ticker === 'PKI') {
-    miniGraph = CSVToArray(PKI);
+    miniGraph = "PKI";
   }
   else if (props.ticker === 'PRGO') {
-    miniGraph = CSVToArray(PRGO);
+    miniGraph = "PRGO";
   }
   else if (props.ticker === 'PFE') {
-    miniGraph = CSVToArray(PFE);
+    miniGraph = "PFE";
   }
   else if (props.ticker === 'PM') {
-    miniGraph = CSVToArray(PM);
+    miniGraph = "PM";
   }
   else if (props.ticker === 'PSX') {
-    miniGraph = CSVToArray(PSX);
+    miniGraph = "PSX";
   }
   else if (props.ticker === 'PNW') {
-    miniGraph = CSVToArray(PNW);
+    miniGraph = "PNW";
   }
   else if (props.ticker === 'PXD') {
-    miniGraph = CSVToArray(PXD);
+    miniGraph = "PXD";
   }
   else if (props.ticker === 'PNC') {
-    miniGraph = CSVToArray(PNC);
+    miniGraph = "PNC";
   }
   else if (props.ticker === 'POOL') {
-    miniGraph = CSVToArray(POOL);
+    miniGraph = "POOL";
   }
   else if (props.ticker === 'PPG') {
-    miniGraph = CSVToArray(PPG);
+    miniGraph = "PPG";
   }
   else if (props.ticker === 'PPL') {
-    miniGraph = CSVToArray(PPL);
+    miniGraph = "PPL";
   }
   else if (props.ticker === 'PFG') {
-    miniGraph = CSVToArray(PFG);
+    miniGraph = "PFG";
   }
   else if (props.ticker === 'PG') {
-    miniGraph = CSVToArray(PG);
+    miniGraph = "PG";
   }
   else if (props.ticker === 'PGR') {
-    miniGraph = CSVToArray(PGR);
+    miniGraph = "PGR";
   }
   else if (props.ticker === 'PLD') {
-    miniGraph = CSVToArray(PLD);
+    miniGraph = "PLD";
   }
   else if (props.ticker === 'PRU') {
-    miniGraph = CSVToArray(PRU);
+    miniGraph = "PRU";
   }
   else if (props.ticker === 'PEG') {
-    miniGraph = CSVToArray(PEG);
+    miniGraph = "PEG";
   }
   else if (props.ticker === 'PSA') {
-    miniGraph = CSVToArray(PSA);
+    miniGraph = "PSA";
   }
   else if (props.ticker === 'PHM') {
-    miniGraph = CSVToArray(PHM);
+    miniGraph = "PHM";
   }
   else if (props.ticker === 'PVH') {
-    miniGraph = CSVToArray(PVH);
+    miniGraph = "PVH";
   }
   else if (props.ticker === 'QRVO') {
-    miniGraph = CSVToArray(QRVO);
+    miniGraph = "QRVO";
   }
   else if (props.ticker === 'PWR') {
-    miniGraph = CSVToArray(PWR);
+    miniGraph = "PWR";
   }
   else if (props.ticker === 'QCOM') {
-    miniGraph = CSVToArray(QCOM);
+    miniGraph = "QCOM";
   }
   else if (props.ticker === 'DGX') {
-    miniGraph = CSVToArray(DGX);
+    miniGraph = "DGX";
   }
   else if (props.ticker === 'RL') {
-    miniGraph = CSVToArray(RL);
+    miniGraph = "RL";
   }
   else if (props.ticker === 'RJF') {
-    miniGraph = CSVToArray(RJF);
+    miniGraph = "RJF";
   }
   else if (props.ticker === 'RTX') {
-    miniGraph = CSVToArray(RTX);
+    miniGraph = "RTX";
   }
   else if (props.ticker === 'O') {
-    miniGraph = CSVToArray(O);
+    miniGraph = "O";
   }
   else if (props.ticker === 'REG') {
-    miniGraph = CSVToArray(REG);
+    miniGraph = "REG";
   }
   else if (props.ticker === 'REGN') {
-    miniGraph = CSVToArray(REGN);
+    miniGraph = "REGN";
   }
   else if (props.ticker === 'RF') {
-    miniGraph = CSVToArray(RF);
+    miniGraph = "RF";
   }
   else if (props.ticker === 'RSG') {
-    miniGraph = CSVToArray(RSG);
+    miniGraph = "RSG";
   }
   else if (props.ticker === 'RMD') {
-    miniGraph = CSVToArray(RMD);
+    miniGraph = "RMD";
   }
   else if (props.ticker === 'RHI') {
-    miniGraph = CSVToArray(RHI);
+    miniGraph = "RHI";
   }
   else if (props.ticker === 'ROK') {
-    miniGraph = CSVToArray(ROK);
+    miniGraph = "ROK";
   }
   else if (props.ticker === 'ROL') {
-    miniGraph = CSVToArray(ROL);
+    miniGraph = "ROL";
   }
   else if (props.ticker === 'ROP') {
-    miniGraph = CSVToArray(ROP);
+    miniGraph = "ROP";
   }
   else if (props.ticker === 'ROST') {
-    miniGraph = CSVToArray(ROST);
+    miniGraph = "ROST";
   }
   else if (props.ticker === 'RCL') {
-    miniGraph = CSVToArray(RCL);
+    miniGraph = "RCL";
   }
   else if (props.ticker === 'SPGI') {
-    miniGraph = CSVToArray(SPGI);
+    miniGraph = "SPGI";
   }
   else if (props.ticker === 'CRM') {
-    miniGraph = CSVToArray(CRM);
+    miniGraph = "CRM";
   }
   else if (props.ticker === 'SBAC') {
-    miniGraph = CSVToArray(SBAC);
+    miniGraph = "SBAC";
   }
   else if (props.ticker === 'SLB') {
-    miniGraph = CSVToArray(SLB);
+    miniGraph = "SLB";
   }
   else if (props.ticker === 'STX') {
-    miniGraph = CSVToArray(STX);
+    miniGraph = "STX";
   }
   else if (props.ticker === 'SEE') {
-    miniGraph = CSVToArray(SEE);
+    miniGraph = "SEE";
   }
   else if (props.ticker === 'SRE') {
-    miniGraph = CSVToArray(SRE);
+    miniGraph = "SRE";
   }
   else if (props.ticker === 'NOW') {
-    miniGraph = CSVToArray(NOW);
+    miniGraph = "NOW";
   }
   else if (props.ticker === 'SHW') {
-    miniGraph = CSVToArray(SHW);
+    miniGraph = "SHW";
   }
   else if (props.ticker === 'SPG') {
-    miniGraph = CSVToArray(SPG);
+    miniGraph = "SPG";
   }
   else if (props.ticker === 'SWKS') {
-    miniGraph = CSVToArray(SWKS);
+    miniGraph = "SWKS";
   }
   else if (props.ticker === 'SLG') {
-    miniGraph = CSVToArray(SLG);
+    miniGraph = "SLG";
   }
   else if (props.ticker === 'SNA') {
-    miniGraph = CSVToArray(SNA);
+    miniGraph = "SNA";
   }
   else if (props.ticker === 'SO') {
-    miniGraph = CSVToArray(SO);
+    miniGraph = "SO";
   }
   else if (props.ticker === 'LUV') {
-    miniGraph = CSVToArray(LUV);
+    miniGraph = "LUV";
   }
   else if (props.ticker === 'SWK') {
-    miniGraph = CSVToArray(SWK);
+    miniGraph = "SWK";
   }
   else if (props.ticker === 'SBUX') {
-    miniGraph = CSVToArray(SBUX);
+    miniGraph = "SBUX";
   }
   else if (props.ticker === 'STT') {
-    miniGraph = CSVToArray(STT);
+    miniGraph = "STT";
   }
   else if (props.ticker === 'STE') {
-    miniGraph = CSVToArray(STE);
+    miniGraph = "STE";
   }
   else if (props.ticker === 'SYK') {
-    miniGraph = CSVToArray(SYK);
+    miniGraph = "SYK";
   }
   else if (props.ticker === 'SIVB') {
-    miniGraph = CSVToArray(SIVB);
+    miniGraph = "SIVB";
   }
   else if (props.ticker === 'SYF') {
-    miniGraph = CSVToArray(SYF);
+    miniGraph = "SYF";
   }
   else if (props.ticker === 'SNPS') {
-    miniGraph = CSVToArray(SNPS);
+    miniGraph = "SNPS";
   }
   else if (props.ticker === 'SYY') {
-    miniGraph = CSVToArray(SYY);
+    miniGraph = "SYY";
   }
   else if (props.ticker === 'TMUS') {
-    miniGraph = CSVToArray(TMUS);
+    miniGraph = "TMUS";
   }
   else if (props.ticker === 'TROW') {
-    miniGraph = CSVToArray(TROW);
+    miniGraph = "TROW";
   }
   else if (props.ticker === 'TTWO') {
-    miniGraph = CSVToArray(TTWO);
+    miniGraph = "TTWO";
   }
   else if (props.ticker === 'TPR') {
-    miniGraph = CSVToArray(TPR);
+    miniGraph = "TPR";
   }
   else if (props.ticker === 'TGT') {
-    miniGraph = CSVToArray(TGT);
+    miniGraph = "TGT";
   }
   else if (props.ticker === 'TEL') {
-    miniGraph = CSVToArray(TEL);
+    miniGraph = "TEL";
   }
   else if (props.ticker === 'TDY') {
-    miniGraph = CSVToArray(TDY);
+    miniGraph = "TDY";
   }
   else if (props.ticker === 'TFX') {
-    miniGraph = CSVToArray(TFX);
+    miniGraph = "TFX";
   }
   else if (props.ticker === 'TER') {
-    miniGraph = CSVToArray(TER);
+    miniGraph = "TER";
   }
   else if (props.ticker === 'TSLA') {
-    miniGraph = CSVToArray(TSLA);
+    miniGraph = "TSLA";
   }
   else if (props.ticker === 'TXN') {
-    miniGraph = CSVToArray(TXN);
+    miniGraph = "TXN";
   }
   else if (props.ticker === 'TXT') {
-    miniGraph = CSVToArray(TXT);
+    miniGraph = "TXT";
   }
   else if (props.ticker === 'TMO') {
-    miniGraph = CSVToArray(TMO);
+    miniGraph = "TMO";
   }
   else if (props.ticker === 'TJX') {
-    miniGraph = CSVToArray(TJX);
+    miniGraph = "TJX";
   }
   else if (props.ticker === 'TSCO') {
-    miniGraph = CSVToArray(TSCO);
+    miniGraph = "TSCO";
   }
   else if (props.ticker === 'TT') {
-    miniGraph = CSVToArray(TT);
+    miniGraph = "TT";
   }
   else if (props.ticker === 'TDG') {
-    miniGraph = CSVToArray(TDG);
+    miniGraph = "TDG";
   }
   else if (props.ticker === 'TRV') {
-    miniGraph = CSVToArray(TRV);
+    miniGraph = "TRV";
   }
   else if (props.ticker === 'TRMB') {
-    miniGraph = CSVToArray(TRMB);
+    miniGraph = "TRMB";
   }
   else if (props.ticker === 'TFC') {
-    miniGraph = CSVToArray(TFC);
+    miniGraph = "TFC";
   }
   else if (props.ticker === 'TWTR') {
-    miniGraph = CSVToArray(TWTR);
+    miniGraph = "TWTR";
   }
   else if (props.ticker === 'TYL') {
-    miniGraph = CSVToArray(TYL);
+    miniGraph = "TYL";
   }
   else if (props.ticker === 'TSN') {
-    miniGraph = CSVToArray(TSN);
+    miniGraph = "TSN";
   }
   else if (props.ticker === 'UDR') {
-    miniGraph = CSVToArray(UDR);
+    miniGraph = "UDR";
   }
   else if (props.ticker === 'ULTA') {
-    miniGraph = CSVToArray(ULTA);
+    miniGraph = "ULTA";
   }
   else if (props.ticker === 'USB') {
-    miniGraph = CSVToArray(USB);
+    miniGraph = "USB";
   }
   else if (props.ticker === 'UAA') {
-    miniGraph = CSVToArray(UAA);
+    miniGraph = "UAA";
   }
   else if (props.ticker === 'UA') {
-    miniGraph = CSVToArray(UA);
+    miniGraph = "UA";
   }
   else if (props.ticker === 'UNP') {
-    miniGraph = CSVToArray(UNP);
+    miniGraph = "UNP";
   }
   else if (props.ticker === 'UAL') {
-    miniGraph = CSVToArray(UAL);
+    miniGraph = "UAL";
   }
   else if (props.ticker === 'UNH') {
-    miniGraph = CSVToArray(UNH);
+    miniGraph = "UNH";
   }
   else if (props.ticker === 'UPS') {
-    miniGraph = CSVToArray(UPS);
+    miniGraph = "UPS";
   }
   else if (props.ticker === 'URI') {
-    miniGraph = CSVToArray(URI);
+    miniGraph = "URI";
   }
   else if (props.ticker === 'UHS') {
-    miniGraph = CSVToArray(UHS);
+    miniGraph = "UHS";
   }
   else if (props.ticker === 'UNM') {
-    miniGraph = CSVToArray(UNM);
+    miniGraph = "UNM";
   }
   else if (props.ticker === 'VLO') {
-    miniGraph = CSVToArray(VLO);
+    miniGraph = "VLO";
   }
   else if (props.ticker === 'VAR') {
-    miniGraph = CSVToArray(VAR);
+    miniGraph = "VAR";
   }
   else if (props.ticker === 'VTR') {
-    miniGraph = CSVToArray(VTR);
+    miniGraph = "VTR";
   }
   else if (props.ticker === 'VRSN') {
-    miniGraph = CSVToArray(VRSN);
+    miniGraph = "VRSN";
   }
   else if (props.ticker === 'VRSK') {
-    miniGraph = CSVToArray(VRSK);
+    miniGraph = "VRSK";
   }
   else if (props.ticker === 'VZ') {
-    miniGraph = CSVToArray(VZ);
+    miniGraph = "VZ";
   }
   else if (props.ticker === 'VRTX') {
-    miniGraph = CSVToArray(VRTX);
+    miniGraph = "VRTX";
   }
   else if (props.ticker === 'VFC') {
-    miniGraph = CSVToArray(VFC);
+    miniGraph = "VFC";
   }
   else if (props.ticker === 'VIAC') {
-    miniGraph = CSVToArray(VIAC);
+    miniGraph = "VIAC";
   }
   else if (props.ticker === 'VTRS') {
-    miniGraph = CSVToArray(VTRS);
+    miniGraph = "VTRS";
   }
   else if (props.ticker === 'V') {
-    miniGraph = CSVToArray(V);
+    miniGraph = "V";
   }
   else if (props.ticker === 'VNT') {
-    miniGraph = CSVToArray(VNT);
+    miniGraph = "VNT";
   }
   else if (props.ticker === 'VNO') {
-    miniGraph = CSVToArray(VNO);
+    miniGraph = "VNO";
   }
   else if (props.ticker === 'VMC') {
-    miniGraph = CSVToArray(VMC);
+    miniGraph = "VMC";
   }
   else if (props.ticker === 'WRB') {
-    miniGraph = CSVToArray(WRB);
+    miniGraph = "WRB";
   }
   else if (props.ticker === 'WAB') {
-    miniGraph = CSVToArray(WAB);
+    miniGraph = "WAB";
   }
   else if (props.ticker === 'WMT') {
-    miniGraph = CSVToArray(WMT);
+    miniGraph = "WMT";
   }
   else if (props.ticker === 'WBA') {
-    miniGraph = CSVToArray(WBA);
+    miniGraph = "WBA";
   }
   else if (props.ticker === 'DIS') {
-    miniGraph = CSVToArray(DIS);
+    miniGraph = "DIS";
   }
   else if (props.ticker === 'WM') {
-    miniGraph = CSVToArray(WM);
+    miniGraph = "WM";
   }
   else if (props.ticker === 'WAT') {
-    miniGraph = CSVToArray(WAT);
+    miniGraph = "WAT";
   }
   else if (props.ticker === 'WEC') {
-    miniGraph = CSVToArray(WEC);
+    miniGraph = "WEC";
   }
   else if (props.ticker === 'WFC') {
-    miniGraph = CSVToArray(WFC);
+    miniGraph = "WFC";
   }
   else if (props.ticker === 'WELL') {
-    miniGraph = CSVToArray(WELL);
+    miniGraph = "WELL";
   }
   else if (props.ticker === 'WST') {
-    miniGraph = CSVToArray(WST);
+    miniGraph = "WST";
   }
   else if (props.ticker === 'WDC') {
-    miniGraph = CSVToArray(WDC);
+    miniGraph = "WDC";
   }
   else if (props.ticker === 'WU') {
-    miniGraph = CSVToArray(WU);
+    miniGraph = "WU";
   }
   else if (props.ticker === 'WRK') {
-    miniGraph = CSVToArray(WRK);
+    miniGraph = "WRK";
   }
   else if (props.ticker === 'WY') {
-    miniGraph = CSVToArray(WY);
+    miniGraph = "WY";
   }
   else if (props.ticker === 'WHR') {
-    miniGraph = CSVToArray(WHR);
+    miniGraph = "WHR";
   }
   else if (props.ticker === 'WMB') {
-    miniGraph = CSVToArray(WMB);
+    miniGraph = "WMB";
   }
   else if (props.ticker === 'WLTW') {
-    miniGraph = CSVToArray(WLTW);
+    miniGraph = "WLTW";
   }
   else if (props.ticker === 'WYNN') {
-    miniGraph = CSVToArray(WYNN);
+    miniGraph = "WYNN";
   }
   else if (props.ticker === 'XEL') {
-    miniGraph = CSVToArray(XEL);
+    miniGraph = "XEL";
   }
   else if (props.ticker === 'XRX') {
-    miniGraph = CSVToArray(XRX);
+    miniGraph = "XRX";
   }
   else if (props.ticker === 'XLNX') {
-    miniGraph = CSVToArray(XLNX);
+    miniGraph = "XLNX";
   }
   else if (props.ticker === 'XYL') {
-    miniGraph = CSVToArray(XYL);
+    miniGraph = "XYL";
   }
   else if (props.ticker === 'YUM') {
-    miniGraph = CSVToArray(YUM);
+    miniGraph = "YUM";
   }
   else if (props.ticker === 'ZBRA') {
-    miniGraph = CSVToArray(ZBRA);
+    miniGraph = "ZBRA";
   }
   else if (props.ticker === 'ZBH') {
-    miniGraph = CSVToArray(ZBH);
+    miniGraph = "ZBH";
   }
   else if (props.ticker === 'ZION') {
-    miniGraph = CSVToArray(ZION);
+    miniGraph = "ZION";
   }
   else if (props.ticker === 'ZTS') {
-    miniGraph = CSVToArray(ZTS);
+    miniGraph = "ZTS";
   }
   const style1 = {
     height: "50px",
@@ -2137,22 +2130,16 @@ export default function MiniGraph(props) {
   return (
     <div style={{border: "solid black"}} className="row">
     <h1 style={style1}>{props.ticker}</h1>
-    <h1 style={style2}>{price}</h1>
-    <h1 style={style}>{difference} ({percentChange}%)</h1>
     <h2>
       <Button onClick={async() => await followClick()} style={style2} variant="contained" color="secondary">Follow</Button>
       <Button onClick={async() => await bearishClick()} style={style3} variant="contained" color="secondary">Bearish</Button>
       <Button onClick={async() => await neutralClick()} style={style4} variant="contained" color="secondary">Neutral</Button>
       <Button onClick={async() => await bullishClick()} style={style5} variant="contained" color="secondary">Bullish</Button>
     </h2>
-    <VictoryChart width='600' height='300'>
-    <VictoryLine data={miniGraph} x='Date' y='Price' />
-    </VictoryChart>
-    <VictoryPie data={[
-    { x: "bullish", y: stockSentiment.bullish },
-    { x: "neutral", y: stockSentiment.neutral },
-    { x: "bearish", y: stockSentiment.bearish }
-    ]} />
+    <TradingViewWidget 
+      symbol={"NASDAQ:"+ miniGraph} 
+      theme={Themes.DARK}
+    />
     </div>
   );
 }
