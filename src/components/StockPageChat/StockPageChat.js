@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Container } from "react-bootstrap"; 
-import { Button, Grid } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import AddComment from './AddComment'
 import LoadComments from './LoadComments'
 
@@ -15,7 +15,7 @@ export default function Chat(props)
     return(
         <Container>
             <LoadComments stock={ stockName }/>
-            <Card>
+            <center>
             {
                 addComment ?
                 (<AddComment user={ user }/>) :
@@ -25,7 +25,8 @@ export default function Chat(props)
                 </Button>
                 )
             }
-            </Card>
+            </center>
+            <hr />
         </Container>
     );
 
