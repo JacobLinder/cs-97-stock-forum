@@ -4,7 +4,9 @@ import { getUsername } from '../functions/auth.js';
 import ReactDOM from 'react-dom';
 import './CommentPage.css';
 import { Link } from 'react-router-dom';
+import { Grid, Box, Button, ButtonGroup } from '@material-ui/core';
 import { ArrowRightAltOutlined } from '@material-ui/icons';
+import { Card, Container } from "react-bootstrap"; 
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -18,14 +20,20 @@ function CommentText(props){
 }
 
 function CommentTicker(props){
-  return <span className="CommentTicker">{props.ticker}</span>
+  return <span className="CommentTicker">{props.ticker}</span>;
+}
+
+function CommentUser(props){
+  //add an href here if we would like to link author name to profile
+  return<span class="CommentUser"><a class="author">{props.username}</a></span>;
 }
 
 function CommentBox(props) {
-  return <div className="CommentBox">
-    <div className="Head">{props.username} at <CommentDate date={props.date}/> on <CommentTicker ticker={props.ticker}/>:</div>
+  return <Container fluid>
+    <div className="Head"><CommentUser username={props.username}/> <span className="Tail"><CommentDate date={props.date}/> on <CommentTicker ticker={props.ticker}/></span></div>
     <CommentText text={props.text}/>
-  </div>;
+    <hr/>
+  </Container>;
 }
 
 export default function CommentPage(props) {
@@ -65,8 +73,9 @@ export default function CommentPage(props) {
           {username !== "" ?
             <h2>{username}'s Comment Page</h2>
           : null}
-          <div>{listItems}</div>
         </center>
+        <hr/>
+        <div>{listItems}</div>
       </div>
     </>
   );

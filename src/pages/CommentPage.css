@@ -1,22 +1,18 @@
 .CommentBox{
-    width: 40%;
-    height: auto;
-    padding: 5px;
-    background-color: #6a308b;
-    color: #ffffff;
-    margin: 10px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    border-radius: 10px;
+    justify-content: flex-start;
 }
 
 .Head{
     font-size:larger;
+    padding-bottom: 10px;
+}
+
+.Tail{
+    font-size:large;
 }
 
 .CommentText{
-
+    font-size:medium;
 }
 
 .CommentDate{
@@ -29,6 +25,13 @@
 
 .CommentTicker:hover{
     color:black;
+}
+
+.CommentUser{
+}
+
+.CommentUser:hover{
+    text-decoration: underline;
 }
 
 body{
