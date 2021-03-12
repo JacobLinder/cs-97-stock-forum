@@ -1,19 +1,20 @@
-import React, { useState, useEffect, createElement } from 'react';
+import React, { useState, useEffect, useRef, createElement } from 'react';
 import { Form, Card, Nav, NavDropdown } from "react-bootstrap";
 import { Grid, Box, Button } from '@material-ui/core';
 import { Comment } from 'semantic-ui-react';
 import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import { getUsername } from '../../functions/auth.js';
+import AddReply from './AddReply'
 import {
   getTickerComments,
   userHasUpvoted,
   userHasDownvoted,
   toggleUpvoteComment,
-  toggleDownvoteComment
+  toggleDownvoteComment,
 } from '../../functions/comments';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-// import Data from './testComments.json'
+//import Data from './testComments.json'
 
 
 /*
@@ -29,7 +30,7 @@ export default function LoadComments(props) {
   const [data, setData] = useState([]);
   const stock = props.stock;
   const user = props.user;
-  const [replyAdding, setReplyAdding] = useState(false);
+  const [limit, setLimit] = useState(3)
 
   // const [displayComments, setDisplayComments] = useState([]);
 
@@ -39,12 +40,6 @@ export default function LoadComments(props) {
     setData(loadComments);
   }, []);
 
-  // Change for reply submitting
-  const handleReplySubmit = async(e) => {
-    e.preventDefault();
-    console.log("Submitting comment placeholder", e);
-    setReplyAdding(false);
-  }
 
   // const RenderSurfaceComment = (surfaceComment) => {
   //   const [inputReply, setInputReply] = useState(false)
@@ -155,46 +150,75 @@ export default function LoadComments(props) {
   // }
 
 
-  // const RenderReply = (reply) => {
-  //   return (
-  //     <div>
-  //       {
-  //         reply.map((reply, key) => {
-  //           if (key > 0) {
-  //             return (
-  //               <Comment key={key} style={{ marginLeft: 20 }}>
-  //                 <Comment.Content>
-  //                   <Grid container direction="column" spacing={1}>
-  //                     <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
-  //                       {/* username and timestamp row*/}
-  //                       <Grid item>
-  //                         <div>
-  //                           <Comment.Author as='a'>{reply.uid}</Comment.Author>
-  //                         </div>
-  //                       </Grid>
+  const RenderReply = (thread) => {
+    const [showReply, setShowReply] = useState(false)
+    const replies = thread.thread.slice(1,thread.thread.length);
 
-  //                       {/* Change date here for comment replies*/}
-  //                       <Grid item>
-  //                         <Box fontSize={12} color="text.secondary">
-  //                           <Comment.Metadata>{reply.timestamp}</Comment.Metadata>
-  //                         </Box>
-  //                       </Grid>
-  //                     </Grid>
+    if (showReply)
+    {
+      return (
+        <div>
+          {
+            replies.map((reply, key) => {
+            const date = new Date(reply.timestamp.seconds * 1000);
+            const dateStr = date.toLocaleDateString('en') + ' at ' + date.toLocaleTimeString('en');
+            
+            return (
+              <Comment key={key} style={{ marginLeft: 30 }}>
+                <Comment.Content>
+                  <Grid container direction="column" spacing={1}>
+                    <Grid item container direction="row" justify="flex-start" alignItems="center" spacing={1}>
+                      {/* username and timestamp row*/}
+                      <Grid item>
+                        <div>
+                          <Comment.Author as='a'>{reply.uid}</Comment.Author>
+                        </div>
+                      </Grid>
 
-  //                     <Grid item container direction="row">
-  //                       {/* Comments contents row */}
-  //                       <Comment.Text>{reply.text}</Comment.Text>
-  //                     </Grid>
-  //                   </Grid>
-  //                 </Comment.Content>
-  //               </Comment>
-  //             );
-  //           }
-  //         })
-  //       }
-  //     </div>
-  //   );
-  // }
+                      {/* Change date here for comment replies*/}
+                      <Grid item>
+                        <Box fontSize={12} color="text.secondary">
+                          <Comment.Metadata>{dateStr}</Comment.Metadata>
+                        </Box>
+                      </Grid>
+                    </Grid>
+
+                    <Grid item container direction="row">
+                      {/* Comments contents row */}
+                      <Comment.Text>{reply.text}</Comment.Text>
+                    </Grid>
+                  </Grid>
+                </Comment.Content>
+              </Comment>
+            );
+            })
+          }
+          <hr />
+        </div>
+      );
+    }
+
+    else
+    {
+      if ((thread.thread.length - 1) > 0)
+      {
+        return (
+          <center>
+            <span onClick={() => setShowReply(true)}>
+              show {thread.thread.length - 1} replies
+            </span>
+            <hr />
+          </center>
+        )
+      }
+      else
+      {
+        return (
+          <hr />
+        )
+      }
+    }
+  }
 
 
   // const RenderComment = (surfaceCommentArray) => {
@@ -230,7 +254,6 @@ export default function LoadComments(props) {
   // }
 
   const ChatEntry = (thread) => {
-
     const topComment = thread.thread[0];
     const date = new Date(topComment.timestamp.seconds * 1000);
     const dateStr = date.toLocaleDateString('en') + ' at ' + date.toLocaleTimeString('en');
@@ -343,29 +366,11 @@ export default function LoadComments(props) {
                 </Comment.Actions>
               </Box>
             </Grid>
-            {/* <Grid item>
+            <Grid item>
               {inputReply &&
-                (<Card>
-                  <Card.Header>
-                    Add a reply
-                  </Card.Header>
-                  <Card.Body>
-                    <Form onSubmit={handleReplySubmit}>
-                      <Form.Group id="reply">
-                        <Form.Control
-                          type="text"
-                          placeholder="Add your reply here"
-                          as="textarea" rows={2}
-                        />
-                      </Form.Group>
-                      <Button size="small" disabled={replyAdding} type="submit">
-                        Add reply
-                      </Button>
-                    </Form>
-                  </Card.Body>
-                </Card>)
+                (<AddReply uid={user.uid} stock={stock}/>)
               }
-            </Grid> */}
+            </Grid>
           </Grid>
         </Comment.Content>
       </Comment>
@@ -394,16 +399,26 @@ export default function LoadComments(props) {
       <div>
         {data.length > 0 ?
           <>
-            {data.map((thread) => {
+            {data.slice(0, limit).map((thread, key) => {
               return (
-                <div>
+                <div key={key}>
                   <ChatEntry key={thread} thread={thread} />
+                  <RenderReply thread={thread}/>
                   {/* {RenderComment(surfaceCommentArray)} */}
                 </div>
               )
             })}
           </>
           : <center><p>No comments yet!</p></center>
+        }
+        {
+          limit < data.length ?
+            <center>
+              <Button onClick={() => setLimit(((limit + 5) < data.length) ? (limit + 5) : data.length )}>
+                Show more
+              </Button>
+            </center>
+            : <center>All comments shown</center>
         }
       </div>
     </>

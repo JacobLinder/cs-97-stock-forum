@@ -16,7 +16,7 @@ export default function Chat(props)
     return(
         <Container>
             <LoadComments stock={ stockName } user={ user } />
-            <center>
+            <center style={{marginTop: 30}}>
             {
                 addComment ?
                 (<AddComment stock={ stockName } user={ user }/>) :

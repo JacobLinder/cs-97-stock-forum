@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Form, Button, Card } from "react-bootstrap";
+import React, { useState, useEffect } from 'react';
+import { Form, Card } from "react-bootstrap";
+import { Button } from '@material-ui/core';
 import { createComment } from '../../functions/comments';
 // import {
 //   createComment,
@@ -22,6 +23,7 @@ export default function AddComment(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     await createComment(stock, uid, text);
+    setLoading(false);
     console.log(stock, uid, text)
   }
 
