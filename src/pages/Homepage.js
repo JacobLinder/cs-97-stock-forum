@@ -7,6 +7,8 @@ import Landing from '../components/landing/Landing';
 import '../HomePagePost.js';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import Navbar from "../components/navbar/Navbar";
+import Content from "../components/content/Content";
 
 export default function Homepage() {
   
@@ -21,7 +23,8 @@ export default function Homepage() {
   return(
     <div>
       <body></body>
-      <Landing />
+      <Navbar />
+      <Content />
     </div>
   );
 }
