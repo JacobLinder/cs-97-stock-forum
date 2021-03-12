@@ -3,12 +3,13 @@ import { getUserComments } from '../functions/comments.js';
 import { getUsername } from '../functions/auth.js';
 import ReactDOM from 'react-dom';
 import './Pages.css';
-import { Link } from 'react-router-dom';
 import { Grid, Box, Button, ButtonGroup, Paper } from '@material-ui/core';
 import { ArrowRightAltOutlined } from '@material-ui/icons';
 import { Card, Container } from "react-bootstrap"; 
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { Link, Redirect, useHistory } from 'react-router-dom';
+
 import Navbar from "../components/navbar/Navbar";
 
 
@@ -49,6 +50,11 @@ export default function CommentPage(props) {
   }
 
   useEffect(async() => {
+    firebase.auth().onAuthStateChanged((firebaseUser) => {
+      if (!firebaseUser) {
+        window.location.pathname = '/landing';
+      }
+    });
     const uid = props.location.search.replace('?', '');
     const comments = await getUserComments(uid);
     const name = await getUsername(uid);
