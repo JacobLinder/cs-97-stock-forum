@@ -42,7 +42,7 @@ export default function CommentPage(props) {
   const [username, setUsername] = useState("");
 
   useEffect(async() => {
-    const uid = props.location.data;
+    const uid = props.location.search.replace('?', '');
     const comments = await getUserComments(uid);
     const name = await getUsername(uid);
     setData(comments);
@@ -57,12 +57,12 @@ export default function CommentPage(props) {
 
       </left>
       <div>
-        <Link to='/homepage'>
+        <Link to='/home'>
           <button style={{float: 'left'}} className="OtherPage">
             Home Page
           </button>
         </Link>
-        <Link to='/landing-page'>
+        <Link to='/landing'>
           <button style={{float: 'right'}} className="OtherPage">
             Sign Out
           </button>
