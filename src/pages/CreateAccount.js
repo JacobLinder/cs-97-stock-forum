@@ -58,6 +58,17 @@ export default function SignUp() {
         setEmail('')
         setEmailErr('Invalid Email')
         break;
+
+      case 3:
+        setPassword('')
+        setPasswordErr('Password is too weak, must be more than 6 digits')
+        break;
+
+      case 4:
+        setEmail('')
+        setPassword('')
+        setEmailErr('Unexpected error creating account')
+        break;
     }
   }
 

@@ -59,7 +59,13 @@ export async function createAccount(username, email, password) {
     return 1;
   } catch(error) {
     console.log(error);
-    return 2;
+    const errorCode = error.code;
+    if (errorCode === 'auth/invalid-email')
+      return 2;
+    else if (errorCode === 'auth/weak-password')
+      return 3;
+    else
+      return 4;
   }
 }
 
