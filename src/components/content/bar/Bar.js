@@ -23,12 +23,6 @@ export default function Bar() {
       >
         <span onClick={() => setPortion(1)}>FOLLOWED</span>
       </div>
-      <div
-        className="filter-element hoverable"
-        style={portion === 2 ? {backgroundColor: 'purple', color: 'white'} : {}}
-      >
-        <span onClick={() => setPortion(2)}>UNFOLLOWED</span>
-      </div>
     </div>
 
     <Posts portion={portion} />
