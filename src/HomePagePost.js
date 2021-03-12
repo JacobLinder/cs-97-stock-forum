@@ -4,7 +4,8 @@ import 'firebase/auth';
 import { toggleBullish, toggleBearish, toggleNeutral, toggleFollow } from "./functions/stock-interactions.js";
 import { VictoryLine, VictoryChart, VictoryPie } from 'victory';
 import { getSentimentHistory } from "./functions/stock-interactions.js";
-import { Button, ButtonGroup, Grid } from "@material-ui/core";
+import { Button, Box, ButtonGroup, Grid } from "@material-ui/core";
+import { Card } from 'react-bootstrap'
 import MMM from "./1y_data/MMM.csv";
 import ABT from "./1y_data/ABT.csv";
 import ABBV from "./1y_data/ABBV.csv";
@@ -2128,31 +2129,37 @@ export default function MiniGraph(props) {
   }
   price = (parseFloat(miniGraph[miniGraph.length - 1])).toFixed(2);
   return (
-    <div style={{border: "solid black"}} className="row">
-      <Grid container direction="column">
-        <Grid item>
-          <h1 style={style1}>{props.ticker}</h1>
-        </Grid>
-        <Grid item>
-          <TradingViewWidget
-            symbol={"NASDAQ:"+ miniGraph} 
-            theme={Themes.DARK}
-          />
-        </Grid>
-        
-        <Grid container justify="space-around">
+    <div>
+      <Card>
+        <Grid container direction="column">
           <Grid item>
-            <Button onClick={async() => await followClick()} style={style2} variant="contained" color="secondary">Follow</Button>
+            <Card.Header>
+              <Box fontSize={35}>
+                {props.ticker}
+              </Box>
+            </Card.Header>
           </Grid>
           <Grid item>
-            <ButtonGroup>
-              <Button onClick={async() => await bearishClick()} style={style3} variant="contained" color="secondary">Bearish</Button>
-              <Button onClick={async() => await neutralClick()} style={style4} variant="contained" color="secondary">Neutral</Button>
-              <Button onClick={async() => await bullishClick()} style={style5} variant="contained" color="secondary">Bullish</Button>
-            </ButtonGroup>
+            <TradingViewWidget
+              symbol={"NASDAQ:"+ miniGraph} 
+              theme={Themes.DARK}
+            />
+          </Grid>
+          
+          <Grid container justify="space-around">
+            <Grid item>
+              <Button onClick={async() => await followClick()} style={style2} variant="contained" color="secondary">Follow</Button>
+            </Grid>
+            <Grid item>
+              <ButtonGroup>
+                <Button onClick={async() => await bearishClick()} style={style3} variant="contained" color="secondary">Bearish</Button>
+                <Button onClick={async() => await neutralClick()} style={style4} variant="contained" color="secondary">Neutral</Button>
+                <Button onClick={async() => await bullishClick()} style={style5} variant="contained" color="secondary">Bullish</Button>
+              </ButtonGroup>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </Card>
     </div>
   );
 }
