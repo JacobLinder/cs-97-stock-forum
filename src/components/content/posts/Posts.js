@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Stock from './Stock';
 import { Content, Loading } from './Posts.styles'
 import { getUsers } from './API';
-
+import { getFollowedStocks } from '../../../functions/stock-interactions';
 import './Posts.css';
+import firebase from 'firebase/app';
+import HomepagePost from '../../../HomePagePost';
 
-
-function Posts() {
+function Posts(props) {
   const [page, setPage] = useState(1);
-  const [users, setUsers] = useState([]);
+  const [stocks, setStocks] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const handleScroll = event => {
@@ -19,21 +20,23 @@ function Posts() {
     }
   }
 
-  useEffect(() => {
+  useEffect(async() => {
     const loadUsers = async () => {
       setLoading(true);
-      const newUsers = await getUsers(page);
-      setUsers((prev) => [...prev, ...newUsers]);
-      setLoading(false);
-    }
+      firebase.auth().onAuthStateChanged(async(user) => {
+        const newStocks = await getFollowedStocks(user.uid);
+        setStocks(newStocks);
+        setLoading(false);
+      });
 
+    }
     loadUsers();
-  }, [page]);
+  }, []);
 
   return (
     <div className='App'>
       <Content onScroll={handleScroll}>
-        {users && users.map(user => <Stock key={user.cell} user={user} />)}
+        {stocks && stocks.map(stock => <HomepagePost ticker={stock} />)}
       </Content>
       {loading && <Loading>Loading ...</Loading>}
     </div>

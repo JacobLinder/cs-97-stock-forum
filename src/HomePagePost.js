@@ -508,7 +508,7 @@ import ZBH from "./1y_data/ZBH.csv";
 import ZION from "./1y_data/ZION.csv";
 import ZTS from "./1y_data/ZTS.csv";
 
-export function MiniGraph(props) {
+export default function MiniGraph(props) {
 
   const CSVToArray = (csv) => {
     var lines = csv.split("\n");
