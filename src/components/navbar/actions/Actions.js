@@ -7,6 +7,7 @@ export default function Actions() {
   return (
     <div className="actions">
       <Link to='../pages/landing'>
+        <Button label="Hi, Username!"/>
         <Button label="Sign Out"/>
       </Link>
     </div>
