@@ -14,15 +14,15 @@ export default function Chat(props)
 
     return(
         <Container>
-            <LoadComments stock={ stockName }/>
+            <LoadComments stock={ stockName } user={ user } />
             <center>
             {
                 addComment ?
-                (<AddComment user={ user }/>) :
+                (<AddComment stock={ stockName } user={ user }/>) :
                 (
-                <Button onClick={() => setAddComment(addComment ? false : true)}>
+                  <Button onClick={() => setAddComment(addComment ? false : true)}>
                     Add a comment
-                </Button>
+                  </Button>
                 )
             }
             </center>
