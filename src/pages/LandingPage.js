@@ -21,6 +21,12 @@ export default function LandingPage() {
       <CssBaseline />
       <Header />
       <Redirections />
+
+    <center>
+      <Link to={{pathname: '/comments', data: '04aIuvjEc2ZbHTLQTXIzO8CR0Xh2'}}>
+        <button>hi</button>
+      </Link>
+      </center>
     </div>
   );
 }
