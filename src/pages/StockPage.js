@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { Paper, Button } from '@material-ui/core'
 import './Pages.css';
 import Chat from '../components/StockPageChat/StockPageChat'
@@ -13,7 +13,12 @@ export default function StockPage(props) {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((firebaseUser) => {
-      setUser(firebaseUser);
+      if (firebaseUser) {
+        setUser(firebaseUser);
+      } else {
+        const history = useHistory();
+        history.push('/landing');
+      }
     })
   }, []);
 
