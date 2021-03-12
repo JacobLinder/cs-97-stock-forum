@@ -14,9 +14,9 @@ function Posts(props) {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({});
 
-  var all = [];
+  var all = ["AAPL", "MSFT", "FB", "ABMD", "ATVI", "ADBE", "AMD", "TSLA"];
   var i;
-  all = tickers.slice(0, 10).map((ticker, key) => {return (ticker.label)});
+  //all = tickers.slice(0, 10).map((ticker, key) => {return (ticker.label)});
   //const listItems = tickers.map((d) => {d.label});
   /*for(i = 0; i<10; i++){
     all.push(tickers[i]);
