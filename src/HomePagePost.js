@@ -2130,7 +2130,7 @@ export default function MiniGraph(props) {
   price = (parseFloat(miniGraph[miniGraph.length - 1])).toFixed(2);
   return (
     <div>
-      <Card>
+      <Card style={{margin: 50}}>
         <Grid container direction="column">
           <Grid item>
             <Card.Header>
@@ -2139,6 +2139,7 @@ export default function MiniGraph(props) {
               </Box>
             </Card.Header>
           </Grid>
+
           <Grid item>
             <TradingViewWidget
               symbol={"NASDAQ:"+ miniGraph} 
@@ -2146,9 +2147,11 @@ export default function MiniGraph(props) {
             />
           </Grid>
           
+          <hr />
+
           <Grid container justify="space-around">
             <Grid item>
-              <Button onClick={async() => await followClick()} style={style2} variant="contained" color="secondary">Follow</Button>
+              <Button onClick={async() => await followClick()} variant="contained" color="secondary">Follow</Button>
             </Grid>
             <Grid item>
               <ButtonGroup>
@@ -2158,6 +2161,8 @@ export default function MiniGraph(props) {
               </ButtonGroup>
             </Grid>
           </Grid>
+
+          <hr />
         </Grid>
       </Card>
     </div>

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
 import { Paper, Button } from '@material-ui/core'
 import './Pages.css';
-import Chat from '../components/StockPageChat/StockPageChat'
+import Chat from '../components/StockPageChat/StockPageChat';
+import HomepagePost from '../HomePagePost'
 import firebase from 'firebase/app';
 import Navbar from "../components/navbar/Navbar";
 
@@ -33,9 +34,7 @@ export default function StockPage(props) {
         <Button>Home</Button>
       </Link>
       <div style={{clear:'both'}}>
-        <center>
-          <h2>{stock}</h2>
-        </center>
+        <HomepagePost ticker={stock}/>
       </div>
       {user ? 
         <Paper style={paperStyle}>
