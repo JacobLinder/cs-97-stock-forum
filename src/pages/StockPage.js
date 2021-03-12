@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Paper } from '@material-ui/core'
+import { Paper, Button } from '@material-ui/core'
 import './Pages.css';
 import Chat from '../components/StockPageChat/StockPageChat'
 import firebase from 'firebase/app';
+import Navbar from "../components/navbar/Navbar";
 
 export default function StockPage(props) {
 
@@ -23,18 +24,10 @@ export default function StockPage(props) {
   }
   return(
     <>
-      <div>
-        <Link to='/home'>
-          <button style={{float:'left'}}className="OtherPage">
-            Home Page
-          </button>
-        </Link>
-        <Link to='/landing-page'>
-          <button style={{float:'right'}}className="OtherPage">
-            Sign Out
-          </button>
-        </Link>
-      </div>
+      <Navbar></Navbar>
+      <Link to="/Home">
+        <Button>Home</Button>
+      </Link>
       <div style={{clear:'both'}}>
         <center>
           <h2>{stock}</h2>

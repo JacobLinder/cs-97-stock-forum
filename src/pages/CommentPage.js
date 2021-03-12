@@ -60,9 +60,11 @@ export default function CommentPage(props) {
 
   return(
     <>
-      <Navbar/>
+      <Navbar></Navbar>
+      <Link to="/Home">
+        <Button>Home</Button>
+      </Link>
       <div style={{clear:'both'}}>
-        <br />
         <center>
           {username !== "" ?
             <h2>{username}'s Comment Page</h2>
