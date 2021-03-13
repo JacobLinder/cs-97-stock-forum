@@ -36,7 +36,6 @@ export default function LoadComments(props) {
 
   useEffect(async() => {
     const loadComments = await getTickerComments(stock);
-    console.log(loadComments);
     setData(loadComments);
   }, []);
 
@@ -257,20 +256,24 @@ export default function LoadComments(props) {
       <hr />
 
       <div>
-      {data.length - 1 > 0 ?
-          <>
-            {data.slice(0, limit).map((thread, key) => {
-              return (
-                <div key={key}>
-                  <ChatEntry key={thread} thread={thread} />
-                  <RenderReply thread={thread}/>
-                  {/* {RenderComment(surfaceCommentArray)} */}
-                </div>
-              )
-            })}
-          </>
-          : <center><p>No comments yet!</p></center>
-        }
+        {data.slice(0, limit).map((thread, key) => {
+          if (thread.length > 0)
+          {
+            return (
+              <div key={key}>
+                <ChatEntry key={thread} thread={thread} />
+                <RenderReply thread={thread}/>
+                {/* {RenderComment(surfaceCommentArray)} */}
+              </div>
+            )
+          }
+          else
+          {
+            return (
+              <center><p>No comments yet!</p></center>
+            )
+          }
+        })}
         {limit < data.length &&
             <center>
               <Button onClick={() => setLimit(((limit + 5) < data.length) ? (limit + 5) : data.length )}>
