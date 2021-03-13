@@ -113,38 +113,6 @@ export default function LoadComments(props) {
   }
 
 
-  // const RenderComment = (surfaceCommentArray) => {
-  //   const [showReply, setShowReply] = useState(false)
-  //   return (
-  //     <div>
-  //       {RenderSurfaceComment(surfaceCommentArray)}
-  //       <div>
-  //         {showReply &&
-  //           (
-  //             <div>
-  //               {RenderReply(surfaceCommentArray)}
-  //             </div>
-  //           )
-  //         }
-  //       </div>
-  //       <div>
-  //         {!showReply &&
-  //           (
-  //             <Grid container item justify="center">
-  //               <Box color="text.secondary">
-  //                 <span onClick={() => setShowReply(true)}>
-  //                   Show  replies
-  //                 </span>
-  //               </Box>
-  //             </Grid>
-  //           )
-  //         }
-  //       </div>
-  //       <hr />
-  //     </div>
-  //   )
-  // }
-
   const ChatEntry = (thread) => {
     const topComment = thread.thread[0];
     const date = new Date(topComment.timestamp.seconds * 1000);
@@ -289,7 +257,7 @@ export default function LoadComments(props) {
       <hr />
 
       <div>
-        {data.length > 0 ?
+      {data.length - 1 > 0 ?
           <>
             {data.slice(0, limit).map((thread, key) => {
               return (
@@ -303,14 +271,12 @@ export default function LoadComments(props) {
           </>
           : <center><p>No comments yet!</p></center>
         }
-        {
-          limit < data.length ?
+        {limit < data.length &&
             <center>
               <Button onClick={() => setLimit(((limit + 5) < data.length) ? (limit + 5) : data.length )}>
                 Show more
               </Button>
             </center>
-            : <center>All comments shown</center>
         }
       </div>
     </>
