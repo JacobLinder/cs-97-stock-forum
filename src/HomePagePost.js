@@ -5,6 +5,7 @@ import { toggleBullish, toggleBearish, toggleNeutral, toggleFollow } from "./fun
 import { VictoryLine, VictoryChart, VictoryPie } from 'victory';
 import { getSentimentHistory } from "./functions/stock-interactions.js";
 import { Button, Box, ButtonGroup, Grid } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap'
 import MMM from "./1y_data/MMM.csv";
 import ABT from "./1y_data/ABT.csv";
@@ -2130,9 +2131,11 @@ export default function MiniGraph(props) {
         <Grid container direction="column">
           <Grid item>
             <Card.Header>
-              <Box fontSize={35}>
-                {props.ticker}
-              </Box>
+              <Link to={{pathname: '/stocks', search: props.ticker}}>
+                <Box fontSize={35}>
+                  {props.ticker}
+                </Box>
+                </Link>
             </Card.Header>
           </Grid>
 
